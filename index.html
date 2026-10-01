@@ -442,6 +442,74 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .moment-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-weight:800}
 .moment-row:last-child{border-bottom:0}
 
+/* ===== gratitude vault ===== */
+.btn.warm{background:linear-gradient(135deg,#ffe7b3,#ffbe96 50%,#ff9fcb);box-shadow:0 10px 26px rgba(255,170,120,.4),inset 0 1px 0 rgba(255,255,255,.6)}
+.warm-card{background:linear-gradient(135deg,rgba(255,214,150,.38),rgba(255,160,190,.28));border-color:rgba(245,207,114,.55)}
+.grat-welcome{display:inline-block;margin:6px 0 4px;padding:10px 18px;border-radius:20px;background:var(--gold);color:var(--ink);font-weight:900;letter-spacing:.06em}
+.grat-welcome span{display:block;font-weight:700;letter-spacing:0;font-size:.95rem}
+.flower-wrap{position:relative;width:240px;height:240px;margin:6px auto 0}
+.grat-flower{display:block;animation:float 6s ease-in-out infinite}
+.flower-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#5a2a0c;pointer-events:none}
+.flower-center b{font-family:'Fraunces',Georgia,serif;font-size:1.6rem;font-weight:900;line-height:1}
+.grat-count{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.55rem;margin-top:6px}
+.grat-actions{display:grid;gap:10px;margin-top:18px}
+.grat-cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.grat-cat{appearance:none;display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;padding:14px;border-radius:22px;border:1px solid rgba(245,207,114,.45);background:linear-gradient(160deg,rgba(255,226,176,.32),rgba(255,170,200,.18));min-height:112px;color:var(--text)}
+.grat-cat:active{transform:scale(.96)}
+.grat-cat .gce{font-size:1.7rem}
+.grat-cat b{font-size:.92rem;line-height:1.15;font-weight:900}
+.grat-cat span:last-child{font-size:.82rem;font-weight:800;color:var(--muted)}
+.grat-banner{margin:10px 0 4px;padding:14px 16px;border-radius:20px;background:var(--gold);color:var(--ink);font-weight:900;text-align:center;letter-spacing:.03em;line-height:1.35}
+.grat-list{display:grid;gap:8px;margin-top:12px}
+.grat-row{display:flex;align-items:stretch;gap:6px;border-radius:20px;background:var(--card-solid);border:2px solid var(--line);transition:background .2s,border-color .2s}
+.grat-row.on{border-color:transparent;background:linear-gradient(135deg,rgba(255,214,150,.55),rgba(255,170,200,.4))}
+.grat-row.skipped{opacity:.45}
+.grat-check{appearance:none;flex:1;display:flex;align-items:center;gap:14px;padding:12px 14px;border:0;background:transparent;text-align:left;font-weight:800;font-size:1.05rem;min-height:62px;color:var(--text)}
+.gbox{width:34px;height:34px;flex:none;border-radius:11px;border:3px solid #e6ad48;display:grid;place-items:center;font-weight:900;font-size:1.15rem;color:var(--ink);transition:transform .2s}
+.grat-row.on .gbox{background:var(--gold);border-color:transparent;animation:pop .4s cubic-bezier(.2,1.8,.4,1)}
+.gtext{line-height:1.3}
+.grat-skip{appearance:none;border:0;background:transparent;font-weight:900;font-size:.72rem;letter-spacing:.08em;color:var(--muted);padding:0 12px;min-width:54px}
+.surprise-card{position:relative;margin-top:16px;padding:34px 22px;border-radius:32px;background:radial-gradient(120% 90% at 50% 0%,#fff3dc,#ffd2a6 45%,#ff9fcb);color:var(--ink);box-shadow:0 0 50px rgba(255,190,120,.45),var(--shadow);animation:pop .5s cubic-bezier(.2,1.5,.4,1);overflow:hidden}
+.surprise-card::before{content:"✦  ✧  ✦";position:absolute;top:12px;left:0;right:0;text-align:center;letter-spacing:.4em;opacity:.55;font-size:.9rem}
+.surprise-card .sc-cat{display:block;font-weight:900;font-size:.78rem;letter-spacing:.12em;opacity:.75;margin-bottom:10px}
+.surprise-card b{display:block;font-size:1.9rem;line-height:1.15;font-weight:900}
+.surprise-card p{font-weight:700;font-size:1.1rem;margin:14px 0 0}
+.link-btn{appearance:none;display:block;margin:14px auto 0;border:0;background:transparent;font-weight:800;color:var(--muted);text-decoration:underline;text-underline-offset:3px;font-size:.95rem;padding:8px}
+.notice-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.notice-card{appearance:none;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px 12px;border-radius:20px;border:2px solid var(--line);background:var(--card-solid);font-weight:800;font-size:.98rem;line-height:1.25;min-height:96px;color:var(--text);transition:transform .15s}
+.notice-card.on{background:linear-gradient(135deg,#ffe7b3,#ffbe96 55%,#ff9fcb);color:var(--ink);border-color:transparent;transform:scale(1.02)}
+.nc-e{font-size:1.4rem}
+.nc-num{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff3e2;display:grid;place-items:center;font-size:.85rem;font-weight:900}
+.three-cards{display:grid;gap:10px;margin-top:10px}
+.three-card{padding:20px;border-radius:24px;background:linear-gradient(135deg,#fff3dc,#ffd2a6 50%,#ffb2d3);color:var(--ink);font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:1.3rem;box-shadow:0 0 30px rgba(255,190,120,.4);animation:threeIn .7s cubic-bezier(.2,1.4,.4,1) both}
+.three-card span{display:block;font-size:1.6rem}
+.dg-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 16px;border-radius:24px;background:var(--card-solid);border:2px solid #e6ad48;box-shadow:0 10px 30px rgba(0,0,0,.18);min-height:66px}
+.dg-bar.done{background:linear-gradient(135deg,#fff3dc,#ffd2a6 55%,#ffb2d3);color:var(--ink);border-color:transparent}
+.dg-left{flex:1;min-width:0}
+.dg-count{display:block;font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.5rem;line-height:1.1}
+.dg-track{display:block;height:8px;border-radius:9px;background:var(--track);overflow:hidden;margin-top:6px;max-width:180px}
+.dg-bar.done .dg-track{background:rgba(42,15,47,.15)}
+.dg-track i{display:block;height:100%;border-radius:9px;background:var(--gold);transition:width .4s cubic-bezier(.3,1.3,.5,1)}
+.dg-need{font-weight:900;letter-spacing:.06em;font-size:.95rem;color:var(--muted);text-align:right}
+.dg-noticed{margin-top:8px;text-align:center;font-weight:900;font-size:.9rem;background:var(--card-solid);border-radius:16px;padding:8px 10px;border:1px solid var(--line)}
+.dg-today{margin:12px auto 0;width:max-content;max-width:100%;padding:8px 16px;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:900}
+.dg-celebrate{margin-top:14px;padding:24px 20px;border-radius:30px;text-align:center;background:radial-gradient(120% 90% at 50% 0%,#fff3dc,#ffd2a6 45%,#ff9fcb);color:var(--ink);box-shadow:0 0 50px rgba(255,190,120,.5),var(--shadow);animation:pop .55s cubic-bezier(.2,1.5,.4,1)}
+.dg-celebrate>div{animation:threeIn .7s cubic-bezier(.2,1.4,.4,1) both}
+.dg-c1{font-size:1.6rem;font-weight:900;line-height:1.15}
+.dg-c2{font-weight:800;margin-top:6px;animation-delay:.25s!important}
+.dg-c3{font-size:1.35rem;font-weight:900;margin-top:14px;animation-delay:.5s!important}
+.dg-c4{font-weight:700;margin-top:4px;animation-delay:.7s!important}
+.dg-pts{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:99px;background:rgba(42,15,47,.12);font-weight:900;font-size:.9rem;animation-delay:.9s!important}
+@media (prefers-reduced-motion: reduce){.dg-celebrate,.dg-celebrate>div{animation:none}.dg-track i{transition:none}}
+@keyframes threeIn{from{opacity:0;transform:translateY(30px) scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
+.mine-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.mine-row:last-child{border-bottom:0}
+.mine-e{font-size:1.4rem;width:30px;text-align:center}
+.mine-act{display:flex;gap:6px}
+.mine-note{margin-top:6px;font-style:italic;font-weight:700;font-size:.95rem;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){
+  .grat-flower,.three-card,.surprise-card,.grat-row.on .gbox{animation:none}
+}
 @media (prefers-reduced-motion: reduce){
   .deck-card.glitching,.glitch-card,.glitch-badge,.pay-fb,.pay-msg p,.vault-coins i,.coin-fall,.celebrate .jar-e{animation:none}
   .stay-line,.goal-bar i{transition:none}
@@ -778,7 +846,8 @@ const MESSAGES = [
 "I can invest in myself.","My money can work while I sleep.","I am allowed to charge for my gifts.","Being paid well lets me give more.","I am comfortable being seen for my value.","I can create income I enjoy.","Financial freedom is a direction, not a fantasy.","My relationship with money can be friendly.","I let go of old limits one thought at a time.","I can dream big and act small, every day.",
 "Big numbers are just numbers I haven't gotten used to yet.","I deserve financial ease.","I can build wealth that outlasts a bad day.","Money loves clarity, and so do I.","I can be the person who receives the good news.","My future self is thankful for today's choices.","I am building a life with more choices.","I welcome wealth with an open heart.","Every day I practice, abundance feels more familiar.","I am magnetic to good opportunities.",
 "Today, I choose expansive money thoughts.","I can be rich in money and rich in meaning.","Receiving is a skill, and I'm practicing it.","There is room for me to succeed.","Money can come to me through value I love creating.",
-"I can enjoy money and keep money.","Money doesn't need to disappear.","Keeping money can feel good.","I deserve enjoyment and security.","Payday gives me choices.","Future me deserves to be treated too.","Money staying with me gives me options.","I can pause without depriving myself.","I can buy things consciously.","Saving isn't punishment.","Spending isn't failure.","The goal is choice.","I can become someone who keeps money."
+"I can enjoy money and keep money.","Money doesn't need to disappear.","Keeping money can feel good.","I deserve enjoyment and security.","Payday gives me choices.","Future me deserves to be treated too.","Money staying with me gives me options.","I can pause without depriving myself.","I can buy things consciously.","Saving isn't punishment.","Spending isn't failure.","The goal is choice.","I can become someone who keeps money.",
+"I can want more and appreciate what I have.","My life already contains value.","I notice abundance that isn't measured in money.","Money already supports parts of my life.","I appreciate what money allows me to do.","I can appreciate today while building tomorrow.","Enough and more can coexist.","I don't need to dislike my present to create a bigger future.","Ordinary things can be incredibly valuable.","Some of the richest parts of my life cannot be bought.","Gratitude and ambition can coexist."
 ];
 
 const THOUGHTS = [
@@ -927,9 +996,12 @@ const GAMES = [
 {id:'flip',e:'🔄',n:'Flip It',d:'Turn old stories over',bg:'linear-gradient(135deg,#ffc9ae,#ff8a78)'},
 {id:'thermo',e:'🌡️',n:'Money Thermostat',d:'How much feels normal?',bg:'linear-gradient(135deg,#dccfff,#9aa6ff)'},
 {id:'spend',e:'💎',n:'Spend Millions',d:'Your money. Your choices.',bg:'linear-gradient(135deg,#fbecd0,#eab65c)'},
-{id:'seller',e:'🏷️',n:'Seller Game',d:'What if people bought it?',bg:'linear-gradient(135deg,#b9f1dc,#4fd0cf)'}
+{id:'seller',e:'🏷️',n:'Seller Game',d:'What if people bought it?',bg:'linear-gradient(135deg,#b9f1dc,#4fd0cf)'},
+{id:'gratgame',e:'✨',n:'Gratitude Discovery',d:'How much good can you notice?',bg:'linear-gradient(135deg,#ffe7b3,#ffb996 55%,#ff9fcb)'}
 ];
-const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY'};
+/* Daily gratitude goal — change this one number to change the whole daily practice */
+const DAILY_GRATITUDE_GOAL = 10;
+const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY',gratitude:'GRATITUDE VAULT',gratexplore:'EXPLORE GRATITUDE',gratsurprise:'SURPRISE ME',gratmine:'MY GRATITUDE',noticegood:`NOTICE ${DAILY_GRATITUDE_GOAL} GOOD THINGS`,gratgame:'GRATITUDE DISCOVERY',gratmoney:'GRATITUDE × MONEY'};
 
 /* ================= UTILS ================= */
 const pad = n => String(n).padStart(2,'0');
@@ -960,7 +1032,8 @@ const DEFAULT = () => ({
   wsDone:0, wsLevel:'medium', flips:0, rainBest:0, rainPlays:0,
   customFlips:[], cart:[], storeTier:0, storeUnlocked:0, storeHistory:[], customDreams:[], bigDreams:[],
   thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, sound:false,
-  glitches:[], itches:[], wishlist:[], goals:[], deposits:[], paydays:[], moments:[], stays:[]
+  glitches:[], itches:[], wishlist:[], goals:[], deposits:[], paydays:[], moments:[], stays:[],
+  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1
 });
 const load = () => { try{ const raw=localStorage.getItem(KEY); return raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT(); }catch(e){ return DEFAULT(); } };
 const persist = s => { try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} };
@@ -2010,6 +2083,424 @@ function LetItStay(){
   </div>`;
 }
 
+
+/* ================= GRATITUDE LIBRARY (static, v1 — append only, never reorder: IDs are index-based) ================= */
+const GRAT_LIB_VERSION = 1;
+const GRAT_CATS = [
+{id:'people',e:'❤️',n:'PEOPLE & LOVE',kw:'love family friend friends relationship partner people kids',items:"Someone who loves me|Someone I love|My partner|My parents|My siblings|My grandparents|My family|My chosen family|A close friend|Old friends|New friends|Someone who checks on me|Someone who makes me laugh|Someone who listens|Someone I can call|Someone who believes in me|Someone who taught me something|Someone who hugs me|Someone who remembers me|Someone who makes ordinary days better|Someone I miss because they mattered|Someone who helped me when I needed it|My children|My cousins|My aunts and uncles|A friend who knows my whole story|Someone who tells me the truth kindly|Inside jokes with someone|Someone who is proud of me|People who let me be myself|A long conversation with someone I like|Being loved as I am|Someone who forgives me|People who show up|Friends who feel like family|Someone I can be silly with"},
+{id:'home',e:'🏠',n:'HOME',kw:'home house apartment flat',items:"Having somewhere to sleep|My bed|My pillow|My duvet|Fresh sheets|A roof|A front door|A lock|Heating|Electricity|Running water|Hot water|My shower|My bathroom|My kitchen|My refrigerator|My freezer|My washing machine|My favorite chair|My sofa|My table|My favorite cup|My blanket|My windows|Sunlight through my windows|Privacy|Having somewhere to come home to|My own key|A wardrobe for my clothes|A tidy corner|Plants in my home|A mirror|Curtains I can close|My favorite room|Storage for my things|A home that holds my memories"},
+{id:'body',e:'💪',n:'MY BODY',kw:'body',items:"My heart beating|My lungs breathing|My eyes|My hearing|My sense of taste|My sense of smell|My hands|My fingers|My feet|My legs|My arms|My skin|My brain|My memory|My ability to move|My ability to walk|My ability to stretch|Being able to hug someone|Being able to laugh|Being able to cry|Being able to sleep|Waking up|Feeling warmth|Feeling touch|My body's ability to adapt|My body's ability to become stronger|My body's signals|My ability to rest|My voice|My smile|My spine holding me up|My balance|My immune system working quietly|My shoulders carrying so much|My body healing small cuts|My breath when I slow it down"},
+{id:'health',e:'❤️‍🩹',n:'HEALTH',kw:'health healthy doctor medicine',items:"A day without pain|Feeling rested|Doctors and nurses|Antibiotics|Vaccines|Dentists|My healthcare system|Clean air to breathe|Recovering from an illness|Energy to get through the day|A healthy meal|Exercise that feels good|Moving my body outdoors|Glasses or contact lenses|Pharmacies|Mental health support|Having someone to talk to when it's hard|Hospitals|Emergency rooms|Regular check-ups|My body's resilience|Health information I can look up|Stretching after sitting|Feeling strong|Drinking enough water|Recovering after a workout|Painkillers when I need them|Physiotherapy and rehabilitation|Healing that happens slowly|Each day of feeling okay"},
+{id:'food',e:'🍎',n:'FOOD & WATER',kw:'food eat eating water drink meal',items:"Clean drinking water|Hot coffee|Tea|Breakfast|Fresh fruit|Vegetables|Bread|Rice|Potatoes|Chocolate|My favorite meal|A warm meal|Cold water when I'm thirsty|Food in my refrigerator|Having choices about what I eat|Spices|Salt|Fresh herbs|Restaurants|Takeaway|Home cooking|Someone cooking for me|Cooking for someone else|Sharing a meal|Trying a new food|Comfort food|Celebration food|Food traditions|Soup on a cold day|Pasta|Eggs|Cheese|Ice cream on a warm day|Fresh berries|Farmers who grow food|A full pantry|Leftovers that taste even better"},
+{id:'luxury',e:'☕',n:'EVERYDAY LUXURIES',kw:'luxury luxuries treat',items:"Hot showers|Fresh towels|Clean sheets|Coffee|Wi-Fi|Streaming services|Headphones|Music whenever I want|My smartphone|A comfortable bed|A dishwasher|Electric lights|Online shopping|Food delivery|Maps on my phone|Contactless payments|An electric kettle|A hairdryer|Good shampoo|Skincare|Perfume|Soft clothes|Comfortable shoes|My favorite mug|A quiet morning|A long bath|A cozy candle|A soft dressing gown|Fresh flowers on the table|A massage|Breakfast in bed|Sunglasses|Ice cubes|A fan on a hot night|Sparkling water"},
+{id:'moneyhave',e:'💰',n:'MONEY I ALREADY HAVE',kw:'money cash savings saved paid pay salary income',items:"Money currently available to me|Money I earned myself|A paycheck I have received|Money that bought my groceries|Money that paid a bill|Money that bought something useful|Money that solved a problem|Money that paid for an experience|Money that helped someone I love|Money that gave me comfort|Something I successfully saved for|Financial lessons I've learned|Being able to choose where some of my money goes|Having paid something off|Having enough money for something I needed|Every amount of money I have successfully earned|A refund that came back to me|Money someone gave me as a gift|The first money I ever earned|A raise or a better rate|A bill I paid on time|Money I set aside for later|A purchase I'm still happy about|Money that paid for my education|A bank account that works|Being trusted to be paid for my work|Money that bought a gift for someone|Small savings that add up|Coins in a jar|A month where everything got paid|Money that let me rest"},
+{id:'moneydoes',e:'💳',n:'WHAT MONEY ALREADY DOES FOR ME',kw:'money pays buys',items:"Money buys food.|Money helps keep my home warm.|Money gives me transportation.|Money gives me choices.|Money solves practical problems.|Money buys experiences.|Money supports education.|Money can create comfort.|Money can save time.|Money allows me to give gifts.|Money allows me to help people.|Money pays for technology I use.|Money helps me care for myself.|Money can protect my future.|Money can fund my dreams.|Money can create freedom.|Money pays for the roof over my head.|Money keeps the lights on.|Money lets me say yes to invitations.|Money pays for clean water to reach my tap.|Money supports causes I believe in.|Money lets me fix things when they break.|Money buys tools for my work.|Money pays the people who help me.|Money lets me travel to see people I love.|Money buys time to rest.|Money helps me learn new skills.|Money supports my health.|Money can give me peace of mind.|Money lets me celebrate.|Money can pay it forward.|Money supports local businesses I love."},
+{id:'work',e:'💼',n:'WORK & PURPOSE',kw:'work job purpose career business',items:"Having work to do|My skills|Being paid for my work|Colleagues I like|A good boss or client|Work that uses my strengths|Finishing a task|A productive morning|Learning on the job|My workspace|A good chair at my desk|Clients who come back|Being trusted with responsibility|Solving a problem at work|Lunch breaks|Weekends|Holidays from work|A job that pays the bills|Work that helps someone|Feeling useful|Ideas for my own projects|My tools|Getting better at what I do|A compliment on my work|Mentors|Teamwork|Days when work flows|The end of a long workday|Purpose that gets me out of bed|Building something of my own"},
+{id:'learning',e:'🧠',n:'LEARNING',kw:'learn learning school study education knowledge',items:"Being able to read|Being able to write|Teachers who believed in me|Libraries|Free online courses|Curiosity|Asking questions|Learning a new word|Learning from mistakes|Tutorials that explain things|Podcasts that teach me something|Documentaries|Learning a language|Understanding something that once confused me|School|Practice that pays off|Knowledge that is passed down|Museums|A good explanation|Learning from someone younger than me|Learning from someone older than me|Notes I've written|Finally getting it|Learning by doing|Being a beginner again|Encyclopedias and reference pages|Classes I've taken|Workshops|Learning something just for fun|Wisdom from experience"},
+{id:'tech',e:'📱',n:'TECHNOLOGY',kw:'tech technology phone internet computer app',items:"The internet|Search engines|Video calls|Messaging apps|Photos on my phone|Cloud backups|My computer|A charger that works|Batteries|Bluetooth speakers|Online banking|Apps that make life easier|Calendars and reminders|A camera in my pocket|GPS|Spell check|Translation apps|Password managers|Smart watches and fitness trackers|Email|Being able to work from anywhere|Online communities|Digital books|Electric bikes and scooters|Weather apps|Notes apps|Flashlights|Voice messages|Tools that let me build things|The people who build technology"},
+{id:'nature',e:'🌿',n:'NATURE',kw:'nature outside outdoors trees sea',items:"Trees|The sky|Sunrises|Sunsets|The ocean|Lakes|Rivers|Forests|Flowers|Birdsong|Rain|Icicles|Stars at night|The moon|Clouds drifting|Green grass|Wildflowers|Mountains|Beaches|Fresh air|The smell after rain|Autumn leaves|Bees|Butterflies|Sunshine|Wind in the trees|A quiet walk in nature|Moss and stones|Waves|Gardens|Fields|The changing light of the day"},
+{id:'experiences',e:'🌍',n:'EXPERIENCES',kw:'travel experience experiences trip holiday adventure',items:"Travel|A trip I'll never forget|Concerts|Festivals|Swimming in the sea|A road trip|Seeing a new city|Trying something for the first time|A great day out|Picnics|Theatre|Cinema|Sports events|Dancing|A spontaneous adventure|Staying up late talking|Hiking|Camping|A boat trip|A weekend away|Visiting family far away|Watching fireworks|A surprise party|Learning to ride a bike|A day at the beach|Nights out with friends|Exploring my own town|A memorable meal out|Seeing something beautiful|Saying yes to something new"},
+{id:'memories',e:'📸',n:'MEMORIES',kw:'memory memories past childhood photos',items:"My childhood memories|A favorite birthday|Old photos|Holidays from the past|The first time I fell in love|A teacher I remember|Family stories|Laughing until I cried|A place I used to live|A song that takes me back|Friends from school|A proud moment|Smells that bring memories back|Letters and cards I've kept|A summer I remember|Grandparents' stories|My first job|A trip with friends|A moment someone was kind to me|Memories of people I've lost|Silly moments|Videos of special days|Moments I didn't know were special|A celebration I loved|The day I moved into a new home|My first car or bike|Old jokes that still make me laugh|Traditions from my childhood|A memory that makes me smile instantly|Being able to remember at all"},
+{id:'freedom',e:'🕊️',n:'FREEDOM',kw:'freedom free choice choose',items:"Freedom to choose my work|Freedom to say no|Freedom to say yes|Freedom to change my mind|Freedom to travel|Freedom to speak my mind|Freedom to love who I love|Freedom to learn|Freedom to rest|Freedom to make my own choices|Freedom to start again|Freedom to spend my free time how I like|Freedom to be myself|Freedom to create|Freedom to move to a new place|Freedom of thought|Freedom to vote|Freedom to dress how I like|Freedom to believe what I believe|Freedom to leave what isn't right|Freedom to make mistakes|Freedom to set boundaries|Freedom to dream|Freedom to plan my day|Freedom to read anything|Freedom to try|Freedom to ask for help|Freedom to be alone|Freedom to take up space|Freedom to grow"},
+{id:'comfort',e:'🛋️',n:'COMFORT',kw:'comfort cozy cosy warm soft',items:"A warm blanket|Soft pajamas|A cup of something hot|My favorite hoodie|Being warm when it's cold outside|Being cool when it's hot|A cozy evening|A hug when I need it|Woollen mittens|A familiar routine|My favorite TV show|A comforting voice|Reassurance|Rain on the window while I'm inside|A hot water bottle|Candlelight|A soft cushion|Lying down after a long day|A familiar smell|My own space|Comfortable silence with someone|Knowing someone has my back|A playlist that calms me|A warm bath before bed|Wrapping my hands around a mug|Clothes fresh from the dryer|Sitting by a window with tea|Slippers|A safe place to land|Being home after travelling"},
+{id:'fun',e:'🎉',n:'FUN',kw:'fun play games laugh party',items:"Laughing with friends|Games|Board games|Video games|Card games|Jokes|Funny videos|Dancing in the kitchen|Singing in the car|Playing like a kid|Silly photos|Puzzles|Karaoke|Water fights|Playing sports|Theme parks|Party nights|Making up stories|Comedy shows|Memes that make me laugh|Kind pranks|A good quiz|Building something just for fun|Splashing in puddles|Being goofy|Hobbies|Collecting things I love|Fun weekends|Playing with children|Unexpected fun"},
+{id:'growth',e:'🌱',n:'PERSONAL GROWTH',kw:'growth grow growing change healing',items:"Getting through hard times|Becoming more patient|Learning to set boundaries|Healing|Facing a fear|Asking for help|Changing a habit|Becoming kinder to myself|Outgrowing old beliefs|Knowing myself better|Saying sorry|Accepting a compliment|Trying again after failing|Getting more honest|Making peace with the past|Becoming braver|Letting go|Learning to rest without guilt|Growing in confidence|Noticing my patterns|Choosing differently|Reflection|Feedback that helped me grow|Learning to trust myself|Becoming more open|Changing my mind about something|Seeing progress over time|Discomfort that taught me something|Being gentle with my mistakes|Every version of me that got me here"},
+{id:'granted',e:'✨',n:'THINGS I TAKE FOR GRANTED',kw:'granted everyday ordinary',items:"Turning on a tap and getting clean water|Flushing a toilet|Opening a refrigerator|Switching on a light|Charging my phone|Walking into a supermarket full of food|Sleeping somewhere safe|Putting clean clothes on|Calling someone instantly|Sending a message across the world|Checking tomorrow's weather|Finding directions instantly|Having rubbish collected|Roads|Street lights|Public transportation|Emergency services|Being able to buy medicine|Soap|Bank cards that just work|Free public Wi-Fi|Building codes that keep homes safe|Buying food someone else grew|Sewage systems|Mail being delivered|Pavements to walk on|Having a name and an identity|Clean public toilets|Fire alarms|Traffic lights keeping people safe"},
+{id:'small',e:'🌸',n:'SMALL THINGS',kw:'small little tiny moments',items:"The first sip of coffee|Getting into fresh sheets|Taking my shoes off after work|Finding money in a pocket|Perfectly ripe fruit|Hearing a favorite song unexpectedly|A warm towel|A good hair day|Finding exactly what I was looking for|Someone holding a door|Getting a green traffic light|Comfortable socks|A really good shower|The smell of coffee|A quiet house|Sunlight on my face|A bird landing nearby|A funny message|Laughing unexpectedly|Finding something I thought I'd lost|A parking spot right away|A short queue|The perfect avocado|A smile from a stranger|A pen that writes smoothly|An empty inbox|Crossing something off my list|A cozy café table by the window|A text that says someone got home safe|A cold drink on a hot day"},
+{id:'future',e:'🌅',n:'FUTURE POSSIBILITIES',kw:'future tomorrow possibility possibilities dreams',items:"Tomorrow|Things I haven't learned yet|People I haven't met yet|Places I haven't visited yet|Ideas I haven't had yet|Opportunities I haven't discovered yet|Meals I haven't tasted yet|Books I haven't read yet|Music I haven't heard yet|Skills I haven't learned yet|Things I haven't created yet|Adventures I haven't experienced yet|Unexpected good days|Future laughter|Future conversations|Future possibilities|Next year|Plans I'm excited about|Goals I'm working toward|Friendships still to deepen|Money I haven't earned yet|Projects waiting to be started|Surprises I can't predict|Becoming who I'm growing into|Problems that will get solved|Rest that's coming|Celebrations ahead|New traditions I'll start|The rest of my life|Next summer"},
+{id:'myself',e:'💗',n:'MYSELF',kw:'myself me self',items:"My curiosity|My humor|My creativity|My intelligence|My persistence|My ability to care|My ability to learn|My imagination|My courage|My individuality|My ideas|My dreams|My experience|My boundaries|My ability to change my mind|My ability to solve problems|My ability to create things|My ability to help someone|My ability to keep learning|The person I have become|The person I am still becoming|My sense of style|My intuition|My values|My resilience|My honesty|My sensitivity|My taste in things|My ability to forgive|The way I show love"},
+{id:'animals',e:'🐾',n:'ANIMALS',kw:'animal animals pet pets dog cat',items:"Dogs|Cats|My pet|Pets I've had|Birds at the feeder|Horses|Wild animals living their lives|Squirrels|Ducks on a pond|Puppies|Kittens|Animals that make me laugh|A dog wagging its tail|A cat purring|Fish in the sea|Whales and dolphins|Hedgehogs|Rabbits|Cows in a field|Sheep|Owls|Animal videos online|Animal shelters|Vets who care for animals|Seeing deer|Seals|Frogs after rain|Ladybirds|Penguins|Elephants|A friend's pet that loves me"},
+{id:'music',e:'🎵',n:'MUSIC',kw:'music song songs sing',items:"My favorite song|Songs that lift my mood|Live music|Singing|Musicians|Albums I love|Playlists|Music that helps me focus|Music that helps me cry|Dancing to music|Songs that remind me of someone|Discovering a new artist|Lyrics that feel written for me|Music in films|A choir|Learning an instrument|Drums|Piano|Guitar|Music from my childhood|Whistling|A street musician|Vinyl records|Radio|Humming without thinking|Music on a long drive|A song I can't stop playing|Classical music|Music I share with friends|Silence between songs"},
+{id:'creativity',e:'🎨',n:'CREATIVITY',kw:'creativity creative art create making design',items:"Drawing|Painting|Writing|Photography|Making something with my hands|Crafts|Knitting|Designing|Decorating my home|Cooking creatively|Building with code|Making videos|Coming up with ideas|Brainstorming|Colors|A blank page|Finishing a creative project|Art I love|Galleries|Pottery|Sewing|Arranging flowers|Creating something no one else could|Inspiration|Sketchbooks|Pens and paper|Creative people around me|Making gifts|Doodling|Creative flow when time disappears"},
+{id:'books',e:'📚',n:'BOOKS & STORIES',kw:'book books reading read story stories',items:"Books|A good novel|Bookshops|Stories that changed me|Audiobooks|Children's books|Poetry|A book I couldn't put down|Characters I love|Reading in bed|Book recommendations|Comics|Biographies|Fairy tales|Stories told around a table|Films based on books|Authors|A favorite quote|Reading on holiday|Rereading an old favorite|Magazines|Stories that made me cry|Stories that made me laugh|Writing my own story|Bedtime stories|Myths and legends|Book clubs|Second-hand books|The smell of old books|A story that gave me courage"},
+{id:'senses',e:'👃',n:'MY SENSES',kw:'senses smell taste sound touch see',items:"Seeing colors|Seeing faces I love|Hearing laughter|Hearing music|Hearing someone say my name kindly|The smell of fresh bread|The smell of flowers|The smell of the sea|The taste of something sweet|The taste of something salty|The taste of fresh mint|Warm sun on my skin|Cool water on my hands|Soft fabric|Sand between my toes|Grass under bare feet|The feeling of a hug|Seeing the stars|Seeing details up close|Hearing the ocean|The crunch of snow|The smell of a campfire|The taste of a ripe tomato|Feeling the wind|The sound of a crackling fire|Seeing a rainbow|The feel of a pet's fur|The smell of clean laundry|Tasting spices|Hearing a baby laugh|The feel of cool sheets"},
+{id:'transport',e:'🚗',n:'TRANSPORTATION',kw:'transport transportation car bike train bus travel drive',items:"My bike|My car|Trains|Buses|The metro|Airplanes|Ferries|Walking places|Taxis|Rideshare apps|Motorways between cities|Bridges|Tunnels|Cycle lanes|A full tank or a charged battery|Getting somewhere on time|Train journeys with a view|Pilots and drivers|Mechanics who fix things|Being able to visit people|Road signs|Airports|Night buses|Carpooling|Skateboards|Parking|A smooth ride|Seatbelts|My driving license|Travel cards"},
+{id:'community',e:'🏘️',n:'COMMUNITY',kw:'community neighbour neighbor town local',items:"Neighbors|Local shops|My town|Community centers|Parks|Playgrounds|Local cafés|Public swimming pools|Volunteers|Local events|Sports clubs|The postman|Shop staff who know me|Teachers in my community|Firefighters|Lifeguards|Local craftspeople|Bus drivers|People who clean public spaces|Online groups that help each other|Markets|Local farmers|Places where people gather|Street parties|Being part of something bigger|People who say hello|A community that welcomes newcomers|Local artists|Neighbors who help out|Feeling like I belong somewhere"},
+{id:'kindness',e:'🤝',n:'KINDNESS',kw:'kindness kind help helping',items:"A stranger's kindness|Someone giving me a compliment|Someone sharing their food|A helping hand|Someone who taught me patiently|Someone remembering my birthday|A thank-you note|Someone letting me go first|Kind words when I needed them|Someone who noticed I was sad|Being kind to someone else|Random acts of kindness|Someone defending me|Patience someone showed me|Gentle honesty|Someone lending me something|A friend who drove me somewhere|Kindness from a coworker|Customer service that really helped|A smile from a child|Encouragement|Someone believing my story|Kindness I showed myself|People who donate|Someone who picked up what I dropped|Help moving house|A surprise gift|Someone saving me a seat|Someone who sent food when I was sick|Good manners"},
+{id:'rest',e:'😴',n:'REST',kw:'rest sleep relax relaxing calm',items:"Deep sleep|Naps|Sundays|Doing nothing|Lazy mornings|Sleeping in|An early night|A sauna|Lying in the grass|Quiet time|A break between tasks|Time off|Stretching before bed|Rest days from training|Daydreaming|A long weekend|Turning my phone off|A hammock|Meditation|A slow afternoon|Waking up naturally|Dreams|Putting my feet up|Bedtime|Blackout curtains|Earplugs|An eye mask|A quiet evening in|Pausing|Recovery after a busy week"},
+{id:'seasons',e:'🌦️',n:'SEASONS',kw:'seasons season weather spring summer autumn winter',items:"Spring blossoms|The first warm day of spring|Long summer evenings|Summer fruit|Autumn colors|Crisp autumn air|Cozy winter nights|Winter lights|Snow days|Light returning in February|Thunderstorms watched from inside|The first snowfall|Bonfires|Midsummer|Harvest time|Days getting longer|Days getting shorter and cozier|Sunny winter mornings|Summer swims|Picking apples|Pumpkins|New Year's Eve|Birthdays every year|Seasonal food|Changing my wardrobe for the season|Frost on the windows|Tulips|Warm nights outside|Hot chocolate in winter|Every season having its own beauty"},
+{id:'achievements',e:'🏆',n:'ACHIEVEMENTS',kw:'achievement achievements proud success won',items:"Things I've finished|Exams I passed|Jobs I got|Skills I mastered|Fears I faced|Moving out on my own|Learning to drive|A goal I reached|Something I built|Making my own living|A habit I kept|A race or challenge I completed|Getting through a tough year|Helping someone succeed|Keeping a promise|Starting something new|Recovering from a setback|Being promoted|Finishing a book|Learning a new skill as an adult|Projects I'm proud of|Compliments I earned|Small wins every day|Showing up when it was hard|Making a difficult decision|Standing up for myself|Creating something people use|Winning something|Every certificate and diploma|Simply getting this far"},
+{id:'second',e:'🔄',n:'SECOND CHANCES',kw:'second chance chances again restart',items:"Starting over|Another chance to try|A new day after a bad one|Forgiveness that healed something|Relationships that were repaired|A second chance at a job|Changing direction|Trying again|New beginnings|Mondays as a reset|New Year resolutions|Apologies accepted|Fresh starts after moving|Failures that led somewhere better|Reconnecting with an old friend|Getting back on the bike|Rebuilding after a loss|Second chances I gave others|A new chapter|Healing after heartbreak|Being able to change|Second chances at love|Coming back to a hobby|Going back to school|A clean slate|Getting a second opinion|Picking myself up|Doors that opened after others closed|A new week|Starting again with money"},
+{id:'ordinary',e:'🧺',n:'ORDINARY LIFE',kw:'ordinary everyday routine daily',items:"An ordinary Tuesday|Making my bed|Doing the dishes|Grocery shopping|Folding laundry|Morning routines|Evening routines|Walking to the shop|Cooking dinner|Taking out the trash|Watering plants|Chatting with a cashier|Brushing my teeth|Getting dressed|Commuting|Answering emails|Feeding a pet|Cleaning the house|A normal day with nothing wrong|Paying a bill online|Packing a bag|Making a cup of tea|Waiting for the kettle|Opening the curtains|Sitting at the kitchen table|Hanging laundry outside|Writing a to-do list|A simple lunch|Locking the door at night|Saying goodnight"},
+{id:'inventions',e:'🌎',n:'HUMAN INVENTIONS',kw:'invention inventions inventors science',items:"The wheel|The alphabet|The printing press|The light bulb|Anesthesia|The microscope|The telephone|Flight|Canning and preserving food|Indoor plumbing|The computer|Toothpaste|Paper|Clocks|Maps|Money itself|Banks|The bicycle|The engine|Cameras|Recorded music|Television|Satellites|Solar power|Matches and lighters|Zippers|Umbrellas|Washing powder|Glass windows|Numbers and mathematics|Language|Scissors|The X-ray"}
+];
+const GRAT_OWN_CAT={id:'own',e:'➕',n:'MY OWN',kw:'own mine custom'};
+let _GRAT=null;
+function gratLib(){
+  if(_GRAT) return _GRAT;
+  const all=[], byId={};
+  GRAT_CATS.forEach(c=>{ c.list=c.items.split('|').map((t,i)=>{ const it={id:`grat-${c.id}-${String(i+1).padStart(3,'0')}`,c:c.id,t,lc:t.toLowerCase()}; all.push(it); byId[it.id]=it; return it; }); });
+  _GRAT={all,byId,cat:Object.fromEntries([...GRAT_CATS,GRAT_OWN_CAT].map(c=>[c.id,c]))};
+  return _GRAT;
+}
+const KEY_PROMPTS=[
+[/hot water|shower|tap/i,'Imagine going without it for one week.'],
+[/laugh|funny|joke/i,'Who came to mind?'],
+[/\bbed\b|pillow|duvet|sheets|mattress/i,'Notice what something ordinary gives you every night.'],
+[/music|song|playlist|album|singing/i,'Think of one song that has made your life better.'],
+[/coffee|\btea\b/i,'Remember the last time it tasted exactly right.'],
+[/someone|friend|family|partner|parents|siblings|grandparents|children/i,'Who came to mind? Hold them in your thoughts for a moment.'],
+[/^money /i,'Think of one specific time this was true in your life.'],
+[/haven't|tomorrow|next |future/i,'Let yourself feel curious about it for a moment.'],
+[/\bmy (heart|lungs|eyes|hands|feet|legs|arms|skin|brain)\b/i,'Notice it working for you right now, without being asked.']
+];
+const CAT_PROMPTS={
+people:['Picture their face for a moment.','What would you like them to know?'],home:['Look around. What here makes life easier?','Notice what this place does for you every day.'],
+body:['Notice it working for you right now.','Thank it quietly, the way you would thank a friend.'],health:['What does a good-health day let you do?','Notice one thing your body did well today.'],
+food:['Remember the last time it tasted exactly right.','Who made, grew or shared this with you?'],luxury:['A few generations ago, this would have felt like a miracle.','Notice how normal this has become — and how good it is.'],
+moneyhave:['Think of one specific time this was true.','Money has already done real things for you. Notice one.'],moneydoes:['Where did money do this for you this week?','Money is already working in your life. Notice it.'],
+work:['What does this give you besides money?','Remember a moment when this felt good.'],learning:['What do you know now that you once didn\'t?','Who helped you learn it?'],
+tech:['Imagine explaining this to someone from 100 years ago.','How much time does this quietly save you?'],nature:['When did you last really look at it?','Let your shoulders drop for a second while you picture it.'],
+experiences:['Which one would you happily relive?','What did it teach you about what you love?'],memories:['Let the memory play for a few seconds.','What feeling comes with it?'],
+freedom:['Where did you use this freedom recently?','Notice a choice you made today that was truly yours.'],comfort:['Where in your body do you feel this one?','What small comfort could you give yourself today?'],
+fun:['When did you last do this?','What made it so much fun?'],growth:['Notice how far you\'ve come.','What would past you think of this?'],
+granted:['Imagine a week without it.','Someone, somewhere, made this possible.'],small:['Small things are often the best things.','When did this last happen to you?'],
+future:['Let yourself feel curious about it.','Possibility is a gift in itself.'],myself:['Where did this quality show up recently?','You are allowed to appreciate yourself.'],
+animals:['Which animal came to mind first?','Notice how animals make the world softer.'],music:['Think of one song that has made your life better.','Hum a few notes in your head.'],
+creativity:['What have you made that you\'re proud of?','Creating something is a quiet kind of wealth.'],books:['Which story stayed with you?','What did it change in you?'],
+senses:['Notice this sense working right now.','Close your eyes and imagine it for a moment.'],transport:['Where has it taken you?','Notice how far you can go today.'],
+community:['Who in your community makes life better?','You are part of something bigger.'],kindness:['Who came to mind?','How did it feel to receive — or give — this?'],
+rest:['When did you last allow this?','Rest is not a reward. It\'s part of a good life.'],seasons:['What do you love most about it?','Every season has its own gifts.'],
+achievements:['Give yourself credit for this one.','What did it take to get there?'],second:['Every new start counts.','What did this second chance make possible?'],
+ordinary:['Ordinary life is full of quiet value.','Notice the comfort of the familiar.'],inventions:['Someone dreamed this up — and now it\'s yours to use.','Imagine life before this existed.'],
+own:['This one is yours. Let it land.']
+};
+function gratPrompt(it){ for(const [r,p] of KEY_PROMPTS){ if(r.test(it.t)) return p; } const arr=CAT_PROMPTS[it.c]||CAT_PROMPTS.own; return arr[hash(it.id)%arr.length]; }
+
+/* ================= GRATITUDE: helpers ================= */
+const GRAT_MSGS=['I can want more and appreciate what I have.','My life already contains value.','I notice abundance that isn\u2019t measured in money.','Money already supports parts of my life.','I appreciate what money allows me to do.','I can appreciate today while building tomorrow.','Enough and more can coexist.','I don\u2019t need to dislike my present to create a bigger future.','Ordinary things can be incredibly valuable.','Some of the richest parts of my life cannot be bought.','Gratitude and ambition can coexist.'];
+const gratCount=S=>Object.keys(S.checkedGratitudeIds||{}).length+(S.customGratitudes||[]).length;
+const gratItem=(S,id)=>gratLib().byId[id]||(S.customGratitudes||[]).map(c=>({id:c.id,c:c.cat||'own',t:c.text,custom:c})).find(x=>x.id===id);
+const gratRandom=(S,n,filter)=>{ const L=gratLib().all.filter(i=>!(S.skippedGratitudeIds||{})[i.id]&&(!filter||filter(i))); return shuffle(L).slice(0,n); };
+function useGrat(){
+  const {S,patch}=useFX();
+  const toggle=id=>{ ding(S.checkedGratitudeIds[id]?420:760,.08); patch(s=>{ const c={...s.checkedGratitudeIds}; const k={...s.skippedGratitudeIds}; if(c[id]) delete c[id]; else { c[id]=dayKey(); delete k[id]; } return {...s,checkedGratitudeIds:c,skippedGratitudeIds:k}; }); };
+  const check=id=>patch(s=>s.checkedGratitudeIds[id]?s:({...s,checkedGratitudeIds:{...s.checkedGratitudeIds,[id]:dayKey()}}));
+  const skip=id=>patch(s=>{ const k={...s.skippedGratitudeIds}; const c={...s.checkedGratitudeIds}; if(k[id]) delete k[id]; else { k[id]=true; delete c[id]; } return {...s,skippedGratitudeIds:k,checkedGratitudeIds:c}; });
+  return {toggle,check,skip};
+}
+
+function GratRow({item}){
+  const {S}=useFX(); const {toggle,skip}=useGrat();
+  const on=!!S.checkedGratitudeIds[item.id]; const skipped=!!S.skippedGratitudeIds[item.id];
+  return html`<div className=${'grat-row'+(on?' on':'')+(skipped?' skipped':'')}>
+    <button className="grat-check" role="checkbox" aria-checked=${on} onClick=${()=>toggle(item.id)}><span className="gbox">${on?'✓':''}</span><span className="gtext">${item.t}</span></button>
+    ${!on && html`<button className="grat-skip" onClick=${()=>skip(item.id)} aria-label=${skipped?'Undo skip':'Doesn\u2019t apply'}>${skipped?'UNDO':'SKIP'}</button>`}
+  </div>`;
+}
+
+function GratCustomModal({init,onClose}){
+  const {record,patch,toast}=useFX();
+  const [text,setText]=useState(init&&init.text||''); const [cat,setCat]=useState(init&&init.cat||'own'); const [note,setNote]=useState(init&&init.note||'');
+  const save=()=>{ const t=text.trim(); if(!t) return;
+    if(init&&init.id){ patch(s=>({...s,customGratitudes:s.customGratitudes.map(c=>c.id===init.id?{...c,text:t,cat,note:note.trim()}:c)})); toast('Updated ✨'); onClose(); return; }
+    const g={id:'grat-own-'+uid(),text:t,cat,note:note.trim(),date:dayKey()};
+    record('gratCustom',15,s=>({...s,customGratitudes:[g,...s.customGratitudes],gratitudeHistory:[...s.gratitudeHistory,{date:dayKey(),type:'custom'}]}));
+    toast('Added to My Gratitude ❤️'); onClose(g); };
+  return html`<${Modal} onClose=${()=>onClose()} label="Add gratitude">
+    <h3>${init&&init.id?'Edit gratitude':'Something I\u2019m grateful for'}</h3>
+    <label className="lbl" htmlFor="gct">WHAT ARE YOU GRATEFUL FOR?</label>
+    <input id="gct" className="input" placeholder="The way the light hits my kitchen" value=${text} onChange=${e=>setText(e.target.value)}/>
+    <label className="lbl" htmlFor="gcc">CATEGORY (OPTIONAL)</label>
+    <select id="gcc" className="input" value=${cat} onChange=${e=>setCat(e.target.value)}>
+      <option value="own">➕ MY OWN</option>${GRAT_CATS.map(c=>html`<option key=${c.id} value=${c.id}>${c.e} ${c.n}</option>`)}
+    </select>
+    <label className="lbl" htmlFor="gcn">WHY DOES THIS MATTER TO ME? (OPTIONAL)</label>
+    <textarea id="gcn" className="input" placeholder="It makes mornings feel gentle." value=${note} onChange=${e=>setNote(e.target.value)}></textarea>
+    <div className="btn-row"><button className="btn ghost" onClick=${()=>onClose()}>CANCEL</button><button className="btn" disabled=${!text.trim()} onClick=${save}>SAVE</button></div>
+  <//>`;
+}
+
+function GratFlower({S,size=240}){
+  const L=gratLib(); const n=GRAT_CATS.length; const c=size/2;
+  return html`<svg viewBox=${`0 0 ${size} ${size}`} width=${size} height=${size} aria-hidden="true" className="grat-flower">
+    <defs><radialGradient id="gsun"><stop offset="0" stopColor="#fff6dc"/><stop offset=".6" stopColor="#ffd38a"/><stop offset="1" stopColor="#ffb07a" stopOpacity="0"/></radialGradient></defs>
+    <circle cx=${c} cy=${c} r=${c} fill="url(#gsun)" opacity=".55"/>
+    ${GRAT_CATS.map((cat,i)=>{ const tot=cat.list.length; const done=cat.list.filter(it=>S.checkedGratitudeIds[it.id]).length; const p=done/tot; const a=i*360/n;
+      return html`<ellipse key=${cat.id} cx=${c} cy=${c-size*.29} rx=${size*.045} ry=${size*.16} transform=${`rotate(${a} ${c} ${c})`} fill=${['#ffb996','#ff9fcb','#f5cf72','#c9b6ff'][i%4]} opacity=${.16+.84*Math.min(1,p*3)}/>`; })}
+    <circle cx=${c} cy=${c} r=${size*.17} fill="#fff3dc" stroke="#f5cf72" strokeWidth="3"/>
+  </svg>`;
+}
+
+/* ================= GRATITUDE VAULT HOME ================= */
+function GratitudeHome(){
+  const {S,open,today}=useFX();
+  const [adding,setAdding]=useState(false);
+  const count=gratCount(S); const L=gratLib();
+  const waiting=L.all.length-Object.keys(S.checkedGratitudeIds).filter(id=>L.byId[id]).length-Object.keys(S.skippedGratitudeIds).length;
+  const alive=S.lastDay===today||S.lastDay===addDays(today,-1);
+  return html`<div className="grat-scope">
+    <div className="center">
+      ${S.lastDay&&!alive && html`<div className="grat-welcome">WELCOME BACK ✨<span>There\u2019s something good to notice today.</span></div>`}
+      <h1 className="game-title display">✨ GRATITUDE VAULT</h1>
+      <p className="game-sub">Look at how much is already here.</p>
+      <div className="flower-wrap"><${GratFlower} S=${S}/><div className="flower-center"><b>${fmt(count)}</b><span>❤️</span></div></div>
+      <div className="grat-count">❤️ ${fmt(count)} ${count===1?'thing':'things'} appreciated</div>
+      <p className="muted" style=${{fontWeight:800,margin:'4px 0 0'}}>${fmt(Math.max(0,waiting))}+ things waiting to be noticed</p>
+      <p className="muted small" style=${{fontWeight:700,margin:'2px 0 0'}}>No finish line. This is discovery, not a task.</p>
+    </div>
+    <div className="grat-actions">
+      <button className="btn warm" onClick=${()=>open('gratexplore')}>✨ EXPLORE GRATITUDE</button>
+      <button className="btn pink" onClick=${()=>open('gratsurprise')}>🎁 SURPRISE ME</button>
+      <button className="btn ghost" onClick=${()=>open('gratmine')}>❤️ MY GRATITUDE</button>
+      <button className="btn ghost" onClick=${()=>setAdding(true)}>+ ADD MY OWN</button>
+    </div>
+    <button className="card warm-card q-card" onClick=${()=>open('gratmoney')}>
+      <div className="eyebrow">💳 GRATITUDE × MONEY</div>
+      <p className="display quote" style=${{fontSize:'1.25rem'}}>You want more money. That\u2019s allowed. Now notice what money already does. →</p>
+    </button>
+    <p className="disclaimer">I can be grateful AND still want something to change.</p>
+    ${adding && html`<${GratCustomModal} onClose=${()=>setAdding(false)}/>`}
+  </div>`;
+}
+
+/* ================= EXPLORE + SEARCH ================= */
+function GratExplore({arg}){
+  const {S,record}=useFX();
+  const [q,setQ]=useState(''); const [cat,setCat]=useState(arg&&arg.cat||null); const [limit,setLimit]=useState(40);
+  const L=gratLib();
+  const openCat=id=>{ setCat(id); setLimit(40); window.scrollTo&&window.scrollTo(0,0);
+    if(!S.gratitudeCategoriesExplored.includes(id)) record('gratExplore',10,s=>({...s,gratitudeCategoriesExplored:[...s.gratitudeCategoriesExplored,id]})); };
+  const results=useMemo(()=>{ const t=q.trim().toLowerCase(); if(!t) return null;
+    const score=new Map(); const bump=(i,v)=>score.set(i,Math.max(score.get(i)||0,v));
+    const esc=t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); const word=new RegExp('\\b'+esc+'(s|es)?\\b');
+    L.all.forEach(i=>{ if(word.test(i.lc)) bump(i,3); else if(i.lc.includes(t)) bump(i,1); });
+    if(t.length>=3) GRAT_CATS.forEach(c=>{ if(c.n.toLowerCase().includes(t)||c.kw.split(' ').some(k=>k===t||(k.length>=4&&(k.startsWith(t)||t.startsWith(k))))) c.list.forEach(i=>bump(i,2)); });
+    return [...score.entries()].sort((a,b)=>b[1]-a[1]).map(e=>e[0]); },[q]);
+  const customHits=q.trim()?S.customGratitudes.filter(c=>c.text.toLowerCase().includes(q.trim().toLowerCase())):[];
+  const list=results||(cat?L.cat[cat].list:null);
+  const C=cat&&L.cat[cat];
+  return html`<div className="grat-scope">
+    <label className="lbl" htmlFor="gq" style=${{marginTop:4}}>🔎 WHAT ARE YOU GRATEFUL FOR?</label>
+    <input id="gq" className="input" type="search" placeholder="coffee, home, love, money…" value=${q} onChange=${e=>{ setQ(e.target.value); setLimit(40); }}/>
+    ${!results && !cat && html`<div>
+      <p className="muted small" style=${{fontWeight:800,margin:'14px 2px 0'}}>${L.all.length.toLocaleString('en-US')} things across ${GRAT_CATS.length} categories. Skip anything that doesn\u2019t apply — unchecked never means missing.</p>
+      <div className="grat-cats">${GRAT_CATS.map(c=>{ const done=c.list.filter(i=>S.checkedGratitudeIds[i.id]).length; return html`<button key=${c.id} className="grat-cat" onClick=${()=>openCat(c.id)}>
+        <span className="gce">${c.e}</span><b>${c.n}</b><span>${done?`❤️ ${done}`:'explore'}${S.gratitudeCategoriesExplored.includes(c.id)?'':' · new'}</span></button>`; })}</div>
+    </div>`}
+    ${cat && !results && html`<div className="row-between" style=${{marginTop:14}}><button className="btn tiny ghost" onClick=${()=>setCat(null)}>‹ ALL CATEGORIES</button><span className="pill">${C.list.filter(i=>S.checkedGratitudeIds[i.id]).length} ❤️</span></div>
+      <h2 className="display" style=${{fontSize:'1.6rem',margin:'12px 0 4px'}}>${C.e} ${C.n}</h2>
+      ${cat==='moneydoes' && html`<div className="grat-banner">MONEY ISN\u2019T ONLY SOMETHING I WANT MORE OF.<br/>MONEY IS ALREADY WORKING IN MY LIFE.</div>`}
+      ${cat==='future' && html`<p className="muted small" style=${{fontWeight:700}}>Gratitude for possibility — not promises.</p>`}`}
+    ${results && html`<p className="muted small" style=${{fontWeight:800,margin:'12px 2px 0'}}>${results.length+customHits.length} ${results.length+customHits.length===1?'result':'results'}</p>`}
+    ${customHits.map(c=>html`<div key=${c.id} className="grat-row on"><div className="grat-check"><span className="gbox">✓</span><span className="gtext">${c.text} <span className="muted small">· my own</span></span></div></div>`)}
+    ${list && html`<div className="grat-list">${list.slice(0,limit).map(i=>html`<${GratRow} key=${i.id} item=${i}/>`)}</div>`}
+    ${list && list.length>limit && html`<button className="btn ghost" style=${{marginTop:12}} onClick=${()=>setLimit(l=>l+40)}>SHOW MORE (${list.length-limit})</button>`}
+    ${results && results.length===0 && customHits.length===0 && html`<div className="card center"><p style=${{fontWeight:800,margin:0}}>Nothing matched — maybe it\u2019s one of your own?</p></div>`}
+  </div>`;
+}
+
+/* ================= SURPRISE ME ================= */
+function GratSurprise(){
+  const {S,toast}=useFX(); const {check,skip}=useGrat();
+  const draw=()=>gratRandom(S,1)[0];
+  const [it,setIt]=useState(draw); const [n,setN]=useState(0);
+  const next=()=>{ setIt(gratRandom(S,1,i=>i.id!==it.id)[0]); setN(x=>x+1); };
+  if(!it) return null;
+  const on=!!S.checkedGratitudeIds[it.id]; const C=gratLib().cat[it.c];
+  return html`<div className="grat-scope center">
+    <h1 className="game-title display">🎁 SURPRISE ME</h1>
+    <div className="surprise-card" key=${n}><span className="sc-cat">${C.e} ${C.n}</span><b className="display">${it.t.replace(/\.$/,'').toUpperCase()}</b><p>${gratPrompt(it)}</p></div>
+    <div className="stack" style=${{marginTop:16}}>
+      <button className="btn warm" disabled=${on} onClick=${()=>{ check(it.id); ding(880,.1); toast('Added to My Gratitude ❤️'); }}>${on?'✓ IN MY GRATITUDE':'❤️ YES, I\u2019M GRATEFUL FOR THIS'}</button>
+      <button className="btn ghost" onClick=${next}>NEXT →</button>
+    </div>
+    ${!on && html`<button className="link-btn" onClick=${()=>{ skip(it.id); next(); }}>Doesn\u2019t apply to me — skip</button>`}
+  </div>`;
+}
+
+/* ================= DAILY GRATITUDE (goal-driven: see DAILY_GRATITUDE_GOAL near the top) ================= */
+const NUM_WORDS = {1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten',12:'twelve',15:'fifteen',20:'twenty'};
+const goalWord = n => NUM_WORDS[n] || String(n);
+const dayLabel = k => { const t=dayKey(); if(k===t) return 'TODAY'; if(k===addDays(t,-1)) return 'YESTERDAY';
+  const [y,m,d]=k.split('-').map(Number); const dt=new Date(y,m-1,d);
+  return (Date.now()-dt.getTime()<6*864e5) ? dt.toLocaleDateString('en-GB',{weekday:'long'}).toUpperCase() : dt.toLocaleDateString('en-GB',{day:'numeric',month:'short'}).toUpperCase(); };
+
+function NoticeGood(){
+  const {S,record,patch,today,confetti}=useFX();
+  const G=DAILY_GRATITUDE_GOAL;
+  const todayIds=S.dailyGratitudeSelections[today]||[];
+  const count=todayIds.length; const reached=count>=G;
+  const celebratedToday=S.gratitudeHistory.some(h=>h.date===today&&h.type==='daily-goal');
+  const seen=useRef(new Set()); const topRef=useRef(null);
+  const draw=()=>{ let p=gratRandom(S,G,i=>!seen.current.has(i.id)&&!todayIds.includes(i.id));
+    if(p.length<G){ seen.current=new Set(); p=gratRandom(S,G,i=>!todayIds.includes(i.id)); }
+    p.forEach(i=>seen.current.add(i.id)); return p; };
+  const [pool,setPool]=useState(draw);
+  const [extra,setExtra]=useState([]); const [own,setOwn]=useState(false); const [ownText,setOwnText]=useState('');
+  const [celebrate,setCelebrate]=useState(null);
+  const cards=[...extra,...pool];
+  const itemOf=id=>cards.find(c=>c.id===id)||gratItem(S,id);
+
+  const addToday=s=>id=>{ const ids=[...(s.dailyGratitudeSelections[today]||[])]; if(ids.includes(id)) return s; ids.push(id);
+    const c={...s.checkedGratitudeIds}; if(gratLib().byId[id]&&!c[id]) c[id]=today;
+    return {...s,checkedGratitudeIds:c,dailyGratitudeSelections:{...s.dailyGratitudeSelections,[today]:ids}}; };
+  const select=id=>{
+    if(todayIds.includes(id)) return;
+    const next=count+1;
+    if(next>=G && !celebratedToday){
+      const award=!earned(S,today,'dailyGratitude');
+      record('dailyGratitude',20,s=>({...addToday(s)(id),gratitudeHistory:[...s.gratitudeHistory,{date:today,type:'daily-goal',goal:G}]}));
+      confetti(); ding(980,.25); setCelebrate({award});
+      setTimeout(()=>{ try{ topRef.current&&topRef.current.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'}); }catch(e){} },60);
+    } else { patch(s=>addToday(s)(id)); ding(640+Math.min(next,14)*28,.07); }
+  };
+  const unselect=id=>patch(s=>{ const ids=(s.dailyGratitudeSelections[today]||[]).filter(x=>x!==id); const c={...s.checkedGratitudeIds};
+    if(c[id]===today) delete c[id]; return {...s,checkedGratitudeIds:c,dailyGratitudeSelections:{...s.dailyGratitudeSelections,[today]:ids}}; });
+  const tap=id=>todayIds.includes(id)?unselect(id):select(id);
+  const addOwn=()=>{ const t=ownText.trim(); if(!t) return; const g={id:'grat-own-'+uid(),text:t,cat:'own',note:'',date:today};
+    record('gratCustom',15,s=>({...s,customGratitudes:[g,...s.customGratitudes]}));
+    setExtra(e=>[{id:g.id,c:'own',t},...e]); setOwnText(''); setOwn(false); setTimeout(()=>select(g.id),0); };
+  const more=()=>{ setPool(draw()); setCelebrate(null); try{ topRef.current&&topRef.current.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'}); }catch(e){} };
+  const history=Object.entries(S.dailyGratitudeSelections).filter(([,ids])=>ids.length).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,7);
+
+  return html`<div className="grat-scope">
+    <div ref=${topRef}></div>
+    <h1 className="game-title display">✨ NOTICE ${G} GOOD THINGS</h1>
+    <p className="game-sub">What\u2019s already good today? Choose ${goalWord(G)} things you appreciate.</p>
+
+    ${celebrate && html`<div className="dg-celebrate">
+      <div className="dg-c1 display">✨ YOU FOUND ${G} GOOD THINGS.</div>
+      <div className="dg-c2">And they were already part of your life.</div>
+      <div className="dg-c3 display">LOOK AT WHAT\u2019S ALREADY HERE.</div>
+      <div className="dg-c4">I can appreciate what I have and still create more.</div>
+      ${celebrate.award && html`<div className="dg-pts">+20 Magnet Points ✨</div>`}
+    </div>`}
+    ${reached && html`<div className="dg-today">❤️ ${count} ${count===1?'thing':'things'} appreciated today</div>`}
+
+    <div className="notice-grid">${cards.map(c=>{ const on=todayIds.includes(c.id); const k=todayIds.indexOf(c.id); return html`<button key=${c.id} className=${'notice-card'+(on?' on':'')} onClick=${()=>tap(c.id)} aria-pressed=${on}>
+      ${on && html`<span className="nc-num">${k+1}</span>`}<span className="nc-e">${(gratLib().cat[c.c]||GRAT_OWN_CAT).e}</span>${c.t}</button>`; })}</div>
+
+    ${own ? html`<div className="row" style=${{marginTop:10}}><input className="input" placeholder="Something good today…" value=${ownText} onChange=${e=>setOwnText(e.target.value)} onKeyDown=${e=>{ if(e.key==='Enter') addOwn(); }}/><button className="btn small" onClick=${addOwn} disabled=${!ownText.trim()}>ADD</button></div>`
+      : html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setOwn(true)}>+ MY OWN</button>`}
+    <button className="link-btn" onClick=${more}>Show me ${goalWord(G)} others</button>
+
+    ${count>0 && html`<div className="card"><h2 className="h2">TODAY\u2019S GOOD THINGS</h2>
+      <div className="want-chips" style=${{justifyContent:'flex-start',marginTop:10}}>${todayIds.map(id=>{ const it=itemOf(id); return it?html`<span key=${id} className="goal-pill">${it.t}</span>`:null; })}</div></div>`}
+
+    ${history.length>0 && html`<div className="card"><h2 className="h2">DAILY GRATITUDE</h2>
+      ${history.map(([d,ids])=>html`<div key=${d} className="moment-row"><span>${dayLabel(d)}</span><span>${ids.length} ${ids.length===1?'thing':'things'} noticed${ids.length>=G?' ✨':''}</span></div>`)}</div>`}
+
+    <div className="itch-continue"><div className=${'dg-bar'+(reached?' done':'')}>
+      <div className="dg-left"><span className="dg-count">${count} / ${G}${count>G?' ✨':''}</span>
+        <span className="dg-track"><i style=${{width:Math.min(100,count/G*100)+'%'}}></i></span></div>
+      ${reached ? html`<button className="btn warm small" onClick=${more}>❤️ KEEP NOTICING</button>`
+        : html`<span className="dg-need">${count===0?`CHOOSE ${G}`:`CHOOSE ${G-count} MORE`}</span>`}
+    </div>
+    ${count===G && html`<div className="dg-noticed">✨ ${G} GOOD THINGS NOTICED · Look at how much is already here.</div>`}</div>
+  </div>`;
+}
+
+/* ================= GRATITUDE DISCOVERY GAME ================= */
+function GratGame(){
+  const {S,record,today,confetti}=useFX(); const {check}=useGrat();
+  const [phase,setPhase]=useState('ready'); const [left,setLeft]=useState(60); const [deck,setDeck]=useState([]); const [i,setI]=useState(0); const [yes,setYes]=useState([]);
+  const yesRef=useRef([]); const endRef=useRef(null);
+  endRef.current=()=>{ const n=yesRef.current.length; record('gratGame',25,s=>{ const c={...s.checkedGratitudeIds}; yesRef.current.forEach(id=>{ if(!c[id]) c[id]=today; }); return {...s,checkedGratitudeIds:c,gratitudeHistory:[...s.gratitudeHistory,{date:today,type:'discovery',count:n}]}; }); if(n) confetti(); setPhase('done'); };
+  useEffect(()=>{ if(phase!=='play') return; const start=Date.now();
+    const t=setInterval(()=>{ const l=Math.max(0,60-(Date.now()-start)/1000); setLeft(l); if(l<=0){ clearInterval(t); endRef.current(); } },200); return ()=>clearInterval(t); },[phase]);
+  const start=()=>{ setDeck(gratRandom(S,200)); setI(0); setYes([]); yesRef.current=[]; setLeft(60); setPhase('play'); };
+  const answer=y=>{ const it=deck[i]; if(y){ yesRef.current=[...yesRef.current,it.id]; setYes(yesRef.current); ding(720+(yesRef.current.length%8)*40,.07); } setI(x=>x+1); };
+  if(phase==='ready') return html`<div className="grat-scope center">
+    <h1 className="game-title display">✨ HOW MUCH GOOD CAN YOU NOTICE?</h1>
+    <p className="game-sub">60 seconds. If it applies to your life, tap ❤️ YES. If not, NEXT. There\u2019s no minimum.</p>
+    <div className="surprise-card"><b className="display">❤️</b><p>Ready when you are.</p></div>
+    <div style=${{marginTop:16}}><button className="btn warm" onClick=${start}>START NOTICING</button></div>
+  </div>`;
+  if(phase==='done') return html`<div className="grat-scope center">
+    <h1 className="game-title display">YOU NOTICED ${yes.length} GOOD ${yes.length===1?'THING':'THINGS'} ✨</h1>
+    <p className="display" style=${{fontSize:'1.25rem',fontWeight:700}}>There is more richness in ordinary life than we usually stop to notice.</p>
+    <div className="want-chips" style=${{marginTop:12}}>${yes.slice(0,12).map(id=>html`<span key=${id} className="goal-pill">${gratLib().byId[id].t}</span>`)}</div>
+    <div style=${{marginTop:16}}><button className="btn warm" onClick=${start}>NOTICE AGAIN</button></div>
+  </div>`;
+  const it=deck[i]; const C=it&&gratLib().cat[it.c];
+  return html`<div className="grat-scope center">
+    <div className="arena-hud" style=${{position:'static',justifyContent:'space-between'}}><span className="chip">⏱ ${Math.ceil(left)}s</span><span className="chip">❤️ ${yes.length}</span></div>
+    ${it && html`<div className="surprise-card" key=${it.id}><span className="sc-cat">${C.e} ${C.n}</span><b className="display">${it.t.replace(/\.$/,'')}</b></div>`}
+    <div className="btn-row"><button className="btn ghost" onClick=${()=>answer(false)}>NEXT</button><button className="btn warm" onClick=${()=>answer(true)}>❤️ YES</button></div>
+  </div>`;
+}
+
+/* ================= MY GRATITUDE ================= */
+function GratMine(){
+  const {S,patch,open}=useFX(); const {toggle}=useGrat();
+  const [filter,setFilter]=useState('all'); const [limit,setLimit]=useState(40); const [edit,setEdit]=useState(null); const [noteFor,setNoteFor]=useState(null); const [noteText,setNoteText]=useState(''); const [adding,setAdding]=useState(false);
+  const L=gratLib(); const today=dayKey(); const month=today.slice(0,7); const weekAgo=addDays(today,-6);
+  const items=[...Object.entries(S.checkedGratitudeIds).filter(([id])=>L.byId[id]).map(([id,d])=>({...L.byId[id],date:d})),
+    ...S.customGratitudes.map(c=>({id:c.id,c:c.cat||'own',t:c.text,date:c.date,custom:c}))].sort((a,b)=>b.date.localeCompare(a.date));
+  const cats=[...new Set(items.map(i=>i.c))];
+  const shown=items.filter(i=>filter==='all'||(filter==='custom'?i.custom:i.c===filter));
+  const del=c=>{ if(window.confirm('Delete this gratitude?')) patch(s=>({...s,customGratitudes:s.customGratitudes.filter(x=>x.id!==c.id)})); };
+  const saveNote=()=>{ patch(s=>{ const n={...s.gratitudeNotes}; if(noteText.trim()) n[noteFor.id]=noteText.trim(); else delete n[noteFor.id]; return {...s,gratitudeNotes:n}; }); setNoteFor(null); };
+  const recent3=Object.entries(S.dailyGratitudeSelections).filter(([,ids])=>ids.length).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,7);
+  return html`<div className="grat-scope">
+    <h1 className="game-title display">❤️ MY GRATITUDE</h1>
+    <div className="stats">
+      <div className="stat"><div className="sv">${items.length}</div><div className="sl">TOTAL APPRECIATED</div></div>
+      <div className="stat"><div className="sv">${S.customGratitudes.length}</div><div className="sl">CUSTOM GRATITUDES</div></div>
+      <div className="stat"><div className="sv">${items.filter(i=>i.date>=weekAgo).length}</div><div className="sl">RECENTLY ADDED · 7 DAYS</div></div>
+      <div className="stat"><div className="sv">${items.filter(i=>i.date.startsWith(month)).length}</div><div className="sl">THIS MONTH</div></div>
+    </div>
+    <button className="btn warm" style=${{marginTop:14}} onClick=${()=>setAdding(true)}>+ ADD SOMETHING I\u2019M GRATEFUL FOR</button>
+    ${items.length===0 ? html`<div className="card center"><p style=${{fontWeight:800,marginTop:0}}>Your collection starts with the first thing you notice.</p><button className="btn ghost" onClick=${()=>open('gratexplore')}>EXPLORE GRATITUDE</button></div>` : html`<div>
+      <div className="hscroll" style=${{marginTop:14}}>
+        <button className=${'chip'+(filter==='all'?' on':'')} onClick=${()=>{ setFilter('all'); setLimit(40); }}>ALL</button>
+        ${S.customGratitudes.length>0 && html`<button className=${'chip'+(filter==='custom'?' on':'')} onClick=${()=>{ setFilter('custom'); setLimit(40); }}>➕ MY OWN</button>`}
+        ${cats.filter(c=>c!=='own').map(c=>html`<button key=${c} className=${'chip'+(filter===c?' on':'')} onClick=${()=>{ setFilter(c); setLimit(40); }}>${L.cat[c].e} ${L.cat[c].n}</button>`)}
+      </div>
+      <div className="card" style=${{paddingTop:6,paddingBottom:6}}>${shown.slice(0,limit).map(i=>{ const note=i.custom?i.custom.note:S.gratitudeNotes[i.id]; return html`<div key=${i.id} className="mine-row">
+        <span className="mine-e">${(L.cat[i.c]||GRAT_OWN_CAT).e}</span>
+        <div style=${{flex:1,minWidth:0}}><b>${i.t}</b><div className="muted small" style=${{fontWeight:700}}>${prettyDate(i.date)}${i.custom?' · my own':''}</div>${note && html`<div className="mine-note">“${note}”</div>`}</div>
+        <span className="mine-act">${i.custom ? html`<button className="x" aria-label="Edit" onClick=${()=>setEdit(i.custom)}>✎</button><button className="x" aria-label="Delete" onClick=${()=>del(i.custom)}>✕</button>`
+          : html`<button className="x" aria-label="Add note" onClick=${()=>{ setNoteFor(i); setNoteText(S.gratitudeNotes[i.id]||''); }}>✎</button><button className="x" aria-label="Uncheck" onClick=${()=>toggle(i.id)}>✕</button>`}</span>
+      </div>`; })}</div>
+      ${shown.length>limit && html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setLimit(l=>l+40)}>SHOW MORE (${shown.length-limit})</button>`}
+    </div>`}
+    ${recent3.length>0 && html`<div className="card"><h2 className="h2">DAILY GRATITUDE</h2>${recent3.map(([d,ids])=>html`<div key=${d} style=${{padding:'10px 0',borderBottom:'1px solid var(--line)'}}><div className="row-between"><b>${dayLabel(d)}</b><span className="small" style=${{fontWeight:800}}>${ids.length} ${ids.length===1?'thing':'things'} noticed${ids.length>=DAILY_GRATITUDE_GOAL?' ✨':''}</span></div><div className="muted small" style=${{fontWeight:700,marginTop:2}}>${ids.slice(0,5).map(id=>{ const it=gratItem(S,id); return it?it.t:''; }).filter(Boolean).join(' · ')}${ids.length>5?' …':''}</div></div>`)}</div>`}
+    ${edit && html`<${GratCustomModal} init=${edit} onClose=${()=>setEdit(null)}/>`}
+    ${adding && html`<${GratCustomModal} onClose=${()=>setAdding(false)}/>`}
+    ${noteFor && html`<${Modal} onClose=${()=>setNoteFor(null)} label="Note"><h3>${noteFor.t}</h3><label className="lbl" htmlFor="gnn">WHY DOES THIS MATTER TO ME?</label><textarea id="gnn" className="input" value=${noteText} onChange=${e=>setNoteText(e.target.value)}></textarea><div className="btn-row"><button className="btn ghost" onClick=${()=>setNoteFor(null)}>CANCEL</button><button className="btn" onClick=${saveNote}>SAVE NOTE</button></div><//>`}
+  </div>`;
+}
+
+/* ================= GRATITUDE x MONEY ================= */
+function GratMoney(){
+  const {S,record,close,today}=useFX(); const {toggle}=useGrat();
+  const [step,setStep]=useState(0);
+  const [items]=useState(()=>[...gratRandom(S,2,i=>i.c==='moneydoes'),...gratRandom(S,1,i=>i.c==='moneyhave')]);
+  useEffect(()=>{ if(step>=3) return; const t=setTimeout(()=>setStep(s=>s+1),REDUCED?0:(step===0?300:1400)); return ()=>clearTimeout(t); },[step]);
+  const finish=()=>{ record('gratMoney',10,s=>({...s,gratitudeHistory:[...s.gratitudeHistory,{date:today,type:'money'}]})); setStep(5); };
+  return html`<div className="grat-scope center">
+    <div className="pay-msg" style=${{minHeight:step>=4?0:'40vh'}}>
+      ${step>=1 && html`<p className="display pm-1">YOU WANT MORE MONEY.</p>`}
+      ${step>=2 && html`<p className="display pm-2">That\u2019s allowed.</p>`}
+      ${step>=3 && html`<p className="display pm-3" style=${{fontSize:'1.5rem'}}>NOW NOTICE WHAT MONEY ALREADY DOES.</p>`}
+    </div>
+    ${step===3 && html`<button className="btn warm" onClick=${()=>setStep(4)}>SHOW ME</button>`}
+    ${step>=4 && html`<div>
+      <div className="grat-list" style=${{textAlign:'left'}}>${items.map(i=>html`<${GratRow} key=${i.id} item=${i}/>`)}</div>
+      ${step===4 ? html`<button className="btn warm" style=${{marginTop:14}} onClick=${finish}>I NOTICED ✨</button>` : html`<div>
+        <p className="display" style=${{fontSize:'1.25rem',fontWeight:700,marginTop:18}}>Appreciating what you have doesn\u2019t mean stopping your growth.</p>
+        <p className="display pm-3" style=${{fontSize:'1.6rem'}}>I CAN APPRECIATE TODAY AND BUILD TOMORROW.</p>
+        <button className="btn ghost" onClick=${close}>DONE</button></div>`}
+    </div>`}
+  </div>`;
+}
+
+function NoticeGoodCard(){
+  const {S,open,today}=useFX(); const G=DAILY_GRATITUDE_GOAL;
+  const n=(S.dailyGratitudeSelections[today]||[]).length;
+  const alive=S.lastDay===today||S.lastDay===addDays(today,-1);
+  const showMoney=hash(today+'gm')%3===0;
+  return html`<div>
+    <button className="card warm-card q-card" onClick=${()=>open('noticegood')}>
+      <div className="row-between"><span className="eyebrow">✨ NOTICE ${G} GOOD THINGS</span><span className="pill">${n>=G?`❤️ ${n} today`:n?`${n} / ${G}`:'+20'}</span></div>
+      <p className="display quote" style=${{fontSize:'1.25rem'}}>${n>=G?`${n} good things noticed today. Look at how much is already here.`:n?`${n} noticed so far today. Keep going whenever you like.`:S.lastDay&&!alive?'Welcome back ✨ There\u2019s something good to notice today.':`What\u2019s already good today? Choose ${goalWord(G)} things you appreciate.`}</p>
+    </button>
+    ${showMoney && html`<button className="notice" style=${{borderColor:'#ffb996'}} onClick=${()=>open('gratmoney')}>💳 You want more money. That\u2019s allowed. Now notice what money already does →</button>`}
+  </div>`;
+}
+
 /* ================= TABS ================= */
 function QuickActions(){
   const {S,open}=useFX(); const now=Date.now();
@@ -2044,6 +2535,7 @@ function TodayTab(){
     </header>
     ${returning && html`<div className="card soft center" style=${{fontWeight:800}}>Your progress isn't gone. Start again today. ✨</div>`}
     <${QuickActions}/>
+    <${NoticeGoodCard}/>
     <div className="card meter-card">
       <${Meter} points=${S.points} gid="mhome"/>
       <${LevelDots} points=${S.points}/>
@@ -2123,6 +2615,7 @@ function MagnetTab(){
       ${said>0 && html`<p className="center" style=${{fontWeight:900,margin:'12px 0 0'}}>${said} said out loud this visit</p>`}
     </div>
     <div className="games">
+      <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#fff0c8,#ffbe96 50%,#ff9fcb)'}} onClick=${()=>open('gratitude')}><span className="ge">✨</span><span><b>GRATITUDE VAULT</b><span>${gratCount(S)?`❤️ ${fmt(gratCount(S))} things appreciated`:'Look at how much is already here.'}</span></span></button>
       <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#dccfff,#9aa6ff)'}} onClick=${()=>open('vault')}><span className="ge">⚡</span><span><b>GLITCH VAULT</b><span>${S.glitches.length?`${S.glitches.length} old ${S.glitches.length===1?'story':'stories'} discovered`:'Old money stories I’ve discovered'}</span></span></button>
       <button className="game-tile wide" style=${{background:'var(--sea)'}} onClick=${()=>open('future')}><span className="ge">🌱</span><span><b>FUTURE ME</b><span>${realSaved?`${fmt(realSaved)} DKK really saved`:'Future me deserves to be treated too'}</span></span></button>
       <button className="game-tile wide" style=${{background:'var(--gold)'}} onClick=${()=>open('stay')}><span className="ge">💎</span><span><b>LET IT STAY</b><span>Practice letting money stay</span></span></button>
@@ -2192,7 +2685,7 @@ function MeTab(){
     [S.evidence.length,'Real money evidence'],[t.shifts,'Thermostat shifts'],
     [lastSeller?(lastSeller.point>=SELL_LEVELS.length?'∞':fmtShort(SELL_LEVELS[lastSeller.point]*lastSeller.price)):'—','Seller expansion point'],
     [alive?S.streak:0,'Current streak'],[S.longest,'Longest streak'],[CREATURE[L.idx],'Creature stage'],
-    [S.moments.length,'Intentional money moments'],[S.glitches.length,'Glitches found'],[fmtShort(S.goals.reduce((a,g)=>a+(g.real||0),0)),'DKK really saved'],[S.stays.length,'Let It Stay rounds']
+    [S.moments.length,'Intentional money moments'],[gratCount(S),'Things appreciated'],[S.glitches.length,'Glitches found'],[fmtShort(S.goals.reduce((a,g)=>a+(g.real||0),0)),'DKK really saved'],[S.stays.length,'Let It Stay rounds']
   ];
   const momentCounts=Object.keys(MOMENT_LABELS).map(k=>[k,S.moments.filter(m=>m.type===k).length]).filter(([,n])=>n>0);
   return html`<div className="wrap">
@@ -2247,7 +2740,8 @@ function Onboarding({onDone}){
 }
 
 /* ================= APP ================= */
-const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,future:FutureMe,payday:Payday,wishlist:Wishlist,stay:LetItStay};
+const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,future:FutureMe,payday:Payday,wishlist:Wishlist,stay:LetItStay,gratitude:GratitudeHome,gratexplore:GratExplore,gratsurprise:GratSurprise,gratmine:GratMine,noticegood:NoticeGood,gratgame:GratGame,gratmoney:GratMoney};
+const HUBS=['gratitude','future','vault'];
 const TABS=[{id:'today',i:'🏠',n:'TODAY'},{id:'play',i:'🎮',n:'PLAY'},{id:'magnet',i:'✨',n:'MAGNET'},{id:'evidence',i:'💰',n:'EVIDENCE'},{id:'me',i:'👤',n:'ME'}];
 
 function App(){
@@ -2283,8 +2777,9 @@ function App(){
     }); },[S,toast]);
 
   const plan=useMemo(()=>todayPlan(today),[today]);
-  const open=useCallback((id,session=false,arg=null)=>setScreen(p=>({id,session,arg,n:((p&&p.n)||0)+1})),[]);
-  const close=useCallback(()=>setScreen(null),[]);
+  const open=useCallback((id,session=false,arg=null)=>setScreen(p=>{ let prev=p?(HUBS.includes(p.id)?{id:p.id,session:p.session,arg:p.arg,prev:p.prev}:p.prev):null;
+    while(prev&&prev.id===id) prev=prev.prev; return {id,session,arg,n:((p&&p.n)||0)+1,prev}; }),[]);
+  const close=useCallback(()=>setScreen(p=>p&&p.prev?{...p.prev,n:p.n+1}:null),[]);
   const resetAll=useCallback(()=>{ try{ localStorage.removeItem(KEY); }catch(e){} setS(DEFAULT()); setTab('today'); setScreen(null); },[]);
   useEffect(()=>{ document.body.style.overflow=screen?'hidden':''; },[screen]);
 
