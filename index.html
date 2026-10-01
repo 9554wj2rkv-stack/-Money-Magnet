@@ -325,6 +325,127 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .dots i{width:10px;height:10px;border-radius:50%;background:var(--track)}
 .dots i.on{background:var(--accent);width:28px;border-radius:9px}
 
+/* ===== mindset upgrade ===== */
+.deck-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.glitch-btn{grid-column:span 2;flex-direction:column;gap:0;background:linear-gradient(135deg,#2a1036,#5b2a78);color:#fff3e2;border:2px solid #b9a3ff;box-shadow:0 8px 22px rgba(120,80,220,.3)}
+.glitch-btn small{font-weight:700;font-size:.82rem;letter-spacing:.02em;opacity:.85}
+.deck-card.glitching{animation:glitch .6s steps(2) both}
+@keyframes glitch{0%{transform:none;text-shadow:none}20%{transform:translate(-4px,2px) skewX(-4deg);text-shadow:3px 0 #39c6c9,-3px 0 #ff4fa3}40%{transform:translate(4px,-2px);text-shadow:-3px 0 #39c6c9,3px 0 #ff4fa3}60%{transform:translate(-2px,1px) skewX(3deg)}80%{transform:translate(2px,0);text-shadow:2px 0 #39c6c9,-2px 0 #ff4fa3}100%{transform:none;text-shadow:none}}
+.deck-tag{display:block;font-family:'Nunito',sans-serif;font-size:.78rem;letter-spacing:.12em;font-weight:900;margin-bottom:8px;opacity:.8}
+.glitch-badge{display:block;width:max-content;max-width:100%;margin:8px auto 0;padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#2a1036,#5b2a78);color:#ffe7a8;font-weight:900;letter-spacing:.08em;border:2px solid #b9a3ff;animation:pop .45s cubic-bezier(.2,1.6,.4,1)}
+.glitch-card{background:linear-gradient(135deg,#ffd7c4,#ffb2d3 55%,#cdb9ff);animation:glitch .7s steps(2) both}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.opt-grid button{appearance:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:64px;padding:12px 8px;border-radius:18px;border:2px solid var(--line);background:var(--card-solid);font-weight:900;font-size:.9rem;letter-spacing:.03em;text-align:center;line-height:1.2;transition:transform .14s}
+.opt-grid button:active{transform:scale(.95)}
+.opt-grid button.on{background:var(--hero);color:var(--ink);border-color:transparent}
+.opt-grid .oe{font-size:1.5rem}
+.opt-grid button{position:relative}
+.opt-check{position:absolute;top:6px;right:8px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff3e2;display:grid;place-items:center;font-size:.8rem;font-weight:900}
+.itch-continue{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);margin-top:16px;z-index:3}
+.want-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.want-chips .goal-pill{margin:0;font-size:.88rem}
+.choice-list button.on{background:var(--hero);color:var(--ink);border-color:transparent}
+.ladder{margin-top:14px}
+.rung-wrap{display:flex;flex-direction:column;align-items:center}
+.rung-arrow{font-weight:900;color:var(--muted);font-size:1.2rem;line-height:1.4}
+.rung{appearance:none;display:block;width:100%;text-align:left;padding:14px 16px;border-radius:20px;border:2px solid var(--line);background:var(--card-solid);font-weight:800;font-size:1.05rem;line-height:1.3;color:var(--text)}
+.rung .rung-l{display:block;font-size:.74rem;letter-spacing:.12em;font-weight:900;color:var(--muted);margin-bottom:3px}
+.rung.current{border-style:dashed;opacity:.85}
+.rung.target{border-color:#e6ad48}
+.rung.on{background:var(--hero);color:var(--ink);border-color:transparent;transform:scale(1.02)}
+.rung.on .rung-l{color:var(--ink)}
+.glitch-entry .glitch-title{font-size:1.5rem;font-weight:900;margin:8px 0 10px;line-height:1.15}
+.kv{display:grid;gap:2px;margin-top:8px}
+.kv span{font-size:.78rem;font-weight:900;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.kv b{font-size:1.05rem}
+.belief-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.belief-btns button{appearance:none;min-height:52px;border-radius:16px;border:2px solid var(--line);background:var(--card-solid);font-weight:900;font-size:.85rem;letter-spacing:.03em;padding:8px}
+.belief-btns button:last-child{grid-column:span 2}
+.belief-btns button.on{background:var(--sea);color:var(--ink);border-color:transparent}
+.timeline{margin-top:14px;display:grid;gap:8px}
+.tl-row{display:grid;grid-template-columns:62px 1fr;gap:4px 10px;align-items:center}
+.tl-date{font-weight:900;font-size:.78rem;color:var(--muted)}
+.tl-bar{height:12px;border-radius:9px;background:var(--track);overflow:hidden}
+.tl-bar i{display:block;height:100%;border-radius:9px;background:var(--hero)}
+.tl-l{grid-column:2;font-weight:800;font-size:.82rem}
+.goal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.goal-card{appearance:none;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px;border-radius:22px;border:2px solid transparent;background:var(--card-solid);box-shadow:var(--shadow);min-height:118px;color:var(--text)}
+.goal-card .ge{font-size:1.8rem}
+.goal-card b{font-size:1rem;line-height:1.15}
+.goal-card span{font-weight:800;font-size:.85rem;color:var(--muted)}
+.goal-card.new{border:2px dashed var(--line);box-shadow:none;background:transparent}
+.goal-card:active{transform:scale(.96)}
+.goal-bar{height:14px;border-radius:9px;background:var(--track);overflow:hidden;margin-top:10px;width:100%}
+.goal-bar i{display:block;height:100%;border-radius:9px;background:var(--gold);transition:width 1.2s cubic-bezier(.3,1.2,.5,1)}
+.goal-bar.sm{height:8px;margin-top:4px}
+.goal-pill{display:block;width:max-content;max-width:100%;margin:6px auto 4px;padding:8px 16px;border-radius:999px;background:var(--card-solid);border:1px solid var(--line);font-weight:900}
+.goal-row .goal-name{font-weight:900;font-size:1.15rem;display:flex;align-items:center;gap:8px}
+.goal-row .gre{font-size:1.6rem}
+.goal-amt{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:1.6rem;margin-top:6px}
+.tag2{font-size:.7rem;font-weight:900;letter-spacing:.08em;padding:3px 8px;border-radius:99px;background:var(--track)}
+.tag2.real{background:var(--sea);color:var(--ink)}
+.emoji-row{display:flex;flex-wrap:wrap;gap:6px}
+.emoji-row button{appearance:none;width:46px;height:46px;border-radius:14px;border:2px solid var(--line);background:var(--card-solid);font-size:1.4rem}
+.emoji-row button.on{border-color:transparent;background:var(--gold)}
+.q-big{font-size:1.4rem;font-weight:800;margin:16px 0 12px;line-height:1.25}
+.celebrate .jar{position:relative;width:150px;height:150px;margin:6px auto 10px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3dc,#ffb996 50%,#f27fb4);display:grid;place-items:center;box-shadow:0 0 40px rgba(255,200,120,.55);overflow:visible}
+.celebrate .jar-e{font-size:4rem;animation:pop .6s cubic-bezier(.2,1.6,.4,1) .5s both}
+.coin-fall{position:absolute;top:-120px;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7d6,#f5cf72 50%,#c98a1e);box-shadow:0 2px 6px rgba(0,0,0,.3);animation:coinFall .9s cubic-bezier(.5,0,.7,1) both}
+@keyframes coinFall{0%{transform:translateY(0) scale(1);opacity:1}85%{opacity:1}100%{transform:translateY(190px) scale(.4);opacity:0}}
+.fw-big{font-weight:900;font-size:1.25rem;letter-spacing:.04em;margin-top:6px}
+.celebrate-msg{font-size:1.4rem;font-weight:800;margin:8px 0 4px}
+.big-choice{appearance:none;display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:20px 18px;margin-top:12px;border-radius:26px;border:0;color:var(--ink);box-shadow:var(--shadow);min-height:104px;transition:transform .14s}
+.big-choice:active{transform:scale(.97)}
+.big-choice .bce{font-size:2.4rem}
+.big-choice b{display:block;font-size:1.15rem;font-weight:900;letter-spacing:.03em}
+.big-choice span span{font-weight:700;font-size:.98rem}
+.big-choice.c1{background:var(--hero)}.big-choice.c2{background:var(--gold)}.big-choice.c3{background:var(--sea)}
+.wish.ready{border:2px solid #e6ad48}
+.wait-chip{display:inline-block;margin-top:10px;padding:6px 12px;border-radius:99px;background:var(--track);font-weight:900;font-size:.85rem}
+.pay-msg{min-height:55vh;display:flex;flex-direction:column;justify-content:center}
+.pay-msg p{margin:10px 0;animation:screenIn .6s ease both}
+.pm-1{font-size:1.8rem;font-weight:900}.pm-2{font-size:1.4rem;font-weight:700}
+.pm-3{font-size:2rem;font-weight:900;background:var(--brand);-webkit-background-clip:text;background-clip:text;color:transparent}
+.big-input{font-size:1.8rem;text-align:center;font-family:'Fraunces',Georgia,serif;font-weight:900}
+.seg-bar{display:flex;height:14px;border-radius:9px;overflow:hidden;background:rgba(255,255,255,.2);margin-top:12px}
+.seg-bar i{display:block;height:100%;transition:width .4s ease}
+.pay-fb{margin-top:12px;padding:14px 16px;border-radius:20px;background:var(--gold);color:var(--ink);text-align:center;animation:pop .45s cubic-bezier(.2,1.6,.4,1)}
+.pay-fb b{display:block;font-weight:900;letter-spacing:.04em}
+.pay-fb span{display:block;font-weight:700;font-size:.95rem;margin-top:2px}
+.buckets{display:grid;gap:8px;margin-top:12px}
+.bucket{display:flex;align-items:center;gap:12px;padding:10px 10px 10px 12px;border-radius:20px;background:var(--card-solid);border:2px solid var(--line)}
+.bucket.has{border-color:#e6ad48}
+.bucket.now{border-style:dashed}
+.bk-e{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;flex:none}
+.bk-t{flex:1;min-width:0}
+.bk-t b{display:block;font-size:.98rem;font-weight:900}
+.bk-t span{font-size:.85rem;font-weight:800;color:var(--muted)}
+.bk-btn{appearance:none;width:50px;height:50px;border-radius:16px;border:0;background:var(--gold);color:var(--ink);font-size:1.6rem;font-weight:900;flex:none}
+.bk-btn.minus{background:var(--track);color:var(--text)}
+.bk-btn:disabled{opacity:.35}
+.bk-btn:active{transform:scale(.9)}
+.practice-chip{display:inline-block;padding:6px 14px;border-radius:999px;border:2px dashed var(--line);font-weight:900;font-size:.8rem;letter-spacing:.12em}
+.vault{position:relative;width:min(280px,80vw);height:200px;margin:14px auto 6px;border-radius:30px;background:linear-gradient(160deg,#4a1b5c,#24102c);border:4px solid #e6ad48;box-shadow:0 14px 36px rgba(0,0,0,.4),inset 0 0 30px rgba(255,200,120,.15);overflow:hidden}
+.vault-door{position:absolute;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:4px solid #e6ad48;opacity:.7}
+.vault-coins{position:absolute;left:20px;right:20px;bottom:14px;display:flex;flex-wrap:wrap-reverse;justify-content:center;gap:6px}
+.vault-coins i{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7d6,#f5cf72 50%,#c98a1e);box-shadow:0 2px 6px rgba(0,0,0,.4);animation:coinDrop .5s cubic-bezier(.3,1.4,.5,1) both}
+@keyframes coinDrop{from{transform:translateY(-160px);opacity:0}to{transform:none;opacity:1}}
+.stay-line{font-size:1.35rem;font-weight:800;margin:10px 0;opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease}
+.stay-line.show{opacity:1;transform:none}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.quick button{appearance:none;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:14px;min-height:88px;border-radius:20px;border:0;color:var(--ink);font-weight:900;font-size:.95rem;letter-spacing:.03em;text-align:left;line-height:1.15;box-shadow:var(--shadow);transition:transform .14s}
+.quick button:active{transform:scale(.95)}
+.quick .qe{font-size:1.6rem}
+.moments-line{margin:12px 0 0;font-weight:800;text-align:center}
+.notice{appearance:none;display:block;width:100%;margin-top:10px;padding:12px 14px;border-radius:18px;border:2px solid #e6ad48;background:var(--card-solid);font-weight:900;text-align:left}
+.section-label{margin:22px 4px 0;font-weight:900;letter-spacing:.12em;font-size:.82rem;color:var(--muted)}
+.moment-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-weight:800}
+.moment-row:last-child{border-bottom:0}
+
+@media (prefers-reduced-motion: reduce){
+  .deck-card.glitching,.glitch-card,.glitch-badge,.pay-fb,.pay-msg p,.vault-coins i,.coin-fall,.celebrate .jar-e{animation:none}
+  .stay-line,.goal-bar i{transition:none}
+}
 @media (prefers-reduced-motion: reduce){
   .float,.orbit,.sparkles span{animation:none!important}
   .sparkles span{opacity:.6}
@@ -656,12 +777,14 @@ const MESSAGES = [
 "I can start where I am.","A single idea can change my financial direction.","I am allowed to rest and still receive.","I can take up space in the marketplace.","My confidence with money grows each day I practice.","Clarity about money feels good.","I can look at my numbers with kindness.","Prosperity can be peaceful.","I am open to money arriving in surprising ways.","I am grateful for what I have and open to more.",
 "I can invest in myself.","My money can work while I sleep.","I am allowed to charge for my gifts.","Being paid well lets me give more.","I am comfortable being seen for my value.","I can create income I enjoy.","Financial freedom is a direction, not a fantasy.","My relationship with money can be friendly.","I let go of old limits one thought at a time.","I can dream big and act small, every day.",
 "Big numbers are just numbers I haven't gotten used to yet.","I deserve financial ease.","I can build wealth that outlasts a bad day.","Money loves clarity, and so do I.","I can be the person who receives the good news.","My future self is thankful for today's choices.","I am building a life with more choices.","I welcome wealth with an open heart.","Every day I practice, abundance feels more familiar.","I am magnetic to good opportunities.",
-"Today, I choose expansive money thoughts.","I can be rich in money and rich in meaning.","Receiving is a skill, and I'm practicing it.","There is room for me to succeed.","Money can come to me through value I love creating."
+"Today, I choose expansive money thoughts.","I can be rich in money and rich in meaning.","Receiving is a skill, and I'm practicing it.","There is room for me to succeed.","Money can come to me through value I love creating.",
+"I can enjoy money and keep money.","Money doesn't need to disappear.","Keeping money can feel good.","I deserve enjoyment and security.","Payday gives me choices.","Future me deserves to be treated too.","Money staying with me gives me options.","I can pause without depriving myself.","I can buy things consciously.","Saving isn't punishment.","Spending isn't failure.","The goal is choice.","I can become someone who keeps money."
 ];
 
 const THOUGHTS = [
 "Receiving more does not require me to become someone else.","I can grow my income and still be exactly who I am.","A bigger number is just a new normal waiting to happen.","My financial past is information, not a verdict.","I don't have to know every step to take the next one.","Wanting more is not greed; it's growth.","Comfort with money is learned, like any other skill.","Every opportunity I notice is practice for the next one.","I can be careful with money and still think big.","Abundance isn't only spending — it's also keeping and growing.",
-"Small savings are proof that money can stay with me.","I'm allowed to enjoy the process of building wealth.","There is no rush — and there is no ceiling.","Generosity gets easier when I have more to give.","What I create can reach more people than I imagine.","Being paid well is a fair exchange for real value.","Money doesn't have to be dramatic to be good.","I can learn from people who already do what I want to do.","Today's small step counts.","Having more money gives me more ways to be myself."
+"Small savings are proof that money can stay with me.","I'm allowed to enjoy the process of building wealth.","There is no rush — and there is no ceiling.","Generosity gets easier when I have more to give.","What I create can reach more people than I imagine.","Being paid well is a fair exchange for real value.","Money doesn't have to be dramatic to be good.","I can learn from people who already do what I want to do.","Today's small step counts.","Having more money gives me more ways to be myself.",
+"I can enjoy money and keep money — both are allowed.","Payday gives me choices, not instructions.","Pausing before buying isn't saying no. It's saying: I choose.","Money doesn't have to disappear to have value."
 ];
 
 const QUESTIONS = [
@@ -714,7 +837,20 @@ const FLIPS = [
 ["I'm behind everyone else.","My timeline is my own, and I'm moving forward."],
 ["Money doesn't grow on trees.","Money grows through ideas, value and time."],
 ["If I fail, I'll lose everything.","I can take smart, small risks and learn from each one."],
-["I'm not creative enough to make money.","Value can be created in many ways, including mine."]
+["I'm not creative enough to make money.","Value can be created in many ways, including mine."],
+["I worked hard. I deserve to spend money.","I worked hard. I deserve to enjoy some AND keep some."],
+["Payday means I can finally spend.","Payday means I get to decide what my money does."],
+["Saving is boring.","Watching my money accumulate can become part of the reward."],
+["I'll save whatever is left.","I can choose what I keep before deciding what I spend."],
+["I deserve a treat.","I deserve enjoyment AND financial security."],
+["If I have money, I might as well use it.","Money doesn't have to disappear to have value."],
+["I can always save next month.","Future me benefits from what I choose today."],
+["Money sitting in my account isn't doing anything.","Money staying available gives me options."],
+["Saving means going without.","Saving means funding something I want more."],
+["Being responsible with money is boring.","Building freedom can become exciting."],
+["I've already spent too much this month.","The next money decision still counts."],
+["I ruined my budget.","Nothing is ruined. I make the next decision."],
+["I can't keep money.","Keeping money is a skill I can practice."]
 ].map(([o,n],i)=>({id:'b'+i, old:o, neu:n}));
 
 const WORDS = {
@@ -757,7 +893,8 @@ const ALLOC_CATS = [
 ];
 
 const SELL_LEVELS = [1,10,100,1000,10000,100000];
-const EV_CATS = ['EARNED','SAVED','RECEIVED','OPPORTUNITY','GIFT','REFUND','SOLD','NEGOTIATED','IDEA','OTHER'];
+const EV_CATS = ['EARNED','RECEIVED','SAVED','KEPT','INVESTED','OPPORTUNITY','REFUND','SOLD','NEGOTIATED','CONSCIOUS SPENDING','WAITED BEFORE BUYING','SAID NO','FUNDED FUTURE ME','OTHER'];
+const EV_EXAMPLES = ['Saved 40 kr on groceries.','I wanted to buy something immediately but waited.','I moved 500 kr to my holiday fund.','I bought something and felt good about the decision.','I left money in my account.','I noticed my payday spending urge.','Someone asked about buying something I made.'];
 
 const LEVELS = [
 {name:'OPENING',min:0},{name:'RECEIVING',min:250},{name:'EXPANDING',min:600},{name:'ABUNDANT',min:1100},{name:'WEALTH',min:1800},{name:'MAGNETIC',min:2800}
@@ -792,7 +929,7 @@ const GAMES = [
 {id:'spend',e:'💎',n:'Spend Millions',d:'Your money. Your choices.',bg:'linear-gradient(135deg,#fbecd0,#eab65c)'},
 {id:'seller',e:'🏷️',n:'Seller Game',d:'What if people bought it?',bg:'linear-gradient(135deg,#b9f1dc,#4fd0cf)'}
 ];
-const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION'};
+const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY'};
 
 /* ================= UTILS ================= */
 const pad = n => String(n).padStart(2,'0');
@@ -822,7 +959,8 @@ const DEFAULT = () => ({
   onboarded:false, points:0, earned:{}, days:{}, streak:0, longest:0, lastDay:null,
   wsDone:0, wsLevel:'medium', flips:0, rainBest:0, rainPlays:0,
   customFlips:[], cart:[], storeTier:0, storeUnlocked:0, storeHistory:[], customDreams:[], bigDreams:[],
-  thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, sound:false
+  thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, sound:false,
+  glitches:[], itches:[], wishlist:[], goals:[], deposits:[], paydays:[], moments:[], stays:[]
 });
 const load = () => { try{ const raw=localStorage.getItem(KEY); return raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT(); }catch(e){ return DEFAULT(); } };
 const persist = s => { try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} };
@@ -1410,7 +1548,481 @@ function DailyQuestion(){
   </div>`;
 }
 
+
+/* ================= MINDSET UPGRADE: shared ================= */
+const REACTIONS=['NO','THAT\u2019S NOT TRUE','I DON\u2019T BELIEVE IT','IMPOSSIBLE','NOT FOR ME','THAT FEELS UNCOMFORTABLE','I DON\u2019T KNOW WHY','OTHER'];
+const BELIEF=['STILL NO','MAYBE','STARTING TO BELIEVE IT','MOSTLY TRUE','FEELS NORMAL'];
+const GLITCH_STARTERS=['I can keep money.','Money is safe for me.','It is safe for me to receive.','I can earn more money.','I deserve to be paid well for valuable work.','I can enjoy money and keep money.','Big money is becoming normal to me.','I am a money magnet.'];
+const LADDERS={
+'I can keep money.':['I can\u2019t keep money.',['I can learn to keep some money.','Keeping money is a skill I can practice.','I am getting better at allowing money to stay.','Having money available can feel safe.','I can receive money without immediately spending it.']],
+'Money is safe for me.':['Money isn\u2019t safe for me.',['I can notice moments when money felt okay.','Money is a tool, and tools can be handled safely.','I am learning to feel calmer around money.','I can let money be part of my life without fear.','Money can feel safe in my hands.']],
+'It is safe for me to receive.':['Receiving feels unsafe or wrong.',['I can receive small things without explaining myself.','Saying thank you is enough.','I am practicing letting good things in.','Receiving more is something I can get used to.','Receiving can feel natural.']],
+'I am a money magnet.':['Money avoids me.',['Money has come to me before, in small ways.','I can notice money and opportunities when they appear.','I am becoming more open to money.','I am attracting more opportunities over time.','Money and opportunity find me more and more.']],
+'Money flows to me easily.':['Money is always hard to get.',['Money has come to me in different ways before.','Some money can come with less struggle.','I am open to easier ways of earning.','I am noticing more ways money can reach me.','Money can come to me with more ease.']],
+'I deserve to be paid well for valuable work.':['I don\u2019t deserve to be paid well.',['My work has value to someone.','Fair payment is a normal part of exchange.','I can practice naming my price.','I am becoming comfortable being paid well.','Being well paid can feel right.']],
+'I can earn more money.':['I can\u2019t earn more than I do.',['My income has changed before.','There are skills that could raise my income.','I can take one step toward earning more.','I am building my earning ability.','Earning more is realistic for me.']],
+'Big money is becoming normal to me.':['Big money isn\u2019t for people like me.',['Big numbers are just numbers I\u2019m not used to yet.','I can imagine larger amounts without panic.','I am getting more familiar with bigger amounts.','Larger amounts feel less strange than before.','Big money can feel normal.']],
+'I can handle larger amounts of money.':['Larger amounts would overwhelm me.',['I handle the money I have today.','Skills for bigger amounts can be learned.','I can ask for help with what I don\u2019t know.','I am growing my capacity step by step.','Larger amounts can feel manageable.']],
+'I can enjoy money and keep money.':['I either spend it or I miss out.',['I can enjoy some money and keep a little.','Keeping some doesn\u2019t cancel the fun.','I am practicing enjoying and keeping at the same time.','Both joy and security are allowed.','Enjoying and keeping can feel balanced.']],
+'I deserve enjoyment and security.':['I only get one or the other.',['I deserve some enjoyment.','I deserve some security too.','Wanting both is reasonable.','I am learning to give myself both.','Enjoyment and security can live together.']],
+'Money doesn\u2019t need to disappear.':['Money always disappears.',['Some money has stayed with me before.','Money can wait while I decide.','I am practicing letting money stay.','Money staying gives me options.','Money can stay with me.']]
+};
+const GENERIC_STEPS=['I\u2019m open to the idea that this could become true for me.','Other people have learned to believe this — I can learn too.','I can notice small moments when this is already a little true.','I am practicing this thought, one day at a time.','This is becoming more natural for me.'];
+function negate(t){ const s=t.trim(); const rules=[[/^I can /i,'I can\u2019t '],[/^I am /i,'I\u2019m not '],[/^I deserve /i,'I don\u2019t deserve '],[/^It is /i,'It isn\u2019t '],[/^Money is /i,'Money isn\u2019t '],[/^Money flows /i,'Money doesn\u2019t flow '],[/^I /,'I don\u2019t really ']];
+  for(const [r,rep] of rules){ if(r.test(s)) return s.replace(r,rep); } return 'Part of me doesn\u2019t believe this yet.'; }
+function ladderFor(t){ const key=Object.keys(LADDERS).find(k=>k.toLowerCase()===t.trim().toLowerCase()); if(key) return {current:LADDERS[key][0],steps:LADDERS[key][1],target:key}; return {current:negate(t),steps:GENERIC_STEPS,target:t.trim()}; }
+
+const WANTS=[['🎁','TREAT MYSELF'],['✨','EXCITEMENT'],['❤️','COMFORT'],['😵','STRESS RELIEF'],['😐','I\u2019M BORED'],['💪','I WORKED HARD'],['💰','IT\u2019S PAYDAY'],['🛍️','I SAW SOMETHING I WANT'],['🧠','IMPULSE'],['✅','I ACTUALLY NEED SOMETHING'],['🤷','I DON\u2019T KNOW']];
+const GOAL_PRESETS=[{key:'car',e:'🚗',n:'CAR ME'},{key:'dentist',e:'🦷',n:'DENTIST ME'},{key:'holiday',e:'✈️',n:'HOLIDAY ME'},{key:'safe',e:'🛡️',n:'SAFE ME'},{key:'grow',e:'🌱',n:'GROW ME'},{key:'home',e:'🏠',n:'HOME ME'},{key:'business',e:'🚀',n:'BUSINESS ME'}];
+const GOAL_EMOJIS=['🚗','🦷','✈️','🛡️','🌱','🏠','🚀','✨','🎓','💍','🐶','🎸','🚲','💻','🌴','🎁'];
+const FUTURE_MSGS=['You just bought yourself more freedom.','Future You just got paid.','Money stayed with you.','Keeping money counts too.','You chose something bigger.'];
+const PAY_FEELS=['EXCITING','RELIEF','I WANT TO SHOP','I DESERVE SOMETHING','I FEEL RICH','I WANT FREEDOM','STRESSFUL','NEUTRAL'];
+const PAY_LINES=a=>[`You didn\u2019t lose ${fmt(a)} kr of spending money. You gave ${fmt(a)} kr a job you chose.`,'FUTURE YOU JUST GOT PAID.','Keeping money counts too.','Money stayed with you.','That money has a purpose now.'];
+const SEG_COLORS=['#ffb996','#f5cf72','#ff8fc2','#b9a3ff','#4fd0cf','#8fe3c3','#ff7e6b','#9aa6ff','#fbe3a1','#c9b6ff'];
+const MOMENT_LABELS={paused:'Paused before buying',conscious:'Made a conscious purchase',future:'Added to Future Me',waited:'Waited before deciding',kept:'Kept money intentionally',glitchReview:'Reviewed a Glitch',payday:'Gave payday money a job'};
+const STAY_AMTS=[5000,10000,20000,50000];
+const H48=48*3600*1000;
+
+const addMoment=(s,type)=>({...s,moments:[...(s.moments||[]),{date:dayKey(),type}]});
+function applyDeposit(s,goalId,amount,real,source){ const f=real?'real':'practice';
+  return {...s,goals:s.goals.map(g=>g.id===goalId?{...g,[f]:(g[f]||0)+amount}:g),deposits:[{id:uid(),goalId,amount,real:!!real,date:dayKey(),source:source||''},...s.deposits].slice(0,400)}; }
+const wishReady=(w,now)=>!w.outcome && (w.status ? true : now-w.created>=H48);
+
+/* ================= GLITCH FLOW ================= */
+function GlitchFlow({arg}){
+  const {S,record,open,close}=useFX();
+  const existing=arg&&arg.glitchId?S.glitches.find(g=>g.id===arg.glitchId):null;
+  const [statement,setStatement]=useState(existing?existing.statement:(arg&&arg.statement)||'');
+  const [step,setStep]=useState(existing?'ladder':(arg&&arg.statement?'react':'pick'));
+  const [reaction,setReaction]=useState(null); const [text,setText]=useState('');
+  const [gid,setGid]=useState(existing?existing.id:null);
+  const [choice,setChoice]=useState(existing&&existing.bridge||null); const [custom,setCustom]=useState('');
+  const lad=useMemo(()=>ladderFor(statement||' '),[statement]);
+  const glitch=S.glitches.find(g=>g.id===gid);
+
+  const saveReaction=()=>{ const id='g'+uid(); const now=dayKey();
+    record('glitch',20,s=>({...s,glitches:[{id,statement:statement.trim(),date:now,reaction,text:text.trim(),bridge:null,feelings:[{date:now,level:0}]},...s.glitches]}));
+    setGid(id); setStep('ladder'); ding(520); };
+  const saveBridge=()=>{ const b=choice==='__custom'?custom.trim():choice; if(!b) return;
+    record('bridge',20,s=>({...s,glitches:s.glitches.map(g=>g.id===gid?{...g,bridge:b,bridgeDate:dayKey()}:g)})); setStep('done'); ding(880); };
+
+  if(step==='pick') return html`<div>
+    <div className="glitch-badge">⚡ MONEY GLITCH</div>
+    <h1 className="game-title display">Which thought pushed back?</h1>
+    <p className="game-sub">Pick one, or write the statement that made your mind say “no”.</p>
+    <div className="choice-list">${GLITCH_STARTERS.map(t=>html`<button key=${t} className=${statement===t?'on':''} onClick=${()=>setStatement(t)}>“${t}”</button>`)}</div>
+    <label className="lbl" htmlFor="gs">OR WRITE YOUR OWN</label>
+    <input id="gs" className="input" placeholder="I can be wealthy." value=${GLITCH_STARTERS.includes(statement)?'':statement} onChange=${e=>setStatement(e.target.value)}/>
+    <div style=${{marginTop:16}}><button className="btn" disabled=${!statement.trim()} onClick=${()=>setStep('react')}>CONTINUE</button></div>
+  </div>`;
+
+  if(step==='react') return html`<div>
+    <div className="glitch-badge">⚡ YOU FOUND A GLITCH</div>
+    <p className="center" style=${{fontWeight:800,margin:'10px auto 0',maxWidth:'30ch'}}>Something in you pushed back against this thought. That\u2019s useful information.</p>
+    <div className="deck-card glitch-card">“${statement}”</div>
+    <h2 className="h2 center" style=${{marginTop:20}}>WHAT DID YOUR MIND SAY?</h2>
+    <div className="opt-grid">${REACTIONS.map(r=>html`<button key=${r} className=${reaction===r?'on':''} onClick=${()=>setReaction(r)}>${r}</button>`)}</div>
+    <label className="lbl" htmlFor="gt">IN YOUR OWN WORDS (OPTIONAL)</label>
+    <textarea id="gt" className="input" placeholder="No. I always spend it." value=${text} onChange=${e=>setText(e.target.value)}></textarea>
+    <div style=${{marginTop:16}}><button className="btn" disabled=${!reaction&&!text.trim()} onClick=${saveReaction}>SAVE THIS GLITCH</button></div>
+    <p className="disclaimer">This doesn\u2019t mark the statement as wrong. It shows you an old belief worth noticing.</p>
+  </div>`;
+
+  if(step==='ladder'){ const opts=[...lad.steps.map((t,i)=>({t,label:'STEP '+(i+1)})),{t:lad.target,label:'TARGET'}];
+    return html`<div>
+    <h1 className="game-title display">BUILD A BRIDGE 🌉</h1>
+    <p className="game-sub">You don\u2019t have to jump from a thought you believe to one your mind rejects. Find the next thought you CAN believe.</p>
+    <div className="ladder">
+      <div className="rung current"><span className="rung-l">CURRENT</span>“${glitch&&glitch.text?glitch.text:lad.current}”</div>
+      ${opts.map(o=>html`<div key=${o.label} className="rung-wrap"><div className="rung-arrow">↓</div>
+        <button className=${'rung'+(o.label==='TARGET'?' target':'')+(choice===o.t?' on':'')} onClick=${()=>setChoice(o.t)}><span className="rung-l">${o.label}</span>“${o.t}”</button></div>`)}
+      <div className="rung-wrap"><div className="rung-arrow">·</div>
+        <button className=${'rung'+(choice==='__custom'?' on':'')} onClick=${()=>setChoice('__custom')}><span className="rung-l">✏️ MY OWN BRIDGE</span>Write a thought that feels believable.</button></div>
+      ${choice==='__custom' && html`<textarea className="input" style=${{marginTop:10}} placeholder="I can keep 100 kr this week." value=${custom} onChange=${e=>setCustom(e.target.value)}></textarea>`}
+    </div>
+    <h2 className="h2 center" style=${{marginTop:18}}>WHICH ONE FEELS BELIEVABLE TODAY?</h2>
+    <div style=${{marginTop:12}}><button className="btn pink" disabled=${!choice||(choice==='__custom'&&!custom.trim())} onClick=${saveBridge}>SAVE MY BRIDGE THOUGHT</button></div>
+  </div>`; }
+
+  return html`<div className="center">
+    <div className="glitch-badge">🌉 BRIDGE BUILT</div>
+    <div className="deck-card">“${glitch&&glitch.bridge}”</div>
+    <p style=${{fontWeight:800}}>This is your current bridge thought. It will show up in your Money Message Deck from time to time.</p>
+    <div className="stack"><button className="btn" onClick=${()=>open('vault')}>OPEN GLITCH VAULT ⚡</button><button className="btn ghost" onClick=${close}>DONE</button></div>
+  </div>`;
+}
+
+/* ================= GLITCH VAULT ================= */
+function GlitchVault(){
+  const {S,record,patch,open}=useFX();
+  const today=dayKey();
+  const feel=(g,l)=>{ record('glitchReview',15,s=>({...addMoment(s,'glitchReview'),glitches:s.glitches.map(x=>x.id===g.id?{...x,feelings:[...x.feelings.filter((f,i)=>!(f.date===today&&i>0)),{date:today,level:l}]}:x)})); ding(600+l*80); };
+  const del=g=>{ if(window.confirm('Remove this glitch from your vault?')) patch(s=>({...s,glitches:s.glitches.filter(x=>x.id!==g.id)})); };
+  return html`<div>
+    <h1 className="game-title display">⚡ GLITCH VAULT</h1>
+    <p className="game-sub">Old money stories I\u2019ve discovered</p>
+    ${S.glitches.length===0 ? html`<div className="card center"><p style=${{fontWeight:800,marginTop:0}}>No glitches yet. When a money message makes your mind say “no”, tap ⚡ GLITCH on the card. That\u2019s where the interesting stuff lives.</p><button className="btn" onClick=${()=>open('glitch')}>I FOUND A GLITCH</button></div>`
+    : S.glitches.map(g=>{ const latest=g.feelings[g.feelings.length-1]; return html`<div key=${g.id} className="card glitch-entry">
+      <div className="row-between"><span className="eyebrow">⚡ DISCOVERED ${prettyDate(g.date).toUpperCase()}</span><button className="x" aria-label="Remove glitch" onClick=${()=>del(g)}>✕</button></div>
+      <h3 className="display glitch-title">${g.statement.replace(/\.$/,'').toUpperCase()}</h3>
+      <div className="kv"><span>Automatic thought</span><b>“${g.text||(g.reaction||'').toLowerCase().replace(/^./,c=>c.toUpperCase())}”</b></div>
+      <div className="kv"><span>Current bridge</span><b>${g.bridge?`“${g.bridge}”`:'No bridge yet'}</b></div>
+      <button className="btn tiny ghost" style=${{marginTop:8}} onClick=${()=>open('glitch',false,{glitchId:g.id})}>${g.bridge?'CHANGE BRIDGE':'BUILD A BRIDGE'} 🌉</button>
+      <h2 className="h2" style=${{marginTop:16}}>HOW DOES THIS FEEL NOW?</h2>
+      <div className="belief-btns">${BELIEF.map((b,l)=>html`<button key=${b} className=${latest&&latest.date===today&&g.feelings.length>1&&latest.level===l?'on':''} onClick=${()=>feel(g,l)}>${b}</button>`)}</div>
+      <div className="timeline">${g.feelings.slice(-6).map((f,i)=>html`<div key=${i} className="tl-row"><span className="tl-date">${prettyDate(f.date).toUpperCase()}</span><span className="tl-bar"><i style=${{width:((f.level+1)/5*100)+'%'}}></i></span><span className="tl-l">${i===0&&g.feelings.length<=6&&f.level===0?'DON\u2019T BELIEVE IT':BELIEF[f.level]}</span></div>`)}</div>
+    </div>`; })}
+    <p className="disclaimer">A self-reflection tool, not a psychological measurement.</p>
+  </div>`;
+}
+
+/* ================= FUTURE ME: building blocks ================= */
+function GoalEditor({init,onClose,onSaved}){
+  const {record,patch}=useFX();
+  const [name,setName]=useState(init.name||''); const [emoji,setEmoji]=useState(init.emoji||'✨'); const [target,setTarget]=useState(init.target?fmt(init.target):'');
+  const save=()=>{ const n=name.trim().toUpperCase(); if(!n) return; const t=parseNum(target);
+    if(init.id){ patch(s=>({...s,goals:s.goals.map(g=>g.id===init.id?{...g,name:n,emoji,target:t}:g)})); onSaved&&onSaved({...init,name:n,emoji,target:t}); return; }
+    const g={id:'goal'+uid(),name:n,emoji,target:t,real:0,practice:0,created:dayKey()};
+    record('goal',15,s=>({...s,goals:[...s.goals,g]})); onSaved&&onSaved(g); };
+  return html`<${Modal} onClose=${onClose} label="Future Me goal">
+    <h3>${init.id?'Edit goal':'A new Future Me'}</h3>
+    <label className="lbl" htmlFor="gn">GOAL NAME</label>
+    <input id="gn" className="input" placeholder="JAPAN ME" value=${name} onChange=${e=>setName(e.target.value)}/>
+    <label className="lbl">EMOJI</label>
+    <div className="emoji-row">${GOAL_EMOJIS.map(e=>html`<button key=${e} className=${emoji===e?'on':''} onClick=${()=>setEmoji(e)} aria-label=${'Emoji '+e}>${e}</button>`)}</div>
+    <label className="lbl" htmlFor="gtg">TARGET AMOUNT (DKK) — OPTIONAL</label>
+    <input id="gtg" className="input" inputMode="numeric" placeholder="20,000" value=${target} onChange=${e=>{ const v=parseNum(e.target.value); setTarget(v?fmt(v):''); }}/>
+    <div className="btn-row"><button className="btn ghost" onClick=${onClose}>CANCEL</button><button className="btn" disabled=${!name.trim()} onClick=${save}>${init.id?'SAVE':'CREATE GOAL'}</button></div>
+  <//>`;
+}
+
+function GoalPicker({onPick,onlyNew}){
+  const {S}=useFX(); const [edit,setEdit]=useState(null);
+  const missing=GOAL_PRESETS.filter(p=>!S.goals.some(g=>g.name===p.n));
+  return html`<div className="goal-grid">
+    ${!onlyNew && S.goals.map(g=>html`<button key=${g.id} className="goal-card" onClick=${()=>onPick(g)}><span className="ge">${g.emoji}</span><b>${g.name}</b><span>${fmt(g.real||0)}${g.target?` / ${fmt(g.target)}`:''} DKK</span>${g.target>0 && html`<span className="goal-bar sm"><i style=${{width:Math.min(100,(g.real||0)/g.target*100)+'%'}}></i></span>`}</button>`)}
+    ${missing.map(p=>html`<button key=${p.key} className="goal-card new" onClick=${()=>setEdit({name:p.n,emoji:p.e})}><span className="ge">${p.e}</span><b>${p.n}</b><span>+ start this goal</span></button>`)}
+    <button className="goal-card new" onClick=${()=>setEdit({name:'',emoji:'✨'})}><span className="ge">✨</span><b>MY OWN GOAL</b><span>+ create</span></button>
+    ${edit && html`<${GoalEditor} init=${edit} onClose=${()=>setEdit(null)} onSaved=${g=>{ setEdit(null); onPick(g); }}/>`}
+  </div>`;
+}
+
+function DepositCelebration({goal,amount,real,msg,onDone}){
+  const after=goal.real||0; const before=real?after-amount:after; const T=goal.target||0;
+  const [w,setW]=useState(T?Math.min(100,before/T*100):0);
+  useEffect(()=>{ const t=setTimeout(()=>setW(T?Math.min(100,after/T*100):0),REDUCED?0:450); return ()=>clearTimeout(t); },[]);
+  return html`<div className="center celebrate">
+    <div className="jar" aria-hidden="true"><span className="jar-e">${goal.emoji}</span>${Array.from({length:REDUCED?0:10},(_,i)=>html`<i key=${i} className="coin-fall" style=${{left:(12+i*8)+'%',animationDelay:(i*.08)+'s'}}></i>`)}</div>
+    <div className="fw-big">+${fmt(amount)} KR ${real?'FOR':'PRACTICED FOR'} FUTURE ME ✨</div>
+    <p className="display celebrate-msg">${msg}</p>
+    ${T>0 ? html`<div className="goal-bar"><i style=${{width:w+'%'}}></i></div><p style=${{fontWeight:800,margin:'8px 0 0'}}>${goal.emoji} ${goal.name} · ${fmt(after)} / ${fmt(T)} DKK</p>`
+      : html`<p style=${{fontWeight:800}}>${goal.emoji} ${goal.name} · ${fmt(after)} DKK really saved</p>`}
+    ${!real && html`<p className="muted small" style=${{fontWeight:700}}>Counted as mindset practice — not added to your real savings.</p>`}
+    ${onDone && html`<button className="btn" style=${{marginTop:14}} onClick=${onDone}>DONE</button>`}
+  </div>`;
+}
+
+function ConfirmDeposit({goalId,amount,source,onDone}){
+  const {S,record,confetti}=useFX();
+  const [amt,setAmt]=useState(amount?fmt(amount):''); const [res,setRes]=useState(null);
+  const a=parseNum(amt); const goal=S.goals.find(g=>g.id===goalId);
+  const go=real=>{ if(!a) return;
+    record(real?'saveReal':'futurePractice',real?30:10,s=>applyDeposit(addMoment(s,'future'),goalId,a,real,source));
+    if(real) confetti(); ding(980,.2);
+    setRes({real,amount:a,msg:pick([...FUTURE_MSGS,`Your future just became ${fmt(a)} kr stronger.`])}); };
+  if(!goal) return null;
+  if(res) return html`<${DepositCelebration} goal=${goal} amount=${res.amount} real=${res.real} msg=${res.msg} onDone=${onDone?()=>onDone(res):null}/>`;
+  return html`<div>
+    <div className="goal-pill">${goal.emoji} ${goal.name}</div>
+    ${amount ? html`<div className="big-number">${fmt(a)} kr</div>` : html`<div><label className="lbl" htmlFor="cda">HOW MUCH? (DKK)</label><input id="cda" className="input" inputMode="numeric" placeholder="500" value=${amt} onChange=${e=>{ const v=parseNum(e.target.value); setAmt(v?fmt(v):''); }}/></div>`}
+    <p className="display q-big">Did you actually move this money?</p>
+    <div className="stack"><button className="btn sea" disabled=${!a} onClick=${()=>go(true)}>YES — I SAVED IT</button><button className="btn ghost" disabled=${!a} onClick=${()=>go(false)}>NO — JUST PRACTICING</button></div>
+    <p className="disclaimer">Only “yes” counts toward your real Future Me savings. Practice is counted separately.</p>
+  </div>`;
+}
+
+function FundGoal({amount,source,onDone}){
+  const [goalId,setGoalId]=useState(null);
+  if(goalId) return html`<${ConfirmDeposit} goalId=${goalId} amount=${amount} source=${source} onDone=${onDone}/>`;
+  return html`<div>
+    <p className="display q-big center">Which Future Me gets ${amount?`this ${fmt(amount)} kr`:'this money'}?</p>
+    <${GoalPicker} onPick=${g=>setGoalId(g.id)}/>
+  </div>`;
+}
+
+/* ================= THE ITCH ================= */
+function Itch(){
+  const {S,record,logEvidence,open,close}=useFX();
+  const [step,setStep]=useState('want'); const [wants,setWants]=useState([]);
+  const toggle=l=>{ setWants(ws=>ws.includes(l)?ws.filter(x=>x!==l):[...ws,l]); ding(620,.06); };
+  const wantEmojis=wants.map(l=>(WANTS.find(w=>w[1]===l)||['🔥'])[0]);
+  const [item,setItem]=useState(''); const [price,setPrice]=useState(''); const [logged,setLogged]=useState(false);
+  const amt=parseNum(price);
+  const entry=choice=>({id:uid(),date:new Date().toISOString(),want:wants.join(' · '),wants:[...wants],item:item.trim(),price:amt,choice});
+  const buy=()=>{ record('itch',25,s=>({...addMoment(s,'conscious'),itches:[...s.itches,entry('buy')]})); setStep('bought'); ding(880); };
+  const wait=()=>{ const w={id:'w'+uid(),item:item.trim()||'Something I wanted',price:amt,reason:wants.join(' · '),created:Date.now(),status:null,outcome:null};
+    record('itch',25,s=>({...addMoment(s,'paused'),itches:[...s.itches,entry('wait')],wishlist:[w,...s.wishlist]})); setStep('waiting'); ding(700); };
+
+  if(step==='want') return html`<div>
+    <h1 className="game-title display">🔥 What\u2019s happening?</h1>
+    <p className="game-sub">No judgment. Let\u2019s just notice.</p>
+    <h2 className="h2 center" style=${{marginTop:12}}>WHAT DO I WANT RIGHT NOW?</h2>
+    <p className="center muted" style=${{fontWeight:800,margin:'4px 0 0'}}>Choose everything that\u2019s true right now.</p>
+    <div className="opt-grid">${WANTS.map(([e,l])=>html`<button key=${l} className=${wants.includes(l)?'on':''} aria-pressed=${wants.includes(l)} onClick=${()=>toggle(l)}>${wants.includes(l) && html`<span className="opt-check">✓</span>`}<span className="oe">${e}</span>${l}</button>`)}</div>
+    <div className="itch-continue"><button className="btn" disabled=${!wants.length} onClick=${()=>setStep('item')}>${wants.length?`CONTINUE · ${wants.length} ${wants.length===1?'REASON':'REASONS'}`:'CHOOSE WHAT\u2019S TRUE'}</button></div>
+  </div>`;
+
+  if(step==='item') return html`<div>
+    <div className="want-chips">${wants.map((l,i)=>html`<span key=${l} className="goal-pill">${wantEmojis[i]} ${l}</span>`)}</div>
+    ${wants.length>1 && html`<p className="center" style=${{fontWeight:800,margin:'6px 0 0'}}>${wants.length} things are pulling at once. Noticing that is already the win.</p>`}
+    <label className="lbl" htmlFor="ii">WHAT DO YOU WANT TO BUY? (OPTIONAL)</label>
+    <input id="ii" className="input" placeholder="New trainers" value=${item} onChange=${e=>setItem(e.target.value)}/>
+    <label className="lbl" htmlFor="ip">HOW MUCH? (DKK)</label>
+    <input id="ip" className="input" inputMode="numeric" placeholder="799" value=${price} onChange=${e=>{ const v=parseNum(e.target.value); setPrice(v?fmt(v):''); }}/>
+    <div style=${{marginTop:16}}><button className="btn" onClick=${()=>setStep('options')}>SHOW MY OPTIONS</button></div>
+  </div>`;
+
+  if(step==='options') return html`<div>
+    <h1 className="game-title display">YOU HAVE OPTIONS.</h1>
+    <p className="game-sub">${item.trim()?`${item.trim()}${amt?` · ${fmt(amt)} kr`:''}`:amt?`${fmt(amt)} kr`:'Every option here is a good one.'}</p>
+    <button className="big-choice c1" onClick=${buy}><span className="bce">🛍️</span><span><b>BUY IT NOW</b><span>I consciously choose to buy it.</span></span></button>
+    <button className="big-choice c2" onClick=${wait}><span className="bce">⏳</span><span><b>SAVE IT FOR LATER</b><span>I\u2019ll give myself 48 hours before deciding.</span></span></button>
+    <button className="big-choice c3" onClick=${()=>setStep('future')}><span className="bce">🌱</span><span><b>BUY SOMETHING FOR FUTURE ME</b><span>Keep this money for something I want more.</span></span></button>
+    <p className="disclaimer">Spending isn\u2019t failure. Saving isn\u2019t punishment. The goal is choice.</p>
+  </div>`;
+
+  if(step==='future') return html`<${FundGoal} amount=${amt} source="itch" onDone=${r=>{ record('itch',25,s=>({...s,itches:[...s.itches,{...entry('future'),real:r.real}]})); close(); }}/>`;
+
+  if(step==='bought') return html`<div className="center">
+    <div className="glitch-badge">CHOSEN, NOT AUTOMATIC ✨</div>
+    <div className="deck-card">Enjoy it. Awareness was the win.</div>
+    <p style=${{fontWeight:800}}>I can buy things consciously.</p>
+    <div className="stack">
+      <button className="btn sea" disabled=${logged} onClick=${()=>{ logEvidence(`Chose consciously: ${item.trim()||'a purchase'}`,'CONSCIOUS SPENDING'); setLogged(true); }}>${logged?'ADDED TO EVIDENCE ✓':'ADD TO MONEY EVIDENCE'}</button>
+      <button className="btn ghost" onClick=${close}>DONE</button>
+    </div>
+  </div>`;
+
+  return html`<div className="center">
+    <div className="glitch-badge">⏳ SAVED FOR LATER</div>
+    <div className="deck-card">I can pause without depriving myself.</div>
+    <p style=${{fontWeight:800}}>It\u2019s on your 48-hour wishlist. No decision needed right now.</p>
+    <div className="stack"><button className="btn" onClick=${()=>open('wishlist')}>VIEW MY WISHLIST</button><button className="btn ghost" onClick=${close}>DONE</button></div>
+  </div>`;
+}
+
+/* ================= 48-HOUR WISHLIST ================= */
+function Wishlist(){
+  const {S,record,patch,toast,logEvidence}=useFX();
+  const [now,setNow]=useState(Date.now());
+  useEffect(()=>{ const t=setInterval(()=>setNow(Date.now()),30000); return ()=>clearInterval(t); },[]);
+  const [fund,setFund]=useState(null);
+  const setW=(id,fn)=>patch(s=>({...s,wishlist:s.wishlist.map(w=>w.id===id?fn(w):w)}));
+  const answer=(w,status)=>{
+    if(status==='unsure'){ record('wishlist',20,s=>({...addMoment(s,'waited'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,created:Date.now(),status:null,extended:(x.extended||0)+1}:x)})); toast('No rush — 48 more hours ⏳'); return; }
+    record('wishlist',20,s=>({...addMoment(s,'waited'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,status,answeredAt:Date.now()}:x)})); };
+  const outcome=(w,o)=>setW(w.id,x=>({...x,outcome:o,decided:Date.now()}));
+  const buy=w=>{ record('conscious',20,s=>({...addMoment(s,'conscious'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,outcome:'bought',decided:Date.now()}:x)})); toast('Chosen, not automatic ✨'); };
+  const more=w=>setW(w.id,x=>({...x,status:null,created:Date.now(),extended:(x.extended||0)+1}));
+  const del=w=>{ if(window.confirm('Remove this from your wishlist?')) patch(s=>({...s,wishlist:s.wishlist.filter(x=>x.id!==w.id)})); };
+  const open_=S.wishlist.filter(w=>!w.outcome); const done=S.wishlist.filter(w=>w.outcome);
+  const OUT={bought:'🛍️ Bought consciously',funded:'🌱 Funded Future Me',kept:'💎 Money stayed with me'};
+  return html`<div>
+    <h1 className="game-title display">⏳ 48-HOUR WISHLIST</h1>
+    <p className="game-sub">Wanting is allowed. Waiting turns an urge into a choice.</p>
+    ${open_.length===0 && html`<div className="card center"><p style=${{fontWeight:800,margin:0}}>Nothing waiting. When the itch shows up, choose “Save it for later” and it lands here.</p></div>`}
+    ${open_.map(w=>{ const ready=wishReady(w,now); const hrs=Math.max(1,Math.round((H48-(now-w.created))/3600000)); return html`<div key=${w.id} className=${'card wish'+(ready?' ready':'')}>
+      <div className="row-between"><b style=${{fontSize:'1.15rem'}}>${w.item}</b><button className="x" aria-label="Remove" onClick=${()=>del(w)}>✕</button></div>
+      <div className="muted small" style=${{fontWeight:800}}>${w.price?fmt(w.price)+' kr · ':''}${w.reason||''} · added ${new Date(w.created).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}${w.extended?` · extended ${w.extended}×`:''}</div>
+      ${!ready && html`<div className="wait-chip">⏳ Ready to revisit in ${hrs} h</div>`}
+      ${ready && !w.status && html`<div><p className="display" style=${{fontSize:'1.25rem',fontWeight:800,margin:'12px 0 8px'}}>How do you feel about it now?</p>
+        <div className="stack"><button className="btn small" style=${{width:'100%'}} onClick=${()=>answer(w,'want')}>STILL WANT IT</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>answer(w,'dont')}>DON\u2019T WANT IT ANYMORE</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>answer(w,'unsure')}>NOT SURE</button></div></div>`}
+      ${w.status==='want' && html`<div><p style=${{fontWeight:800,margin:'12px 0 8px'}}>Then you can make a conscious decision.</p>
+        <div className="stack"><button className="btn small" style=${{width:'100%'}} onClick=${()=>buy(w)}>🛍️ BUY IT CONSCIOUSLY</button><button className="btn small sea" style=${{width:'100%'}} onClick=${()=>setFund(w)}>🌱 FUND FUTURE ME INSTEAD</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>more(w)}>⏳ GIVE IT MORE TIME</button></div></div>`}
+      ${w.status==='dont' && html`<div><p style=${{fontWeight:800,margin:'12px 0 8px'}}>Noted ✨ The money is still with you. Want to give it a job?</p>
+        <div className="stack"><button className="btn small sea" style=${{width:'100%'}} onClick=${()=>setFund(w)}>🌱 FUND FUTURE ME</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>{ outcome(w,'kept'); logEvidence(`Waited 48 hours and let “${w.item}” go`,'WAITED BEFORE BUYING'); }}>💎 LET IT STAY WHERE IT IS</button></div></div>`}
+    </div>`; })}
+    ${done.length>0 && html`<div className="card"><h2 className="h2">DECIDED</h2>${done.slice(0,12).map(w=>html`<div key=${w.id} className="cart-line"><span>${w.item}${w.price?html`<br/><span className="muted small">${fmt(w.price)} kr</span>`:''}</span><span className="small" style=${{textAlign:'right'}}>${OUT[w.outcome]}</span></div>`)}</div>`}
+    ${fund && html`<${Modal} onClose=${()=>setFund(null)} label="Fund Future Me"><${FundGoal} amount=${fund.price} source="wishlist" onDone=${()=>{ outcome(fund,'funded'); setFund(null); }}/><//>`}
+  </div>`;
+}
+
+/* ================= FUTURE ME ================= */
+function FutureMe(){
+  const {S,patch,open}=useFX();
+  const [fund,setFund]=useState(null); const [edit,setEdit]=useState(null); const [adding,setAdding]=useState(false);
+  const real=S.goals.reduce((a,g)=>a+(g.real||0),0), prac=S.goals.reduce((a,g)=>a+(g.practice||0),0);
+  const waiting=S.wishlist.filter(w=>!w.outcome).length;
+  const del=g=>{ if(window.confirm(`Delete ${g.name}? Its saved history will be removed from the app (your real money is not affected).`)) patch(s=>({...s,goals:s.goals.filter(x=>x.id!==g.id),deposits:s.deposits.filter(d=>d.goalId!==g.id)})); };
+  const goalName=id=>{ const g=S.goals.find(x=>x.id===id); return g?`${g.emoji} ${g.name}`:'Goal'; };
+  return html`<div>
+    <h1 className="game-title display">🌱 FUTURE ME</h1>
+    <p className="game-sub">Future me deserves to be treated too.</p>
+    <div className="ev-total">
+      <div className="stat"><div className="sv">${fmtShort(real)}</div><div className="sl">DKK REALLY SAVED</div></div>
+      <div className="stat"><div className="sv">${fmtShort(prac)}</div><div className="sl">DKK PRACTICED</div></div>
+    </div>
+    ${S.goals.length===0 && html`<div className="card center"><p style=${{fontWeight:800,margin:0}}>Pick a future version of you to start funding.</p></div>`}
+    ${S.goals.map(g=>html`<div key=${g.id} className="card goal-row">
+      <div className="row-between"><span className="goal-name"><span className="gre">${g.emoji}</span>${g.name}</span><span className="row" style=${{gap:6}}><button className="x" aria-label="Edit goal" onClick=${()=>setEdit(g)}>✎</button><button className="x" aria-label="Delete goal" onClick=${()=>del(g)}>✕</button></span></div>
+      <div className="goal-amt">${fmt(g.real||0)}${g.target?` / ${fmt(g.target)}`:''} DKK</div>
+      ${g.target>0 && html`<div className="goal-bar"><i style=${{width:Math.min(100,(g.real||0)/g.target*100)+'%'}}></i></div>`}
+      ${(g.practice||0)>0 && html`<div className="muted small" style=${{fontWeight:800,marginTop:6}}>+ ${fmt(g.practice)} DKK practiced (not counted as real)</div>`}
+      <button className="btn small" style=${{width:'100%',marginTop:12}} onClick=${()=>setFund(g)}>+ ADD MONEY</button>
+    </div>`)}
+    <button className="btn sea" style=${{marginTop:14}} onClick=${()=>setAdding(true)}>+ NEW FUTURE ME GOAL</button>
+    <button className="btn ghost" style=${{marginTop:10}} onClick=${()=>open('wishlist')}>⏳ 48-HOUR WISHLIST${waiting?` (${waiting})`:''}</button>
+    ${S.deposits.length>0 && html`<div className="card"><h2 className="h2">RECENT</h2>${S.deposits.slice(0,10).map(d=>html`<div key=${d.id} className="cart-line"><span>${goalName(d.goalId)}<br/><span className="muted small">${prettyDate(d.date)}</span></span><span className="row" style=${{gap:8}}><b>+${fmt(d.amount)}</b><span className=${'tag2'+(d.real?' real':'')}>${d.real?'REAL':'PRACTICE'}</span></span></div>`)}</div>`}
+    <p className="disclaimer">Money staying with me gives me options. Real savings only count when you confirm you moved the money.</p>
+    ${fund && html`<${Modal} onClose=${()=>setFund(null)} label="Add money"><${ConfirmDeposit} goalId=${fund.id} amount=${0} source="future" onDone=${()=>setFund(null)}/><//>`}
+    ${edit && html`<${GoalEditor} init=${edit} onClose=${()=>setEdit(null)} onSaved=${()=>setEdit(null)}/>`}
+    ${adding && html`<${Modal} onClose=${()=>setAdding(false)} label="New goal"><h3>Which future you?</h3><${GoalPicker} onlyNew=${true} onPick=${()=>setAdding(false)}/><//>`}
+  </div>`;
+}
+
+/* ================= PAYDAY POWER ================= */
+function Payday(){
+  const {S,record,confetti,close}=useFX();
+  const [step,setStep]=useState('feel'); const [feel,setFeel]=useState(null); const [reveal,setReveal]=useState(0);
+  const [amount,setAmount]=useState(''); const total=parseNum(amount);
+  const [alloc,setAlloc]=useState({}); const [size,setSize]=useState(500); const [fb,setFb]=useState(null); const [edit,setEdit]=useState(false); const [result,setResult]=useState(null);
+  useEffect(()=>{ if(step!=='message') return; if(REDUCED){ setReveal(4); return; } if(reveal>=4) return;
+    const t=setTimeout(()=>setReveal(r=>r+1),reveal===0?250:1300); return ()=>clearTimeout(t); },[step,reveal]);
+  const buckets=[{key:'now',e:'✨',n:'NOW ME',sub:'Fun · spending · treats'},
+    ...S.goals.map(g=>({key:g.id,e:g.emoji,n:g.name,sub:g.target?`${fmt(g.real||0)} / ${fmt(g.target)} saved`:`${fmt(g.real||0)} saved`,future:true})),
+    ...GOAL_PRESETS.filter(p=>!S.goals.some(g=>g.name===p.n)).map(p=>({key:'preset:'+p.key,e:p.e,n:p.n,sub:'New goal',future:true,preset:p}))];
+  const used=Object.values(alloc).reduce((a,b)=>a+b,0); const remaining=total-used;
+  const futureTotal=buckets.filter(b=>b.future).reduce((a,b)=>a+(alloc[b.key]||0),0);
+  const give=(b,dir)=>{ const cur=alloc[b.key]||0;
+    const delta=dir>0?(size==='all'?remaining:Math.min(size,remaining)):-(size==='all'?cur:Math.min(size,cur));
+    if(!delta) return; setAlloc({...alloc,[b.key]:cur+delta});
+    if(dir>0){ setFb({id:uid(),key:b.key,title:`+${fmt(delta)} KR TO ${b.n} ✨`,line:b.future?pick(PAY_LINES(delta)):'Enjoy it — on purpose.'}); ding(b.future?900:700,.1); } };
+  const finish=real=>{ const snap={...alloc};
+    const lines=buckets.filter(b=>snap[b.key]>0).map(b=>({e:b.e,n:b.n,v:snap[b.key],future:!!b.future}));
+    record('payday',30,s=>{ let ns={...s}; const ids={};
+      GOAL_PRESETS.forEach(p=>{ const k='preset:'+p.key; if(snap[k]>0){ const g={id:'goal'+uid(),name:p.n,emoji:p.e,target:0,real:0,practice:0,created:dayKey()}; ns={...ns,goals:[...ns.goals,g]}; ids[k]=g.id; } });
+      Object.entries(snap).forEach(([k,v])=>{ if(k==='now'||!v) return; ns=applyDeposit(ns,ids[k]||k,v,real,'payday'); });
+      ns=addMoment(ns,'payday'); return {...ns,paydays:[...ns.paydays,{date:dayKey(),amount:total,feeling:feel,alloc:snap,real:!!real}]}; });
+    if(real&&futureTotal) record('saveReal',30);
+    confetti(); setResult({lines,real,futureTotal,now:snap.now||0,left:remaining}); setStep('done'); };
+
+  if(step==='feel') return html`<div>
+    <h1 className="game-title display">💰 PAYDAY POWER</h1>
+    <p className="game-sub">Your money arrived. Decide what it does before impulse decides for you.</p>
+    <h2 className="h2 center" style=${{marginTop:12}}>HOW DOES PAYDAY FEEL?</h2>
+    <div className="opt-grid">${PAY_FEELS.map(f=>html`<button key=${f} className=${feel===f?'on':''} onClick=${()=>{ setFeel(f); setReveal(0); setStep('message'); }}>${f}</button>`)}</div>
+  </div>`;
+
+  if(step==='message'){ const L=[['YOU WORKED FOR THIS MONEY.','pm-1'],['You deserve to enjoy some of it.','pm-2'],['And you deserve to keep some of it.','pm-2'],['KEEP FIRST. PLAY SECOND.','pm-3']];
+    return html`<div className="center pay-msg">
+      ${L.slice(0,reveal).map(([t,c])=>html`<p key=${t} className=${'display '+c}>${t}</p>`)}
+      ${reveal>=4 && html`<button className="btn" style=${{marginTop:20}} onClick=${()=>setStep('amount')}>LET\u2019S DECIDE →</button>`}
+    </div>`; }
+
+  if(step==='amount') return html`<div>
+    <h1 className="game-title display">How much arrived?</h1>
+    <label className="lbl" htmlFor="pa">PAYDAY AMOUNT (DKK)</label>
+    <input id="pa" className="input big-input" inputMode="numeric" placeholder="25,000" value=${amount} onChange=${e=>{ const v=parseNum(e.target.value); setAmount(v?fmt(v):''); setAlloc({}); }}/>
+    <div style=${{marginTop:16}}><button className="btn" disabled=${!total} onClick=${()=>setStep('alloc')}>GIVE MY MONEY JOBS</button></div>
+    <p className="disclaimer">No rules, no percentages. You decide.</p>
+  </div>`;
+
+  if(step==='alloc'){ const segs=buckets.filter(b=>alloc[b.key]>0);
+    return html`<div>
+    <div className="balance remaining">
+      <div className="row-between"><span className="bl">PAYDAY · ${fmt(total)} DKK</span><span className="bl">${segs.length} ${segs.length===1?'job':'jobs'}</span></div>
+      <div className="bv">${fmt(remaining)} DKK</div><div className="bl" style=${{marginTop:2}}>STILL UNASSIGNED</div>
+      <div className="seg-bar">${segs.map((b,i)=>html`<i key=${b.key} title=${b.n} style=${{width:(alloc[b.key]/total*100)+'%',background:SEG_COLORS[buckets.indexOf(b)%SEG_COLORS.length]}}></i>`)}</div>
+    </div>
+    ${fb && html`<div className="pay-fb" key=${fb.id}><b>${fb.title}</b><span>${fb.line}</span></div>`}
+    <div className="seg" style=${{marginTop:12}} aria-label="Amount per tap">${[100,500,1000,5000,'all'].map(v=>html`<button key=${v} className=${size===v?'on':''} onClick=${()=>setSize(v)}>${v==='all'?'ALL REST':fmt(v)}</button>`)}</div>
+    <div className="buckets">${buckets.map((b,i)=>{ const v=alloc[b.key]||0; return html`<div key=${b.key} className=${'bucket'+(v?' has':'')+(b.key==='now'?' now':'')}>
+      <span className="bk-e" style=${{background:SEG_COLORS[i%SEG_COLORS.length]}}>${b.e}</span>
+      <span className="bk-t"><b>${b.n}</b><span>${v?fmt(v)+' DKK':b.sub}</span></span>
+      <button className="bk-btn minus" aria-label=${'Less to '+b.n} disabled=${!v} onClick=${()=>give(b,-1)}>−</button>
+      <button className="bk-btn" aria-label=${'More to '+b.n} disabled=${!remaining} onClick=${()=>give(b,1)}>+</button>
+    </div>`; })}</div>
+    <button className="btn ghost" style=${{marginTop:12}} onClick=${()=>setEdit(true)}>+ CUSTOM GOAL</button>
+    <div style=${{marginTop:12}}><button className="btn pink" disabled=${!used} onClick=${()=>futureTotal?setStep('real'):finish(false)}>I DECIDED ✨</button></div>
+    ${remaining>0&&used>0 && html`<p className="disclaimer">${fmt(remaining)} DKK unassigned — it simply stays put. That\u2019s allowed.</p>`}
+    ${edit && html`<${GoalEditor} init=${{name:'',emoji:'✨'}} onClose=${()=>setEdit(false)} onSaved=${()=>setEdit(false)}/>`}
+  </div>`; }
+
+  if(step==='real') return html`<div className="center">
+    <h1 className="game-title display">${fmt(futureTotal)} kr for Future Me</h1>
+    <p className="display q-big">Did you actually move this money?</p>
+    <div className="stack"><button className="btn sea" onClick=${()=>finish(true)}>YES — I MOVED IT</button><button className="btn ghost" onClick=${()=>finish(false)}>NO — JUST PRACTICING</button></div>
+    <p className="disclaimer">Only “yes” counts toward real Future Me savings.</p>
+  </div>`;
+
+  return html`<div className="center">
+    <div className="glitch-badge">KEEP FIRST. PLAY SECOND. ✓</div>
+    ${result.futureTotal>0 && html`<div className="big-number">FUTURE YOU JUST GOT PAID.</div>`}
+    <div className="card" style=${{textAlign:'left'}}>${result.lines.map(l=>html`<div key=${l.n} className="cart-line"><span>${l.e} ${l.n}</span><b>${fmt(l.v)}</b></div>`)}
+      ${result.left>0 && html`<div className="cart-line"><span>💎 Still unassigned</span><b>${fmt(result.left)}</b></div>`}</div>
+    ${result.now>0 && html`<p style=${{fontWeight:800}}>${fmt(result.now)} kr to enjoy — on purpose. I deserve enjoyment AND security.</p>`}
+    ${result.futureTotal>0 && !result.real && html`<p className="muted small" style=${{fontWeight:700}}>Saved as practice — your real Future Me totals didn\u2019t change.</p>`}
+    <button className="btn" onClick=${close}>DONE</button>
+  </div>`;
+}
+
+/* ================= LET IT STAY ================= */
+function LetItStay(){
+  const {S,record}=useFX();
+  const [total,setTotal]=useState(()=>pick(STAY_AMTS)); const [step,setStep]=useState('arrive'); const [keep,setKeep]=useState(50); const [phase,setPhase]=useState(0);
+  const kept=Math.round(total*keep/100); const enjoyed=total-kept;
+  const choose=k=>{ setKeep(k==='spend'?0:k==='keep'?100:50); setStep('divide'); };
+  const confirm=()=>{ record('stay',25,s=>({...(kept>0?addMoment(s,'kept'):s),stays:[...s.stays,{date:dayKey(),total,kept}]})); setPhase(0); setStep('vault'); ding(760,.25); };
+  useEffect(()=>{ if(step!=='vault') return; const d=REDUCED?[0,0,0]:[3200,5200,6800]; const ts=d.map((ms,i)=>setTimeout(()=>setPhase(i+1),ms)); return ()=>ts.forEach(clearTimeout); },[step]);
+  const again=()=>{ setTotal(pick(STAY_AMTS)); setKeep(50); setStep('arrive'); };
+  const coins=Math.round(keep/100*14);
+  return html`<div>
+    <div className="center"><span className="practice-chip">PRACTICE MONEY</span></div>
+    ${step==='arrive' && html`<div className="center">
+      <div className="big-number">${fmt(total)} DKK</div><h1 className="game-title display" style=${{marginTop:0}}>ARRIVED</h1>
+      <p className="game-sub">What happens next?</p>
+      <div className="stack">
+        <button className="btn ghost" onClick=${()=>choose('spend')}>SPEND EVERYTHING</button>
+        <button className="btn ghost" onClick=${()=>choose('keep')}>KEEP EVERYTHING</button>
+        <button className="btn pink" onClick=${()=>choose('both')}>ENJOY SOME + KEEP SOME</button>
+        <button className="btn ghost" onClick=${()=>choose('decide')}>LET ME DECIDE</button>
+      </div></div>`}
+    ${step==='divide' && html`<div>
+      <h1 className="game-title display">Divide it your way</h1>
+      <div className="ev-total"><div className="stat"><div className="sv">${fmt(enjoyed)}</div><div className="sl">✨ TO ENJOY</div></div><div className="stat"><div className="sv">${fmt(kept)}</div><div className="sl">💎 TO KEEP</div></div></div>
+      <label className="lbl" htmlFor="ks">SLIDE TO DIVIDE</label>
+      <input id="ks" type="range" min="0" max="100" step="5" value=${keep} onChange=${e=>setKeep(Number(e.target.value))} style=${{width:'100%',accentColor:'#d99a2b',height:40}}/>
+      <div className="row-between muted small" style=${{fontWeight:800}}><span>Enjoy it all</span><span>Keep it all</span></div>
+      <div style=${{marginTop:16}}><button className="btn" onClick=${confirm}>LET IT STAY 💎</button></div>
+    </div>`}
+    ${step==='vault' && html`<div className="center">
+      <div className="vault" aria-label=${fmt(kept)+' DKK in the vault'}>
+        <div className="vault-door"></div>
+        <div className="vault-coins">${Array.from({length:coins},(_,i)=>html`<i key=${i} style=${{animationDelay:(i*.07)+'s'}}></i>`)}</div>
+      </div>
+      <div className="big-number">${fmt(kept)} DKK</div><h2 className="h2">STILL HERE</h2>
+      ${enjoyed>0 && html`<p className="muted" style=${{fontWeight:800}}>${fmt(enjoyed)} DKK enjoyed ✨</p>`}
+      ${kept===0 ? html`<p className="display stay-line show">That\u2019s okay. Noticing is the practice. Maybe let a little stay next time?</p>`
+        : html`<p className=${'display stay-line'+(phase>=1?' show':'')}>You don\u2019t have to do anything with it.</p><p className=${'display stay-line'+(phase>=2?' show':'')}>Money is allowed to stay.</p>`}
+      ${(phase>=3||kept===0) && html`<div className="stack" style=${{marginTop:12}}><button className="btn" onClick=${again}>RECEIVE AGAIN</button></div>`}
+      <p className="disclaimer">Practice money only — never counted as real savings. ${S.stays.length} rounds played.</p>
+    </div>`}
+  </div>`;
+}
+
 /* ================= TABS ================= */
+function QuickActions(){
+  const {S,open}=useFX(); const now=Date.now();
+  const ready=S.wishlist.filter(w=>wishReady(w,now)).length;
+  const Q=[['itch','🔥','I HAVE THE ITCH','var(--hero)'],['glitch','⚡','I FOUND A MONEY GLITCH','linear-gradient(135deg,#dccfff,#9aa6ff)'],['payday','💰','IT’S PAYDAY','var(--gold)'],['future','🌱','FUTURE ME','var(--sea)']];
+  return html`<section className="card">
+    <h2 className="h2">WHAT DO YOU NEED RIGHT NOW?</h2>
+    <div className="quick">${Q.map(([id,e,l,bg])=>html`<button key=${id} style=${{background:bg}} onClick=${()=>open(id)}><span className="qe">${e}</span>${l}</button>`)}</div>
+    ${ready>0 && html`<button className="notice" onClick=${()=>open('wishlist')}>⏳ ${ready} wishlist ${ready===1?'item is':'items are'} ready to revisit →</button>`}
+    ${S.moments.length>0 && html`<p className="moments-line">✦ ${S.moments.length} intentional money ${S.moments.length===1?'moment':'moments'}</p>`}
+  </section>`;
+}
+
 function TodayTab(){
   const {S,plan,open,today}=useFX();
   const d=S.days[today]||{acts:{}};
@@ -1431,6 +2043,7 @@ function TodayTab(){
       <p className="today-msg display">${msg}</p>
     </header>
     ${returning && html`<div className="card soft center" style=${{fontWeight:800}}>Your progress isn't gone. Start again today. ✨</div>`}
+    <${QuickActions}/>
     <div className="card meter-card">
       <${Meter} points=${S.points} gid="mhome"/>
       <${LevelDots} points=${S.points}/>
@@ -1455,7 +2068,16 @@ function PlayTab(){
   const d=S.days[today]||{acts:{}};
   return html`<div className="wrap">
     <header className="hero"><div className="eyebrow">PLAY ANYTIME</div><h1 className="brand display" style=${{fontSize:'2.4rem'}}>The playground</h1><p className="muted" style=${{fontWeight:700,margin:0}}>Every game is open, every day.</p></header>
-    <div className="games">
+    <div className="section-label">MONEY MOMENTS</div>
+    <div className="games" style=${{marginTop:10}}>
+      <button className="game-tile wide" style=${{background:'var(--hero)'}} onClick=${()=>open('itch')}><span className="ge">🔥</span><span><b>I HAVE THE ITCH</b><span>I suddenly want to spend money.</span></span></button>
+      <button className="game-tile" style=${{background:'var(--gold)'}} onClick=${()=>open('payday')}><span className="ge">💰</span><span><b>Payday Power</b><span>Keep first. Play second.</span></span></button>
+      <button className="game-tile" style=${{background:'linear-gradient(135deg,#dccfff,#b9a3ff)'}} onClick=${()=>open('stay')}><span className="ge">💎</span><span><b>Let It Stay</b><span>Money is allowed to stay</span></span></button>
+      <button className="game-tile" style=${{background:'var(--sea)'}} onClick=${()=>open('future')}><span className="ge">🌱</span><span><b>Future Me</b><span>Fund the future you</span></span></button>
+      <button className="game-tile" style=${{background:'linear-gradient(135deg,#ffc9ae,#ff8fc2)'}} onClick=${()=>open('vault')}><span className="ge">⚡</span><span><b>Glitch Vault</b><span>Old stories I found</span></span></button>
+    </div>
+    <div className="section-label">GAMES</div>
+    <div className="games" style=${{marginTop:10}}>
       ${GAMES.map((g,i)=>html`<button key=${g.id} className=${'game-tile'+(i===0?' wide':'')} style=${{background:g.bg}} onClick=${()=>open(g.id)}>
         ${d.acts[g.id] && html`<span className="donemark">✓ today</span>`}
         <span className="ge">${g.e}</span><span><b>${g.n}</b><span>${g.d}</span></span>
@@ -1466,11 +2088,16 @@ function PlayTab(){
 }
 
 function MagnetTab(){
-  const {S,today}=useFX();
+  const {S,today,open}=useFX();
   const L=levelOf(S.points);
   const alive=S.lastDay===today||S.lastDay===addDays(today,-1);
-  const [k,setK]=useState(hash(today)%MESSAGES.length);
-  const [said,setSaid]=useState(0);
+  const [card,setCard]=useState(()=>({text:MESSAGES[hash(today)%MESSAGES.length],bridge:false,n:0}));
+  const [said,setSaid]=useState(0); const [glitching,setGlitching]=useState(false);
+  const bridges=S.glitches.filter(g=>g.bridge).map(g=>g.bridge);
+  const nextCard=()=>setCard(c=>{ if(bridges.length&&Math.random()<.28){ const b=pick(bridges); if(b!==c.text) return {text:b,bridge:true,n:c.n+1}; }
+    let t; do{ t=pick(MESSAGES); }while(t===c.text); return {text:t,bridge:false,n:c.n+1}; });
+  const glitch=()=>{ setGlitching(true); ding(220,.15); setTimeout(()=>{ setGlitching(false); open('glitch',false,{statement:card.text}); },REDUCED?0:650); };
+  const realSaved=S.goals.reduce((a,g)=>a+(g.real||0),0);
   return html`<div className="wrap">
     <div className="card creature-stage" style=${{marginTop:10}}>
       <div className="eyebrow">YOUR MONEY CREATURE</div>
@@ -1487,9 +2114,18 @@ function MagnetTab(){
     <div className="card">
       <h2 className="h2">MONEY MESSAGE DECK</h2>
       <p className="muted small" style=${{margin:'4px 0 0',fontWeight:700}}>Read it out loud, then draw the next. Mindset statements — not financial promises.</p>
-      <div className="deck-card" key=${k+'-'+said}>${MESSAGES[k%MESSAGES.length]}</div>
-      <div className="btn-row"><button className="btn ghost" onClick=${()=>{ setSaid(x=>x+1); ding(900,.08); }}>I SAID IT ✨</button><button className="btn pink" onClick=${()=>setK(x=>(x+1+Math.floor(Math.random()*7))%MESSAGES.length)}>NEXT CARD</button></div>
+      <div className=${'deck-card'+(glitching?' glitching':'')} key=${card.n+'-'+said}><div>${card.bridge && html`<span className="deck-tag">🌉 YOUR BRIDGE THOUGHT</span>`}${card.text}</div></div>
+      <div className="deck-btns">
+        <button className="btn ghost" onClick=${()=>{ setSaid(x=>x+1); ding(900,.08); }}>I SAID IT ✨</button>
+        <button className="btn pink" onClick=${nextCard}>NEXT CARD</button>
+        <button className="btn glitch-btn" onClick=${glitch}>⚡ GLITCH<small>This doesn’t feel true yet</small></button>
+      </div>
       ${said>0 && html`<p className="center" style=${{fontWeight:900,margin:'12px 0 0'}}>${said} said out loud this visit</p>`}
+    </div>
+    <div className="games">
+      <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#dccfff,#9aa6ff)'}} onClick=${()=>open('vault')}><span className="ge">⚡</span><span><b>GLITCH VAULT</b><span>${S.glitches.length?`${S.glitches.length} old ${S.glitches.length===1?'story':'stories'} discovered`:'Old money stories I’ve discovered'}</span></span></button>
+      <button className="game-tile wide" style=${{background:'var(--sea)'}} onClick=${()=>open('future')}><span className="ge">🌱</span><span><b>FUTURE ME</b><span>${realSaved?`${fmt(realSaved)} DKK really saved`:'Future me deserves to be treated too'}</span></span></button>
+      <button className="game-tile wide" style=${{background:'var(--gold)'}} onClick=${()=>open('stay')}><span className="ge">💎</span><span><b>LET IT STAY</b><span>Practice letting money stay</span></span></button>
     </div>
   </div>`;
 }
@@ -1498,6 +2134,7 @@ function EvidenceTab(){
   const {S,record,patch,toast,today}=useFX();
   const [open,setOpen]=useState(false);
   const [f,setF]=useState({text:'',amount:'',cat:'SAVED'});
+  const [ph]=useState(()=>pick(EV_EXAMPLES));
   const totalDKK=S.evidence.reduce((a,e)=>a+(e.amount||0),0);
   const save=()=>{ if(!f.text.trim()) return; const amt=parseNum(f.amount);
     const entry={id:uid(),date:today,text:f.text.trim(),amount:amt||null,cat:f.cat};
@@ -1513,14 +2150,14 @@ function EvidenceTab(){
     </div>
     <div style=${{marginTop:14}}><button className="btn sea" onClick=${()=>setOpen(true)}>+ ADD MONEY WIN</button></div>
     <div className="card">
-      ${S.evidence.length===0 ? html`<p style=${{fontWeight:700,margin:0}}>Nothing here yet. Saved 40 kr on groceries? Someone asked about buying something you made? That counts. Add it.</p>`
+      ${S.evidence.length===0 ? html`<p style=${{fontWeight:700,margin:0}}>Nothing here yet. Saved 40 kr? Waited before buying? Moved money to Future Me? Bought something and felt good about it? It all counts as money evidence ✨</p>`
         : S.evidence.map(e=>html`<div key=${e.id} className="ev"><span className="tag">${e.cat}</span><div style=${{flex:1}}><div style=${{fontWeight:800}}>${e.text}</div><div className="muted small" style=${{fontWeight:700}}>${prettyDate(e.date)}${e.amount?` · ${fmt(e.amount)} DKK`:''}</div></div><button className="x" aria-label="Delete" onClick=${()=>del(e.id)}>✕</button></div>`)}
     </div>
     <p className="disclaimer">Real life only. Game money never counts here.</p>
     ${open && html`<${Modal} onClose=${()=>setOpen(false)} label="Add money win">
       <h3>Add a money win</h3>
       <label className="lbl" htmlFor="et">WHAT HAPPENED?</label>
-      <textarea id="et" className="input" placeholder="Saved 40 kr on groceries." value=${f.text} onChange=${e=>setF({...f,text:e.target.value})}></textarea>
+      <textarea id="et" className="input" placeholder=${ph} value=${f.text} onChange=${e=>setF({...f,text:e.target.value})}></textarea>
       <label className="lbl" htmlFor="ea">AMOUNT (DKK) — OPTIONAL</label>
       <input id="ea" className="input" inputMode="numeric" placeholder="40" value=${f.amount} onChange=${e=>{ const v=parseNum(e.target.value); setF({...f,amount:v?fmt(v):''}); }}/>
       <label className="lbl">CATEGORY</label>
@@ -1554,11 +2191,18 @@ function MeTab(){
     [practiced,'Days practiced'],[L.name,'Magnet level'],[S.wsDone,'Money Search puzzles'],[S.flips,'Old stories flipped'],
     [S.evidence.length,'Real money evidence'],[t.shifts,'Thermostat shifts'],
     [lastSeller?(lastSeller.point>=SELL_LEVELS.length?'∞':fmtShort(SELL_LEVELS[lastSeller.point]*lastSeller.price)):'—','Seller expansion point'],
-    [alive?S.streak:0,'Current streak'],[S.longest,'Longest streak'],[CREATURE[L.idx],'Creature stage']
+    [alive?S.streak:0,'Current streak'],[S.longest,'Longest streak'],[CREATURE[L.idx],'Creature stage'],
+    [S.moments.length,'Intentional money moments'],[S.glitches.length,'Glitches found'],[fmtShort(S.goals.reduce((a,g)=>a+(g.real||0),0)),'DKK really saved'],[S.stays.length,'Let It Stay rounds']
   ];
+  const momentCounts=Object.keys(MOMENT_LABELS).map(k=>[k,S.moments.filter(m=>m.type===k).length]).filter(([,n])=>n>0);
   return html`<div className="wrap">
     <header className="hero"><div className="eyebrow">ME</div><h1 className="brand display" style=${{fontSize:'2.3rem'}}>Your progress</h1></header>
     <div className="stats">${stats.map(([v,l])=>html`<div key=${l} className="stat"><div className="sv" style=${{fontSize:String(v).length>6?'1.35rem':undefined}}>${v}</div><div className="sl">${l}</div></div>`)}</div>
+    <div className="card">
+      <div className="row-between"><h2 className="h2">INTENTIONAL MONEY MOMENTS</h2><span className="pill">${S.moments.length}</span></div>
+      <p className="muted small" style=${{margin:'4px 0 6px',fontWeight:700}}>Awareness and choice — not spending as little as possible.</p>
+      ${momentCounts.length?momentCounts.map(([k,n])=>html`<div key=${k} className="moment-row"><span>${MOMENT_LABELS[k]}</span><span>${n}</span></div>`):html`<p style=${{fontWeight:700,margin:0}}>Use the Itch, Payday Power, Future Me or Let It Stay to start collecting moments.</p>`}
+    </div>
     <div className="card">
       <div className="row-between"><h2 className="h2">30-DAY MONEY MINDSET JOURNEY</h2><span className="pill">${Math.min(sessions,30)}/30</span></div>
       <p className="muted small" style=${{margin:'4px 0 0',fontWeight:700}}>A light turns on for each completed daily reset.</p>
@@ -1603,7 +2247,7 @@ function Onboarding({onDone}){
 }
 
 /* ================= APP ================= */
-const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion};
+const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,future:FutureMe,payday:Payday,wishlist:Wishlist,stay:LetItStay};
 const TABS=[{id:'today',i:'🏠',n:'TODAY'},{id:'play',i:'🎮',n:'PLAY'},{id:'magnet',i:'✨',n:'MAGNET'},{id:'evidence',i:'💰',n:'EVIDENCE'},{id:'me',i:'👤',n:'ME'}];
 
 function App(){
@@ -1639,13 +2283,14 @@ function App(){
     }); },[S,toast]);
 
   const plan=useMemo(()=>todayPlan(today),[today]);
-  const open=useCallback((id,session=false)=>setScreen({id,session}),[]);
+  const open=useCallback((id,session=false,arg=null)=>setScreen(p=>({id,session,arg,n:((p&&p.n)||0)+1})),[]);
   const close=useCallback(()=>setScreen(null),[]);
   const resetAll=useCallback(()=>{ try{ localStorage.removeItem(KEY); }catch(e){} setS(DEFAULT()); setTab('today'); setScreen(null); },[]);
   useEffect(()=>{ document.body.style.overflow=screen?'hidden':''; },[screen]);
 
   const restore=useCallback(data=>{ setS({...DEFAULT(),...data,onboarded:true}); setTab('today'); },[]);
-  const ctx={S,record,patch,toast,confetti,open,close,plan,today,resetAll,restore};
+  const logEvidence=useCallback((text,cat,amount)=>{ record('evidence',50,s=>({...s,evidence:[{id:uid(),date:dayKey(),text,amount:amount||null,cat},...s.evidence]})); toast(`${cat} ADDED ✨`); },[record,toast]);
+  const ctx={S,record,patch,toast,confetti,open,close,plan,today,resetAll,restore,logEvidence};
   const Comp=screen?SCREENS[screen.id]:null;
 
   return html`<${FX.Provider} value=${ctx}>
@@ -1657,9 +2302,9 @@ function App(){
       ${tab==='me'&&html`<${MeTab}/>`}
       <nav className="nav" aria-label="Main"><div className="nav-inner">${TABS.map(t=>html`<button key=${t.id} className=${tab===t.id?'on':''} aria-current=${tab===t.id?'page':undefined} onClick=${()=>{ setTab(t.id); window.scrollTo(0,0); }}><span className="ni">${t.i}</span>${t.n}</button>`)}</div></nav>
     </div>`}
-    ${Comp && html`<div className="screen" role="dialog" aria-label=${SCREEN_TITLES[screen.id]}>
+    ${Comp && html`<div className="screen" key=${"scr"+screen.n} role="dialog" aria-label=${SCREEN_TITLES[screen.id]}>
       <div className="screen-head"><button className="icon-btn" onClick=${close} aria-label="Back">‹</button><div className="screen-title">${SCREEN_TITLES[screen.id]}</div><span className="chip" style=${{padding:'6px 10px'}}>✨ ${fmt(S.points)}</span></div>
-      <div className="screen-body"><${Comp} key=${screen.id}/></div>
+      <div className="screen-body"><${Comp} key=${screen.id+"-"+screen.n} arg=${screen.arg}/></div>
       ${screen.session && html`<${SessionBar} current=${screen.id}/>`}
     </div>`}
     ${levelUp!==null && html`<${Modal} onClose=${()=>setLevelUp(null)} label="Level up">
