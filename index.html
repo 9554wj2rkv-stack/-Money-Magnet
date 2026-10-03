@@ -501,6 +501,17 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .dg-c4{font-weight:700;margin-top:4px;animation-delay:.7s!important}
 .dg-pts{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:99px;background:rgba(42,15,47,.12);font-weight:900;font-size:.9rem;animation-delay:.9s!important}
 @media (prefers-reduced-motion: reduce){.dg-celebrate,.dg-celebrate>div{animation:none}.dg-track i{transition:none}}
+.insight{display:flex;gap:12px;align-items:flex-start;margin-top:14px;padding:14px 16px;border-radius:22px;background:linear-gradient(135deg,rgba(255,226,176,.45),rgba(201,182,255,.3));border:1px solid rgba(245,207,114,.55)}
+.ins-e{font-size:1.8rem;line-height:1}
+.insight b{display:block;font-weight:900;letter-spacing:.08em;font-size:.82rem}
+.insight p{margin:3px 0 0;font-weight:800;font-size:1rem}
+.familiar{margin-top:12px;padding:14px;border-radius:22px;background:var(--card-solid);border:2px solid #e6ad48;animation:pop .35s cubic-bezier(.2,1.6,.4,1)}
+.fam-card{display:flex;gap:10px;align-items:center;margin:10px 0 2px;padding:12px 14px;border-radius:16px;background:linear-gradient(135deg,#fff3dc,#ffd2a6);color:var(--ink);font-weight:900;font-size:1.05rem}
+.fam-card span{font-size:1.4rem}
+.day-list{display:grid;gap:6px;margin-top:10px}
+.day-item{display:flex;gap:10px;align-items:center;font-weight:800;font-size:1rem}
+.day-item span{width:28px;text-align:center;font-size:1.2rem}
+.x.pinned{background:var(--gold)}
 @keyframes threeIn{from{opacity:0;transform:translateY(30px) scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
 .mine-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .mine-row:last-child{border-bottom:0}
@@ -1033,9 +1044,9 @@ const DEFAULT = () => ({
   customFlips:[], cart:[], storeTier:0, storeUnlocked:0, storeHistory:[], customDreams:[], bigDreams:[],
   thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, sound:false,
   glitches:[], itches:[], wishlist:[], goals:[], deposits:[], paydays:[], moments:[], stays:[],
-  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1
+  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1, gratitudeShown:{}, gratitudeShownToday:{date:'',ids:[]}
 });
-const load = () => { try{ const raw=localStorage.getItem(KEY); return raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT(); }catch(e){ return DEFAULT(); } };
+const load = () => { try{ const raw=localStorage.getItem(KEY); return migrateGratitude(raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT()); }catch(e){ return DEFAULT(); } };
 const persist = s => { try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} };
 
 function applyEarn(s,key,amt){
@@ -2170,8 +2181,85 @@ function gratPrompt(it){ for(const [r,p] of KEY_PROMPTS){ if(r.test(it.t)) retur
 /* ================= GRATITUDE: helpers ================= */
 const GRAT_MSGS=['I can want more and appreciate what I have.','My life already contains value.','I notice abundance that isn\u2019t measured in money.','Money already supports parts of my life.','I appreciate what money allows me to do.','I can appreciate today while building tomorrow.','Enough and more can coexist.','I don\u2019t need to dislike my present to create a bigger future.','Ordinary things can be incredibly valuable.','Some of the richest parts of my life cannot be bought.','Gratitude and ambition can coexist.'];
 const gratCount=S=>Object.keys(S.checkedGratitudeIds||{}).length+(S.customGratitudes||[]).length;
-const gratItem=(S,id)=>gratLib().byId[id]||(S.customGratitudes||[]).map(c=>({id:c.id,c:c.cat||'own',t:c.text,custom:c})).find(x=>x.id===id);
+const gratItem=(S,id)=>{ if(gratLib().byId[id]) return gratLib().byId[id]; const c=(S.customGratitudes||[]).find(x=>x.id===id); return c?personalItem(c):null; };
 const gratRandom=(S,n,filter)=>{ const L=gratLib().all.filter(i=>!(S.skippedGratitudeIds||{})[i.id]&&(!filter||filter(i))); return shuffle(L).slice(0,n); };
+
+/* ================= GRATITUDE THAT LEARNS: engine ================= */
+const EMOJI_RE=/\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic})*\uFE0F?/u;
+const EMOJI_RE_G=/\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic})*\uFE0F?/gu;
+const splitEmoji=t=>{ const m=String(t||'').match(EMOJI_RE); return {emoji:m?m[0]:'',text:String(t||'').replace(EMOJI_RE_G,'').replace(/\s+/g,' ').trim()}; };
+const GRAT_LEADS=/^(today )?(i'?m|i am|im)?\s*(so |really |very )?(grateful|thankful|happy) (for|that|about)\s+|^i (really )?(appreciate|love)\s+/;
+function gratNorm(t){ let s=String(t||'').toLowerCase().replace(EMOJI_RE_G,' ').replace(/[’`]/g,"'").replace(/[^\p{L}\p{N}' ]+/gu,' ').replace(/\s+/g,' ').trim();
+  s=s.replace(GRAT_LEADS,''); for(let k=0;k<2;k++) s=s.replace(/^(my|the|a|an|our|having|that|this|some)\s+/,'');
+  return s.replace(/'/g,'').trim(); }
+function findFamiliar(S,text,exceptId){ const n=gratNorm(text); if(!n) return null; const nt=n.split(' ');
+  let best=null,bestScore=0;
+  (S.customGratitudes||[]).forEach(c=>{ if(c.id===exceptId) return; const m=gratNorm(c.text); if(!m) return; let sc=0;
+    if(m===n) sc=1; else { const mt=m.split(' '); const A=new Set(nt),B=new Set(mt); const inter=[...A].filter(x=>B.has(x)).length; const j=inter/new Set([...A,...B]).size;
+      const sub=(inter===A.size||inter===B.size)&&Math.abs(A.size-B.size)<=2&&inter>=1; sc=Math.max(j>=.6?j:0,sub?.7:0); }
+    if(sc>bestScore){ bestScore=sc; best=c; } });
+  return bestScore>=.6?best:null; }
+const personalItem=c=>({id:c.id,c:c.cat||'own',t:c.text,e:c.emoji||'',custom:c});
+const gratEmoji=it=>(it&&it.e)||((gratLib().cat[it&&it.c]||GRAT_OWN_CAT).e);
+function migrateGratitude(s){ const cg=(s.customGratitudes||[]).map(c=>{ if(c.migratedV2) return c; const sp=splitEmoji(c.text);
+    return {...c,text:sp.text||c.text,emoji:c.emoji||sp.emoji||'',createdAt:c.createdAt||c.date||dayKey(),pinned:!!c.pinned,migratedV2:true}; });
+  return {...s,customGratitudes:cg,gratitudeShown:s.gratitudeShown||{},gratitudeShownToday:s.gratitudeShownToday||{date:'',ids:[]}}; }
+
+const _statsCache=new WeakMap();
+function gratStats(S){ const src=S.dailyGratitudeSelections||{}; if(_statsCache.has(src)) return _statsCache.get(src);
+  const st={}; Object.keys(src).sort().forEach(d=>[...new Set(src[d])].forEach(id=>{ const x=st[id]||(st[id]={days:0,dates:[],first:d,last:d}); x.days++; x.dates.push(d); x.last=d; }));
+  _statsCache.set(src,st); return st; }
+const daysBetween=(a,b)=>{ const p=k=>{ const [y,m,d]=k.split('-').map(Number); return new Date(y,m-1,d).getTime(); }; return Math.round((p(b)-p(a))/864e5); };
+function gratHistorySpan(S){ const ds=Object.keys(S.dailyGratitudeSelections||{}).filter(d=>(S.dailyGratitudeSelections[d]||[]).length).sort(); return {days:ds.length,span:ds.length?daysBetween(ds[0],dayKey()):0}; }
+const gratEnoughHistory=S=>{ const h=gratHistorySpan(S); return h.days>=4&&h.span>=6; };
+function gratScore(S,id,st,shownToday){ const s=st[id]; let sc=0; const today=dayKey();
+  if(s){ sc+=Math.min(s.days,12); const age=daysBetween(s.last,today); if(age<=7) sc+=2; else if(age<=21) sc+=1; }
+  const c=id.startsWith('grat-own-')?(S.customGratitudes||[]).find(x=>x.id===id):null;
+  if(c){ sc+=1; if(c.pinned) sc+=14; }
+  const ignored=(S.gratitudeShown[id]||0)-(s?s.days:0); if(ignored>3) sc-=Math.min(3,(ignored-3)*.3);
+  if(shownToday.has(id)) sc-=20;
+  return sc; }
+function weightedPick(items,n,wfn){ const pool=items.map(it=>({it,w:Math.max(.05,wfn(it))})); const out=[];
+  while(out.length<n&&pool.length){ const tot=pool.reduce((a,b)=>a+b.w,0); let r=Math.random()*tot; let k=0; for(;k<pool.length;k++){ r-=pool[k].w; if(r<=0) break; } out.push(pool.splice(Math.min(k,pool.length-1),1)[0].it); }
+  return out; }
+/* mode 'first' = favorites + recent personal + discovery + varied; mode 'more' = mostly discovery */
+function gratRecommend(S,G,exclude,mode){
+  const st=gratStats(S); const today=dayKey();
+  const shownToday=new Set(S.gratitudeShownToday&&S.gratitudeShownToday.date===today?S.gratitudeShownToday.ids:[]);
+  const skipped=S.skippedGratitudeIds||{}; const ok=it=>!exclude.has(it.id)&&!skipped[it.id];
+  const personal=(S.customGratitudes||[]).map(personalItem).filter(ok);
+  const lib=gratLib().all.filter(ok);
+  const score=it=>gratScore(S,it.id,st,shownToday);
+  const favPool=[...personal,...lib.filter(i=>st[i.id])].filter(it=>(st[it.id]&&st[it.id].days>=2)||(it.custom&&it.custom.pinned));
+  const nFav=Math.round(G*(mode==='first'?.3:.2)), nRecent=Math.round(G*(mode==='first'?.2:.1)), nVar=mode==='first'?Math.round(G*.2):0;
+  const taken=new Set(); const take=arr=>{ arr.forEach(i=>taken.add(i.id)); return arr; };
+  const fresh=it=>!shownToday.has(it.id);
+  const fav=take(weightedPick(favPool.filter(fresh),nFav,it=>(1+Math.sqrt(Math.max(0,score(it)+20*(shownToday.has(it.id)?1:0))))*(it.custom&&it.custom.pinned?3:1)));
+  const recentPool=personal.filter(i=>!taken.has(i.id)&&fresh(i)).sort((a,b)=>(b.custom.createdAt||'').localeCompare(a.custom.createdAt||'')).slice(0,8);
+  const recent=take(weightedPick(recentPool,nRecent,it=>score(it)+3));
+  const discPool=lib.filter(i=>!taken.has(i.id)&&!st[i.id]);
+  const nDisc=G-fav.length-recent.length-nVar;
+  const disc=take(weightedPick(discPool,nDisc,it=>(shownToday.has(it.id)?.02:1)/(1+(S.gratitudeShown[it.id]||0))));
+  const usedCats=new Set([...fav,...recent,...disc].map(i=>i.c));
+  let varPool=lib.filter(i=>!taken.has(i.id)&&!usedCats.has(i.c)&&!shownToday.has(i.id)); if(varPool.length<nVar) varPool=lib.filter(i=>!taken.has(i.id));
+  const varied=take(weightedPick(varPool,nVar,()=>1));
+  let all=[]; const lanes=[fav,recent,disc,varied]; const order=mode==='first'?[0,1,2,0,3,2,0,1,2,3]:[0,2,2,1,2,0,2,2,2,2];
+  let guard=0; while(all.length<fav.length+recent.length+disc.length+varied.length&&guard<200){ const lane=lanes[order[guard%order.length]]; if(lane.length) all.push(lane.shift()); guard++; }
+  lanes.forEach(l=>{ while(l.length) all.push(l.shift()); });
+  if(all.length<G){ const fill=weightedPick(lib.filter(i=>!taken.has(i.id)),G-all.length,()=>1); all=all.concat(fill); }
+  return all.slice(0,G);
+}
+function gratOften(S,min=3){ const st=gratStats(S); return Object.entries(st).filter(([,s])=>s.days>=min).map(([id,s])=>({it:gratItem(S,id),days:s.days})).filter(x=>x.it).sort((a,b)=>b.days-a.days||a.it.t.localeCompare(b.it.t)); }
+function gratInsight(S){
+  if(!gratEnoughHistory(S)) return null; const st=gratStats(S); const out=[];
+  Object.entries(st).forEach(([id,s])=>{ const it=gratItem(S,id); if(!it) return;
+    if(s.days>=8) out.push({e:gratEmoji(it),title:'YOU KEEP COMING BACK TO THIS',text:`You\u2019ve chosen \u201c${it.t}\u201d ${s.days} times.`});
+    else if(s.days>=5) out.push({e:gratEmoji(it),title:'A LITTLE PATTERN',text:`You\u2019ve appreciated \u201c${it.t}\u201d on ${s.days} different days.`}); });
+  const catCount={}; let total=0; Object.values(S.dailyGratitudeSelections||{}).forEach(ids=>ids.forEach(id=>{ const it=gratItem(S,id); if(it&&it.c!=='own'){ catCount[it.c]=(catCount[it.c]||0)+1; total++; } }));
+  Object.entries(catCount).forEach(([c,n])=>{ if(n>=8&&n/total>=.2){ const C=gratLib().cat[c]; out.push({e:C.e,title:'SOMETHING YOU VALUE',text:`Things from ${C.e} ${C.n} appear often in your gratitude choices.`}); } });
+  if(!out.length) return null; return out[hash(dayKey()+'ins')%out.length]; }
+function GratInsightCard(){ const {S}=useFX(); const ins=gratInsight(S); if(!ins) return null;
+  return html`<div className="insight"><span className="ins-e">${ins.e}</span><div><b>${ins.title}</b><p>${ins.text}</p></div></div>`; }
 function useGrat(){
   const {S,patch}=useFX();
   const toggle=id=>{ ding(S.checkedGratitudeIds[id]?420:760,.08); patch(s=>{ const c={...s.checkedGratitudeIds}; const k={...s.skippedGratitudeIds}; if(c[id]) delete c[id]; else { c[id]=dayKey(); delete k[id]; } return {...s,checkedGratitudeIds:c,skippedGratitudeIds:k}; }); };
@@ -2187,28 +2275,6 @@ function GratRow({item}){
     <button className="grat-check" role="checkbox" aria-checked=${on} onClick=${()=>toggle(item.id)}><span className="gbox">${on?'✓':''}</span><span className="gtext">${item.t}</span></button>
     ${!on && html`<button className="grat-skip" onClick=${()=>skip(item.id)} aria-label=${skipped?'Undo skip':'Doesn\u2019t apply'}>${skipped?'UNDO':'SKIP'}</button>`}
   </div>`;
-}
-
-function GratCustomModal({init,onClose}){
-  const {record,patch,toast}=useFX();
-  const [text,setText]=useState(init&&init.text||''); const [cat,setCat]=useState(init&&init.cat||'own'); const [note,setNote]=useState(init&&init.note||'');
-  const save=()=>{ const t=text.trim(); if(!t) return;
-    if(init&&init.id){ patch(s=>({...s,customGratitudes:s.customGratitudes.map(c=>c.id===init.id?{...c,text:t,cat,note:note.trim()}:c)})); toast('Updated ✨'); onClose(); return; }
-    const g={id:'grat-own-'+uid(),text:t,cat,note:note.trim(),date:dayKey()};
-    record('gratCustom',15,s=>({...s,customGratitudes:[g,...s.customGratitudes],gratitudeHistory:[...s.gratitudeHistory,{date:dayKey(),type:'custom'}]}));
-    toast('Added to My Gratitude ❤️'); onClose(g); };
-  return html`<${Modal} onClose=${()=>onClose()} label="Add gratitude">
-    <h3>${init&&init.id?'Edit gratitude':'Something I\u2019m grateful for'}</h3>
-    <label className="lbl" htmlFor="gct">WHAT ARE YOU GRATEFUL FOR?</label>
-    <input id="gct" className="input" placeholder="The way the light hits my kitchen" value=${text} onChange=${e=>setText(e.target.value)}/>
-    <label className="lbl" htmlFor="gcc">CATEGORY (OPTIONAL)</label>
-    <select id="gcc" className="input" value=${cat} onChange=${e=>setCat(e.target.value)}>
-      <option value="own">➕ MY OWN</option>${GRAT_CATS.map(c=>html`<option key=${c.id} value=${c.id}>${c.e} ${c.n}</option>`)}
-    </select>
-    <label className="lbl" htmlFor="gcn">WHY DOES THIS MATTER TO ME? (OPTIONAL)</label>
-    <textarea id="gcn" className="input" placeholder="It makes mornings feel gentle." value=${note} onChange=${e=>setNote(e.target.value)}></textarea>
-    <div className="btn-row"><button className="btn ghost" onClick=${()=>onClose()}>CANCEL</button><button className="btn" disabled=${!text.trim()} onClick=${save}>SAVE</button></div>
-  <//>`;
 }
 
 function GratFlower({S,size=240}){
@@ -2239,6 +2305,9 @@ function GratitudeHome(){
       <p className="muted" style=${{fontWeight:800,margin:'4px 0 0'}}>${fmt(Math.max(0,waiting))}+ things waiting to be noticed</p>
       <p className="muted small" style=${{fontWeight:700,margin:'2px 0 0'}}>No finish line. This is discovery, not a task.</p>
     </div>
+    <${GratInsightCard}/>
+    ${gratEnoughHistory(S) && gratOften(S).length>0 && html`<button className="card q-card" onClick=${()=>open('gratmine')}><div className="eyebrow">❤️ THINGS I APPRECIATE OFTEN</div>
+      <div className="want-chips" style=${{justifyContent:'flex-start',marginTop:10}}>${gratOften(S).slice(0,6).map(({it,days})=>html`<span key=${it.id} className="goal-pill">${gratEmoji(it)} ${it.t} · ${days} days</span>`)}</div></button>`}
     <div className="grat-actions">
       <button className="btn warm" onClick=${()=>open('gratexplore')}>✨ EXPLORE GRATITUDE</button>
       <button className="btn pink" onClick=${()=>open('gratsurprise')}>🎁 SURPRISE ME</button>
@@ -2323,10 +2392,14 @@ function NoticeGood(){
   const count=todayIds.length; const reached=count>=G;
   const celebratedToday=S.gratitudeHistory.some(h=>h.date===today&&h.type==='daily-goal');
   const seen=useRef(new Set()); const topRef=useRef(null);
-  const draw=()=>{ let p=gratRandom(S,G,i=>!seen.current.has(i.id)&&!todayIds.includes(i.id));
-    if(p.length<G){ seen.current=new Set(); p=gratRandom(S,G,i=>!todayIds.includes(i.id)); }
+  const draw=mode=>{ let p=gratRecommend(S,G,new Set([...seen.current,...todayIds]),mode);
+    if(p.length<G){ seen.current=new Set(); p=gratRecommend(S,G,new Set(todayIds),mode); }
     p.forEach(i=>seen.current.add(i.id)); return p; };
-  const [pool,setPool]=useState(draw);
+  const [pool,setPool]=useState(()=>draw('first'));
+  useEffect(()=>{ patch(s=>{ const t=dayKey(); const sh={...s.gratitudeShown}; pool.forEach(i=>{ sh[i.id]=(sh[i.id]||0)+1; });
+    const prev=s.gratitudeShownToday&&s.gratitudeShownToday.date===t?s.gratitudeShownToday.ids:[];
+    return {...s,gratitudeShown:sh,gratitudeShownToday:{date:t,ids:[...new Set([...prev,...pool.map(i=>i.id)])].slice(-300)}}; }); },[pool]);
+  const [fam,setFam]=useState(null); const create=useCreatePersonal();
   const [extra,setExtra]=useState([]); const [own,setOwn]=useState(false); const [ownText,setOwnText]=useState('');
   const [celebrate,setCelebrate]=useState(null);
   const cards=[...extra,...pool];
@@ -2348,16 +2421,19 @@ function NoticeGood(){
   const unselect=id=>patch(s=>{ const ids=(s.dailyGratitudeSelections[today]||[]).filter(x=>x!==id); const c={...s.checkedGratitudeIds};
     if(c[id]===today) delete c[id]; return {...s,checkedGratitudeIds:c,dailyGratitudeSelections:{...s.dailyGratitudeSelections,[today]:ids}}; });
   const tap=id=>todayIds.includes(id)?unselect(id):select(id);
-  const addOwn=()=>{ const t=ownText.trim(); if(!t) return; const g={id:'grat-own-'+uid(),text:t,cat:'own',note:'',date:today};
-    record('gratCustom',15,s=>({...s,customGratitudes:[g,...s.customGratitudes]}));
-    setExtra(e=>[{id:g.id,c:'own',t},...e]); setOwnText(''); setOwn(false); setTimeout(()=>select(g.id),0); };
-  const more=()=>{ setPool(draw()); setCelebrate(null); try{ topRef.current&&topRef.current.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'}); }catch(e){} };
+  const addOwn=force=>{ const t=ownText.trim(); if(!t) return;
+    if(force!==true){ const m=findFamiliar(S,t); if(m){ setFam(m); return; } }
+    const g=create(t); setExtra(e=>[personalItem(g),...e]); setOwnText(''); setOwn(false); setFam(null); setTimeout(()=>select(g.id),0); };
+  const useExisting=()=>{ const m=fam; setFam(null); setOwnText(''); setOwn(false);
+    if(!cards.some(c=>c.id===m.id)) setExtra(e=>[personalItem(m),...e]); if(!todayIds.includes(m.id)) setTimeout(()=>select(m.id),0); };
+  const more=()=>{ setPool(draw('more')); setCelebrate(null); try{ topRef.current&&topRef.current.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'}); }catch(e){} };
   const history=Object.entries(S.dailyGratitudeSelections).filter(([,ids])=>ids.length).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,7);
 
   return html`<div className="grat-scope">
     <div ref=${topRef}></div>
     <h1 className="game-title display">✨ NOTICE ${G} GOOD THINGS</h1>
     <p className="game-sub">What\u2019s already good today? Choose ${goalWord(G)} things you appreciate.</p>
+    <${GratInsightCard}/>
 
     ${celebrate && html`<div className="dg-celebrate">
       <div className="dg-c1 display">✨ YOU FOUND ${G} GOOD THINGS.</div>
@@ -2369,14 +2445,15 @@ function NoticeGood(){
     ${reached && html`<div className="dg-today">❤️ ${count} ${count===1?'thing':'things'} appreciated today</div>`}
 
     <div className="notice-grid">${cards.map(c=>{ const on=todayIds.includes(c.id); const k=todayIds.indexOf(c.id); return html`<button key=${c.id} className=${'notice-card'+(on?' on':'')} onClick=${()=>tap(c.id)} aria-pressed=${on}>
-      ${on && html`<span className="nc-num">${k+1}</span>`}<span className="nc-e">${(gratLib().cat[c.c]||GRAT_OWN_CAT).e}</span>${c.t}</button>`; })}</div>
+      ${on && html`<span className="nc-num">${k+1}</span>`}<span className="nc-e">${gratEmoji(c)}</span>${c.t}</button>`; })}</div>
 
-    ${own ? html`<div className="row" style=${{marginTop:10}}><input className="input" placeholder="Something good today…" value=${ownText} onChange=${e=>setOwnText(e.target.value)} onKeyDown=${e=>{ if(e.key==='Enter') addOwn(); }}/><button className="btn small" onClick=${addOwn} disabled=${!ownText.trim()}>ADD</button></div>`
+    ${own ? html`<div className="row" style=${{marginTop:10}}><input className="input" placeholder="Something good today…" value=${ownText} onChange=${e=>setOwnText(e.target.value)} onKeyDown=${e=>{ if(e.key==='Enter') addOwn(); }}/><button className="btn small" onClick=${()=>addOwn()} disabled=${!ownText.trim()}>ADD</button></div>`
       : html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setOwn(true)}>+ MY OWN</button>`}
+    ${fam && html`<${FamiliarBox} match=${fam} onUse=${useExisting} onDifferent=${()=>addOwn(true)}/>`}
     <button className="link-btn" onClick=${more}>Show me ${goalWord(G)} others</button>
 
     ${count>0 && html`<div className="card"><h2 className="h2">TODAY\u2019S GOOD THINGS</h2>
-      <div className="want-chips" style=${{justifyContent:'flex-start',marginTop:10}}>${todayIds.map(id=>{ const it=itemOf(id); return it?html`<span key=${id} className="goal-pill">${it.t}</span>`:null; })}</div></div>`}
+      <div className="want-chips" style=${{justifyContent:'flex-start',marginTop:10}}>${todayIds.map(id=>{ const it=itemOf(id); return it?html`<span key=${id} className="goal-pill">${gratEmoji(it)} ${it.t}</span>`:null; })}</div></div>`}
 
     ${history.length>0 && html`<div className="card"><h2 className="h2">DAILY GRATITUDE</h2>
       ${history.map(([d,ids])=>html`<div key=${d} className="moment-row"><span>${dayLabel(d)}</span><span>${ids.length} ${ids.length===1?'thing':'things'} noticed${ids.length>=G?' ✨':''}</span></div>`)}</div>`}
@@ -2421,42 +2498,121 @@ function GratGame(){
   </div>`;
 }
 
-/* ================= MY GRATITUDE ================= */
+/* ================= MY GRATITUDE (personal, learning) ================= */
+const QUICK_EMOJIS=['☕','🏠','❤️','🛏️','🎵','🌿','🚿','💼','📱','🐶','🌞','🍫','🚲','📚','✨','🙏'];
+function FamiliarBox({match,onUse,onDifferent}){
+  return html`<div className="familiar"><div className="eyebrow">THIS LOOKS FAMILIAR ${match.emoji||'✨'}</div>
+    <div className="fam-card"><span>${match.emoji||'➕'}</span>${match.text}</div>
+    <div className="btn-row"><button className="btn small" style=${{width:'100%'}} onClick=${onUse}>USE EXISTING</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${onDifferent}>SAVE AS DIFFERENT</button></div></div>`;
+}
+function useCreatePersonal(){
+  const {record,toast}=useFX();
+  return (raw,{cat='own',note='',emoji=''}={})=>{ const sp=splitEmoji(raw); const g={id:'grat-own-'+uid(),text:sp.text||raw.trim(),emoji:emoji||sp.emoji||'',cat,note:note.trim(),date:dayKey(),createdAt:dayKey(),pinned:false,migratedV2:true};
+    record('gratCustom',15,s=>({...s,customGratitudes:[g,...s.customGratitudes],gratitudeHistory:[...s.gratitudeHistory,{date:dayKey(),type:'custom'}]})); return g; };
+}
+
+function GratCustomModal({init,onClose}){
+  const {S,patch,toast}=useFX(); const create=useCreatePersonal();
+  const sp0=splitEmoji(init&&init.text||'');
+  const [text,setText]=useState(init&&init.id?init.text:''); const [emoji,setEmoji]=useState(init&&init.emoji||sp0.emoji||'');
+  const [cat,setCat]=useState(init&&init.cat||'own'); const [note,setNote]=useState(init&&init.note||''); const [fam,setFam]=useState(null);
+  const doSave=()=>{ const t=text.trim(); if(!t) return; const sp=splitEmoji(t);
+    if(init&&init.id){ patch(s=>({...s,customGratitudes:s.customGratitudes.map(c=>c.id===init.id?{...c,text:sp.text||t,emoji:emoji||sp.emoji||c.emoji||'',cat,note:note.trim()}:c)})); toast('Updated ✨'); onClose(); return; }
+    create(t,{cat,note,emoji}); toast('Saved to My Personal Gratitudes ❤️'); onClose(); };
+  const save=()=>{ if(!(init&&init.id)){ const m=findFamiliar(S,text); if(m&&!fam){ setFam(m); return; } } doSave(); };
+  return html`<${Modal} onClose=${()=>onClose()} label="Personal gratitude">
+    <h3>${init&&init.id?'Edit gratitude':'Something I\u2019m grateful for'}</h3>
+    <label className="lbl" htmlFor="gct">WHAT ARE YOU GRATEFUL FOR?</label>
+    <input id="gct" className="input" placeholder="My morning coffee ☕" value=${text} onChange=${e=>{ setText(e.target.value); setFam(null); }}/>
+    ${fam && html`<${FamiliarBox} match=${fam} onUse=${()=>{ toast('Already in your personal gratitudes ✨'); onClose(); }} onDifferent=${doSave}/>`}
+    <label className="lbl" htmlFor="gce">EMOJI (OPTIONAL)</label>
+    <div className="row" style=${{gap:8}}><input id="gce" className="input" style=${{width:80,textAlign:'center',fontSize:'1.4rem'}} value=${emoji} onChange=${e=>setEmoji((e.target.value.match(EMOJI_RE)||[''])[0])} placeholder="☕"/>
+      <div className="emoji-row" style=${{flex:1}}>${QUICK_EMOJIS.slice(0,8).map(e=>html`<button key=${e} className=${emoji===e?'on':''} onClick=${()=>setEmoji(emoji===e?'':e)}>${e}</button>`)}</div></div>
+    <label className="lbl" htmlFor="gcc">CATEGORY (OPTIONAL)</label>
+    <select id="gcc" className="input" value=${cat} onChange=${e=>setCat(e.target.value)}>
+      <option value="own">➕ MY OWN</option>${GRAT_CATS.map(c=>html`<option key=${c.id} value=${c.id}>${c.e} ${c.n}</option>`)}
+    </select>
+    <label className="lbl" htmlFor="gcn">WHY DOES THIS MATTER TO ME? (OPTIONAL)</label>
+    <textarea id="gcn" className="input" placeholder="It makes mornings feel gentle." value=${note} onChange=${e=>setNote(e.target.value)}></textarea>
+    ${!fam && html`<div className="btn-row"><button className="btn ghost" onClick=${()=>onClose()}>CANCEL</button><button className="btn" disabled=${!text.trim()} onClick=${save}>SAVE</button></div>`}
+  <//>`;
+}
+
+const MINE_TABS=[['favorites','MY FAVORITES'],['personal','MY PERSONAL GRATITUDES'],['recent','RECENTLY APPRECIATED'],['often','THINGS I APPRECIATE OFTEN'],['history','DAILY HISTORY'],['all','ALL APPRECIATED'],['discover','DISCOVER MORE']];
 function GratMine(){
   const {S,patch,open}=useFX(); const {toggle}=useGrat();
-  const [filter,setFilter]=useState('all'); const [limit,setLimit]=useState(40); const [edit,setEdit]=useState(null); const [noteFor,setNoteFor]=useState(null); const [noteText,setNoteText]=useState(''); const [adding,setAdding]=useState(false);
-  const L=gratLib(); const today=dayKey(); const month=today.slice(0,7); const weekAgo=addDays(today,-6);
+  const st=gratStats(S); const L=gratLib(); const today=dayKey(); const month=today.slice(0,7); const weekAgo=addDays(today,-6);
+  const favorites=[...S.customGratitudes.map(personalItem),...L.all.filter(i=>st[i.id])].filter(it=>(st[it.id]&&st[it.id].days>=2)||(it.custom&&it.custom.pinned))
+    .sort((a,b)=>((st[b.id]||{}).days||0)-((st[a.id]||{}).days||0)||a.t.localeCompare(b.t));
+  const [tab,setTab]=useState(favorites.length?'favorites':S.customGratitudes.length?'personal':'all');
+  const [filter,setFilter]=useState('all'); const [limit,setLimit]=useState(40); const [hLimit,setHLimit]=useState(7);
+  const [edit,setEdit]=useState(null); const [adding,setAdding]=useState(false); const [noteFor,setNoteFor]=useState(null); const [noteText,setNoteText]=useState('');
+  const [disc,setDisc]=useState(()=>gratRandom(S,8,i=>!st[i.id]&&!S.checkedGratitudeIds[i.id]));
   const items=[...Object.entries(S.checkedGratitudeIds).filter(([id])=>L.byId[id]).map(([id,d])=>({...L.byId[id],date:d})),
-    ...S.customGratitudes.map(c=>({id:c.id,c:c.cat||'own',t:c.text,date:c.date,custom:c}))].sort((a,b)=>b.date.localeCompare(a.date));
-  const cats=[...new Set(items.map(i=>i.c))];
-  const shown=items.filter(i=>filter==='all'||(filter==='custom'?i.custom:i.c===filter));
-  const del=c=>{ if(window.confirm('Delete this gratitude?')) patch(s=>({...s,customGratitudes:s.customGratitudes.filter(x=>x.id!==c.id)})); };
+    ...S.customGratitudes.map(c=>({...personalItem(c),date:c.createdAt||c.date}))].sort((a,b)=>b.date.localeCompare(a.date));
+  const cats=[...new Set(items.map(i=>i.c))]; const shown=items.filter(i=>filter==='all'||(filter==='custom'?i.custom:i.c===filter));
+  const del=c=>{ if(window.confirm('Delete this personal gratitude? Past days keep their history.')) patch(s=>({...s,customGratitudes:s.customGratitudes.filter(x=>x.id!==c.id)})); };
+  const pin=c=>patch(s=>({...s,customGratitudes:s.customGratitudes.map(x=>x.id===c.id?{...x,pinned:!x.pinned}:x)}));
   const saveNote=()=>{ patch(s=>{ const n={...s.gratitudeNotes}; if(noteText.trim()) n[noteFor.id]=noteText.trim(); else delete n[noteFor.id]; return {...s,gratitudeNotes:n}; }); setNoteFor(null); };
-  const recent3=Object.entries(S.dailyGratitudeSelections).filter(([,ids])=>ids.length).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,7);
+  const histDays=Object.entries(S.dailyGratitudeSelections).filter(([,ids])=>ids.length).sort((a,b)=>b[0].localeCompare(a[0]));
+  const recent=[]; const seenR=new Set(); histDays.forEach(([d,ids])=>ids.slice().reverse().forEach(id=>{ if(!seenR.has(id)){ seenR.add(id); const it=gratItem(S,id); if(it) recent.push({it,d}); } }));
+  const often=gratOften(S); const enough=gratEnoughHistory(S); const span=gratHistorySpan(S);
+  const daysTxt=n=>`${n} ${n===1?'day':'days'}`;
+  const Row=({it,right})=>html`<div className="mine-row"><span className="mine-e">${gratEmoji(it)}</span><div style=${{flex:1,minWidth:0}}><b>${it.custom&&it.custom.pinned?'📌 ':''}${it.t}</b></div>${right}</div>`;
   return html`<div className="grat-scope">
     <h1 className="game-title display">❤️ MY GRATITUDE</h1>
     <div className="stats">
       <div className="stat"><div className="sv">${items.length}</div><div className="sl">TOTAL APPRECIATED</div></div>
-      <div className="stat"><div className="sv">${S.customGratitudes.length}</div><div className="sl">CUSTOM GRATITUDES</div></div>
+      <div className="stat"><div className="sv">${S.customGratitudes.length}</div><div className="sl">PERSONAL GRATITUDES</div></div>
       <div className="stat"><div className="sv">${items.filter(i=>i.date>=weekAgo).length}</div><div className="sl">RECENTLY ADDED · 7 DAYS</div></div>
       <div className="stat"><div className="sv">${items.filter(i=>i.date.startsWith(month)).length}</div><div className="sl">THIS MONTH</div></div>
     </div>
-    <button className="btn warm" style=${{marginTop:14}} onClick=${()=>setAdding(true)}>+ ADD SOMETHING I\u2019M GRATEFUL FOR</button>
-    ${items.length===0 ? html`<div className="card center"><p style=${{fontWeight:800,marginTop:0}}>Your collection starts with the first thing you notice.</p><button className="btn ghost" onClick=${()=>open('gratexplore')}>EXPLORE GRATITUDE</button></div>` : html`<div>
-      <div className="hscroll" style=${{marginTop:14}}>
+    <${GratInsightCard}/>
+    <div className="hscroll" style=${{marginTop:14}} role="tablist">${MINE_TABS.map(([k,l])=>html`<button key=${k} className=${'chip'+(tab===k?' on':'')} onClick=${()=>setTab(k)}>${l}</button>`)}</div>
+
+    ${tab==='favorites' && html`<div className="card"><h2 className="h2">MY FAVORITES</h2><p className="muted small" style=${{fontWeight:700,margin:'4px 0 6px'}}>Chosen on two or more days, plus anything you pinned.</p>
+      ${favorites.length?favorites.map(it=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="small" style=${{fontWeight:800}}>${st[it.id]?daysTxt(st[it.id].days):'pinned'}</span>`}/>`)
+        :html`<p style=${{fontWeight:700,margin:0}}>Favorites appear when you choose something on more than one day.</p>`}</div>`}
+
+    ${tab==='personal' && html`<div className="card"><div className="row-between"><h2 className="h2">MY PERSONAL GRATITUDES</h2><button className="btn tiny" onClick=${()=>setAdding(true)}>+ ADD</button></div>
+      ${S.customGratitudes.length===0 && html`<p style=${{fontWeight:700}}>Anything you write in “Something good today…” is saved here, ready to choose again.</p>`}
+      ${S.customGratitudes.map(c=>{ const s=st[c.id]; return html`<div key=${c.id} className="mine-row">
+        <span className="mine-e">${c.emoji||'➕'}</span>
+        <div style=${{flex:1,minWidth:0}}><b>${c.pinned?'📌 ':''}${c.text}</b><div className="muted small" style=${{fontWeight:700}}>${s?`Chosen on ${daysTxt(s.days)} · last ${prettyDate(s.last)}`:`Added ${prettyDate(c.createdAt||c.date)}`}</div>${c.note && html`<div className="mine-note">“${c.note}”</div>`}</div>
+        <span className="mine-act"><button className=${'x'+(c.pinned?' pinned':'')} aria-label=${c.pinned?'Unpin':'Pin'} aria-pressed=${!!c.pinned} onClick=${()=>pin(c)}>📌</button><button className="x" aria-label="Edit" onClick=${()=>setEdit(c)}>✎</button><button className="x" aria-label="Delete" onClick=${()=>del(c)}>✕</button></span>
+      </div>`; })}
+      <p className="muted small" style=${{fontWeight:700,marginBottom:0}}>📌 Pinned gratitudes show up often in your daily choices — still only once a day.</p></div>`}
+
+    ${tab==='recent' && html`<div className="card"><h2 className="h2">RECENTLY APPRECIATED</h2>
+      ${recent.length?recent.slice(0,20).map(({it,d})=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="muted small" style=${{fontWeight:800}}>${dayLabel(d)}</span>`}/>`):html`<p style=${{fontWeight:700,margin:0}}>Your daily choices will appear here.</p>`}</div>`}
+
+    ${tab==='often' && html`<div className="card"><h2 className="h2">❤️ THINGS I APPRECIATE OFTEN</h2>
+      ${enough&&often.length ? often.slice(0,15).map(({it,days})=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="small" style=${{fontWeight:800}}>${daysTxt(days)}</span>`}/>`)
+        : html`<p style=${{fontWeight:700,margin:0}}>Patterns appear after about a week of noticing, based only on what you actually choose. So far: ${daysTxt(span.days)} of daily gratitude.</p>`}</div>`}
+
+    ${tab==='history' && html`<div>${histDays.length===0?html`<div className="card"><p style=${{fontWeight:700,margin:0}}>Each day you notice good things, the full list is kept here.</p></div>`:''}
+      ${histDays.slice(0,hLimit).map(([d,ids])=>html`<div key=${d} className="card"><div className="row-between"><h2 className="h2">${dayLabel(d)==='TODAY'||dayLabel(d)==='YESTERDAY'?dayLabel(d)+' · ':''}${new Date(d+'T12:00').toLocaleDateString('en-GB',{day:'numeric',month:'long'}).toUpperCase()}</h2><span className="small" style=${{fontWeight:800}}>${ids.length} noticed</span></div>
+        <div className="day-list">${ids.map(id=>{ const it=gratItem(S,id); return it?html`<div key=${id} className="day-item"><span>${gratEmoji(it)}</span>${it.t}</div>`:null; })}</div></div>`)}
+      ${histDays.length>hLimit && html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setHLimit(h=>h+7)}>SHOW EARLIER DAYS</button>`}</div>`}
+
+    ${tab==='all' && html`<div>${items.length===0 ? html`<div className="card center"><p style=${{fontWeight:800,marginTop:0}}>Your collection starts with the first thing you notice.</p><button className="btn ghost" onClick=${()=>open('gratexplore')}>EXPLORE GRATITUDE</button></div>` : html`<div>
+      <div className="hscroll" style=${{marginTop:12}}>
         <button className=${'chip'+(filter==='all'?' on':'')} onClick=${()=>{ setFilter('all'); setLimit(40); }}>ALL</button>
-        ${S.customGratitudes.length>0 && html`<button className=${'chip'+(filter==='custom'?' on':'')} onClick=${()=>{ setFilter('custom'); setLimit(40); }}>➕ MY OWN</button>`}
+        ${S.customGratitudes.length>0 && html`<button className=${'chip'+(filter==='custom'?' on':'')} onClick=${()=>{ setFilter('custom'); setLimit(40); }}>➕ PERSONAL</button>`}
         ${cats.filter(c=>c!=='own').map(c=>html`<button key=${c} className=${'chip'+(filter===c?' on':'')} onClick=${()=>{ setFilter(c); setLimit(40); }}>${L.cat[c].e} ${L.cat[c].n}</button>`)}
       </div>
       <div className="card" style=${{paddingTop:6,paddingBottom:6}}>${shown.slice(0,limit).map(i=>{ const note=i.custom?i.custom.note:S.gratitudeNotes[i.id]; return html`<div key=${i.id} className="mine-row">
-        <span className="mine-e">${(L.cat[i.c]||GRAT_OWN_CAT).e}</span>
-        <div style=${{flex:1,minWidth:0}}><b>${i.t}</b><div className="muted small" style=${{fontWeight:700}}>${prettyDate(i.date)}${i.custom?' · my own':''}</div>${note && html`<div className="mine-note">“${note}”</div>`}</div>
+        <span className="mine-e">${gratEmoji(i)}</span>
+        <div style=${{flex:1,minWidth:0}}><b>${i.t}</b><div className="muted small" style=${{fontWeight:700}}>${prettyDate(i.date)}${i.custom?' · personal':''}</div>${note && html`<div className="mine-note">“${note}”</div>`}</div>
         <span className="mine-act">${i.custom ? html`<button className="x" aria-label="Edit" onClick=${()=>setEdit(i.custom)}>✎</button><button className="x" aria-label="Delete" onClick=${()=>del(i.custom)}>✕</button>`
           : html`<button className="x" aria-label="Add note" onClick=${()=>{ setNoteFor(i); setNoteText(S.gratitudeNotes[i.id]||''); }}>✎</button><button className="x" aria-label="Uncheck" onClick=${()=>toggle(i.id)}>✕</button>`}</span>
       </div>`; })}</div>
-      ${shown.length>limit && html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setLimit(l=>l+40)}>SHOW MORE (${shown.length-limit})</button>`}
-    </div>`}
-    ${recent3.length>0 && html`<div className="card"><h2 className="h2">DAILY GRATITUDE</h2>${recent3.map(([d,ids])=>html`<div key=${d} style=${{padding:'10px 0',borderBottom:'1px solid var(--line)'}}><div className="row-between"><b>${dayLabel(d)}</b><span className="small" style=${{fontWeight:800}}>${ids.length} ${ids.length===1?'thing':'things'} noticed${ids.length>=DAILY_GRATITUDE_GOAL?' ✨':''}</span></div><div className="muted small" style=${{fontWeight:700,marginTop:2}}>${ids.slice(0,5).map(id=>{ const it=gratItem(S,id); return it?it.t:''; }).filter(Boolean).join(' · ')}${ids.length>5?' …':''}</div></div>`)}</div>`}
+      ${shown.length>limit && html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setLimit(l=>l+40)}>SHOW MORE (${shown.length-limit})</button>`}</div>`}</div>`}
+
+    ${tab==='discover' && html`<div><p className="muted small" style=${{fontWeight:800,margin:'12px 2px 0'}}>Things from the library you haven\u2019t chosen yet.</p>
+      <div className="grat-list">${disc.map(i=>html`<${GratRow} key=${i.id} item=${i}/>`)}</div>
+      <div className="btn-row"><button className="btn ghost" onClick=${()=>setDisc(gratRandom(S,8,i=>!st[i.id]&&!S.checkedGratitudeIds[i.id]))}>SHOW OTHERS</button><button className="btn warm" onClick=${()=>open('gratexplore')}>EXPLORE ALL</button></div></div>`}
+
     ${edit && html`<${GratCustomModal} init=${edit} onClose=${()=>setEdit(null)}/>`}
     ${adding && html`<${GratCustomModal} onClose=${()=>setAdding(false)}/>`}
     ${noteFor && html`<${Modal} onClose=${()=>setNoteFor(null)} label="Note"><h3>${noteFor.t}</h3><label className="lbl" htmlFor="gnn">WHY DOES THIS MATTER TO ME?</label><textarea id="gnn" className="input" value=${noteText} onChange=${e=>setNoteText(e.target.value)}></textarea><div className="btn-row"><button className="btn ghost" onClick=${()=>setNoteFor(null)}>CANCEL</button><button className="btn" onClick=${saveNote}>SAVE NOTE</button></div><//>`}
