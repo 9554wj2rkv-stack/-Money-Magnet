@@ -512,6 +512,24 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .day-item{display:flex;gap:10px;align-items:center;font-weight:800;font-size:1rem}
 .day-item span{width:28px;text-align:center;font-size:1.2rem}
 .x.pinned{background:var(--gold)}
+.glitch-entry{position:relative}
+.glitch-x{position:absolute;top:16px;right:16px;border:0;background:var(--track);width:36px;height:36px;border-radius:50%;font-weight:900}
+.glitch-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.glitch-btns .btn:disabled{opacity:.4}
+.msg-evo{margin-top:10px;padding:12px 14px;border-radius:18px;background:var(--card-solid);border:1px dashed var(--line)}
+.struck{text-decoration:line-through;text-decoration-thickness:2px;opacity:.75}
+.status-badge{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:900;letter-spacing:.1em;background:var(--track)}
+.status-badge.replaced{background:var(--hero);color:var(--ink)}
+.status-badge.retired{background:#4a3b52;color:#fff3e2}
+.src-badge{display:inline-block;padding:3px 9px;border-radius:99px;font-size:.68rem;font-weight:900;letter-spacing:.08em;background:var(--track)}
+.src-badge.user-created,.src-badge.bridge-replacement{background:var(--gold);color:var(--ink)}
+.msg-row{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.msg-row:last-child{border-bottom:0}
+.msg-row b{font-size:1.02rem;line-height:1.3}
+.msg-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.msg-meta .status-badge{margin-top:0}
+.check-line{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:16px;border:2px solid var(--line);margin:4px 0 14px;font-weight:800}
+.check-line input{width:24px;height:24px;accent-color:#b3261e;flex:none}
 @keyframes threeIn{from{opacity:0;transform:translateY(30px) scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
 .mine-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .mine-row:last-child{border-bottom:0}
@@ -1012,7 +1030,7 @@ const GAMES = [
 ];
 /* Daily gratitude goal — change this one number to change the whole daily practice */
 const DAILY_GRATITUDE_GOAL = 10;
-const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY',gratitude:'GRATITUDE VAULT',gratexplore:'EXPLORE GRATITUDE',gratsurprise:'SURPRISE ME',gratmine:'MY GRATITUDE',noticegood:`NOTICE ${DAILY_GRATITUDE_GOAL} GOOD THINGS`,gratgame:'GRATITUDE DISCOVERY',gratmoney:'GRATITUDE × MONEY'};
+const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY',gratitude:'GRATITUDE VAULT',gratexplore:'EXPLORE GRATITUDE',gratsurprise:'SURPRISE ME',gratmine:'MY GRATITUDE',noticegood:`NOTICE ${DAILY_GRATITUDE_GOAL} GOOD THINGS`,gratgame:'GRATITUDE DISCOVERY',gratmoney:'GRATITUDE × MONEY',mymessages:'MY MONEY MESSAGES'};
 
 /* ================= UTILS ================= */
 const pad = n => String(n).padStart(2,'0');
@@ -1044,9 +1062,9 @@ const DEFAULT = () => ({
   customFlips:[], cart:[], storeTier:0, storeUnlocked:0, storeHistory:[], customDreams:[], bigDreams:[],
   thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, sound:false,
   glitches:[], itches:[], wishlist:[], goals:[], deposits:[], paydays:[], moments:[], stays:[],
-  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1, gratitudeShown:{}, gratitudeShownToday:{date:'',ids:[]}
+  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1, gratitudeShown:{}, gratitudeShownToday:{date:'',ids:[]}, messageStatus:{}, userMessages:[]
 });
-const load = () => { try{ const raw=localStorage.getItem(KEY); return migrateGratitude(raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT()); }catch(e){ return DEFAULT(); } };
+const load = () => { try{ const raw=localStorage.getItem(KEY); return migrateMessages(migrateGratitude(raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT())); }catch(e){ return DEFAULT(); } };
 const persist = s => { try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} };
 
 function applyEarn(s,key,amt){
@@ -1685,7 +1703,7 @@ function GlitchFlow({arg}){
   const glitch=S.glitches.find(g=>g.id===gid);
 
   const saveReaction=()=>{ const id='g'+uid(); const now=dayKey();
-    record('glitch',20,s=>({...s,glitches:[{id,statement:statement.trim(),date:now,reaction,text:text.trim(),bridge:null,feelings:[{date:now,level:0}]},...s.glitches]}));
+    record('glitch',20,s=>({...s,glitches:[{id,statement:statement.trim(),msgId:(arg&&arg.msgId)||(findMessageByText(s,statement)||{}).id||null,originalStatus:'active',msgMigrated:true,date:now,reaction,text:text.trim(),bridge:null,feelings:[{date:now,level:0}]},...s.glitches]}));
     setGid(id); setStep('ladder'); ding(520); };
   const saveBridge=()=>{ const b=choice==='__custom'?custom.trim():choice; if(!b) return;
     record('bridge',20,s=>({...s,glitches:s.glitches.map(g=>g.id===gid?{...g,bridge:b,bridgeDate:dayKey()}:g)})); setStep('done'); ding(880); };
@@ -1737,25 +1755,161 @@ function GlitchFlow({arg}){
 }
 
 /* ================= GLITCH VAULT ================= */
+
+/* ================= MONEY MESSAGES: status system (built-ins keep stable text-hash IDs) ================= */
+const msgIdFor = t => 'msg-'+hash(String(t).trim()).toString(36);
+let _BUILTIN_MSGS=null;
+const builtinMsgs = () => _BUILTIN_MSGS||(_BUILTIN_MSGS=MESSAGES.map(t=>({id:msgIdFor(t),text:t,source:'built-in'})));
+/* every message with its live status: built-ins (status from messageStatus overrides) + user messages */
+function allMessages(S){
+  const ms=S.messageStatus||{};
+  const b=builtinMsgs().map(m=>({...m,status:(ms[m.id]&&ms[m.id].status)||'active',replacedBy:ms[m.id]&&ms[m.id].replacedBy||null}));
+  return [...b,...(S.userMessages||[])];
+}
+const activeMessages = S => allMessages(S).filter(m=>m.status==='active');
+const findMessage = (S,id) => allMessages(S).find(m=>m.id===id)||null;
+const findMessageByText = (S,t) => { const n=String(t||'').trim().toLowerCase(); return allMessages(S).find(m=>m.text.trim().toLowerCase()===n)||null; };
+/* pure state updaters */
+function setMsgStatus(s,id,status,extra={}){
+  if(String(id).startsWith('msg-')){ const ms={...(s.messageStatus||{})}; if(status==='active') delete ms[id]; else ms[id]={status,at:dayKey(),...extra}; return {...s,messageStatus:ms}; }
+  return {...s,userMessages:(s.userMessages||[]).map(m=>m.id===id?{...m,status,...extra}:m)};
+}
+function newUserMessage(text,source,extra={}){ return {id:'umsg-'+uid(),text:text.trim(),status:'active',source,createdAt:dayKey(),replacedBy:null,replacedFrom:null,history:[],...extra}; }
+/* make sure a glitch's original statement has a message record we can mark (typed statements get one, kept out of rotation) */
+function ensureOriginal(s,g){
+  const id=g.msgId&&findMessage(s,g.msgId)?g.msgId:(findMessageByText(s,g.statement)||{}).id;
+  if(id) return [s,id];
+  const m=newUserMessage(g.statement,'glitch-statement',{status:'inactive'});
+  return [{...s,userMessages:[...(s.userMessages||[]),m]},m.id];
+}
+function migrateMessages(s){
+  const out={...s,messageStatus:s.messageStatus||{},userMessages:s.userMessages||[]};
+  out.glitches=(s.glitches||[]).map(g=>{ if(g.msgMigrated) return g; const m=findMessageByText(out,g.statement); return {...g,msgId:g.msgId||(m?m.id:null),originalStatus:g.originalStatus||'active',msgMigrated:true}; });
+  return out;
+}
+const SOURCE_LABEL={'built-in':'BUILT-IN','user-created':'MINE','bridge-replacement':'FROM A GLITCH','glitch-statement':'FROM A GLITCH'};
+
+function GlitchActions({g}){
+  const {S,patch,toast,open}=useFX();
+  const [modal,setModal]=useState(null); const [alsoRetire,setAlsoRetire]=useState(false);
+  const replacement=g.replacementMsgId?findMessage(S,g.replacementMsgId):null;
+  const replace=()=>{ patch(s=>{ let [ns,origId]=ensureOriginal(s,g); const nm=newUserMessage(g.bridge,'bridge-replacement',{replacedFrom:origId,glitchId:g.id});
+      ns={...ns,userMessages:[...ns.userMessages,nm]}; ns=setMsgStatus(ns,origId,'replaced',{replacedBy:nm.id});
+      return {...ns,glitches:ns.glitches.map(x=>x.id===g.id?{...x,msgId:origId,originalStatus:'replaced',replacementMsgId:nm.id}:x)}; });
+    setModal(null); ding(900,.2); toast('Your new message is in the deck ✨'); };
+  const retire=()=>{ patch(s=>{ let [ns,origId]=ensureOriginal(s,g); ns=setMsgStatus(ns,origId,'retired');
+      return {...ns,glitches:ns.glitches.map(x=>x.id===g.id?{...x,msgId:origId,originalStatus:'retired'}:x)}; });
+    setModal(null); toast('Retired — it won\u2019t appear in your deck 🗄️'); };
+  const restore=()=>{ patch(s=>{ let [ns,origId]=ensureOriginal(s,g); const m=findMessage(ns,origId); ns=setMsgStatus(ns,origId,m&&m.source==='glitch-statement'?'inactive':'active',{replacedBy:null});
+      return {...ns,glitches:ns.glitches.map(x=>x.id===g.id?{...x,originalStatus:'active'}:x)}; }); toast('Original message restored'); };
+  const del=()=>{ patch(s=>{ let ns=s; if(alsoRetire&&g.originalStatus==='active'){ const r=ensureOriginal(ns,g); ns=setMsgStatus(r[0],r[1],'retired'); }
+      return {...ns,glitches:ns.glitches.filter(x=>x.id!==g.id)}; }); setModal(null); toast('Glitch record deleted'); };
+  const st=g.originalStatus||'active';
+  return html`<div>
+    ${st!=='active' && html`<div className="msg-evo">
+      <div className="kv"><span>Original message</span><b className="struck">“${g.statement}”</b></div>
+      <span className=${'status-badge '+st}>${st==='replaced'?'REPLACED':'RETIRED'}</span>
+      ${st==='replaced' && replacement && html`<div className="kv"><span>My new message</span><b>“${replacement.text}”</b></div>`}
+    </div>`}
+    <div className="glitch-btns">
+      <button className="btn tiny ghost" onClick=${()=>open('glitch',false,{glitchId:g.id})}>${g.bridge?'CHANGE BRIDGE':'BUILD A BRIDGE'} 🌉</button>
+      ${st==='active' && html`<button className="btn tiny ghost" disabled=${!g.bridge} title=${g.bridge?'':'Build a bridge first'} onClick=${()=>setModal('replace')}>✏️ REPLACE ORIGINAL</button>`}
+      ${st==='active' && html`<button className="btn tiny ghost" onClick=${()=>setModal('retire')}>🗄️ RETIRE ORIGINAL</button>`}
+      ${st==='retired' && html`<button className="btn tiny ghost" onClick=${restore}>↩︎ RESTORE ORIGINAL</button>`}
+    </div>
+    ${modal==='replace' && html`<${Modal} onClose=${()=>setModal(null)} label="Replace this money message">
+      <h3>Replace this Money Message?</h3>
+      <div className="kv"><span>Old</span><b className="struck">“${g.statement}”</b></div>
+      <div className="kv" style=${{marginTop:12}}><span>New</span><b>“${g.bridge}”</b></div>
+      <p style=${{fontWeight:700}}>The new sentence will replace the old one in your Money Message Deck. Your Glitch history stays in the Vault.</p>
+      <div className="stack"><button className="btn pink" onClick=${replace}>✨ YES — USE MY NEW MESSAGE</button><button className="btn ghost" onClick=${()=>setModal(null)}>CANCEL</button></div>
+    <//>`}
+    ${modal==='retire' && html`<${Modal} onClose=${()=>setModal(null)} label="Retire this message">
+      <h3>Stop showing this message?</h3>
+      <div className="kv"><span>Message</span><b>“${g.statement}”</b></div>
+      <p style=${{fontWeight:700}}>This message will be removed from your Money Message Deck, but its Glitch history will remain in your Vault. You can restore it any time.</p>
+      <div className="stack"><button className="btn" onClick=${retire}>YES — RETIRE IT</button><button className="btn ghost" onClick=${()=>setModal(null)}>CANCEL</button></div>
+    <//>`}
+    ${modal==='delete' && html`<${Modal} onClose=${()=>setModal(null)} label="Delete glitch record">
+      <h3>Delete this Glitch record?</h3>
+      <p style=${{fontWeight:700}}>This deletes the Glitch history, your bridge and its progress.</p>
+      ${st==='active' && html`<label className="check-line"><input type="checkbox" checked=${alsoRetire} onChange=${e=>setAlsoRetire(e.target.checked)}/><span>Also stop showing the original Money Message</span></label>`}
+      ${st==='replaced' && html`<p className="muted small" style=${{fontWeight:700}}>Your new message stays in your deck.</p>`}
+      <div className="stack"><button className="btn danger" onClick=${del}>DELETE GLITCH</button><button className="btn ghost" onClick=${()=>setModal(null)}>CANCEL</button></div>
+    <//>`}
+    <button className="glitch-x" aria-label="Delete glitch record" onClick=${()=>{ setAlsoRetire(false); setModal('delete'); }}>✕</button>
+  </div>`;
+}
+
+function MyMessages(){
+  const {S,patch,toast}=useFX();
+  const [tab,setTab]=useState('active'); const [limit,setLimit]=useState(30); const [q,setQ]=useState('');
+  const [editing,setEditing]=useState(null); const [text,setText]=useState(''); const [confirm,setConfirm]=useState(null);
+  const all=allMessages(S);
+  const active=all.filter(m=>m.status==='active'); const mine=(S.userMessages||[]).filter(m=>m.source!=='glitch-statement'||m.status==='active');
+  const retired=all.filter(m=>m.status==='retired'||m.status==='replaced');
+  const openEdit=m=>{ setEditing(m||{}); setText(m&&m.text||''); };
+  const save=()=>{ const t=text.trim(); if(!t) return;
+    if(!editing.id){ patch(s=>({...s,userMessages:[...(s.userMessages||[]),newUserMessage(t,'user-created')]})); toast('Added to your deck ✨'); }
+    else if(editing.source==='built-in'){ patch(s=>{ const nm=newUserMessage(t,'user-created',{replacedFrom:editing.id}); let ns={...s,userMessages:[...(s.userMessages||[]),nm]}; return setMsgStatus(ns,editing.id,'replaced',{replacedBy:nm.id}); }); toast('Your wording replaces the original ✨'); }
+    else { patch(s=>({...s,userMessages:s.userMessages.map(m=>m.id===editing.id?{...m,text:t,history:[...(m.history||[]),m.text].slice(-10),editedAt:dayKey()}:m)})); toast('Updated ✨'); }
+    setEditing(null); };
+  const retire=m=>{ patch(s=>{ let ns=setMsgStatus(s,m.id,'retired'); return {...ns,glitches:ns.glitches.map(g=>g.msgId===m.id&&g.originalStatus==='active'?{...g,originalStatus:'retired'}:g)}; }); toast('Retired 🗄️'); };
+  const restore=m=>{ patch(s=>{ let ns=setMsgStatus(s,m.id,'active',{replacedBy:null}); return {...ns,glitches:ns.glitches.map(g=>g.msgId===m.id&&g.originalStatus!=='active'?{...g,originalStatus:'active'}:g)}; }); toast('Back in your deck ✨'); };
+  const del=m=>{ patch(s=>({...s,userMessages:s.userMessages.filter(x=>x.id!==m.id)})); setConfirm(null); toast('Message deleted'); };
+  const replacedByText=m=>{ const r=m.replacedBy&&findMessage(S,m.replacedBy); return r?r.text:null; };
+  const list=(tab==='active'?active:tab==='mine'?mine:retired).filter(m=>!q.trim()||m.text.toLowerCase().includes(q.trim().toLowerCase()));
+  const Row=m=>html`<div key=${m.id} className="msg-row">
+    <div style=${{flex:1,minWidth:0}}><b>${m.text}</b>
+      <div className="msg-meta"><span className=${'src-badge '+(m.source||'')}>${SOURCE_LABEL[m.source]||'MINE'}</span>${m.status!=='active'?html`<span className=${'status-badge '+m.status}>${m.status==='replaced'?'REPLACED':m.status==='retired'?'RETIRED':'NOT IN DECK'}</span>`:''}</div>
+      ${m.status==='replaced'&&replacedByText(m) && html`<div className="muted small" style=${{fontWeight:700,marginTop:4}}>→ “${replacedByText(m)}”</div>`}</div>
+    <span className="mine-act">
+      ${m.status==='active' && html`<button className="x" aria-label="Edit" onClick=${()=>openEdit(m)}>✎</button><button className="x" aria-label="Retire" onClick=${()=>retire(m)}>🗄️</button>`}
+      ${(m.status==='retired'||m.status==='replaced') && html`<button className="btn tiny ghost" onClick=${()=>restore(m)}>RESTORE</button>`}
+      ${m.source!=='built-in' && tab==='mine' && html`<button className="x" aria-label="Delete" onClick=${()=>setConfirm(m)}>✕</button>`}
+    </span></div>`;
+  return html`<div>
+    <h1 className="game-title display">✨ MY MONEY MESSAGES</h1>
+    <p className="game-sub">My wording overrides the app\u2019s wording.</p>
+    <div className="ev-total"><div className="stat"><div className="sv">${active.length}</div><div className="sl">IN MY DECK</div></div><div className="stat"><div className="sv">${(S.userMessages||[]).filter(m=>m.status==='active').length}</div><div className="sl">MY OWN WORDING</div></div></div>
+    <button className="btn sea" style=${{marginTop:14}} onClick=${()=>openEdit(null)}>+ ADD MY OWN MONEY MESSAGE</button>
+    <div className="seg" style=${{marginTop:14}}>${[['active','ACTIVE'],['mine','MY OWN'],['retired','RETIRED']].map(([k,l])=>html`<button key=${k} className=${tab===k?'on':''} onClick=${()=>{ setTab(k); setLimit(30); }}>${l} · ${(k==='active'?active:k==='mine'?mine:retired).length}</button>`)}</div>
+    <input className="input" type="search" style=${{marginTop:12}} placeholder="Search messages…" value=${q} onChange=${e=>setQ(e.target.value)}/>
+    <div className="card" style=${{paddingTop:4,paddingBottom:4}}>
+      ${list.length===0 && html`<p style=${{fontWeight:700}}>${tab==='mine'?'Messages you write — or replace through a Glitch — live here.':tab==='retired'?'Nothing retired. Anything you retire or replace can be restored here.':'No messages match.'}</p>`}
+      ${list.slice(0,limit).map(Row)}
+    </div>
+    ${list.length>limit && html`<button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setLimit(l=>l+30)}>SHOW MORE (${list.length-limit})</button>`}
+    ${editing && html`<${Modal} onClose=${()=>setEditing(null)} label="Money message">
+      <h3>${!editing.id?'My own Money Message':editing.source==='built-in'?'Say it my way':'Edit my message'}</h3>
+      ${editing.source==='built-in' && html`<p className="muted small" style=${{fontWeight:700}}>Your wording will replace the original in your deck. You can restore the original later.</p>`}
+      <textarea className="input" aria-label="Message" placeholder="Money is safe for me to receive ❤️" value=${text} onChange=${e=>setText(e.target.value)}></textarea>
+      <div className="btn-row"><button className="btn ghost" onClick=${()=>setEditing(null)}>CANCEL</button><button className="btn" disabled=${!text.trim()||text.trim()===editing.text} onClick=${save}>SAVE</button></div>
+    <//>`}
+    ${confirm && html`<${Modal} onClose=${()=>setConfirm(null)} label="Delete message"><h3>Delete this message?</h3><p style=${{fontWeight:700}}>“${confirm.text}” will be removed completely. To just stop seeing it, retire it instead.</p>
+      <div className="stack"><button className="btn danger" onClick=${()=>del(confirm)}>DELETE MESSAGE</button><button className="btn ghost" onClick=${()=>retire(confirm)||setConfirm(null)}>RETIRE INSTEAD</button><button className="btn ghost" onClick=${()=>setConfirm(null)}>CANCEL</button></div><//>`}
+  </div>`;
+}
+
 function GlitchVault(){
   const {S,record,patch,open}=useFX();
   const today=dayKey();
   const feel=(g,l)=>{ record('glitchReview',15,s=>({...addMoment(s,'glitchReview'),glitches:s.glitches.map(x=>x.id===g.id?{...x,feelings:[...x.feelings.filter((f,i)=>!(f.date===today&&i>0)),{date:today,level:l}]}:x)})); ding(600+l*80); };
-  const del=g=>{ if(window.confirm('Remove this glitch from your vault?')) patch(s=>({...s,glitches:s.glitches.filter(x=>x.id!==g.id)})); };
   return html`<div>
     <h1 className="game-title display">⚡ GLITCH VAULT</h1>
     <p className="game-sub">Old money stories I\u2019ve discovered</p>
     ${S.glitches.length===0 ? html`<div className="card center"><p style=${{fontWeight:800,marginTop:0}}>No glitches yet. When a money message makes your mind say “no”, tap ⚡ GLITCH on the card. That\u2019s where the interesting stuff lives.</p><button className="btn" onClick=${()=>open('glitch')}>I FOUND A GLITCH</button></div>`
     : S.glitches.map(g=>{ const latest=g.feelings[g.feelings.length-1]; return html`<div key=${g.id} className="card glitch-entry">
-      <div className="row-between"><span className="eyebrow">⚡ DISCOVERED ${prettyDate(g.date).toUpperCase()}</span><button className="x" aria-label="Remove glitch" onClick=${()=>del(g)}>✕</button></div>
+      <div className="row-between" style=${{paddingRight:44}}><span className="eyebrow">⚡ DISCOVERED ${prettyDate(g.date).toUpperCase()}</span></div>
       <h3 className="display glitch-title">${g.statement.replace(/\.$/,'').toUpperCase()}</h3>
       <div className="kv"><span>Automatic thought</span><b>“${g.text||(g.reaction||'').toLowerCase().replace(/^./,c=>c.toUpperCase())}”</b></div>
       <div className="kv"><span>Current bridge</span><b>${g.bridge?`“${g.bridge}”`:'No bridge yet'}</b></div>
-      <button className="btn tiny ghost" style=${{marginTop:8}} onClick=${()=>open('glitch',false,{glitchId:g.id})}>${g.bridge?'CHANGE BRIDGE':'BUILD A BRIDGE'} 🌉</button>
+      <${GlitchActions} g=${g}/>
       <h2 className="h2" style=${{marginTop:16}}>HOW DOES THIS FEEL NOW?</h2>
       <div className="belief-btns">${BELIEF.map((b,l)=>html`<button key=${b} className=${latest&&latest.date===today&&g.feelings.length>1&&latest.level===l?'on':''} onClick=${()=>feel(g,l)}>${b}</button>`)}</div>
       <div className="timeline">${g.feelings.slice(-6).map((f,i)=>html`<div key=${i} className="tl-row"><span className="tl-date">${prettyDate(f.date).toUpperCase()}</span><span className="tl-bar"><i style=${{width:((f.level+1)/5*100)+'%'}}></i></span><span className="tl-l">${i===0&&g.feelings.length<=6&&f.level===0?'DON\u2019T BELIEVE IT':BELIEF[f.level]}</span></div>`)}</div>
     </div>`; })}
+    <button className="btn ghost" style=${{marginTop:16}} onClick=${()=>open('mymessages')}>✨ MY MONEY MESSAGES</button>
     <p className="disclaimer">A self-reflection tool, not a psychological measurement.</p>
   </div>`;
 }
@@ -2675,7 +2829,7 @@ function TodayTab(){
   const d=S.days[today]||{acts:{}};
   const done=plan.filter(a=>d.acts[a.id]).length;
   const h=hash(today);
-  const msg=MESSAGES[h%MESSAGES.length];
+  const actMsgs=activeMessages(S); const msg=actMsgs.length?actMsgs[h%actMsgs.length].text:'My Money Messages are mine to shape.';
   const thought=THOUGHTS[(h>>>5)%THOUGHTS.length];
   const alive=S.lastDay===today||S.lastDay===addDays(today,-1);
   const streak=alive?S.streak:0;
@@ -2739,12 +2893,15 @@ function MagnetTab(){
   const {S,today,open}=useFX();
   const L=levelOf(S.points);
   const alive=S.lastDay===today||S.lastDay===addDays(today,-1);
-  const [card,setCard]=useState(()=>({text:MESSAGES[hash(today)%MESSAGES.length],bridge:false,n:0}));
+  const [card,setCard]=useState(()=>{ const a=activeMessages(S); const m=a.length?a[hash(today)%a.length]:{text:'My Money Messages are mine to shape.',id:null}; return {text:m.text,id:m.id,bridge:false,n:0}; });
   const [said,setSaid]=useState(0); const [glitching,setGlitching]=useState(false);
-  const bridges=S.glitches.filter(g=>g.bridge).map(g=>g.bridge);
-  const nextCard=()=>setCard(c=>{ if(bridges.length&&Math.random()<.28){ const b=pick(bridges); if(b!==c.text) return {text:b,bridge:true,n:c.n+1}; }
-    let t; do{ t=pick(MESSAGES); }while(t===c.text); return {text:t,bridge:false,n:c.n+1}; });
-  const glitch=()=>{ setGlitching(true); ding(220,.15); setTimeout(()=>{ setGlitching(false); open('glitch',false,{statement:card.text}); },REDUCED?0:650); };
+  const bridges=S.glitches.filter(g=>g.bridge&&g.originalStatus!=='replaced').map(g=>g.bridge);
+  const nextCard=()=>setCard(c=>{ const act=activeMessages(S); const own=act.filter(m=>m.source!=='built-in');
+    if(bridges.length&&Math.random()<.25){ const b=pick(bridges); if(b!==c.text) return {text:b,id:null,bridge:true,n:c.n+1}; }
+    let pool=(own.length&&Math.random()<.3)?own:act; pool=pool.filter(m=>m.text!==c.text); if(!pool.length) pool=act; if(!pool.length) return c;
+    const m=pick(pool); return {text:m.text,id:m.id,bridge:false,n:c.n+1}; });
+  const cardMsg=card.id?findMessage(S,card.id):null; const cardOwn=cardMsg&&cardMsg.source!=='built-in';
+  const glitch=()=>{ setGlitching(true); ding(220,.15); setTimeout(()=>{ setGlitching(false); open('glitch',false,{statement:card.text,msgId:card.id}); },REDUCED?0:650); };
   const realSaved=S.goals.reduce((a,g)=>a+(g.real||0),0);
   return html`<div className="wrap">
     <div className="card creature-stage" style=${{marginTop:10}}>
@@ -2762,12 +2919,13 @@ function MagnetTab(){
     <div className="card">
       <h2 className="h2">MONEY MESSAGE DECK</h2>
       <p className="muted small" style=${{margin:'4px 0 0',fontWeight:700}}>Read it out loud, then draw the next. Mindset statements — not financial promises.</p>
-      <div className=${'deck-card'+(glitching?' glitching':'')} key=${card.n+'-'+said}><div>${card.bridge && html`<span className="deck-tag">🌉 YOUR BRIDGE THOUGHT</span>`}${card.text}</div></div>
+      <div className=${'deck-card'+(glitching?' glitching':'')} key=${card.n+'-'+said}><div>${card.bridge && html`<span className="deck-tag">🌉 YOUR BRIDGE THOUGHT</span>`}${cardOwn && html`<span className="deck-tag">💜 MY MESSAGE</span>`}${card.text}</div></div>
       <div className="deck-btns">
         <button className="btn ghost" onClick=${()=>{ setSaid(x=>x+1); ding(900,.08); }}>I SAID IT ✨</button>
         <button className="btn pink" onClick=${nextCard}>NEXT CARD</button>
         <button className="btn glitch-btn" onClick=${glitch}>⚡ GLITCH<small>This doesn’t feel true yet</small></button>
       </div>
+      <button className="link-btn" onClick=${()=>open('mymessages')}>✨ My Money Messages · ${activeMessages(S).length} in my deck</button>
       ${said>0 && html`<p className="center" style=${{fontWeight:900,margin:'12px 0 0'}}>${said} said out loud this visit</p>`}
     </div>
     <div className="games">
@@ -2896,7 +3054,7 @@ function Onboarding({onDone}){
 }
 
 /* ================= APP ================= */
-const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,future:FutureMe,payday:Payday,wishlist:Wishlist,stay:LetItStay,gratitude:GratitudeHome,gratexplore:GratExplore,gratsurprise:GratSurprise,gratmine:GratMine,noticegood:NoticeGood,gratgame:GratGame,gratmoney:GratMoney};
+const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,future:FutureMe,payday:Payday,wishlist:Wishlist,stay:LetItStay,gratitude:GratitudeHome,gratexplore:GratExplore,gratsurprise:GratSurprise,gratmine:GratMine,noticegood:NoticeGood,gratgame:GratGame,gratmoney:GratMoney,mymessages:MyMessages};
 const HUBS=['gratitude','future','vault'];
 const TABS=[{id:'today',i:'🏠',n:'TODAY'},{id:'play',i:'🎮',n:'PLAY'},{id:'magnet',i:'✨',n:'MAGNET'},{id:'evidence',i:'💰',n:'EVIDENCE'},{id:'me',i:'👤',n:'ME'}];
 
