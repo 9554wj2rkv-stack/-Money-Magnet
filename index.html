@@ -530,6 +530,10 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .msg-meta .status-badge{margin-top:0}
 .check-line{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:16px;border:2px solid var(--line);margin:4px 0 14px;font-weight:800}
 .check-line input{width:24px;height:24px;accent-color:#b3261e;flex:none}
+.gm p.display{margin:10px 0}
+.gm-in{animation:gmIn .6s ease both}
+@keyframes gmIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.gm-in{animation:none}}
 @keyframes threeIn{from{opacity:0;transform:translateY(30px) scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
 .mine-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .mine-row:last-child{border-bottom:0}
@@ -2775,25 +2779,24 @@ function GratMine(){
 
 /* ================= GRATITUDE x MONEY ================= */
 function GratMoney(){
-  const {S,record,close,today}=useFX(); const {toggle}=useGrat();
-  const [step,setStep]=useState(0);
-  const [items]=useState(()=>[...gratRandom(S,2,i=>i.c==='moneydoes'),...gratRandom(S,1,i=>i.c==='moneyhave')]);
-  useEffect(()=>{ if(step>=3) return; const t=setTimeout(()=>setStep(s=>s+1),REDUCED?0:(step===0?300:1400)); return ()=>clearTimeout(t); },[step]);
-  const finish=()=>{ record('gratMoney',10,s=>({...s,gratitudeHistory:[...s.gratitudeHistory,{date:today,type:'money'}]})); setStep(5); };
-  return html`<div className="grat-scope center">
-    <div className="pay-msg" style=${{minHeight:step>=4?0:'40vh'}}>
-      ${step>=1 && html`<p className="display pm-1">YOU WANT MORE MONEY.</p>`}
-      ${step>=2 && html`<p className="display pm-2">That\u2019s allowed.</p>`}
-      ${step>=3 && html`<p className="display pm-3" style=${{fontSize:'1.5rem'}}>NOW NOTICE WHAT MONEY ALREADY DOES.</p>`}
-    </div>
-    ${step===3 && html`<button className="btn warm" onClick=${()=>setStep(4)}>SHOW ME</button>`}
-    ${step>=4 && html`<div>
-      <div className="grat-list" style=${{textAlign:'left'}}>${items.map(i=>html`<${GratRow} key=${i.id} item=${i}/>`)}</div>
-      ${step===4 ? html`<button className="btn warm" style=${{marginTop:14}} onClick=${finish}>I NOTICED ✨</button>` : html`<div>
+  const {S,record,close,today}=useFX();
+  const [items,setItems]=useState(()=>[...gratRandom(S,2,i=>i.c==='moneydoes'),...gratRandom(S,1,i=>i.c==='moneyhave')]);
+  const [done,setDone]=useState(false);
+  const finish=()=>{ record('gratMoney',10,s=>({...s,gratitudeHistory:[...s.gratitudeHistory,{date:today,type:'money'}]})); setDone(true); ding(900,.15); };
+  const others=()=>setItems([...gratRandom(S,2,i=>i.c==='moneydoes'&&!items.some(x=>x.id===i.id)),...gratRandom(S,1,i=>i.c==='moneyhave'&&!items.some(x=>x.id===i.id))]);
+  return html`<div className="grat-scope center gm">
+    <p className="display pm-1 gm-in" style=${{animationDelay:'0s'}}>YOU WANT MORE MONEY.</p>
+    <p className="display pm-2 gm-in" style=${{animationDelay:'.35s'}}>That\u2019s allowed.</p>
+    <p className="display pm-3 gm-in" style=${{fontSize:'1.5rem',animationDelay:'.7s'}}>NOW NOTICE WHAT MONEY ALREADY DOES.</p>
+    <p className="muted gm-in" style=${{fontWeight:800,margin:'4px 0 0',animationDelay:'1s'}}>Tap any that are true for you.</p>
+    <div className="grat-list" style=${{textAlign:'left'}}>${items.map((i,k)=>html`<div key=${i.id} className="gm-in" style=${{animationDelay:(1.1+k*.2)+'s'}}><${GratRow} item=${i}/></div>`)}</div>
+    ${!done ? html`<div className="gm-in" style=${{animationDelay:'1.7s'}}>
+      <button className="btn warm" style=${{marginTop:14}} onClick=${finish}>I NOTICED ✨</button>
+      <button className="link-btn" onClick=${others}>Show me three others</button></div>`
+    : html`<div className="gm-in">
         <p className="display" style=${{fontSize:'1.25rem',fontWeight:700,marginTop:18}}>Appreciating what you have doesn\u2019t mean stopping your growth.</p>
         <p className="display pm-3" style=${{fontSize:'1.6rem'}}>I CAN APPRECIATE TODAY AND BUILD TOMORROW.</p>
         <button className="btn ghost" onClick=${close}>DONE</button></div>`}
-    </div>`}
   </div>`;
 }
 
