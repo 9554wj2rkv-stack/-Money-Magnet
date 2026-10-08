@@ -534,6 +534,64 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .gm-in{animation:gmIn .6s ease both}
 @keyframes gmIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.gm-in{animation:none}}
+/* ===== future gratitude ===== */
+.fut-hero{position:relative;margin-top:14px;padding:30px 22px;border-radius:32px;text-align:center;color:var(--ink);background:radial-gradient(120% 100% at 50% 0%,#fff6dc,#ffd9a8 40%,#ff9fcb 75%,#b9a3ff);box-shadow:0 0 60px rgba(245,207,114,.45),var(--shadow);overflow:hidden}
+.fut-hero p{margin:6px 0 0;font-size:1.55rem;font-weight:800;line-height:1.25}
+.fut-stars,.vh-stars{display:block;letter-spacing:.5em;font-size:.9rem;color:#a06a10;animation:twinkleSoft 3.5s ease-in-out infinite}
+@keyframes twinkleSoft{0%,100%{opacity:.45}50%{opacity:1}}
+.fut-menu{display:grid;gap:10px;margin-top:16px}
+.fut-menu-btn{appearance:none;display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;min-height:74px;border-radius:22px;border:1px solid rgba(245,207,114,.5);background:linear-gradient(135deg,rgba(255,226,176,.28),rgba(201,182,255,.2));color:var(--text);transition:transform .14s}
+.fut-menu-btn:active{transform:scale(.97)}
+.fut-menu-btn .fme{font-size:1.8rem;width:40px;text-align:center}
+.fut-menu-btn b{display:block;font-weight:900;font-size:1rem;letter-spacing:.04em}
+.fut-menu-btn span span{font-weight:700;font-size:.9rem;color:var(--muted)}
+.fut-menu-btn>span:nth-child(2){flex:1}
+.fmc{font-size:1.6rem;font-weight:900;color:var(--muted)}
+.fut-hero-card{padding:18px;border-radius:24px;background:linear-gradient(135deg,#fff3dc,#ffd2a6 55%,#ffb2d3);color:var(--ink);font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:1.3rem;line-height:1.3;box-shadow:0 0 30px rgba(255,190,120,.35)}
+.fut-hero-card.sm{font-size:1.05rem;padding:12px 14px}
+.fut-tag{display:inline-block;margin-left:4px;padding:2px 8px;border-radius:99px;font-size:.68rem;font-weight:900;letter-spacing:.08em;background:var(--track);vertical-align:middle}
+.fut-tag.real{background:var(--gold);color:var(--ink)}
+.fut-more{font-size:1.6rem!important;letter-spacing:0!important;color:var(--text)!important;min-width:52px!important}
+.fut-real-note{margin:4px 0 8px;font-weight:900}
+.fut-details{margin-top:10px}
+.fut-sheet-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.fut-sheet-btns .btn{width:100%;min-height:54px;font-size:.88rem}
+.fut-sheet-btns .btn.warm{grid-column:span 2}
+.fut-action{appearance:none;display:flex;gap:12px;align-items:center;width:100%;text-align:left;margin-top:8px;padding:10px 12px;border-radius:16px;border:2px solid var(--line);background:var(--card-solid);color:var(--text);font-weight:800}
+.fut-action .gbox{width:28px;height:28px;border-radius:9px}
+.fut-action.done{border-color:transparent;background:linear-gradient(135deg,rgba(143,227,195,.45),rgba(79,208,207,.3))}
+.fut-action.done .gbox{background:var(--sea);border-color:transparent}
+.fut-card.on{background:linear-gradient(135deg,#fff3c8,#f5cf72 50%,#ffb2d3)!important}
+.fut-chosen{display:grid;gap:8px;margin-top:6px}
+.fut-chosen-card{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:18px;text-align:left;background:linear-gradient(135deg,#fff3dc,#ffd2a6 50%,#ffb2d3);color:var(--ink);font-weight:800;box-shadow:0 0 22px rgba(255,190,120,.3);animation:threeIn .6s cubic-bezier(.2,1.4,.4,1) both}
+.fut-chosen-card span{font-size:1.3rem}
+.fut-imagine{font-size:1.4rem;font-weight:800;margin:20px 0 0;line-height:1.3}
+.fut-star{font-size:3.4rem;animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+.fut-celebrate h3{margin-top:4px}
+.ff-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ff-two .input{min-width:0}
+.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.vision-tile{appearance:none;border:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:16px 14px;min-height:150px;border-radius:24px;color:var(--ink);box-shadow:var(--shadow);transition:transform .14s}
+.vision-tile:active{transform:scale(.96)}
+.vision-tile .vt-e{font-size:2rem}
+.vision-tile b{font-size:.98rem;font-weight:900;line-height:1.2}
+.vision-tile span:last-child{font-weight:800;font-size:.82rem;opacity:.85;margin-top:auto}
+.vision-hero{margin-top:12px;padding:24px 20px;border-radius:30px;color:var(--ink);box-shadow:0 0 40px rgba(255,190,120,.3),var(--shadow);text-align:center}
+.vision-hero .vh-e{font-size:3rem;display:block}
+.vision-hero h1{font-size:1.5rem;margin:6px 0 8px;line-height:1.15}
+.vision-hero p{font-weight:700;font-size:1.08rem;margin:0;line-height:1.4}
+.fut-today-card{background:linear-gradient(135deg,rgba(255,214,150,.32),rgba(185,163,255,.3));border-color:rgba(245,207,114,.55)}
+.fut-familiar .btn{width:auto}
+@media (max-width:360px){.ff-two{grid-template-columns:1fr}.fut-sheet-btns{grid-template-columns:1fr}.fut-sheet-btns .btn.warm{grid-column:auto}}
+@media (prefers-reduced-motion: reduce){.fut-stars,.vh-stars,.fut-chosen-card,.fut-star{animation:none}}
+.dq-card{margin-top:14px}
+.dq-card.future{background:linear-gradient(135deg,rgba(255,214,150,.3),rgba(185,163,255,.28));border-color:rgba(245,207,114,.55)}
+.dq-item{margin-top:16px}
+.dq-q{display:block;font-size:1.2rem;font-weight:800;line-height:1.3;margin-bottom:8px;color:var(--text)}
+.dq-item textarea{min-height:88px}
+.dq-past{padding:12px 0;border-bottom:1px solid var(--line)}
+.dq-past:last-child{border-bottom:0}
+.dq-past-item{margin-top:8px}
 @keyframes threeIn{from{opacity:0;transform:translateY(30px) scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
 .mine-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .mine-row:last-child{border-bottom:0}
@@ -964,25 +1022,6 @@ TRUST:"I can trust myself with money.",INVEST:"My money can work for me.",THRIVE
 
 const RAIN_MSGS = ["It is safe to receive.","I allow more good things into my life.","Receiving can feel easy.","I can handle more.","Money can come from many sources."];
 
-const STORE_CATS = [
-{id:'home',e:'🏠',n:'Home'},{id:'travel',e:'✈️',n:'Travel'},{id:'transport',e:'🚗',n:'Transport'},{id:'lifestyle',e:'👗',n:'Lifestyle'},{id:'education',e:'🎓',n:'Education'},{id:'family',e:'❤️',n:'Family'},
-{id:'giving',e:'🎁',n:'Giving'},{id:'business',e:'🚀',n:'Business'},{id:'investing',e:'📈',n:'Investing'},{id:'impact',e:'🌍',n:'Impact'},{id:'dream',e:'✨',n:'Dream'}
-];
-const CATALOG = [
-['home','🛋️','New sofa',14000],['home','🧖','Garden sauna',65000],['home','🏡','Summer house by the sea',2900000],['home','🏰','Dream home',6500000],
-['travel','🥐','Weekend in Paris',9000],['travel','🗾','Three weeks in Japan',45000],['travel','💺','Business-class trip',60000],['travel','🌏','A year around the world',450000],
-['transport','🚲','E-bike',25000],['transport','🚴','Carbon road bike',85000],['transport','⚡','Electric car',420000],['transport','⛵','Small sailboat',350000],
-['lifestyle','🧥','Tailored coat',6000],['lifestyle','👚','Wardrobe refresh',20000],['lifestyle','👩‍🍳','Private chef for a month',70000],['lifestyle','⌚','Heirloom watch',95000],
-['education','💻','Online course',3500],['education','🧭','A year of coaching',60000],['education','🎓','Master\u2019s degree',250000],
-['family','🏖️','Family holiday',40000],['family','🌅','Parents\u2019 dream trip',80000],['family','📚','Kids\u2019 education fund',500000],
-['giving','💝','Donation to a cause',10000],['giving','💧','Fund a village well',150000],['giving','🎓','Scholarship fund',1000000],
-['business','🖥️','New laptop',18000],['business','🚀','Launch budget',100000],['business','🤝','First employee (a year)',600000],['business','🏢','Studio space',2000000],
-['investing','🌱','Index fund start',50000],['investing','📊','Diversified portfolio',1000000],['investing','🏘️','Rental apartment',3500000],
-['impact','🌳','Plant 10,000 trees',60000],['impact','🥕','Community garden',200000],['impact','🌊','Ocean clean-up project',5000000],
-['dream','🏝️','Private island weekend',400000],['dream','🖼️','Art collection',1500000],['dream','🌟','Foundation in my name',25000000]
-].map(([cat,emoji,name,price],i)=>({id:'s'+i,cat,emoji,name,price}));
-const TIERS = [10000,50000,100000,500000,1000000,5000000,10000000,25000000,100000000];
-const GROW_PATHS = ['CREATE','EARN','BUILD','INVEST','PARTNER','LEARN','RECEIVE'];
 
 const THERMO_AMTS = [1000,5000,10000,25000,50000,100000,250000,500000,1e6,5e6,1e7,2.5e7,1e8];
 const FEELS = [{e:'😬',l:'UNCOMFORTABLE'},{e:'🤔',l:'HARD TO IMAGINE'},{e:'🙂',l:'POSSIBLE'},{e:'😌',l:'COMFORTABLE'},{e:'🔥',l:'NORMAL'}];
@@ -995,7 +1034,7 @@ const ALLOC_CATS = [
 ];
 
 const SELL_LEVELS = [1,10,100,1000,10000,100000];
-const EV_CATS = ['EARNED','RECEIVED','SAVED','KEPT','INVESTED','OPPORTUNITY','REFUND','SOLD','NEGOTIATED','CONSCIOUS SPENDING','WAITED BEFORE BUYING','SAID NO','FUNDED FUTURE ME','OTHER'];
+const EV_CATS = ['EARNED','RECEIVED','SAVED','KEPT','INVESTED','OPPORTUNITY','REFUND','SOLD','NEGOTIATED','CONSCIOUS SPENDING','WAITED BEFORE BUYING','SAID NO','IT’S MY REALITY NOW','OTHER'];
 const EV_EXAMPLES = ['Saved 40 kr on groceries.','I wanted to buy something immediately but waited.','I moved 500 kr to my holiday fund.','I bought something and felt good about the decision.','I left money in my account.','I noticed my payday spending urge.','Someone asked about buying something I made.'];
 
 const LEVELS = [
@@ -1015,16 +1054,14 @@ const PLAN_POOL = [
 {id:'ws',emoji:'🔎',label:'Find the money words'},
 {id:'flip',emoji:'🧠',label:'Flip 3 old money stories'},
 {id:'rain',emoji:'💸',label:'Receive money for 20 seconds'},
-{id:'store',emoji:'🛒',label:'Fill an imaginary cart'},
 {id:'thermo',emoji:'🌡️',label:'Check your money thermostat'},
-{id:'question',emoji:'💭',label:'Answer today\u2019s question'},
+{id:'question',emoji:'💭',label:'Answer today\u2019s questions'},
 {id:'spend',emoji:'💎',label:'Allocate millions'},
 {id:'seller',emoji:'🏷️',label:'Play the seller game'}
 ];
 
 const GAMES = [
 {id:'ws',e:'🔎',n:'Money Search',d:'Find your money language',bg:'var(--hero)'},
-{id:'store',e:'🛒',n:'Abundance Store',d:'Imagine without limitation',bg:'var(--gold)'},
 {id:'rain',e:'💸',n:'Money Rain',d:'Receive for 20 seconds',bg:'var(--sea)'},
 {id:'flip',e:'🔄',n:'Flip It',d:'Turn old stories over',bg:'linear-gradient(135deg,#ffc9ae,#ff8a78)'},
 {id:'thermo',e:'🌡️',n:'Money Thermostat',d:'How much feels normal?',bg:'linear-gradient(135deg,#dccfff,#9aa6ff)'},
@@ -1034,7 +1071,7 @@ const GAMES = [
 ];
 /* Daily gratitude goal — change this one number to change the whole daily practice */
 const DAILY_GRATITUDE_GOAL = 10;
-const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTION',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY',gratitude:'GRATITUDE VAULT',gratexplore:'EXPLORE GRATITUDE',gratsurprise:'SURPRISE ME',gratmine:'MY GRATITUDE',noticegood:`NOTICE ${DAILY_GRATITUDE_GOAL} GOOD THINGS`,gratgame:'GRATITUDE DISCOVERY',gratmoney:'GRATITUDE × MONEY',mymessages:'MY MONEY MESSAGES'};
+const SCREEN_TITLES = {ws:'MONEY SEARCH',flip:'FLIP IT',rain:'MONEY RAIN',store:'ABUNDANCE STORE',thermo:'MONEY THERMOSTAT',spend:'SPEND MILLIONS',seller:'SELLER GAME',question:'DAILY QUESTIONS',glitch:'MONEY GLITCH',vault:'GLITCH VAULT',itch:'THE ITCH',future:'FUTURE ME',payday:'PAYDAY POWER',wishlist:'48-HOUR WISHLIST',stay:'LET IT STAY',gratitude:'GRATITUDE VAULT',gratexplore:'EXPLORE GRATITUDE',gratsurprise:'SURPRISE ME',gratmine:'MY GRATITUDE',noticegood:`NOTICE ${DAILY_GRATITUDE_GOAL} GOOD THINGS`,gratgame:'GRATITUDE DISCOVERY',gratmoney:'GRATITUDE × MONEY',mymessages:'MY MONEY MESSAGES',futurehome:'FUTURE GRATITUDE VAULT',futuretoday:'TODAY’S FUTURE GRATITUDE',futureexplore:'EXPLORE MY FUTURE',futuremine:'MY FUTURE GRATITUDES',futurevision:'FUTURE ME VISION',futurereality:'IT’S MY REALITY NOW',futurejourney:'MY FUTURE JOURNEY'};
 
 /* ================= UTILS ================= */
 const pad = n => String(n).padStart(2,'0');
@@ -1062,11 +1099,12 @@ const KEY = 'moneyMagnet.v1';
 const DAILY_CAP = 350;
 const DEFAULT = () => ({
   onboarded:false, points:0, earned:{}, days:{}, streak:0, longest:0, lastDay:null,
-  wsDone:0, wsLevel:'medium', flips:0, rainBest:0, rainPlays:0,
+  wsDone:0, wsLevel:'hard', flips:0, rainBest:0, rainPlays:0,
   customFlips:[], cart:[], storeTier:0, storeUnlocked:0, storeHistory:[], customDreams:[], bigDreams:[],
-  thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, sound:false,
+  thermo:[], alloc:[], allocUnlocked:0, seller:[], evidence:[], answers:{}, dailyQuestions:{}, sound:false,
   glitches:[], itches:[], wishlist:[], goals:[], deposits:[], paydays:[], moments:[], stays:[],
-  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1, gratitudeShown:{}, gratitudeShownToday:{date:'',ids:[]}, messageStatus:{}, userMessages:[]
+  checkedGratitudeIds:{}, skippedGratitudeIds:{}, customGratitudes:[], gratitudeNotes:{}, dailyGratitudeSelections:{}, gratitudeHistory:[], gratitudeCategoriesExplored:[], gratitudeLibraryVersion:1, gratitudeShown:{}, gratitudeShownToday:{date:'',ids:[]}, messageStatus:{}, userMessages:[],
+  futureGratitudes:[], futureGratitudeCollection:{}, futureGratitudeSelections:{}, futureGratitudeHistory:[], futureGratitudeReflections:[], futureGratitudeFavorites:{}, futureGratitudeAchievements:{}, futureGratitudeActions:[], futureGratitudeStatus:{}, futureGratitudeLibraryVersion:1
 });
 const load = () => { try{ const raw=localStorage.getItem(KEY); return migrateMessages(migrateGratitude(raw ? {...DEFAULT(), ...JSON.parse(raw)} : DEFAULT())); }catch(e){ return DEFAULT(); } };
 const persist = s => { try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} };
@@ -1213,15 +1251,15 @@ function SessionBar({current}){
 /* ================= GAME 1: MONEY SEARCH ================= */
 function WordSearch(){
   const {S,record,today,confetti}=useFX();
-  const [level,setLevel]=useState(S.wsLevel||'medium');
-  const [pz,setPz]=useState(()=>makePuzzle(S.wsLevel||'medium'));
+  const level='hard';
+  const [pz,setPz]=useState(()=>makePuzzle('hard'));
   const [found,setFound]=useState([]);
   const [sel,setSel]=useState(null);
   const [flash,setFlash]=useState(null);
   const [done,setDone]=useState(null);
   const gridRef=useRef(null); const selRef=useRef(null);
 
-  const newGame=lv=>{ setLevel(lv); setPz(makePuzzle(lv)); setFound([]); setFlash(null); setDone(null); };
+  const newGame=()=>{ setPz(makePuzzle('hard')); setFound([]); setFlash(null); setDone(null); };
   const cellFrom=e=>{ const r=gridRef.current.getBoundingClientRect(); const pad=8; const w=r.width-pad*2, h=r.height-pad*2;
     const x=Math.floor((e.clientX-r.left-pad)/w*pz.size), y=Math.floor((e.clientY-r.top-pad)/h*pz.size);
     return [Math.max(0,Math.min(pz.size-1,x)),Math.max(0,Math.min(pz.size-1,y))]; };
@@ -1252,7 +1290,6 @@ function WordSearch(){
   return html`<div>
     <h1 className="game-title display">Find your money language</h1>
     <p className="game-sub">Drag across letters to find each word.</p>
-    <div className="seg" role="tablist" aria-label="Difficulty">${['easy','medium','hard'].map(l=>html`<button key=${l} className=${level===l?'on':''} onClick=${()=>newGame(l)}>${l.toUpperCase()}</button>`)}</div>
     <div className="ws-grid" ref=${gridRef} style=${{gridTemplateColumns:`repeat(${pz.size},1fr)`,fontSize:fs}} onPointerDown=${down} onPointerMove=${move} onPointerUp=${up} onPointerCancel=${up}>
       ${pz.grid.map((row,y)=>row.map((ch,x)=>{ const k=x+','+y; const fi=foundMap[k]; return html`<div key=${k} className=${'ws-cell'+(selCells.has(k)?' sel':'')+(fi!==undefined?' found':'')} style=${fi!==undefined?{background:WS_COLORS[fi%WS_COLORS.length]}:null}>${ch}</div>`; }))}
     </div>
@@ -1376,91 +1413,6 @@ function MoneyRain(){
 }
 
 /* ================= GAME 2: ABUNDANCE STORE ================= */
-function Store(){
-  const {S,patch,record,toast,confetti,today}=useFX();
-  const [cat,setCat]=useState('home');
-  const [bigger,setBigger]=useState(null);
-  const [adding,setAdding]=useState(false);
-  const [form,setForm]=useState({name:'',price:'',cat:'dream'});
-  const [bump,setBump]=useState(0);
-  const [done,setDone]=useState(null);
-  const tierIdx=Math.min(S.storeTier,S.storeUnlocked);
-  const balance=TIERS[tierIdx];
-  const cartTotal=S.cart.reduce((a,b)=>a+b.price,0);
-  const remaining=balance-cartTotal;
-  const items=[...CATALOG.filter(x=>x.cat===cat),...S.customDreams.filter(x=>x.cat===cat)];
-
-  const add=item=>{ if(item.price>remaining){ setBigger(item); return; }
-    patch(s=>({...s,cart:[...s.cart,{uid:uid(),name:item.name,emoji:item.emoji,price:item.price,cat:item.cat}]})); setBump(b=>b+1); ding(840); };
-  const remove=u=>patch(s=>({...s,cart:s.cart.filter(x=>x.uid!==u)}));
-  const setTier=i=>{ if(i>S.storeUnlocked) return; if(TIERS[i]<cartTotal){ toast('Your cart is bigger than that balance'); return; } patch(s=>({...s,storeTier:i})); };
-  const growPath=p=>{ const it=bigger; patch(s=>({...s,bigDreams:[{id:uid(),name:it.name,price:it.price,path:p,date:today},...s.bigDreams]})); setBigger(null); toast(`${p} — a path for “${it.name}” ✨`); };
-  const checkout=()=>{ if(!S.cart.length) return; const willUnlock=S.storeUnlocked<TIERS.length-1 && tierIdx>=S.storeUnlocked;
-    const snapshot={total:cartTotal,count:S.cart.length,balance};
-    record('store',20,s=>({...s,storeHistory:[...s.storeHistory,{date:today,balance,total:cartTotal,items:s.cart.map(x=>x.name)}],cart:[],storeUnlocked:willUnlock?s.storeUnlocked+1:s.storeUnlocked}));
-    confetti(); setDone({...snapshot,unlocked:willUnlock?TIERS[S.storeUnlocked+1]:null}); };
-  const saveDream=()=>{ const price=parseNum(form.price); if(!form.name.trim()||!price) return;
-    const d={id:'d'+uid(),name:form.name.trim(),price,cat:form.cat,emoji:(STORE_CATS.find(c=>c.id===form.cat)||{}).e||'✨',custom:true};
-    patch(s=>({...s,customDreams:[...s.customDreams,d]})); setCat(form.cat); setForm({name:'',price:'',cat:'dream'}); setAdding(false); toast('Dream added to the store ✨'); };
-  const delDream=id=>{ if(window.confirm('Remove this dream from the store?')) patch(s=>({...s,customDreams:s.customDreams.filter(x=>x.id!==id)})); };
-  const biggerFit=bigger?TIERS.findIndex((t,i)=>i<=S.storeUnlocked&&t>=bigger.price+cartTotal):-1;
-
-  if(done) return html`<div className="center">
-    <h1 className="game-title display">Imagined. Received. ✨</h1>
-    <div className="big-number">${fmt(done.total)} DKK</div>
-    <p className="game-sub">${done.count} ${done.count===1?'thing':'things'} chosen from a ${fmtShort(done.balance)} DKK balance.</p>
-    ${done.unlocked && html`<div className="found-card"><div className="fw">NEW BALANCE UNLOCKED</div><p>${fmt(done.unlocked)} DKK</p></div>`}
-    <p style=${{fontWeight:800,marginTop:16}}>How did it feel to choose without flinching?</p>
-    <button className="btn" onClick=${()=>setDone(null)}>BACK TO THE STORE</button>
-    <p className="disclaimer">This is imagination — not real financial advice.</p>
-  </div>`;
-
-  return html`<div>
-    <h1 className="game-title display">THE ABUNDANCE STORE 🛒</h1>
-    <p className="game-sub">Imagine without limitation.</p>
-    <div className="hscroll" aria-label="Imaginary balances">${TIERS.map((t,i)=>html`<button key=${t} className=${'chip'+(i===tierIdx?' on':'')+(i>S.storeUnlocked?' lock':'')} onClick=${()=>setTier(i)} aria-disabled=${i>S.storeUnlocked}>${i>S.storeUnlocked?'🔒 ':''}${fmtShort(t)}</button>`)}</div>
-    <div className=${'balance'+(bump?' cart-bump':'')} key=${bump}>
-      <div className="bl">IMAGINARY BALANCE</div>
-      <div className="bv">${fmt(balance)} DKK</div>
-      <div className="row-between" style=${{marginTop:8,fontWeight:800}}><span>🛒 ${fmt(cartTotal)} in cart</span><span>${fmt(remaining)} left</span></div>
-      <div className="bar"><i style=${{width:Math.min(100,cartTotal/balance*100)+'%'}}></i></div>
-    </div>
-    <div className="hscroll" style=${{marginTop:14}}>${STORE_CATS.map(c=>html`<button key=${c.id} className=${'chip'+(cat===c.id?' on':'')} onClick=${()=>setCat(c.id)}>${c.e} ${c.n}</button>`)}</div>
-    <div className="items">${items.map(it=>html`<div key=${it.id} className="item">
-      ${it.custom && html`<button className="del" aria-label="Remove dream" onClick=${()=>delDream(it.id)}>✕</button>`}
-      <span className="ie">${it.emoji}</span><b>${it.name}</b><span className="ip">${fmt(it.price)} DKK</span>
-      <button className="btn tiny add" onClick=${()=>add(it)}>+ ADD</button>
-    </div>`)}</div>
-    <button className="btn sea" style=${{marginTop:12}} onClick=${()=>setAdding(true)}>+ ADD MY OWN DREAM</button>
-    ${S.cart.length>0 && html`<div className="card">
-      <div className="row-between"><h2 className="h2">MY CART</h2><span className="pill">${S.cart.length}</span></div>
-      <div style=${{marginTop:8}}>${S.cart.map(c=>html`<div key=${c.uid} className="cart-line"><span>${c.emoji} ${c.name}</span><span className="row"><span>${fmt(c.price)}</span><button className="x" aria-label="Remove" onClick=${()=>remove(c.uid)}>✕</button></span></div>`)}</div>
-      <button className="btn pink" style=${{marginTop:12}} onClick=${checkout}>IMAGINE IT'S MINE ✨</button>
-    </div>`}
-    ${S.bigDreams.length>0 && html`<div className="card"><h2 className="h2">BIGGER DREAMS</h2><p className="muted small" style=${{margin:'4px 0 6px'}}>Dreams bigger than the balance, with the path you chose for them.</p>
-      ${S.bigDreams.slice(0,8).map(b=>html`<div key=${b.id} className="cart-line"><span>${b.name}<br/><span className="muted small">${fmt(b.price)} DKK</span></span><span className="pill">${b.path}</span></div>`)}</div>`}
-    <p className="disclaimer">This is imagination — not real financial advice.</p>
-
-    ${bigger && html`<${Modal} onClose=${()=>setBigger(null)} label="Dream bigger than balance">
-      <div className="eyebrow">${bigger.emoji} ${bigger.name.toUpperCase()} · ${fmt(bigger.price)} DKK</div>
-      <h3>This dream is bigger than today's balance.</h3>
-      <p style=${{fontWeight:700}}>What would need to grow to make room for it?</p>
-      <div className="paths">${GROW_PATHS.map(p=>html`<button key=${p} onClick=${()=>growPath(p)}>${p}</button>`)}</div>
-      ${biggerFit>=0 && biggerFit!==tierIdx && html`<button className="btn" style=${{marginTop:12}} onClick=${()=>{ patch(s=>({...s,storeTier:biggerFit})); setBigger(null); }}>SWITCH TO ${fmtShort(TIERS[biggerFit])} DKK</button>`}
-      <button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setBigger(null)}>KEEP SHOPPING</button>
-    <//>`}
-    ${adding && html`<${Modal} onClose=${()=>setAdding(false)} label="Add my own dream">
-      <h3>Add my own dream</h3>
-      <label className="lbl" htmlFor="dn">ITEM NAME</label>
-      <input id="dn" className="input" placeholder="Dream home" value=${form.name} onChange=${e=>setForm({...form,name:e.target.value})}/>
-      <label className="lbl" htmlFor="dp">PRICE (DKK)</label>
-      <input id="dp" className="input" inputMode="numeric" placeholder="6,500,000" value=${form.price} onChange=${e=>{ const v=parseNum(e.target.value); setForm({...form,price:v?fmt(v):''}); }}/>
-      <label className="lbl">CATEGORY</label>
-      <div className="cats">${STORE_CATS.map(c=>html`<button key=${c.id} className=${form.cat===c.id?'on':''} onClick=${()=>setForm({...form,cat:c.id})}>${c.e} ${c.n}</button>`)}</div>
-      <div className="btn-row"><button className="btn ghost" onClick=${()=>setAdding(false)}>CANCEL</button><button className="btn" disabled=${!form.name.trim()||!parseNum(form.price)} onClick=${saveDream}>ADD DREAM</button></div>
-    <//>`}
-  </div>`;
-}
 
 /* ================= GAME 5: THERMOSTAT ================= */
 const polar=(cx,cy,r,deg)=>{ const a=deg*Math.PI/180; return [cx+r*Math.cos(a),cy+r*Math.sin(a)]; };
@@ -1635,21 +1587,56 @@ function Seller(){
   </div>`;
 }
 
-/* ================= DAILY QUESTION ================= */
-const questionFor = t => QUESTIONS[hash(t+'q')%QUESTIONS.length];
+/* ================= DAILY QUESTIONS (3 now + 3 future, rotating without repeats) ================= */
+const MORE_QUESTIONS=["What did money make possible for me this week?","What is one money decision I’m proud of recently?","Where did I feel abundant today?","What do I already have that I once wished for?","What money habit am I quietly getting better at?","When did I last receive something easily?","What does “enough” look like for me this month?","What would make my next payday feel calm?","What am I spending money on that truly makes me happy?","Which purchase am I still grateful for?","What would I do today if I fully trusted myself?","Who has helped me with money, and what did they teach me?","What did I learn about money growing up that I want to keep?","What old money rule am I ready to rewrite?","Where might I be undervaluing myself?","How could I make someone’s life easier and be paid for it?","What do I want more of in my life right now?","What is one small money win from today?","How do I want to feel when I think about money?","What did I notice the last time I wanted to spend money?","What am I proud of having built so far?","What skill do I already have that others would pay for?","Where in my life am I already rich?","What could I stop paying for without missing it?","What does financial safety mean to me right now?","What could I sell, share or offer this month?","What is money teaching me at the moment?","Which money thought felt different this week?","What would make tomorrow a little easier financially?","What did I enjoy today that cost nothing?","What am I ready to receive?","What does a good money day look like for me?"];
+const FUTURE_QUESTIONS=["What does an ordinary Tuesday look like in my ideal future?","Where am I living five years from now?","How does it feel to look at my bank account in my future?","What will I be proud of one year from today?","What is my future self grateful that I started today?","How do my mornings look in my ideal future?","What does my future self no longer worry about?","Which income streams does my future self have?","What would my future self say about today’s worries?","Which habit of my future self can I start now?","Who is around me in my best future?","What does financial freedom feel like in my body?","What will I do in the first week money is no longer a worry?","What does my future home smell and sound like?","Which trip is my future self planning?","What does my future business look like on a good day?","How does my future self respond when an unexpected bill arrives?","What has my future self learned that I am learning now?","What does my future self do for fun?","How does my future self talk about money with friends?","What will I have created three years from now?","What does my future self give to others?","How much does my future self have saved, and how does that feel?","What do I wear on a day I feel truly confident in my future?","What is my future self’s favourite part of the week?","What does my future self say no to easily?","What does my future self say yes to without hesitating?","What does retirement look like for my older self?","What decision today will my future self thank me for?","How does my future self feel on payday?","What does my future health routine look like?","What does my future self celebrate this year?","What would make next year my best year yet?","What small step brings my future closer this week?","What does my future self invest in?","What does a calm, abundant evening look like in my future?","Which fear has my future self moved past?","What does my future workday look like from start to finish?","Who does my future self learn from?","What does my future self do with a free afternoon?","How does my future self treat me — kindly and wisely?","What is my future self building for the long term?","What does my future morning coffee moment look like?","How does my future self feel opening the banking app?","What will I remember about this season of my life?","What does success look like on an ordinary day in my future?","What would my future self want me to stop worrying about?","What does my future self have more time for?","Which place does my future self love visiting?","What does my future wardrobe say about me?","What problem has my future self solved for other people?","Which money milestone is my future self celebrating?","How does my future self handle big decisions?","What has become easy for my future self that feels hard now?","What is my future relationship with work like?","What will I have learned by this time next year?","How does my future self spend a birthday?","What does my future self own that is truly loved?","How does my future self show up in the community?","What does “a beautiful life” mean to my future self?"];
+const DAILY_Q_COUNT=3;
+const NOW_QS=[...QUESTIONS,...MORE_QUESTIONS];
+const _qOrder={};
+const qOrder=(list,key)=>_qOrder[key]||(_qOrder[key]=shuffle(list,rng(hash('order-'+key))));
+const dayNumber=k=>{ const [y,m,d]=k.split('-').map(Number); return Math.floor(Date.UTC(y,m-1,d)/864e5); };
+const pickRotation=(list,key,k,n)=>{ const o=qOrder(list,key); const start=(dayNumber(k)*n)%o.length; return Array.from({length:n},(_,i)=>o[(start+i)%o.length]); };
+const questionsFor=k=>({now:pickRotation(NOW_QS,'now',k,DAILY_Q_COUNT),future:pickRotation(FUTURE_QUESTIONS,'future',k,DAILY_Q_COUNT)});
+const questionFor=k=>questionsFor(k).now[0];
+const dqCount=(S,k)=>{ const e=(S.dailyQuestions||{})[k]; return e?[...(e.now||[]),...(e.future||[])].filter(x=>x.a).length:0; };
+/* every answered question, newest day first (includes answers from the old single-question version) */
+function answerHistory(S){
+  const days={};
+  Object.entries(S.answers||{}).forEach(([d,v])=>{ if(v&&v.a) (days[d]=days[d]||[]).push({q:v.q,a:v.a,kind:'now'}); });
+  Object.entries(S.dailyQuestions||{}).forEach(([d,e])=>{ ['now','future'].forEach(kind=>(e[kind]||[]).forEach(x=>{ if(x.a) (days[d]=days[d]||[]).push({q:x.q,a:x.a,kind}); })); });
+  return Object.entries(days).sort((a,b)=>b[0].localeCompare(a[0]));
+}
 function DailyQuestion(){
-  const {S,record,today,toast}=useFX();
-  const q=questionFor(today); const saved=S.answers[today];
-  const [text,setText]=useState(saved?saved.a:'');
-  const save=()=>{ if(!text.trim()) return; record('question',20,s=>({...s,answers:{...s.answers,[today]:{q,a:text.trim()}}})); toast('Answer saved ✨'); };
-  const past=Object.entries(S.answers).filter(([d])=>d!==today).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,12);
+  const {S,record,toast,today}=useFX(); const qs=questionsFor(today); const saved=(S.dailyQuestions||{})[today]||{};
+  const init=kind=>qs[kind].map((q,i)=>{ const hit=(saved[kind]||[]).find(x=>x.q===q); return hit?hit.a:''; });
+  const [now,setNow]=useState(()=>init('now')); const [fut,setFut]=useState(()=>init('future'));
+  const answered=[...now,...fut].filter(a=>a.trim()).length;
+  const pack=(kind,vals)=>qs[kind].map((q,i)=>({q,a:vals[i].trim()}));
+  const dirty=JSON.stringify([pack('now',now),pack('future',fut)].map(a=>a.map(x=>x.a)))!==JSON.stringify([init('now'),init('future')].map(a=>a.map(x=>x.trim())));
+  const save=()=>{ if(!answered) return; const entry={now:pack('now',now),future:pack('future',fut),savedAt:dayKey()};
+    const put=s=>({...s,dailyQuestions:{...(s.dailyQuestions||{}),[today]:entry}});
+    if(entry.now.some(x=>x.a)) record('question',20,put); else record(null,0,put);
+    if(entry.future.some(x=>x.a)) record('futureQuestion',15);
+    toast('Answers saved ✨'); };
+  const past=answerHistory(S).filter(([d])=>d!==today).slice(0,10);
+  const Block=({kind,vals,set,icon,title,sub})=>html`<section className=${'card dq-card '+kind}>
+    <div className="row-between"><h2 className="h2">${icon} ${title}</h2><span className="pill">${vals.filter(v=>v.trim()).length} / ${DAILY_Q_COUNT}</span></div>
+    <p className="muted small" style=${{fontWeight:700,margin:'4px 0 0'}}>${sub}</p>
+    ${qs[kind].map((q,i)=>html`<div key=${q} className="dq-item"><label className="dq-q display" htmlFor=${kind+'-q'+i}>${q}</label>
+      <textarea id=${kind+'-q'+i} className="input" placeholder="A few words is enough…" value=${vals[i]} onChange=${e=>{ const v=e.target.value; set(a=>a.map((x,k)=>k===i?v:x)); }}></textarea></div>`)}
+  </section>`;
   return html`<div>
-    <h1 className="game-title display" style=${{fontSize:'1.7rem'}}>${q}</h1>
-    <p className="game-sub">A few words is enough.</p>
-    <textarea className="input" aria-label="Your answer" placeholder="Write freely…" value=${text} onChange=${e=>setText(e.target.value)} style=${{marginTop:10,minHeight:150}}></textarea>
-    <div style=${{marginTop:12}}><button className="btn" disabled=${!text.trim()||(saved&&saved.a===text.trim())} onClick=${save}>${saved?'UPDATE ANSWER':'SAVE ANSWER'}</button></div>
+    <h1 className="game-title display">💭 TODAY’S QUESTIONS</h1>
+    <p className="game-sub">Answer one, some or all six. A few words is enough.</p>
+    ${Block({kind:'now',vals:now,set:setNow,icon:'💭',title:'TODAY',sub:'About my money life right now.'})}
+    ${Block({kind:'future',vals:fut,set:setFut,icon:'🌅',title:'MY FUTURE',sub:'Imagining the life I am creating.'})}
+    <div className="itch-continue"><div className=${'dg-bar'+(answered?' done':'')}>
+      <div className="dg-left"><span className="dg-count">${answered} / ${DAILY_Q_COUNT*2}</span><span className="dg-track"><i style=${{width:(answered/(DAILY_Q_COUNT*2)*100)+'%'}}></i></span></div>
+      <button className="btn warm small" disabled=${!answered||!dirty} onClick=${save}>${saved.savedAt&&!dirty?'SAVED ✓':'SAVE ANSWERS'}</button>
+    </div></div>
     ${past.length>0 && html`<div className="card"><h2 className="h2">PAST ANSWERS</h2>
-      ${past.map(([d,v])=>html`<div key=${d} style=${{padding:'12px 0',borderBottom:'1px solid var(--line)'}}><div className="muted small" style=${{fontWeight:800}}>${prettyDate(d)} · ${v.q}</div><div style=${{fontWeight:700,marginTop:4}}>${v.a}</div></div>`)}
+      ${past.map(([d,items])=>html`<div key=${d} className="dq-past"><div className="muted small" style=${{fontWeight:900}}>${prettyDate(d).toUpperCase()}</div>
+        ${items.map((x,k)=>html`<div key=${k} className="dq-past-item"><div className="muted small" style=${{fontWeight:800}}>${x.kind==='future'?'🌅':'💭'} ${x.q}</div><div style=${{fontWeight:700,marginTop:2}}>${x.a}</div></div>`)}</div>`)}
     </div>`}
   </div>`;
 }
@@ -1679,12 +1666,6 @@ function negate(t){ const s=t.trim(); const rules=[[/^I can /i,'I can\u2019t '],
 function ladderFor(t){ const key=Object.keys(LADDERS).find(k=>k.toLowerCase()===t.trim().toLowerCase()); if(key) return {current:LADDERS[key][0],steps:LADDERS[key][1],target:key}; return {current:negate(t),steps:GENERIC_STEPS,target:t.trim()}; }
 
 const WANTS=[['🎁','TREAT MYSELF'],['✨','EXCITEMENT'],['❤️','COMFORT'],['😵','STRESS RELIEF'],['😐','I\u2019M BORED'],['💪','I WORKED HARD'],['💰','IT\u2019S PAYDAY'],['🛍️','I SAW SOMETHING I WANT'],['🧠','IMPULSE'],['✅','I ACTUALLY NEED SOMETHING'],['🤷','I DON\u2019T KNOW']];
-const GOAL_PRESETS=[{key:'car',e:'🚗',n:'CAR ME'},{key:'dentist',e:'🦷',n:'DENTIST ME'},{key:'holiday',e:'✈️',n:'HOLIDAY ME'},{key:'safe',e:'🛡️',n:'SAFE ME'},{key:'grow',e:'🌱',n:'GROW ME'},{key:'home',e:'🏠',n:'HOME ME'},{key:'business',e:'🚀',n:'BUSINESS ME'}];
-const GOAL_EMOJIS=['🚗','🦷','✈️','🛡️','🌱','🏠','🚀','✨','🎓','💍','🐶','🎸','🚲','💻','🌴','🎁'];
-const FUTURE_MSGS=['You just bought yourself more freedom.','Future You just got paid.','Money stayed with you.','Keeping money counts too.','You chose something bigger.'];
-const PAY_FEELS=['EXCITING','RELIEF','I WANT TO SHOP','I DESERVE SOMETHING','I FEEL RICH','I WANT FREEDOM','STRESSFUL','NEUTRAL'];
-const PAY_LINES=a=>[`You didn\u2019t lose ${fmt(a)} kr of spending money. You gave ${fmt(a)} kr a job you chose.`,'FUTURE YOU JUST GOT PAID.','Keeping money counts too.','Money stayed with you.','That money has a purpose now.'];
-const SEG_COLORS=['#ffb996','#f5cf72','#ff8fc2','#b9a3ff','#4fd0cf','#8fe3c3','#ff7e6b','#9aa6ff','#fbe3a1','#c9b6ff'];
 const MOMENT_LABELS={paused:'Paused before buying',conscious:'Made a conscious purchase',future:'Added to Future Me',waited:'Waited before deciding',kept:'Kept money intentionally',glitchReview:'Reviewed a Glitch',payday:'Gave payday money a job'};
 const STAY_AMTS=[5000,10000,20000,50000];
 const H48=48*3600*1000;
@@ -1791,7 +1772,7 @@ function migrateMessages(s){
   out.glitches=(s.glitches||[]).map(g=>{ if(g.msgMigrated) return g; const m=findMessageByText(out,g.statement); return {...g,msgId:g.msgId||(m?m.id:null),originalStatus:g.originalStatus||'active',msgMigrated:true}; });
   return out;
 }
-const SOURCE_LABEL={'built-in':'BUILT-IN','user-created':'MINE','bridge-replacement':'FROM A GLITCH','glitch-statement':'FROM A GLITCH'};
+const SOURCE_LABEL={'built-in':'BUILT-IN','user-created':'MINE','bridge-replacement':'FROM A GLITCH','glitch-statement':'FROM A GLITCH','future-bridge':'FUTURE BRIDGE'};
 
 function GlitchActions({g}){
   const {S,patch,toast,open}=useFX();
@@ -1918,80 +1899,6 @@ function GlitchVault(){
   </div>`;
 }
 
-/* ================= FUTURE ME: building blocks ================= */
-function GoalEditor({init,onClose,onSaved}){
-  const {record,patch}=useFX();
-  const [name,setName]=useState(init.name||''); const [emoji,setEmoji]=useState(init.emoji||'✨'); const [target,setTarget]=useState(init.target?fmt(init.target):'');
-  const save=()=>{ const n=name.trim().toUpperCase(); if(!n) return; const t=parseNum(target);
-    if(init.id){ patch(s=>({...s,goals:s.goals.map(g=>g.id===init.id?{...g,name:n,emoji,target:t}:g)})); onSaved&&onSaved({...init,name:n,emoji,target:t}); return; }
-    const g={id:'goal'+uid(),name:n,emoji,target:t,real:0,practice:0,created:dayKey()};
-    record('goal',15,s=>({...s,goals:[...s.goals,g]})); onSaved&&onSaved(g); };
-  return html`<${Modal} onClose=${onClose} label="Future Me goal">
-    <h3>${init.id?'Edit goal':'A new Future Me'}</h3>
-    <label className="lbl" htmlFor="gn">GOAL NAME</label>
-    <input id="gn" className="input" placeholder="JAPAN ME" value=${name} onChange=${e=>setName(e.target.value)}/>
-    <label className="lbl">EMOJI</label>
-    <div className="emoji-row">${GOAL_EMOJIS.map(e=>html`<button key=${e} className=${emoji===e?'on':''} onClick=${()=>setEmoji(e)} aria-label=${'Emoji '+e}>${e}</button>`)}</div>
-    <label className="lbl" htmlFor="gtg">TARGET AMOUNT (DKK) — OPTIONAL</label>
-    <input id="gtg" className="input" inputMode="numeric" placeholder="20,000" value=${target} onChange=${e=>{ const v=parseNum(e.target.value); setTarget(v?fmt(v):''); }}/>
-    <div className="btn-row"><button className="btn ghost" onClick=${onClose}>CANCEL</button><button className="btn" disabled=${!name.trim()} onClick=${save}>${init.id?'SAVE':'CREATE GOAL'}</button></div>
-  <//>`;
-}
-
-function GoalPicker({onPick,onlyNew}){
-  const {S}=useFX(); const [edit,setEdit]=useState(null);
-  const missing=GOAL_PRESETS.filter(p=>!S.goals.some(g=>g.name===p.n));
-  return html`<div className="goal-grid">
-    ${!onlyNew && S.goals.map(g=>html`<button key=${g.id} className="goal-card" onClick=${()=>onPick(g)}><span className="ge">${g.emoji}</span><b>${g.name}</b><span>${fmt(g.real||0)}${g.target?` / ${fmt(g.target)}`:''} DKK</span>${g.target>0 && html`<span className="goal-bar sm"><i style=${{width:Math.min(100,(g.real||0)/g.target*100)+'%'}}></i></span>`}</button>`)}
-    ${missing.map(p=>html`<button key=${p.key} className="goal-card new" onClick=${()=>setEdit({name:p.n,emoji:p.e})}><span className="ge">${p.e}</span><b>${p.n}</b><span>+ start this goal</span></button>`)}
-    <button className="goal-card new" onClick=${()=>setEdit({name:'',emoji:'✨'})}><span className="ge">✨</span><b>MY OWN GOAL</b><span>+ create</span></button>
-    ${edit && html`<${GoalEditor} init=${edit} onClose=${()=>setEdit(null)} onSaved=${g=>{ setEdit(null); onPick(g); }}/>`}
-  </div>`;
-}
-
-function DepositCelebration({goal,amount,real,msg,onDone}){
-  const after=goal.real||0; const before=real?after-amount:after; const T=goal.target||0;
-  const [w,setW]=useState(T?Math.min(100,before/T*100):0);
-  useEffect(()=>{ const t=setTimeout(()=>setW(T?Math.min(100,after/T*100):0),REDUCED?0:450); return ()=>clearTimeout(t); },[]);
-  return html`<div className="center celebrate">
-    <div className="jar" aria-hidden="true"><span className="jar-e">${goal.emoji}</span>${Array.from({length:REDUCED?0:10},(_,i)=>html`<i key=${i} className="coin-fall" style=${{left:(12+i*8)+'%',animationDelay:(i*.08)+'s'}}></i>`)}</div>
-    <div className="fw-big">+${fmt(amount)} KR ${real?'FOR':'PRACTICED FOR'} FUTURE ME ✨</div>
-    <p className="display celebrate-msg">${msg}</p>
-    ${T>0 ? html`<div className="goal-bar"><i style=${{width:w+'%'}}></i></div><p style=${{fontWeight:800,margin:'8px 0 0'}}>${goal.emoji} ${goal.name} · ${fmt(after)} / ${fmt(T)} DKK</p>`
-      : html`<p style=${{fontWeight:800}}>${goal.emoji} ${goal.name} · ${fmt(after)} DKK really saved</p>`}
-    ${!real && html`<p className="muted small" style=${{fontWeight:700}}>Counted as mindset practice — not added to your real savings.</p>`}
-    ${onDone && html`<button className="btn" style=${{marginTop:14}} onClick=${onDone}>DONE</button>`}
-  </div>`;
-}
-
-function ConfirmDeposit({goalId,amount,source,onDone}){
-  const {S,record,confetti}=useFX();
-  const [amt,setAmt]=useState(amount?fmt(amount):''); const [res,setRes]=useState(null);
-  const a=parseNum(amt); const goal=S.goals.find(g=>g.id===goalId);
-  const go=real=>{ if(!a) return;
-    record(real?'saveReal':'futurePractice',real?30:10,s=>applyDeposit(addMoment(s,'future'),goalId,a,real,source));
-    if(real) confetti(); ding(980,.2);
-    setRes({real,amount:a,msg:pick([...FUTURE_MSGS,`Your future just became ${fmt(a)} kr stronger.`])}); };
-  if(!goal) return null;
-  if(res) return html`<${DepositCelebration} goal=${goal} amount=${res.amount} real=${res.real} msg=${res.msg} onDone=${onDone?()=>onDone(res):null}/>`;
-  return html`<div>
-    <div className="goal-pill">${goal.emoji} ${goal.name}</div>
-    ${amount ? html`<div className="big-number">${fmt(a)} kr</div>` : html`<div><label className="lbl" htmlFor="cda">HOW MUCH? (DKK)</label><input id="cda" className="input" inputMode="numeric" placeholder="500" value=${amt} onChange=${e=>{ const v=parseNum(e.target.value); setAmt(v?fmt(v):''); }}/></div>`}
-    <p className="display q-big">Did you actually move this money?</p>
-    <div className="stack"><button className="btn sea" disabled=${!a} onClick=${()=>go(true)}>YES — I SAVED IT</button><button className="btn ghost" disabled=${!a} onClick=${()=>go(false)}>NO — JUST PRACTICING</button></div>
-    <p className="disclaimer">Only “yes” counts toward your real Future Me savings. Practice is counted separately.</p>
-  </div>`;
-}
-
-function FundGoal({amount,source,onDone}){
-  const [goalId,setGoalId]=useState(null);
-  if(goalId) return html`<${ConfirmDeposit} goalId=${goalId} amount=${amount} source=${source} onDone=${onDone}/>`;
-  return html`<div>
-    <p className="display q-big center">Which Future Me gets ${amount?`this ${fmt(amount)} kr`:'this money'}?</p>
-    <${GoalPicker} onPick=${g=>setGoalId(g.id)}/>
-  </div>`;
-}
-
 /* ================= THE ITCH ================= */
 function Itch(){
   const {S,record,logEvidence,open,close}=useFX();
@@ -2004,6 +1911,7 @@ function Itch(){
   const buy=()=>{ record('itch',25,s=>({...addMoment(s,'conscious'),itches:[...s.itches,entry('buy')]})); setStep('bought'); ding(880); };
   const wait=()=>{ const w={id:'w'+uid(),item:item.trim()||'Something I wanted',price:amt,reason:wants.join(' · '),created:Date.now(),status:null,outcome:null};
     record('itch',25,s=>({...addMoment(s,'paused'),itches:[...s.itches,entry('wait')],wishlist:[w,...s.wishlist]})); setStep('waiting'); ding(700); };
+  const keep=()=>{ record('itch',25,s=>({...addMoment(s,'kept'),itches:[...s.itches,entry('keep')]})); setStep('kept'); ding(900); };
 
   if(step==='want') return html`<div>
     <h1 className="game-title display">🔥 What\u2019s happening?</h1>
@@ -2029,11 +1937,20 @@ function Itch(){
     <p className="game-sub">${item.trim()?`${item.trim()}${amt?` · ${fmt(amt)} kr`:''}`:amt?`${fmt(amt)} kr`:'Every option here is a good one.'}</p>
     <button className="big-choice c1" onClick=${buy}><span className="bce">🛍️</span><span><b>BUY IT NOW</b><span>I consciously choose to buy it.</span></span></button>
     <button className="big-choice c2" onClick=${wait}><span className="bce">⏳</span><span><b>SAVE IT FOR LATER</b><span>I\u2019ll give myself 48 hours before deciding.</span></span></button>
-    <button className="big-choice c3" onClick=${()=>setStep('future')}><span className="bce">🌱</span><span><b>BUY SOMETHING FOR FUTURE ME</b><span>Keep this money for something I want more.</span></span></button>
+    <button className="big-choice c3" onClick=${keep}><span className="bce">💎</span><span><b>KEEP THE MONEY</b><span>I choose to let this money stay with me.</span></span></button>
     <p className="disclaimer">Spending isn\u2019t failure. Saving isn\u2019t punishment. The goal is choice.</p>
   </div>`;
 
-  if(step==='future') return html`<${FundGoal} amount=${amt} source="itch" onDone=${r=>{ record('itch',25,s=>({...s,itches:[...s.itches,{...entry('future'),real:r.real}]})); close(); }}/>`;
+
+  if(step==='kept') return html`<div className="center">
+    <div className="glitch-badge">💎 MONEY STAYED WITH YOU</div>
+    <div className="deck-card">Keeping money counts too.</div>
+    <p style=${{fontWeight:800}}>${amt?`${fmt(amt)} kr is still yours — and it has options.`:'The money is still yours — and it has options.'}</p>
+    <div className="stack">
+      <button className="btn sea" disabled=${logged} onClick=${()=>{ logEvidence(`Kept the money instead of buying${item.trim()?`: ${item.trim()}`:''}`,'KEPT',amt||null); setLogged(true); }}>${logged?'ADDED TO EVIDENCE ✓':'ADD TO MONEY EVIDENCE'}</button>
+      <button className="btn ghost" onClick=${close}>DONE</button>
+    </div>
+  </div>`;
 
   if(step==='bought') return html`<div className="center">
     <div className="glitch-badge">CHOSEN, NOT AUTOMATIC ✨</div>
@@ -2058,13 +1975,13 @@ function Wishlist(){
   const {S,record,patch,toast,logEvidence}=useFX();
   const [now,setNow]=useState(Date.now());
   useEffect(()=>{ const t=setInterval(()=>setNow(Date.now()),30000); return ()=>clearInterval(t); },[]);
-  const [fund,setFund]=useState(null);
   const setW=(id,fn)=>patch(s=>({...s,wishlist:s.wishlist.map(w=>w.id===id?fn(w):w)}));
   const answer=(w,status)=>{
     if(status==='unsure'){ record('wishlist',20,s=>({...addMoment(s,'waited'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,created:Date.now(),status:null,extended:(x.extended||0)+1}:x)})); toast('No rush — 48 more hours ⏳'); return; }
     record('wishlist',20,s=>({...addMoment(s,'waited'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,status,answeredAt:Date.now()}:x)})); };
   const outcome=(w,o)=>setW(w.id,x=>({...x,outcome:o,decided:Date.now()}));
   const buy=w=>{ record('conscious',20,s=>({...addMoment(s,'conscious'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,outcome:'bought',decided:Date.now()}:x)})); toast('Chosen, not automatic ✨'); };
+  const keepIt=w=>{ record('wishlist',20,s=>({...addMoment(s,'kept'),wishlist:s.wishlist.map(x=>x.id===w.id?{...x,outcome:'kept',decided:Date.now()}:x)})); toast('Money stayed with you 💎'); };
   const more=w=>setW(w.id,x=>({...x,status:null,created:Date.now(),extended:(x.extended||0)+1}));
   const del=w=>{ if(window.confirm('Remove this from your wishlist?')) patch(s=>({...s,wishlist:s.wishlist.filter(x=>x.id!==w.id)})); };
   const open_=S.wishlist.filter(w=>!w.outcome); const done=S.wishlist.filter(w=>w.outcome);
@@ -2080,131 +1997,11 @@ function Wishlist(){
       ${ready && !w.status && html`<div><p className="display" style=${{fontSize:'1.25rem',fontWeight:800,margin:'12px 0 8px'}}>How do you feel about it now?</p>
         <div className="stack"><button className="btn small" style=${{width:'100%'}} onClick=${()=>answer(w,'want')}>STILL WANT IT</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>answer(w,'dont')}>DON\u2019T WANT IT ANYMORE</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>answer(w,'unsure')}>NOT SURE</button></div></div>`}
       ${w.status==='want' && html`<div><p style=${{fontWeight:800,margin:'12px 0 8px'}}>Then you can make a conscious decision.</p>
-        <div className="stack"><button className="btn small" style=${{width:'100%'}} onClick=${()=>buy(w)}>🛍️ BUY IT CONSCIOUSLY</button><button className="btn small sea" style=${{width:'100%'}} onClick=${()=>setFund(w)}>🌱 FUND FUTURE ME INSTEAD</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>more(w)}>⏳ GIVE IT MORE TIME</button></div></div>`}
-      ${w.status==='dont' && html`<div><p style=${{fontWeight:800,margin:'12px 0 8px'}}>Noted ✨ The money is still with you. Want to give it a job?</p>
-        <div className="stack"><button className="btn small sea" style=${{width:'100%'}} onClick=${()=>setFund(w)}>🌱 FUND FUTURE ME</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>{ outcome(w,'kept'); logEvidence(`Waited 48 hours and let “${w.item}” go`,'WAITED BEFORE BUYING'); }}>💎 LET IT STAY WHERE IT IS</button></div></div>`}
+        <div className="stack"><button className="btn small" style=${{width:'100%'}} onClick=${()=>buy(w)}>🛍️ BUY IT CONSCIOUSLY</button><button className="btn small sea" style=${{width:'100%'}} onClick=${()=>keepIt(w)}>💎 KEEP THE MONEY INSTEAD</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>more(w)}>⏳ GIVE IT MORE TIME</button></div></div>`}
+      ${w.status==='dont' && html`<div><p style=${{fontWeight:800,margin:'12px 0 8px'}}>Noted ✨ The money is still with you.</p>
+        <div className="stack"><button className="btn small ghost" style=${{width:'100%'}} onClick=${()=>{ outcome(w,'kept'); logEvidence(`Waited 48 hours and let “${w.item}” go`,'WAITED BEFORE BUYING'); }}>💎 LET IT STAY WHERE IT IS</button></div></div>`}
     </div>`; })}
     ${done.length>0 && html`<div className="card"><h2 className="h2">DECIDED</h2>${done.slice(0,12).map(w=>html`<div key=${w.id} className="cart-line"><span>${w.item}${w.price?html`<br/><span className="muted small">${fmt(w.price)} kr</span>`:''}</span><span className="small" style=${{textAlign:'right'}}>${OUT[w.outcome]}</span></div>`)}</div>`}
-    ${fund && html`<${Modal} onClose=${()=>setFund(null)} label="Fund Future Me"><${FundGoal} amount=${fund.price} source="wishlist" onDone=${()=>{ outcome(fund,'funded'); setFund(null); }}/><//>`}
-  </div>`;
-}
-
-/* ================= FUTURE ME ================= */
-function FutureMe(){
-  const {S,patch,open}=useFX();
-  const [fund,setFund]=useState(null); const [edit,setEdit]=useState(null); const [adding,setAdding]=useState(false);
-  const real=S.goals.reduce((a,g)=>a+(g.real||0),0), prac=S.goals.reduce((a,g)=>a+(g.practice||0),0);
-  const waiting=S.wishlist.filter(w=>!w.outcome).length;
-  const del=g=>{ if(window.confirm(`Delete ${g.name}? Its saved history will be removed from the app (your real money is not affected).`)) patch(s=>({...s,goals:s.goals.filter(x=>x.id!==g.id),deposits:s.deposits.filter(d=>d.goalId!==g.id)})); };
-  const goalName=id=>{ const g=S.goals.find(x=>x.id===id); return g?`${g.emoji} ${g.name}`:'Goal'; };
-  return html`<div>
-    <h1 className="game-title display">🌱 FUTURE ME</h1>
-    <p className="game-sub">Future me deserves to be treated too.</p>
-    <div className="ev-total">
-      <div className="stat"><div className="sv">${fmtShort(real)}</div><div className="sl">DKK REALLY SAVED</div></div>
-      <div className="stat"><div className="sv">${fmtShort(prac)}</div><div className="sl">DKK PRACTICED</div></div>
-    </div>
-    ${S.goals.length===0 && html`<div className="card center"><p style=${{fontWeight:800,margin:0}}>Pick a future version of you to start funding.</p></div>`}
-    ${S.goals.map(g=>html`<div key=${g.id} className="card goal-row">
-      <div className="row-between"><span className="goal-name"><span className="gre">${g.emoji}</span>${g.name}</span><span className="row" style=${{gap:6}}><button className="x" aria-label="Edit goal" onClick=${()=>setEdit(g)}>✎</button><button className="x" aria-label="Delete goal" onClick=${()=>del(g)}>✕</button></span></div>
-      <div className="goal-amt">${fmt(g.real||0)}${g.target?` / ${fmt(g.target)}`:''} DKK</div>
-      ${g.target>0 && html`<div className="goal-bar"><i style=${{width:Math.min(100,(g.real||0)/g.target*100)+'%'}}></i></div>`}
-      ${(g.practice||0)>0 && html`<div className="muted small" style=${{fontWeight:800,marginTop:6}}>+ ${fmt(g.practice)} DKK practiced (not counted as real)</div>`}
-      <button className="btn small" style=${{width:'100%',marginTop:12}} onClick=${()=>setFund(g)}>+ ADD MONEY</button>
-    </div>`)}
-    <button className="btn sea" style=${{marginTop:14}} onClick=${()=>setAdding(true)}>+ NEW FUTURE ME GOAL</button>
-    <button className="btn ghost" style=${{marginTop:10}} onClick=${()=>open('wishlist')}>⏳ 48-HOUR WISHLIST${waiting?` (${waiting})`:''}</button>
-    ${S.deposits.length>0 && html`<div className="card"><h2 className="h2">RECENT</h2>${S.deposits.slice(0,10).map(d=>html`<div key=${d.id} className="cart-line"><span>${goalName(d.goalId)}<br/><span className="muted small">${prettyDate(d.date)}</span></span><span className="row" style=${{gap:8}}><b>+${fmt(d.amount)}</b><span className=${'tag2'+(d.real?' real':'')}>${d.real?'REAL':'PRACTICE'}</span></span></div>`)}</div>`}
-    <p className="disclaimer">Money staying with me gives me options. Real savings only count when you confirm you moved the money.</p>
-    ${fund && html`<${Modal} onClose=${()=>setFund(null)} label="Add money"><${ConfirmDeposit} goalId=${fund.id} amount=${0} source="future" onDone=${()=>setFund(null)}/><//>`}
-    ${edit && html`<${GoalEditor} init=${edit} onClose=${()=>setEdit(null)} onSaved=${()=>setEdit(null)}/>`}
-    ${adding && html`<${Modal} onClose=${()=>setAdding(false)} label="New goal"><h3>Which future you?</h3><${GoalPicker} onlyNew=${true} onPick=${()=>setAdding(false)}/><//>`}
-  </div>`;
-}
-
-/* ================= PAYDAY POWER ================= */
-function Payday(){
-  const {S,record,confetti,close}=useFX();
-  const [step,setStep]=useState('feel'); const [feel,setFeel]=useState(null); const [reveal,setReveal]=useState(0);
-  const [amount,setAmount]=useState(''); const total=parseNum(amount);
-  const [alloc,setAlloc]=useState({}); const [size,setSize]=useState(500); const [fb,setFb]=useState(null); const [edit,setEdit]=useState(false); const [result,setResult]=useState(null);
-  useEffect(()=>{ if(step!=='message') return; if(REDUCED){ setReveal(4); return; } if(reveal>=4) return;
-    const t=setTimeout(()=>setReveal(r=>r+1),reveal===0?250:1300); return ()=>clearTimeout(t); },[step,reveal]);
-  const buckets=[{key:'now',e:'✨',n:'NOW ME',sub:'Fun · spending · treats'},
-    ...S.goals.map(g=>({key:g.id,e:g.emoji,n:g.name,sub:g.target?`${fmt(g.real||0)} / ${fmt(g.target)} saved`:`${fmt(g.real||0)} saved`,future:true})),
-    ...GOAL_PRESETS.filter(p=>!S.goals.some(g=>g.name===p.n)).map(p=>({key:'preset:'+p.key,e:p.e,n:p.n,sub:'New goal',future:true,preset:p}))];
-  const used=Object.values(alloc).reduce((a,b)=>a+b,0); const remaining=total-used;
-  const futureTotal=buckets.filter(b=>b.future).reduce((a,b)=>a+(alloc[b.key]||0),0);
-  const give=(b,dir)=>{ const cur=alloc[b.key]||0;
-    const delta=dir>0?(size==='all'?remaining:Math.min(size,remaining)):-(size==='all'?cur:Math.min(size,cur));
-    if(!delta) return; setAlloc({...alloc,[b.key]:cur+delta});
-    if(dir>0){ setFb({id:uid(),key:b.key,title:`+${fmt(delta)} KR TO ${b.n} ✨`,line:b.future?pick(PAY_LINES(delta)):'Enjoy it — on purpose.'}); ding(b.future?900:700,.1); } };
-  const finish=real=>{ const snap={...alloc};
-    const lines=buckets.filter(b=>snap[b.key]>0).map(b=>({e:b.e,n:b.n,v:snap[b.key],future:!!b.future}));
-    record('payday',30,s=>{ let ns={...s}; const ids={};
-      GOAL_PRESETS.forEach(p=>{ const k='preset:'+p.key; if(snap[k]>0){ const g={id:'goal'+uid(),name:p.n,emoji:p.e,target:0,real:0,practice:0,created:dayKey()}; ns={...ns,goals:[...ns.goals,g]}; ids[k]=g.id; } });
-      Object.entries(snap).forEach(([k,v])=>{ if(k==='now'||!v) return; ns=applyDeposit(ns,ids[k]||k,v,real,'payday'); });
-      ns=addMoment(ns,'payday'); return {...ns,paydays:[...ns.paydays,{date:dayKey(),amount:total,feeling:feel,alloc:snap,real:!!real}]}; });
-    if(real&&futureTotal) record('saveReal',30);
-    confetti(); setResult({lines,real,futureTotal,now:snap.now||0,left:remaining}); setStep('done'); };
-
-  if(step==='feel') return html`<div>
-    <h1 className="game-title display">💰 PAYDAY POWER</h1>
-    <p className="game-sub">Your money arrived. Decide what it does before impulse decides for you.</p>
-    <h2 className="h2 center" style=${{marginTop:12}}>HOW DOES PAYDAY FEEL?</h2>
-    <div className="opt-grid">${PAY_FEELS.map(f=>html`<button key=${f} className=${feel===f?'on':''} onClick=${()=>{ setFeel(f); setReveal(0); setStep('message'); }}>${f}</button>`)}</div>
-  </div>`;
-
-  if(step==='message'){ const L=[['YOU WORKED FOR THIS MONEY.','pm-1'],['You deserve to enjoy some of it.','pm-2'],['And you deserve to keep some of it.','pm-2'],['KEEP FIRST. PLAY SECOND.','pm-3']];
-    return html`<div className="center pay-msg">
-      ${L.slice(0,reveal).map(([t,c])=>html`<p key=${t} className=${'display '+c}>${t}</p>`)}
-      ${reveal>=4 && html`<button className="btn" style=${{marginTop:20}} onClick=${()=>setStep('amount')}>LET\u2019S DECIDE →</button>`}
-    </div>`; }
-
-  if(step==='amount') return html`<div>
-    <h1 className="game-title display">How much arrived?</h1>
-    <label className="lbl" htmlFor="pa">PAYDAY AMOUNT (DKK)</label>
-    <input id="pa" className="input big-input" inputMode="numeric" placeholder="25,000" value=${amount} onChange=${e=>{ const v=parseNum(e.target.value); setAmount(v?fmt(v):''); setAlloc({}); }}/>
-    <div style=${{marginTop:16}}><button className="btn" disabled=${!total} onClick=${()=>setStep('alloc')}>GIVE MY MONEY JOBS</button></div>
-    <p className="disclaimer">No rules, no percentages. You decide.</p>
-  </div>`;
-
-  if(step==='alloc'){ const segs=buckets.filter(b=>alloc[b.key]>0);
-    return html`<div>
-    <div className="balance remaining">
-      <div className="row-between"><span className="bl">PAYDAY · ${fmt(total)} DKK</span><span className="bl">${segs.length} ${segs.length===1?'job':'jobs'}</span></div>
-      <div className="bv">${fmt(remaining)} DKK</div><div className="bl" style=${{marginTop:2}}>STILL UNASSIGNED</div>
-      <div className="seg-bar">${segs.map((b,i)=>html`<i key=${b.key} title=${b.n} style=${{width:(alloc[b.key]/total*100)+'%',background:SEG_COLORS[buckets.indexOf(b)%SEG_COLORS.length]}}></i>`)}</div>
-    </div>
-    ${fb && html`<div className="pay-fb" key=${fb.id}><b>${fb.title}</b><span>${fb.line}</span></div>`}
-    <div className="seg" style=${{marginTop:12}} aria-label="Amount per tap">${[100,500,1000,5000,'all'].map(v=>html`<button key=${v} className=${size===v?'on':''} onClick=${()=>setSize(v)}>${v==='all'?'ALL REST':fmt(v)}</button>`)}</div>
-    <div className="buckets">${buckets.map((b,i)=>{ const v=alloc[b.key]||0; return html`<div key=${b.key} className=${'bucket'+(v?' has':'')+(b.key==='now'?' now':'')}>
-      <span className="bk-e" style=${{background:SEG_COLORS[i%SEG_COLORS.length]}}>${b.e}</span>
-      <span className="bk-t"><b>${b.n}</b><span>${v?fmt(v)+' DKK':b.sub}</span></span>
-      <button className="bk-btn minus" aria-label=${'Less to '+b.n} disabled=${!v} onClick=${()=>give(b,-1)}>−</button>
-      <button className="bk-btn" aria-label=${'More to '+b.n} disabled=${!remaining} onClick=${()=>give(b,1)}>+</button>
-    </div>`; })}</div>
-    <button className="btn ghost" style=${{marginTop:12}} onClick=${()=>setEdit(true)}>+ CUSTOM GOAL</button>
-    <div style=${{marginTop:12}}><button className="btn pink" disabled=${!used} onClick=${()=>futureTotal?setStep('real'):finish(false)}>I DECIDED ✨</button></div>
-    ${remaining>0&&used>0 && html`<p className="disclaimer">${fmt(remaining)} DKK unassigned — it simply stays put. That\u2019s allowed.</p>`}
-    ${edit && html`<${GoalEditor} init=${{name:'',emoji:'✨'}} onClose=${()=>setEdit(false)} onSaved=${()=>setEdit(false)}/>`}
-  </div>`; }
-
-  if(step==='real') return html`<div className="center">
-    <h1 className="game-title display">${fmt(futureTotal)} kr for Future Me</h1>
-    <p className="display q-big">Did you actually move this money?</p>
-    <div className="stack"><button className="btn sea" onClick=${()=>finish(true)}>YES — I MOVED IT</button><button className="btn ghost" onClick=${()=>finish(false)}>NO — JUST PRACTICING</button></div>
-    <p className="disclaimer">Only “yes” counts toward real Future Me savings.</p>
-  </div>`;
-
-  return html`<div className="center">
-    <div className="glitch-badge">KEEP FIRST. PLAY SECOND. ✓</div>
-    ${result.futureTotal>0 && html`<div className="big-number">FUTURE YOU JUST GOT PAID.</div>`}
-    <div className="card" style=${{textAlign:'left'}}>${result.lines.map(l=>html`<div key=${l.n} className="cart-line"><span>${l.e} ${l.n}</span><b>${fmt(l.v)}</b></div>`)}
-      ${result.left>0 && html`<div className="cart-line"><span>💎 Still unassigned</span><b>${fmt(result.left)}</b></div>`}</div>
-    ${result.now>0 && html`<p style=${{fontWeight:800}}>${fmt(result.now)} kr to enjoy — on purpose. I deserve enjoyment AND security.</p>`}
-    ${result.futureTotal>0 && !result.real && html`<p className="muted small" style=${{fontWeight:700}}>Saved as practice — your real Future Me totals didn\u2019t change.</p>`}
-    <button className="btn" onClick=${close}>DONE</button>
   </div>`;
 }
 
@@ -2814,11 +2611,559 @@ function NoticeGoodCard(){
   </div>`;
 }
 
+
+/* ================= FUTURE GRATITUDE LIBRARY (static, v1 — append only, never reorder: IDs are index-based) ================= */
+const FUTURE_LIB_VERSION = 1;
+const FUT_CATS = [
+{id:'finfree',e:'💸',n:'FINANCIAL FREEDOM',g:'money',items:"having enough money to make choices freely|the financial freedom I am creating|knowing my bills are covered every month|waking up without money worries|having money left over after payday|being free from consumer debt|paying off my last debt|having a full year of expenses saved|choosing work because I want to, not because I have to|saying yes to opportunities without checking my balance first|having a buffer that makes surprises feel small|my money working for me while I sleep|passive income arriving every month|covering my basic costs with income I built|being able to take a month off without stress|feeling calm when I open my banking app|knowing exactly where my money goes|never having to borrow money to get through the month|paying for things in full|being able to leave a situation that isn't right for me|having options when life changes|financial decisions that come from calm instead of fear|funding my own sabbatical|the freedom to change direction in my career|being able to support myself completely|having money set aside for every important thing|reaching my first financial independence milestone|living comfortably below my means and loving it|my income growing faster than my expenses|having a financial plan I actually enjoy following|seeing my net worth go up year after year|feeling free instead of trapped by money|being able to work part-time if I choose|having enough to say no to things I don't want|investments that grow quietly over time|the day my investments cover my rent|being able to afford good help when I need it|having time and money at the same time|the peace that comes from financial independence|being financially free while still young enough to enjoy it|handling money as a confident adult|a monthly money check-in that takes ten minutes and feels good|choosing my next chapter freely"},
+{id:'wealth',e:'💎',n:'WEALTH & ABUNDANCE',g:'money',items:"feeling comfortable having large amounts of money|wealth that grows while I enjoy my life|having my first million kroner|seeing six figures in my account|receiving abundance with ease|money flowing to me from many directions|building wealth while enjoying my life|abundance that feels normal to me|being someone who is comfortable with wealth|enjoying beautiful things without guilt|earning more than I ever thought possible|my wealth reflecting the value I create|being generous because I have plenty|a life that feels rich in every way|buying quality things that last|treating abundance as something safe|noticing abundance everywhere I look|my first really big payment|an income that keeps rising|being able to afford beautiful experiences|receiving large payments calmly|wealth that gives me peace rather than pressure|the ease of having more than enough|a portfolio I'm proud of|diversified income I can rely on|money arriving earlier than I expected|an unexpected windfall I handled wisely|choosing the best option instead of the cheapest|upgrading my life one thoughtful step at a time|growing comfortable with bigger numbers|generational wealth I am beginning to build|assets that grow in value|celebrating each new wealth milestone|seeing money as a friendly tool|the abundance mindset I have practised|investing in things that pay me back|wealth that supports the people I love|building wealth through value, not stress|an abundance of choices in every area of my life|feeling rich on an ordinary Wednesday|enjoying luxury and keeping my values|my money and my values pointing in the same direction|having more than I need and sharing it"},
+{id:'savings',e:'🛡️',n:'SAVINGS & SECURITY',g:'money',items:"having 100,000 kr in savings|having money available when unexpected expenses arise|a fully funded emergency fund|enjoying saving money|watching my savings grow every month|automatic savings that happen without effort|paying for a car repair without panic|having a dentist fund ready when I need it|saving first and spending second|having three months of income saved|having six months of income saved|keeping money in my account without feeling the urge to spend it|a savings account with a goal name I love|reaching my savings goal early|seeing my holiday fund fill up|paying cash for a big purchase|having a security buffer that lets me sleep well|saving a little from every payment I receive|choosing savings over impulse and feeling proud|having separate savings for each Future Me|insurance that protects what I have built|knowing I can handle a quiet month financially|covering a broken appliance from savings|a savings habit that feels natural|growing my savings even in busy seasons|money staying with me|making thoughtful financial decisions|having savings that cover my annual bills|the first time my savings passed 50,000 kr|a healthy balance at the end of every month|feeling safe because of the money I kept|being the person who has money set aside|a security fund for my business|saving for things before I buy them|interest earning money for me|my savings growing steadily without stress|reviewing my savings and smiling|saving without feeling deprived|financial security that lets me be generous|having a calm plan for every big expense|replenishing my emergency fund quickly after using it|the habit of paying Future Me first|trusting that I will be okay financially"},
+{id:'business',e:'🚀',n:'BUSINESS SUCCESS',g:'work',items:"the successful business I've built|customers who value my work|earning income from my own ideas|creating products that improve people's lives|the confidence to charge fairly for my work|becoming a capable business owner|seeing my ideas become real products|my first paying customer|my hundredth paying customer|a business that runs smoothly|recurring revenue that arrives every month|an app people use every day|glowing reviews from happy customers|a waiting list for what I offer|my business covering my salary|hiring my first helper|systems that let my business run without me every minute|launching a product I'm proud of|a business that reflects my values|profit I can reinvest with confidence|a brand people recognise|partnerships that grow my business|customers recommending me to their friends|a business that gives me freedom|selling something I created while I sleep|turning my skills into a thriving business|raising my prices and keeping my clients|clear numbers that show my business is growing|a business bank account with a healthy balance|the courage to launch before I felt ready|learning from each launch|a website that brings me customers|my work reaching people in other countries|being paid well for my expertise|building something that lasts|collaborating with people I admire|a business that grows at a pace I enjoy|my first month of 50,000 kr revenue|creating multiple income streams from my work|saying no to clients who aren't a good fit|my products helping people feel better|a creative business that pays the bills|the satisfaction of building something from nothing"},
+{id:'career',e:'💼',n:'CAREER & ACHIEVEMENTS',g:'work',items:"being recognised for the value I bring|a promotion I worked toward|work that uses my strengths|a salary that reflects my worth|negotiating my pay with confidence|colleagues who respect my expertise|being trusted with important projects|a career that feels meaningful|leading a team I'm proud of|mentoring someone early in their career|finishing a project that challenged me|a workplace where I can be myself|receiving a job offer I was excited about|being headhunted for my skills|speaking at an event in my field|becoming known as an expert in what I do|work that leaves me energised rather than drained|a career change that turned out beautifully|professional certifications I earned|a portfolio full of work I'm proud of|my work making a visible difference|flexible work arrangements that suit my life|being invited to opportunities I once only dreamed of|a professional network that supports me|asking for what I want at work and receiving it|handling a difficult situation at work with grace|a career milestone I celebrated properly|contributing ideas that get implemented|being paid for my creativity|earning a bonus for great work|building a reputation for reliability|a day at work that felt like play|learning a skill that changed my career|work-life balance that actually works|choosing projects that excite me|being proud of how I handled my career|feedback that showed me how much I've grown|a job title that fits who I've become|working with clients who appreciate me|my professional confidence growing every year|a career that funds the life I want|celebrating ten years of meaningful work|finding my professional purpose"},
+{id:'home',e:'🏡',n:'MY FUTURE HOME',g:'home',items:"living in a home I love|a home that reflects my personality|a kitchen I love cooking in|morning light in my living room|a bedroom that feels like a sanctuary|a garden where I can grow things|owning my own home|paying my mortgage comfortably|a cosy reading corner|a home office that inspires me|a balcony with plants and morning coffee|furniture I chose with love|a home that is calm and organised|inviting friends into my beautiful home|a bathroom that feels like a spa|a home close to nature|space for every hobby I love|a guest room ready for visitors|a home that feels safe and peaceful|a dining table full of people I love|a home with good energy|renovating my home exactly how I want it|art on my walls that I love|a home where everything has its place|a view I never get tired of|a summer house by the water|a fireplace for winter evenings|a home that is easy to keep clean|neighbours I enjoy|living in a neighbourhood I love|a home that welcomes me after travelling|quality bedding that makes every night better|a home gym corner I actually use|a kitchen stocked with good food|plants thriving in every room|my own key to a place I chose|a home that supports my routines|celebrating holidays in my own home|a peaceful morning routine at home|redecorating without stress about money|a home that grows with me|a front door I'm happy to come home to|a home filled with laughter"},
+{id:'travel',e:'✈️',n:'TRAVEL & EXPERIENCES',g:'travel',items:"being able to travel comfortably|a trip to Japan|watching the sunrise from a new place|travelling without counting every krone|a week by the sea with nothing to do|exploring a new city on foot|staying in a beautiful hotel|travelling with people I love|a solo trip that changed me|tasting food in its country of origin|a spontaneous weekend getaway|a holiday fully paid before I leave|seeing the northern lights|a road trip through beautiful landscapes|flying business class for the first time|learning phrases in a new language while travelling|a cabin in the mountains|visiting family far away whenever I want|a long train journey through Europe|a cycling holiday in a new country|watching the sunset from a sailboat|a winter holiday in the sun|museums that inspire me|a travel fund that's always ready|coming home rested and inspired|an island I've always wanted to visit|travelling slowly and fully enjoying it|a city break with my best friend|taking my family on a holiday they'll remember|a retreat that restored my energy|the excitement of booking a dream trip|a hot spring under the stars|exploring markets in a foreign city|working remotely from somewhere beautiful|celebrating a big birthday abroad|a safari to see wild animals|a picnic in a famous park|waking up somewhere new|photos from places I never thought I'd see|discovering a hidden local restaurant|a travel journal full of memories|a passport with stamps I love|coming back home grateful for my life"},
+{id:'health',e:'🌿',n:'HEALTH & VITALITY',g:'health',items:"feeling energetic in the morning|sleeping deeply and waking up rested|enjoying a balanced relationship with food|developing sustainable healthy habits|a body that feels well cared for|check-ups that bring good news|drinking enough water without thinking about it|eating meals that make me feel good|a calm nervous system|respecting my body's need for recovery|recovering quickly after being ill|listening to my body's signals|regular health care I can easily afford|feeling strong and capable in daily life|a routine that supports my wellbeing|time to cook nourishing meals|fresh air every day|healthy habits that feel easy|taking good care of my teeth|my body healing well|getting outside in daylight every morning|feeling comfortable in my own skin|moving without pain|my energy lasting through the whole day|eating vegetables I genuinely enjoy|a healthy relationship with rest|mental health support whenever I need it|breathing calmly when life gets busy|saying yes to my health first|growing older in good health|knowing how to look after myself|a healthy gut that feels settled|appointments I keep because I value myself|getting sick less often|a stocked medicine cabinet and a calm mind|healthy routines that survive busy weeks|eating mindfully and enjoying it|enough sleep to feel like myself|a body that carries me through adventures|the vitality to keep up with my plans|taking a rest day without guilt|my body and mind working together|feeling well in my body for years to come"},
+{id:'fitness',e:'💪',n:'FITNESS & STRENGTH',g:'health',items:"becoming stronger|moving my body because I enjoy it|enjoying exercise without all-or-nothing thinking|lifting weights I once thought were heavy|finishing a long bike ride with energy left|completing a race I trained for|a training plan that fits my life|strong legs that carry me up hills|consistent training week after week|recovering well between workouts|being stronger at fifty than at thirty|finding a sport I love|training with friends who motivate me|a personal best that surprised me|flexibility that makes daily life easier|cycling up a climb that used to defeat me|balance and coordination I'm proud of|a strong back and good posture|enjoying the feeling after a good workout|training outdoors in all seasons|equipment that makes training a pleasure|a coach who helps me improve|showing up for myself on hard days|progress I can feel|stretching that feels like a gift|swimming in open water with confidence|hiking a mountain trail|training that fits around my work beautifully|strength that makes me feel capable|completing a challenge I signed up for bravely|seeing my endurance grow season by season|dancing without holding back|playing with children without getting tired|a body that adapts and improves|a balanced mix of training and rest|celebrating small fitness wins|long walks that clear my head|a yoga practice that grounds me|training data that shows steady progress|joining a club and feeling like I belong|movement being part of who I am|completing a sportive with a smile|staying active for the rest of my life"},
+{id:'bodyconf',e:'🌸',n:'BODY CONFIDENCE',g:'health',items:"feeling confident in my body|wearing clothes that feel like me|looking in the mirror with kindness|appreciating what my body can do|dressing for the life I'm living now|feeling at home in my body|speaking about my body with respect|walking into a room with confidence|swimwear days that feel relaxed|enjoying photos of myself|treating my body like a friend|choosing clothes that fit comfortably|my posture reflecting my confidence|feeling attractive in my own way|accepting compliments easily|a wardrobe I love wearing|not comparing my body to anyone else's|moving freely without self-consciousness|celebrating my body at every age|dancing like nobody is watching|taking up space without apologising|caring for my skin as a kindness|seeing beauty in my unique features|my body confidence not depending on numbers|feeling good in sportswear|being comfortable being seen|a haircut that makes me smile|trusting my body's wisdom|choosing comfort and style together|enjoying the sun on my skin|feeling proud of my strong body|holding my head high|letting go of old body worries|enjoying getting ready in the morning|my self-worth being bigger than my appearance|admiring my reflection after a good day|buying clothes for who I am today|feeling sensual and alive|loving the way I laugh|a relaxed relationship with mirrors|appreciating my body's changes with grace|showing up in photos with the people I love|feeling beautiful on an ordinary day"},
+{id:'love',e:'❤️',n:'RELATIONSHIPS & LOVE',g:'people',items:"a loving relationship that feels safe|being loved exactly as I am|deep conversations with my partner|a partner who supports my dreams|building a beautiful life together|laughing together every day|feeling chosen and appreciated|showing love in ways that land|a relationship where money talks are easy|quality time with the people I love|family dinners full of warmth|healing old family wounds|being a loving presence for someone|receiving love without pushing it away|growing old with someone I love|celebrating anniversaries that mean something|a home full of affection|weekends together without rushing|trust that deepens year after year|feeling understood|expressing my needs clearly and lovingly|forgiving and being forgiven|children who know they are loved|being close to my parents|siblings I enjoy spending time with|romantic evenings that feel effortless|love letters and small surprises|a partner who is also my best friend|handling disagreements with respect|feeling safe to be vulnerable|loving myself in the way I love others|relationships that make me better|saying I love you often|being someone people feel safe with|a family that cheers for each other|travelling with the person I love|shared dreams we're building together|gentle mornings with someone I love|a love that feels peaceful|creating traditions with my family|hugs that last long enough|being proud of the relationships I nurture|connections that feel easy and true"},
+{id:'friends',e:'🤝',n:'FRIENDSHIPS & COMMUNITY',g:'people',items:"friends who feel like family|a friend I can call at any hour|belonging to a community I love|friends who celebrate my wins|making new friends as an adult|hosting dinners full of laughter|a group chat that always makes me smile|being invited to things I love|friendships that last decades|neighbours who look out for each other|a training group that feels like a team|supporting a friend through a hard time|friends who inspire me to grow|being known in my local café|a creative community that gets me|reconnecting with an old friend|friends who share my values|weekly walks with a friend|being a good friend|celebrating birthdays together|a community around my business|people who believe in my ideas|volunteering alongside lovely people|easy friendships without drama|friends of all ages|a mastermind group that lifts me up|introducing friends to each other|feeling welcomed wherever I go|long talks over coffee|friends visiting me in my new home|shared holidays with friends|belonging without having to perform|a neighbourhood party I helped organise|friends who make ordinary days fun|being remembered on special days|people who show up when it matters|a supportive network of entrepreneurs|mentors who generously share wisdom|laughing until my stomach hurts with friends|receiving help graciously|giving help freely|friendships that grow with me|a social life that energises me"},
+{id:'growth',e:'🌱',n:'PERSONAL DEVELOPMENT',g:'mind',items:"becoming the person I'm meant to be|breaking an old habit for good|growing through challenges|learning from my mistakes quickly|keeping promises to myself|becoming more patient|journaling that helps me understand myself|coaching that helps me grow|facing a fear and doing it anyway|becoming more disciplined in a kind way|setting healthy boundaries|noticing my progress|responding instead of reacting|becoming more organised|finishing what I start|reading books that change my thinking|embracing change with curiosity|letting go of perfectionism|becoming more present|asking for help when I need it|knowing my values clearly|living in line with my values|self-reflection that leads to action|being proud of how far I've come|changing my money story|replacing old beliefs with kinder ones|becoming more flexible in my thinking|taking responsibility with self-compassion|making decisions faster and with confidence|a morning practice that grounds me|listening more deeply|celebrating growth instead of only results|becoming wiser with each year|handling criticism calmly|learning to rest without guilt|becoming more honest with myself|trying new things without fear of looking silly|discovering hidden strengths|becoming more emotionally intelligent|consistent small steps that add up|stepping outside my comfort zone regularly|feeling at peace with who I'm becoming|a version of me that keeps evolving"},
+{id:'confidence',e:'✨',n:'CONFIDENCE & SELF-WORTH',g:'mind',items:"trusting myself with money|believing I can learn new financial skills|feeling comfortable with success|allowing myself to dream bigger|making decisions that support my future|knowing my worth|asking for what I deserve|speaking up in meetings|sharing my work proudly|believing my ideas are valuable|feeling worthy of good things|receiving praise without deflecting|standing by my decisions|being comfortable in new situations|trusting my intuition|feeling enough as I am|charging what my work is worth|feeling confident talking about money|being proud of my achievements|handling rejection calmly|believing I deserve abundance|walking away from what doesn't serve me|backing myself even when others doubt|feeling capable of handling whatever comes|presenting my ideas with confidence|not needing outside approval|accepting opportunities without hesitation|seeing myself as a successful person|feeling safe to be visible|owning my story|trusting my ability to figure things out|knowing I can earn money again if I lose it|saying no without guilt|believing good things can happen to me|a calm inner voice that encourages me|feeling equal in every room I enter|treating myself with respect|celebrating myself without embarrassment|confidence that comes from keeping my word|feeling ready for bigger opportunities|believing I can grow my income|my self-worth growing steadily|standing tall in who I am"},
+{id:'independence',e:'🕊️',n:'FREEDOM & INDEPENDENCE',g:'mind',items:"making my own choices|living life on my own terms|being financially independent|having my own space|choosing how I spend my days|the freedom to move anywhere|a car that gives me freedom|being able to take care of myself|deciding my own schedule|working from anywhere|independence that feels joyful|not needing permission to live my life|having my own money in my own account|the freedom to start over if I want|choosing who I spend time with|travelling alone with confidence|running my own business|making decisions without fear|freedom from other people's expectations|the ability to leave a job that drains me|freedom to try new things|being self-reliant and also supported|my own creative freedom|freedom to rest when I need it|saying yes to adventures spontaneously|independence in old age|handling paperwork confidently by myself|fixing things around my home myself|my own way of doing things|freedom to change my mind|choosing my own values|the freedom of a clear calendar|freedom to say no to overtime|deciding where my money goes|independence that lets me help others|freedom to speak my truth|choosing my lifestyle consciously|freedom from comparison|building a life I don't need to escape from|freedom to explore new interests|being independent and deeply connected|waking up without an alarm|the freedom to follow my curiosity"},
+{id:'time',e:'⏳',n:'TIME & LIFESTYLE',g:'home',items:"having time to enjoy my coffee|having freedom over my schedule|slow mornings without rushing|a four-day work week|long lunches with people I love|time to read every day|afternoons free for my hobbies|weekends that feel truly restful|time to cook dinner slowly|a calendar with plenty of white space|being on time without stress|time to train properly|long summer evenings outside|a daily walk with no agenda|time to think and dream|evenings without screens|a lifestyle that feels balanced|taking a whole summer off|time for my creative projects|leisurely Sunday breakfasts|being present instead of busy|time to visit family often|a simple life that feels rich|afternoon naps when I want them|time to learn something new each week|a routine that suits my natural rhythm|plenty of time for friendships|holidays that feel long enough|time to look after my home with joy|doing one thing at a time|time to watch the sunset|a lifestyle built around what matters to me|mornings that begin with gratitude|being unhurried|time for spontaneous plans|balancing ambition and rest|time to rest after big projects|a lifestyle that supports my health|time to be bored and creative|working fewer hours for more income|time to enjoy the money I earn|evenings that feel like mine|seasons of rest built into my year"},
+{id:'creativity',e:'🎨',n:'CREATIVITY & PROJECTS',g:'work',items:"finishing a creative project I love|an app that started as an idea in my head|writing a book|sharing my art with the world|a studio space for my projects|my creativity paying my bills|designs that make people smile|creative flow that lasts for hours|ideas arriving at the perfect moment|learning new creative tools|collaborating on a creative project|an exhibition of my work|selling my handmade work|a creative routine I enjoy|projects that combine my passions|building tools that help people|my creative confidence growing|experimenting without fear of failure|photographs I'm proud of|my music being heard|a notebook full of ideas|seeing strangers use something I made|creative challenges that stretch me|time to play creatively|an online shop for my creations|publishing my work|creative projects that become businesses|a design that won an award|teaching others to be creative|my portfolio growing every year|completing a project I once abandoned|finding my unique creative voice|creative work that feels meaningful|a beautiful workspace that inspires me|making gifts with my own hands|creative ideas that solve real problems|receiving fan mail|a podcast I'm proud of|creating content that helps people|tidy digital files and a clear process|a supportive creative community|creativity that feels like play|my ideas turning into reality"},
+{id:'learning',e:'🎓',n:'LEARNING & EDUCATION',g:'mind',items:"learning a new language fluently|understanding investing clearly|a course that changed my life|reading fifty books in a year|mastering a skill I always admired|going back to study as an adult|a mentor who teaches me generously|understanding my finances completely|learning to code well|certifications that open doors|curiosity that never runs out|learning from my own experiments|understanding taxes without stress|teaching what I've learned|podcasts that expand my thinking|learning to play an instrument|understanding how businesses grow|studying something purely for joy|a library card I use often|learning about money with excitement|online classes that fit my schedule|being a lifelong learner|asking smart questions|learning from people who've done what I want to do|a degree I'm proud of|learning to cook new cuisines|understanding marketing and sales|taking notes that help me remember|learning faster than I used to|workshops that inspire me|learning about my own patterns|skills that increase my income|learning to invest in property|staying curious about the world|understanding contracts confidently|learning photography properly|reading financial news with understanding|teachers who believed in me|learning from failure without shame|a desk set up for focused study|graduating from something I started|learning together with friends|the joy of finally understanding something difficult"},
+{id:'luxuries',e:'☕',n:'EVERYDAY LUXURIES',g:'home',items:"fresh flowers on my table every week|a massage whenever I need one|good coffee beans at home|eating at restaurants I love|high-quality bedding|a beautiful set of dinnerware|a cleaner who helps keep my home fresh|a weekend spa visit|a favourite perfume I wear daily|soft towels and a warm bathrobe|beautiful notebooks and pens|a comfortable pair of shoes for every occasion|buying organic food without worrying about price|a good bottle of wine for celebrations|taxis on rainy evenings|a cosy blanket on every sofa|skincare I love using|a really good chair for my desk|tickets to concerts I love|a beautiful handbag that lasts|fresh bakery bread on Sunday mornings|a weekly treat I fully enjoy|noise-cancelling headphones|a garden that someone helps me maintain|candles that make my home smell lovely|quality cycling gear|an upgrade on a long flight|afternoon tea in a beautiful hotel|a car that is comfortable and reliable|beautiful lighting in my home|having my groceries delivered|a sauna session after training|a wardrobe of quality basics|eating fresh berries all summer|a professional haircut I love|art I bought from an artist I admire|a weekend breakfast in bed|front-row seats at a show|a kitchen gadget that makes cooking joyful|a hot tub under the stars|silk pillowcases|fresh juice in the morning|little luxuries enjoyed without guilt"},
+{id:'giving',e:'🎁',n:'GIVING & GENEROSITY',g:'people',items:"being able to help people I love|donating generously to causes I care about|treating my family to something special|paying for dinner for friends|supporting small local businesses|sponsoring a child's education|giving thoughtful gifts|helping a friend through a tough month|leaving a generous tip|funding a project I believe in|volunteering my time and skills|giving without expecting anything back|supporting animal welfare|helping my parents in their later years|creating a scholarship|planting trees with my income|supporting artists by buying their work|giving my time to my community|being able to say yes when someone needs help|mentoring young entrepreneurs|surprising someone with kindness|donating to my local library|giving that feels joyful, not obligatory|sharing knowledge freely|helping someone start their business|covering a friend's ticket so they can join|giving monthly to charity automatically|supporting women in business|generous birthdays for the people I love|investing in my community|paying it forward|giving back to the places that shaped me|setting up a family fund|helping a neighbour with something practical|giving my best work to the world|being a generous listener|lending a hand without hesitation|donating clothes I no longer need|supporting causes that protect nature|being remembered for my generosity|creating jobs for other people|generosity flowing both ways in my life|teaching my children to give"},
+{id:'peace',e:'🧘',n:'PEACE & EMOTIONAL BALANCE',g:'mind',items:"feeling calm about money|peaceful evenings at home|handling stress with ease|a quiet mind before sleep|emotional balance during busy seasons|forgiving myself quickly|letting go of things I can't control|feeling content with my life|a meditation practice that steadies me|waking up with a peaceful heart|responding to problems calmly|being kind to myself on hard days|peace with my past|feeling safe in my own mind|calm conversations about difficult topics|moments of stillness every day|trusting that things will work out|releasing worry about the future|a balanced emotional life|feeling joy without waiting for something to go wrong|being patient with myself|quiet walks that reset my mood|comfort with uncertainty|inner peace that doesn't depend on circumstances|noticing my feelings without judgement|a home that feels emotionally safe|peaceful boundaries with difficult people|taking deep breaths before reacting|feeling grounded|sleeping peacefully without money worries|accepting what is and creating what's next|holding hope and realism together|calm Sunday evenings|emotional resilience I've built|peace in my relationships|feeling okay even when things are imperfect|gentle routines that soothe me|coming back to calm quickly|softness toward myself in difficult moments|peaceful mornings with no urgency|emotional freedom|crying when I need to and feeling lighter|a deep sense of being okay"},
+{id:'retirement',e:'🌅',n:'RETIREMENT & LONG-TERM SECURITY',g:'retire',items:"a comfortable retirement|retiring when I choose|a pension that keeps growing|long-term investments that compound|knowing my older self is taken care of|retiring in good health|a home that is paid off|grandchildren who visit often|time to travel in retirement|a retirement plan I understand|investing consistently for decades|my future self thanking me|financial security in old age|leaving something meaningful behind|a will that reflects my wishes|long retirement days in my garden|volunteering in retirement|learning new things in my seventies|enough savings to support a long life|retirement income from many sources|a calm, well-organised financial life later on|staying active and curious as I age|my investments outgrowing inflation|helping my children without risking my security|a home suited to my older years|peace of mind about the far future|time to write my memoirs|retiring early by choice|reviewing my pension once a year with confidence|long-term care planned in advance|a community to grow old with|cycling well into my old age|an investment account I set up decades ago|security that lets me be generous later in life|the compounding of small decisions|seasonal living in retirement|my older self feeling proud of me|starting retirement savings early enough|having a financial adviser I trust|retirement adventures with friends|no money worries in old age|a long, healthy, abundant life|a legacy of kindness and security"},
+{id:'adventure',e:'🧭',n:'ADVENTURE & EXPLORATION',g:'travel',items:"saying yes to adventure|climbing a mountain I once only looked at|learning to surf|a multi-day hiking trip|camping under the stars|cycling across a country|sailing on open water|diving among coral reefs|exploring places off the tourist path|a hot-air balloon ride|learning to ski|kayaking along a quiet coast|riding horses on a beach|an expedition that tested me|exploring caves and hidden places|a spontaneous road trip with no plan|trying an adventure sport|seeing wildlife in its natural habitat|running a trail race in the mountains|wild swimming in a lake|a festival in another country|crossing something off my bucket list|camping in the snow|paragliding over a valley|exploring my own country more deeply|backpacking with a light bag and an open heart|an adventure that made a great story|discovering a new hobby that thrills me|night hikes with headlamps|exploring ancient ruins|a cycling tour with friends|foraging and cooking in nature|being brave in unfamiliar places|an adventure with my family|learning to navigate by map|a sunrise summit|riding a bike through the Alps|the thrill of trying something for the first time|adventures that make me feel alive|walking an ancient pilgrimage route|sleeping in a treehouse|exploring a rainforest|coming home with stories to tell"},
+{id:'moments',e:'🌼',n:'BEAUTIFUL EVERYDAY MOMENTS',g:'home',items:"a quiet coffee on a sunny balcony|laughing at dinner with people I love|the smell of fresh bread in my kitchen|a long bath after a good day|sunlight through the curtains in the morning|reading in bed on a rainy afternoon|a phone call that makes me smile|a walk by the sea at sunset|fresh sheets on a Friday night|a hug at the end of the day|a perfect cup of tea|birdsong while I work|cooking a favourite recipe|dancing in the kitchen|a spontaneous picnic|lighting candles on a dark evening|a funny moment with a stranger|the first warm day of spring|a message that says someone is thinking of me|finishing a task and feeling proud|watering my plants in the morning|a clean kitchen at night|the smell of rain on warm ground|a slow breakfast on a Saturday|looking up at the stars|my favourite song coming on|a cosy evening with a good film|the quiet after a busy day|holding a warm mug with both hands|watching snow fall from the window|a delicious meal I cooked myself|noticing something beautiful on my way home|playing a board game with friends|an evening walk in summer|the moment I take my shoes off at home|a good night's sleep before an exciting day|fresh berries from the market|smiling at my reflection|a small win that made my day|writing in my journal before bed|feeding birds in winter|feeling content for no particular reason|an ordinary day that felt like enough"}
+];
+const FUT_OWN_CAT={id:'own',e:'➕',n:'MY OWN FUTURE GRATITUDES',g:'own'};
+let _FUT=null;
+function futLib(){
+  if(_FUT) return _FUT;
+  const all=[], byId={};
+  FUT_CATS.forEach(c=>{ c.list=c.items.split('|').map((t,i)=>{ const it={id:`fut-${c.id}-${String(i+1).padStart(3,'0')}`,c:c.id,t,lc:t.toLowerCase()}; all.push(it); byId[it.id]=it; return it; }); });
+  _FUT={all,byId,cat:Object.fromEntries([...FUT_CATS,FUT_OWN_CAT].map(c=>[c.id,c]))};
+  return _FUT;
+}
+
+/* ================= FUTURE GRATITUDE: engine ================= */
+const FUTURE_DAILY_GOAL = 10;
+const lowerFirst=s=>s?s.charAt(0).toLowerCase()+s.slice(1):s;
+const capFirst=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
+const FULL_SENTENCE=/^(i|i'm|i’m|im|i am|my|me|we)\b/i;
+function futItem(S,id){
+  const L=futLib(); const b=L.byId[id];
+  if(b) return {id,c:b.c,label:capFirst(b.t),statement:`I’m grateful for ${b.t}.`,lc:b.lc};
+  const c=(S.futureGratitudes||[]).find(x=>x.id===id); if(!c) return null;
+  const t=c.text.trim(); const end=/[.!?✨💜❤️]$/u.test(t)?'':'.';
+  return {id,c:c.cat||'own',label:t,statement:FULL_SENTENCE.test(t)?t+end:`I’m grateful for ${lowerFirst(t)}${end}`,lc:t.toLowerCase(),custom:c};
+}
+const futCatOf=it=>futLib().cat[it&&it.c]||FUT_OWN_CAT;
+const futStatus=(S,id)=>(S.futureGratitudeStatus||{})[id]||{};
+const futAchieved=(S,id)=>!!(S.futureGratitudeAchievements||{})[id];
+const futActive=(S,id)=>{ const st=futStatus(S,id).status; return st!=='retired'&&st!=='replaced'&&!futAchieved(S,id)&&!!futItem(S,id); };
+const _futStatsCache=new WeakMap();
+function futStats(S){ const src=S.futureGratitudeSelections||{}; if(_futStatsCache.has(src)) return _futStatsCache.get(src);
+  const st={}; Object.keys(src).sort().forEach(d=>[...new Set(src[d])].forEach(id=>{ const x=st[id]||(st[id]={days:0,dates:[],first:d,last:d}); x.days++; x.dates.push(d); x.last=d; }));
+  _futStatsCache.set(src,st); return st; }
+const futDaysTxt=n=>`${n} ${n===1?'day':'days'}`;
+/* everything in "My Future Gratitudes": checked library items + my own (custom) items */
+function futMine(S){ const ids=new Set([...Object.keys(S.futureGratitudeCollection||{}),...(S.futureGratitudes||[]).map(c=>c.id)]);
+  return [...ids].map(id=>futItem(S,id)).filter(Boolean); }
+function futFirstImagined(S,id){ const st=futStats(S)[id]; const cands=[st&&st.first,(S.futureGratitudeCollection||{})[id],((S.futureGratitudes||[]).find(c=>c.id===id)||{}).createdAt].filter(Boolean).sort(); return cands[0]||null; }
+function futFamiliar(S){
+  const ds=Object.keys(S.futureGratitudeSelections||{}).filter(d=>(S.futureGratitudeSelections[d]||[]).length).sort();
+  if(ds.length<4||daysBetween(ds[0],dayKey())<6) return null;
+  const st=futStats(S); const c=Object.entries(st).filter(([id,s])=>s.days>=5&&futActive(S,id)).map(([id,s])=>({it:futItem(S,id),days:s.days})).filter(x=>x.it);
+  if(!c.length) return null; c.sort((a,b)=>b.days-a.days||a.it.id.localeCompare(b.it.id)); return c[hash(dayKey()+'fam')%c.length]; }
+function futNormalize(t){ return gratNorm(String(t||'').replace(/^(today )?(i'?m|i’m|i am|im)\s+(so |really |very )?(grateful|thankful) (for|that)\s+/i,'')); }
+function findFutureFamiliar(S,text,exceptId){ const n=futNormalize(text); if(!n) return null; const A=new Set(n.split(' '));
+  let best=null,bestScore=0;
+  const cands=[...(S.futureGratitudes||[]).filter(c=>c.id!==exceptId).map(c=>futItem(S,c.id)),...futLib().all.map(i=>futItem(S,i.id))];
+  cands.forEach(it=>{ if(!it) return; const m=futNormalize(it.label); if(!m) return; let sc=0;
+    if(m===n) sc=1; else { const B=new Set(m.split(' ')); const inter=[...A].filter(x=>B.has(x)).length; const j=inter/new Set([...A,...B]).size;
+      const sub=(inter===A.size||inter===B.size)&&Math.abs(A.size-B.size)<=2&&inter>=2; sc=Math.max(j>=.7?j:0,sub?.72:0); }
+    if(sc>bestScore){ bestScore=sc; best=it; } });
+  return bestScore>=.7?best:null; }
+/* daily mix: pinned + frequent + my own + collection + discovery (varied categories) */
+function futRecommend(S,n,exclude,mode){
+  const st=futStats(S); const pins=S.futureGratitudeFavorites||{}; const coll=S.futureGratitudeCollection||{};
+  const ok=it=>it&&!exclude.has(it.id)&&futActive(S,it.id);
+  const own=(S.futureGratitudes||[]).map(c=>futItem(S,c.id)).filter(ok);
+  const lib=futLib().all.filter(i=>ok(i)).map(i=>futItem(S,i.id));
+  const taken=new Set(); const take=a=>{ a.forEach(i=>taken.add(i.id)); return a; };
+  const first=mode==='first';
+  const pinned=take(weightedPick([...own,...lib].filter(i=>pins[i.id]),first?2:1,()=>1));
+  const freq=take(weightedPick([...own,...lib].filter(i=>!taken.has(i.id)&&st[i.id]&&st[i.id].days>=2),first?3:1,i=>1+Math.sqrt(st[i.id].days)));
+  const mine=take(weightedPick(own.filter(i=>!taken.has(i.id)),first?2:1,i=>1+(st[i.id]?1:0)));
+  const col=take(weightedPick(lib.filter(i=>!taken.has(i.id)&&coll[i.id]&&!st[i.id]),first?1:0,()=>1));
+  const fam=[...pinned,...freq,...mine,...col];
+  const need=Math.max(0,n-fam.length); const usedCats=new Set(fam.map(i=>i.c)); const disc=[];
+  const fresh=shuffle(lib.filter(i=>!taken.has(i.id)&&!st[i.id]));
+  for(const i of fresh){ if(disc.length>=need) break; if(!usedCats.has(i.c)){ disc.push(i); usedCats.add(i.c); } }
+  for(const i of fresh){ if(disc.length>=need) break; if(!disc.includes(i)) disc.push(i); }
+  take(disc);
+  if(fam.length+disc.length<n) disc.push(...take(weightedPick(lib.filter(i=>!taken.has(i.id)),n-fam.length-disc.length,()=>1)));
+  const famQ=shuffle(fam); const out=[]; const pattern=first?'fdfdfdfddd':'dfddfddddd';
+  for(let k=0;k<pattern.length&&out.length<n;k++){ const q=pattern[k]==='f'?famQ:disc; if(q.length) out.push(q.shift()); else if((q===famQ?disc:famQ).length) out.push((q===famQ?disc:famQ).shift()); }
+  while(out.length<n&&(famQ.length||disc.length)) out.push((famQ.length?famQ:disc).shift());
+  return out.slice(0,n);
+}
+const FUT_BRIDGES={
+  money:['I’m learning how to build financial security.','I’m capable of learning the skills that help people build wealth.','I can take one small step toward this today.','Other people have built this, and I can learn how.'],
+  work:['I’m building this one small step at a time.','My skills are growing every time I practise.','I can learn what this takes.','Every project teaches me something useful.'],
+  health:['My body responds to small, kind habits.','I can take one caring step for my body today.','I’m learning what helps me feel good.','Progress counts, even when it’s small.'],
+  mind:['I’m practising this one moment at a time.','This is a skill I am learning.','I’m becoming someone who can feel this.','I can be patient with myself while I grow.'],
+  people:['I can nurture the connections I already have.','I’m learning to give and receive love more easily.','Small moments of connection add up.','I’m open to more warmth in my life.'],
+  retire:['I’m learning how long-term security is built.','Small decisions today help my older self.','I can understand this one piece at a time.','My future self is worth planning for.'],
+  home:['I’m allowed to want a beautiful life.','I can create a little of this today.','This is something I am learning to imagine.','Small comforts are a good beginning.'],
+  travel:['I can start building toward this, one krone at a time.','I can find adventure close to home while I plan.','This is something I am learning to imagine.','I’m allowed to want this.'],
+  own:['I can take one small step toward this today.','This future is something I am learning to imagine.','I’m allowed to want this.','I’m open to this becoming part of my life.']
+};
+const FUT_ACTIONS={
+  money:['Review my spending','Transfer an affordable amount to savings','Identify one unnecessary expense','Explore an additional income opportunity','Check my savings balance with curiosity'],
+  work:['Spend 25 focused minutes on my project','Reach out to one potential customer or contact','Write down three ideas','Share my work with one person','Update my portfolio or website'],
+  health:['Go for a 20-minute walk','Plan one nourishing meal','Go to bed 30 minutes earlier','Do 10 minutes of stretching','Book a check-up I’ve been postponing'],
+  mind:['Write one sentence about who I’m becoming','Spend 10 minutes learning something','Take five slow breaths','Do one thing slightly outside my comfort zone','Read 10 pages of a good book'],
+  people:['Send a kind message to someone','Plan time with someone I love','Do one generous thing today','Say thank you to someone'],
+  retire:['Look at my pension overview','Learn one thing about long-term investing','Set up an automatic monthly transfer','Write down what my older self will need'],
+  home:['Clear one small space at home','Plan one slow morning this week','Put a small treat in my budget','Save a picture of something I’d love'],
+  travel:['Start or top up a travel fund','Research one destination','Look at the calendar for a possible date','Plan a small local adventure this weekend'],
+  own:['Write down one first step','Spend 10 minutes on this today','Tell someone about this future','Put a reminder in my calendar']
+};
+const futGroup=it=>futCatOf(it).g||'own';
+const FUT_FEELINGS=[['✨','EXCITING','Let the excitement be fuel, not pressure.'],['🕊️','PEACEFUL','Peace is a beautiful sign that this future feels safe.'],['🌱','POSSIBLE','Possible is a powerful place to stand.'],['🌀','UNFAMILIAR','Unfamiliar just means new. Familiarity grows with practice.'],['⚡','DIFFICULT TO BELIEVE','That’s honest and welcome. You can build a bridge to a thought that feels truer today.']];
+const VISION_CARDS=[
+  {id:'finfree',e:'☀️',t:'MY FINANCIALLY FREE MORNING',bg:'linear-gradient(150deg,#ffe7b3,#ffbe96 55%,#ff9fcb)',intro:'Imagine waking up knowing your bills are covered, your savings are growing, and you have choices about your day.',q:['What does your morning look like?','What is different about the way you think?','What would you do with your time?','What habits helped you create this life?']},
+  {id:'business',e:'🚀',t:'MY THRIVING BUSINESS',bg:'linear-gradient(150deg,#c9f2e1,#4fd0cf 60%,#9aa6ff)',intro:'Imagine opening your inbox to messages from happy customers, and seeing your business support the life you want.',q:['What does a normal workday look like?','What are you most proud of having built?','How do you feel when a payment arrives?','What habits helped you build this?']},
+  {id:'home',e:'🏡',t:'MY DREAM HOME',bg:'linear-gradient(150deg,#fff0c8,#f5cf72 55%,#ffb996)',intro:'Imagine walking through the door of a home that feels completely like you.',q:['Where is it, and what does it look like?','What do you do there on a slow Sunday morning?','Who comes to visit?','What steps brought you there?']},
+  {id:'health',e:'🌿',t:'MY HEALTHY LIFESTYLE',bg:'linear-gradient(150deg,#d7f5c4,#8fe3c3 55%,#4fd0cf)',intro:'Imagine feeling rested, strong and at home in your body on an ordinary weekday.',q:['How do you feel when you wake up?','How do you like to move your body?','What do you eat that makes you feel good?','Which habits support you the most?']},
+  {id:'confident',e:'👑',t:'MY CONFIDENT FUTURE SELF',bg:'linear-gradient(150deg,#e6dbff,#c9b6ff 55%,#ff9fcb)',intro:'Imagine walking into any room calm, capable and sure of your worth.',q:['How do you carry yourself?','What do you say yes to now?','What no longer worries you?','What did you practise to get here?']},
+  {id:'travel',e:'✈️',t:'MY TRAVEL LIFE',bg:'linear-gradient(150deg,#cfe9ff,#8fdcff 55%,#c9b6ff)',intro:'Imagine waking up somewhere beautiful, on a trip that was paid for comfortably before you left.',q:['Where are you waking up?','Who is with you?','How does it feel to have paid for this with ease?','What helped make this trip possible?']},
+  {id:'career',e:'💼',t:'MY CAREER SUCCESS',bg:'linear-gradient(150deg,#ffd7c4,#ffb2d3 55%,#c9b6ff)',intro:'Imagine doing work you’re proud of, valued and well paid for what you bring.',q:['What kind of work fills your days?','How do people describe your contribution?','How do you feel on Sunday evenings?','What skills and habits got you here?']},
+  {id:'retire',e:'🌅',t:'MY SECURE LATER YEARS',bg:'linear-gradient(150deg,#ffe3c7,#f5cf72 50%,#b9a3ff)',intro:'Imagine your older self, relaxed and secure, enjoying the life your earlier choices made possible.',q:['Where do you live and how do your days look?','What gives you a sense of security?','What do you enjoy doing with your time?','What did your younger self do that you’re thankful for?']},
+  {id:'money',e:'💜',t:'MY PEACEFUL RELATIONSHIP WITH MONEY',bg:'linear-gradient(150deg,#fbe3f0,#ff9fcb 50%,#9a86ff)',intro:'Imagine opening your banking app and feeling calm, curious and in charge.',q:['How do you feel on payday?','How do you make spending decisions now?','What do you say to yourself about money?','What small habits created this peace?']}
+];
+/* pure updaters */
+const futAddToCollection=(s,id)=>(s.futureGratitudeCollection||{})[id]?s:{...s,futureGratitudeCollection:{...(s.futureGratitudeCollection||{}),[id]:dayKey()}};
+const futSetStatus=(s,id,patchObj)=>{ const cur=(s.futureGratitudeStatus||{})[id]||{}; return {...s,futureGratitudeStatus:{...(s.futureGratitudeStatus||{}),[id]:{...cur,...patchObj}}}; };
+const futAddAction=(s,itemId,text)=>({...s,futureGratitudeActions:[{id:'fa-'+uid(),itemId,text:text.trim(),date:dayKey(),done:false},...(s.futureGratitudeActions||[])]});
+
+/* ================= FUTURE GRATITUDE: shared UI ================= */
+function FutRow({it,onOpen}){
+  const {S,patch}=useFX();
+  const inList=!!(S.futureGratitudeCollection||{})[it.id]||!!it.custom; const pinned=!!(S.futureGratitudeFavorites||{})[it.id];
+  const st=futStatus(S,it.id); const ach=futAchieved(S,it.id);
+  const toggle=()=>{ if(it.custom){ onOpen(it); return; } ding(inList?420:760,.08);
+    patch(s=>{ const c={...(s.futureGratitudeCollection||{})}; if(c[it.id]) delete c[it.id]; else c[it.id]=dayKey(); return {...s,futureGratitudeCollection:c}; }); };
+  return html`<div className=${'grat-row fut-row'+(inList?' on':'')+(st.status==='retired'||st.status==='replaced'?' skipped':'')}>
+    <button className="grat-check" role="checkbox" aria-checked=${inList} onClick=${toggle}><span className="gbox">${inList?'✓':''}</span>
+      <span className="gtext">${pinned?'📌 ':''}${it.label}${ach?html` <span className="fut-tag real">🌟 REALITY</span>`:''}${st.bridge&&!ach?html` <span className="fut-tag">🌉</span>`:''}${st.status==='retired'?html` <span className="fut-tag">ARCHIVED</span>`:''}${st.status==='replaced'?html` <span className="fut-tag">REPLACED</span>`:''}</span></button>
+    <button className="grat-skip fut-more" aria-label=${'Open '+it.label} onClick=${()=>onOpen(it)}>›</button>
+  </div>`;
+}
+
+function FutureForm({init,onDone,onCancel}){
+  const {S,record,patch,toast}=useFX();
+  const editing=!!(init&&init.id);
+  const [f,setF]=useState(()=>({text:init&&init.text||'',cat:init&&init.cat||'own',targetAmount:init&&init.targetAmount?fmt(init.targetAmount):'',targetDate:init&&init.targetDate||'',why:init&&init.why||'',feeling:init&&init.feeling||'',firstStep:init&&init.firstStep||''}));
+  const [fam,setFam]=useState(null);
+  const set=(k,v)=>{ setF(x=>({...x,[k]:v})); if(k==='text') setFam(null); };
+  const doSave=()=>{ const text=f.text.trim(); if(!text) return;
+    const data={text,cat:f.cat,targetAmount:parseNum(f.targetAmount)||null,targetDate:f.targetDate||null,why:f.why.trim(),feeling:f.feeling.trim(),firstStep:f.firstStep.trim()};
+    if(editing){ patch(s=>({...s,futureGratitudes:s.futureGratitudes.map(c=>c.id===init.id?{...c,...data,history:c.text!==text?[...(c.history||[]),{text:c.text,date:dayKey()}].slice(-10):(c.history||[])}:c)})); toast('Updated ✨'); onDone(futItem(S,init.id)); return; }
+    const g={id:'fut-own-'+uid(),...data,createdAt:dayKey(),history:[]};
+    record('futureCustom',15,s=>{ let ns={...s,futureGratitudes:[g,...(s.futureGratitudes||[])]}; if(data.firstStep) ns=futAddAction(ns,g.id,data.firstStep); return ns; });
+    toast('Saved to My Future Gratitudes ✨'); onDone({id:g.id,c:g.cat,label:g.text,custom:g}); };
+  const save=()=>{ if(!editing){ const m=findFutureFamiliar(S,f.text); if(m&&!fam){ setFam(m); return; } } doSave(); };
+  const useExisting=()=>{ if(!fam.custom) patch(s=>futAddToCollection(s,fam.id)); toast('It’s in My Future Gratitudes ✨'); onDone(fam); };
+  return html`<div>
+    <h3>${editing?'Edit my future gratitude':'My future gratitude'}</h3>
+    <label className="lbl" htmlFor="ff-t">WHAT FUTURE EXPERIENCE OR ACHIEVEMENT AM I GRATEFUL FOR?</label>
+    <textarea id="ff-t" className="input" style=${{minHeight:84}} placeholder="I’m grateful for having 500,000 kr saved." value=${f.text} onChange=${e=>set('text',e.target.value)}></textarea>
+    ${fam && html`<div className="familiar"><div className="eyebrow">THIS LOOKS FAMILIAR ✨</div><div className="fam-card"><span>${futCatOf(fam).e}</span>${fam.label}</div>
+      <div className="btn-row"><button className="btn small" style=${{width:'100%'}} onClick=${useExisting}>USE EXISTING</button><button className="btn small ghost" style=${{width:'100%'}} onClick=${doSave}>SAVE AS DIFFERENT</button></div></div>`}
+    <label className="lbl" htmlFor="ff-c">CATEGORY (OPTIONAL)</label>
+    <select id="ff-c" className="input" value=${f.cat} onChange=${e=>set('cat',e.target.value)}><option value="own">➕ MY OWN</option>${FUT_CATS.map(c=>html`<option key=${c.id} value=${c.id}>${c.e} ${c.n}</option>`)}</select>
+    <div className="ff-two">
+      <div><label className="lbl" htmlFor="ff-a">TARGET AMOUNT (DKK)</label><input id="ff-a" className="input" inputMode="numeric" placeholder="500,000" value=${f.targetAmount} onChange=${e=>{ const v=parseNum(e.target.value); set('targetAmount',v?fmt(v):''); }}/></div>
+      <div><label className="lbl" htmlFor="ff-d">TARGET DATE</label><input id="ff-d" className="input" type="date" value=${f.targetDate} onChange=${e=>set('targetDate',e.target.value)}/></div>
+    </div>
+    <label className="lbl" htmlFor="ff-w">WHY THIS MATTERS TO ME</label>
+    <input id="ff-w" className="input" placeholder="Financial independence, freedom and peace." value=${f.why} onChange=${e=>set('why',e.target.value)}/>
+    <label className="lbl" htmlFor="ff-f">HOW I IMAGINE FEELING</label>
+    <input id="ff-f" className="input" placeholder="Confident, calm and secure." value=${f.feeling} onChange=${e=>set('feeling',e.target.value)}/>
+    <label className="lbl" htmlFor="ff-s">MY FIRST PRACTICAL STEP</label>
+    <input id="ff-s" className="input" placeholder="Create a monthly savings plan." value=${f.firstStep} onChange=${e=>set('firstStep',e.target.value)}/>
+    ${!fam && html`<div className="btn-row"><button className="btn ghost" onClick=${onCancel}>CANCEL</button><button className="btn" disabled=${!f.text.trim()} onClick=${save}>SAVE</button></div>`}
+  </div>`;
+}
+function FutureCustomModal({init,onClose}){ return html`<${Modal} onClose=${()=>onClose()} label="My future gratitude"><${FutureForm} init=${init} onDone=${it=>onClose(it)} onCancel=${()=>onClose()}/><//>`; }
+
+/* one sheet for every action on a single future gratitude */
+function FutureItemSheet({id,startMode,onClose}){
+  const {S,record,patch,toast,confetti,logEvidence}=useFX();
+  const [mode,setMode]=useState(startMode||'view'); const [bridge,setBridge]=useState(null); const [own,setOwn]=useState(''); const [act,setAct]=useState(''); const [celebrate,setCelebrate]=useState(null);
+  const it=futItem(S,id); const st=futStatus(S,id); const stats=futStats(S)[id]; const ach=(S.futureGratitudeAchievements||{})[id];
+  if(!it && !celebrate) return null;
+  const C=it?futCatOf(it):FUT_OWN_CAT; const pinned=!!(S.futureGratitudeFavorites||{})[id]; const inList=!!(S.futureGratitudeCollection||{})[id]||!!(it&&it.custom);
+  const acts=(S.futureGratitudeActions||[]).filter(a=>a.itemId===id);
+  const togglePin=()=>patch(s=>{ const f={...(s.futureGratitudeFavorites||{})}; if(f[id]) delete f[id]; else f[id]=true; return futAddToCollection({...s,futureGratitudeFavorites:f},id); });
+  const saveBridge=()=>{ const b=(bridge==='__own'?own:bridge||'').trim(); if(!b) return;
+    patch(s=>futSetStatus(futAddToCollection(s,id),id,{bridge:b,bridgeDate:dayKey(),bridgeHistory:[...((s.futureGratitudeStatus||{})[id]||{}).bridgeHistory||[],...(st.bridge?[{text:st.bridge,date:st.bridgeDate}]:[])].slice(-10)}));
+    record('futureBridge',15,s=>({...s,futureGratitudeReflections:[{id:uid(),date:dayKey(),type:'bridge',itemId:id,text:b},...(s.futureGratitudeReflections||[])]}));
+    toast('Bridge saved 🌉'); setMode('view'); };
+  const toDeck=()=>{ patch(s=>({...s,userMessages:[...(s.userMessages||[]),newUserMessage(st.bridge,'future-bridge',{futureId:id})]})); toast('Added to my Money Message Deck 💜'); };
+  const replace=()=>{ patch(s=>{ if(it.custom) return futSetStatus({...s,futureGratitudes:s.futureGratitudes.map(c=>c.id===id?{...c,text:st.bridge,history:[...(c.history||[]),{text:c.text,date:dayKey()}].slice(-10)}:c)},id,{bridge:null,replacedText:it.label,replacedDate:dayKey()});
+      const g={id:'fut-own-'+uid(),text:st.bridge,cat:it.c,createdAt:dayKey(),replacedFrom:id,history:[]};
+      let ns={...s,futureGratitudes:[g,...(s.futureGratitudes||[])]}; ns=futSetStatus(ns,id,{status:'replaced',replacedBy:g.id,replacedDate:dayKey()});
+      if((s.futureGratitudeFavorites||{})[id]){ const f={...s.futureGratitudeFavorites}; delete f[id]; f[g.id]=true; ns={...ns,futureGratitudeFavorites:f}; }
+      return ns; }); toast('Your new wording is now the statement ✨'); onClose(); };
+  const archive=()=>{ patch(s=>futSetStatus(s,id,{status:'retired',retiredDate:dayKey()})); toast('Archived — it won’t appear in your daily choices 🗄️'); setMode('view'); };
+  const restore=()=>{ patch(s=>futSetStatus(s,id,{status:'active'})); toast('Back in your future gratitudes ✨'); };
+  const del=()=>{ patch(s=>{ const c={...(s.futureGratitudeCollection||{})}; delete c[id]; const f={...(s.futureGratitudeFavorites||{})}; delete f[id];
+      let ns={...s,futureGratitudeCollection:c,futureGratitudeFavorites:f}; if(it.custom) ns={...ns,futureGratitudes:ns.futureGratitudes.filter(x=>x.id!==id)}; return ns; });
+    toast(it.custom?'Future gratitude deleted':'Removed from My Future Gratitudes'); onClose(); };
+  const saveAction=t=>{ const v=(t||act).trim(); if(!v) return; record('futureAction',10,s=>futAddAction(s,id,v)); toast('Small step saved 🌱'); setAct(''); setMode('view'); };
+  const toggleDone=a=>{ const done=!a.done; patch(s=>({...s,futureGratitudeActions:s.futureGratitudeActions.map(x=>x.id===a.id?{...x,done,doneDate:done?dayKey():null}:x)})); if(done){ record('futureActionDone',10); ding(880,.12); } };
+  const confirmReality=()=>{ const today=dayKey(); const first=futFirstImagined(S,id); const days=first?daysBetween(first,today):0; const chosen=stats?stats.days:0;
+    const rec={date:today,statement:it.statement,label:it.label,firstImagined:first,practiceDays:days,timesChosen:chosen};
+    record('futureReality',40,s=>{ const g={id:'grat-own-'+uid(),text:it.label,emoji:'🌟',cat:'achievements',note:`Once a future gratitude — became real on ${prettyDate(today)}`,date:today,createdAt:today,pinned:false,migratedV2:true,fromFuture:id};
+      return {...s,futureGratitudeAchievements:{...(s.futureGratitudeAchievements||{}),[id]:{...rec,presentGratitudeId:g.id}},customGratitudes:[g,...(s.customGratitudes||[])],
+        futureGratitudeHistory:[...(s.futureGratitudeHistory||[]),{date:today,type:'reality',itemId:id}]}; });
+    logEvidence(`It became real: ${it.label}`,'IT’S MY REALITY NOW');
+    confetti(); setCelebrate(rec); setMode('celebrate'); };
+  const group=it?futGroup(it):'own'; const sugg=FUT_ACTIONS[group]||FUT_ACTIONS.own; const bsugg=FUT_BRIDGES[group]||FUT_BRIDGES.own;
+  return html`<${Modal} onClose=${onClose} label="Future gratitude">
+    ${mode==='celebrate' && celebrate ? html`<div className="center fut-celebrate">
+      <div className="fut-star" aria-hidden="true">🌟</div>
+      <div className="eyebrow">IT’S MY REALITY NOW</div>
+      <h3>Something I once imagined is now part of my life.</h3>
+      <div className="fut-hero-card" style=${{margin:'12px 0'}}>${celebrate.label}</div>
+      ${celebrate.firstImagined ? html`<p style=${{fontWeight:800}}>Part of your Future Gratitude practice for ${futDaysTxt(celebrate.practiceDays)} — since ${prettyDate(celebrate.firstImagined)}${celebrate.timesChosen?`, chosen on ${futDaysTxt(celebrate.timesChosen)}`:''}.</p>`:''}
+      <p className="muted small" style=${{fontWeight:700}}>Added to your Gratitude Vault and your Money Evidence ✨</p>
+      <button className="btn warm" onClick=${onClose}>CELEBRATE AND CLOSE</button></div>`
+    : mode==='reality' ? html`<div>
+      <div className="eyebrow">✨ IT’S MY REALITY NOW</div>
+      <h3>Has this become true in your real life?</h3>
+      <div className="fut-hero-card" style=${{margin:'10px 0 14px'}}>${it.statement}</div>
+      <p className="muted small" style=${{fontWeight:700}}>Only you decide this. Imagining something often never marks it as achieved.</p>
+      <div className="stack"><button className="btn warm" onClick=${confirmReality}>🌟 YES, I’VE ACHIEVED THIS</button><button className="btn ghost" onClick=${()=>{ toast('No rush. It’s still yours to imagine ✨'); setMode('view'); }}>NOT YET</button></div></div>`
+    : mode==='bridge' ? html`<div>
+      <div className="eyebrow">⚡ THIS FEELS UNFAMILIAR</div>
+      <h3>Find a bridge that feels true today</h3>
+      <p style=${{fontWeight:700,marginTop:0}}>You never have to repeat a sentence that feels false. Pick a step you can believe — or write your own.</p>
+      <div className="rung current"><span className="rung-l">ORIGINAL</span>“${it.statement}”</div>
+      ${bsugg.map(b=>html`<div key=${b} className="rung-wrap"><div className="rung-arrow">↓</div><button className=${'rung'+(bridge===b?' on':'')} onClick=${()=>setBridge(b)}>“${b}”</button></div>`)}
+      <div className="rung-wrap"><div className="rung-arrow">·</div><button className=${'rung'+(bridge==='__own'?' on':'')} onClick=${()=>setBridge('__own')}><span className="rung-l">✏️ MY OWN BRIDGE</span>Write a thought that feels believable.</button></div>
+      ${bridge==='__own' && html`<textarea className="input" style=${{marginTop:10}} placeholder="I’m learning to save a little every month." value=${own} onChange=${e=>setOwn(e.target.value)}></textarea>`}
+      <div className="btn-row"><button className="btn ghost" onClick=${()=>setMode('view')}>CANCEL</button><button className="btn pink" disabled=${!bridge||(bridge==='__own'&&!own.trim())} onClick=${saveBridge}>SAVE BRIDGE 🌉</button></div></div>`
+    : mode==='action' ? html`<div>
+      <div className="eyebrow">🌱 ONE SMALL STEP</div>
+      <h3>What is one small thing I can do today to support this future?</h3>
+      <div className="fut-hero-card sm" style=${{margin:'8px 0 12px'}}>${it.label}</div>
+      <div className="choice-list">${sugg.map(a=>html`<button key=${a} onClick=${()=>saveAction(a)}>${a}</button>`)}</div>
+      <label className="lbl" htmlFor="fa-own">OR MY OWN STEP</label>
+      <div className="row"><input id="fa-own" className="input" placeholder="Something small and doable…" value=${act} onChange=${e=>setAct(e.target.value)}/><button className="btn small" disabled=${!act.trim()} onClick=${()=>saveAction()}>SAVE</button></div>
+      <p className="muted small" style=${{fontWeight:700}}>Steps are progress, not promises. Nothing is moved or paid automatically.</p>
+      <button className="btn ghost" style=${{marginTop:6}} onClick=${()=>setMode('view')}>BACK</button></div>`
+    : mode==='edit' ? html`<${FutureForm} init=${it.custom} onDone=${()=>setMode('view')} onCancel=${()=>setMode('view')}/>`
+    : mode==='confirmReplace' ? html`<div><h3>Replace this statement?</h3>
+      <div className="kv"><span>Old</span><b className="struck">“${it.statement}”</b></div>
+      <div className="kv" style=${{marginTop:12}}><span>New</span><b>“${st.bridge}”</b></div>
+      <p style=${{fontWeight:700}}>Your bridge becomes the future gratitude you practise. Your history is kept.</p>
+      <div className="stack"><button className="btn pink" onClick=${replace}>✨ YES — USE MY NEW WORDING</button><button className="btn ghost" onClick=${()=>setMode('view')}>CANCEL</button></div></div>`
+    : mode==='confirmDelete' ? html`<div><h3>${it.custom?'Delete this future gratitude?':'Remove from My Future Gratitudes?'}</h3>
+      <p style=${{fontWeight:700}}>${it.custom?'This deletes the statement, its notes and pin. Past daily history keeps its record.':'It stays in the library and can be added again any time. Your past daily history is kept.'}</p>
+      <div className="stack"><button className="btn danger" onClick=${del}>${it.custom?'DELETE':'REMOVE'}</button><button className="btn ghost" onClick=${()=>setMode('view')}>CANCEL</button></div></div>`
+    : html`<div>
+      <div className="row-between"><span className="eyebrow">${C.e} ${C.n}</span><button className=${'x'+(pinned?' pinned':'')} aria-label=${pinned?'Unpin':'Pin'} aria-pressed=${pinned} onClick=${togglePin}>📌</button></div>
+      <div className="fut-hero-card" style=${{margin:'10px 0'}}>${it.statement}</div>
+      ${ach && html`<div className="fut-real-note">🌟 Became real on ${prettyDate(ach.date)}</div>`}
+      ${st.status==='retired' && html`<div className="fut-real-note muted">🗄️ Archived — not shown in daily choices</div>`}
+      ${st.status==='replaced' && html`<div className="fut-real-note muted">Replaced by my new wording</div>`}
+      <div className="muted small" style=${{fontWeight:800}}>${stats?`Chosen on ${futDaysTxt(stats.days)} · first ${prettyDate(stats.first)} · last ${prettyDate(stats.last)}`:'Not chosen in a daily practice yet'}${!inList&&!it.custom?' · not in my list yet':''}</div>
+      ${it.custom && html`<div className="fut-details">
+        ${it.custom.targetAmount?html`<div className="kv"><span>Target amount</span><b>${fmt(it.custom.targetAmount)} DKK</b></div>`:''}
+        ${it.custom.targetDate?html`<div className="kv"><span>Target date</span><b>${prettyDate(it.custom.targetDate)}</b></div>`:''}
+        ${it.custom.why?html`<div className="kv"><span>Why this matters</span><b>${it.custom.why}</b></div>`:''}
+        ${it.custom.feeling?html`<div className="kv"><span>How I imagine feeling</span><b>${it.custom.feeling}</b></div>`:''}
+        ${it.custom.firstStep?html`<div className="kv"><span>My first practical step</span><b>${it.custom.firstStep}</b></div>`:''}</div>`}
+      ${st.bridge && html`<div className="msg-evo"><div className="kv"><span>🌉 My current bridge</span><b>“${st.bridge}”</b></div>
+        <div className="glitch-btns"><button className="btn tiny ghost" onClick=${()=>{ setBridge(null); setMode('bridge'); }}>CHANGE BRIDGE</button><button className="btn tiny ghost" onClick=${()=>setMode('confirmReplace')}>✏️ REPLACE STATEMENT</button><button className="btn tiny ghost" onClick=${toDeck}>💜 SAVE TO MY DECK</button></div></div>`}
+      ${acts.length>0 && html`<div style=${{marginTop:12}}><div className="kv"><span>My small steps</span></div>${acts.slice(0,6).map(a=>html`<button key=${a.id} className=${'fut-action'+(a.done?' done':'')} onClick=${()=>toggleDone(a)} aria-pressed=${a.done}><span className="gbox">${a.done?'✓':''}</span><span>${a.text}</span></button>`)}</div>`}
+      <div className="fut-sheet-btns">
+        ${!ach && st.status!=='replaced' && html`<button className="btn warm small" onClick=${()=>setMode('reality')}>✨ IT’S MY REALITY NOW</button>`}
+        ${!ach && html`<button className="btn sea small" onClick=${()=>setMode('action')}>🌱 ONE SMALL STEP</button>`}
+        ${!ach && !st.bridge && st.status!=='replaced' && html`<button className="btn ghost small" onClick=${()=>setMode('bridge')}>⚡ THIS FEELS UNFAMILIAR</button>`}
+        ${!it.custom && !inList && html`<button className="btn ghost small" onClick=${()=>{ patch(s=>futAddToCollection(s,id)); toast('Added to My Future Gratitudes ✨'); }}>+ ADD TO MY LIST</button>`}
+        ${it.custom && html`<button className="btn ghost small" onClick=${()=>setMode('edit')}>✎ EDIT</button>`}
+        ${st.status==='retired' ? html`<button className="btn ghost small" onClick=${restore}>↩︎ RESTORE</button>` : !ach && st.status!=='replaced' && html`<button className="btn ghost small" onClick=${archive}>🗄️ ARCHIVE</button>`}
+        ${(it.custom||inList) && html`<button className="btn ghost small" onClick=${()=>setMode('confirmDelete')}>${it.custom?'🗑 DELETE':'REMOVE FROM MY LIST'}</button>`}
+      </div>
+      <button className="btn ghost" style=${{marginTop:10}} onClick=${onClose}>CLOSE</button>
+    </div>`}
+  <//>`;
+}
+
+/* ================= FUTURE GRATITUDE: screens ================= */
+function FutureFamiliarCard({onAct}){
+  const {S}=useFX(); const f=futFamiliar(S); if(!f) return null;
+  return html`<div className="insight fut-familiar"><span className="ins-e">✨</span><div><b>THIS IS BECOMING FAMILIAR</b>
+    <p>You’ve imagined “${f.it.label}” on ${f.days} different days.</p>
+    <p className="muted small" style=${{fontWeight:700}}>What is one small action that could help make this more real?</p>
+    <button className="btn tiny" style=${{marginTop:8}} onClick=${()=>onAct(f.it.id)}>CHOOSE A SMALL ACTION</button></div></div>`;
+}
+
+function FutureHome(){
+  const {S,open,today}=useFX(); const [sheet,setSheet]=useState(null); const [adding,setAdding]=useState(false);
+  const mine=futMine(S); const ach=Object.keys(S.futureGratitudeAchievements||{}).length;
+  const daysImagined=Object.values(S.futureGratitudeSelections||{}).filter(a=>a.length).length;
+  const todayN=(S.futureGratitudeSelections[today]||[]).length;
+  const B=[['futuretoday','🌅','TODAY’S FUTURE GRATITUDE',todayN?`${todayN} chosen today`:'Choose the futures you want to imagine'],['futuremine','💛','MY FUTURE GRATITUDES',`${mine.length} in my collection`],['futureexplore','🔭','EXPLORE MY FUTURE',`${fmt(futLib().all.length)} ideas in ${FUT_CATS.length} categories`],['futurevision','🔮','FUTURE ME VISION','Imagine a whole day in your future'],['futurereality','🌟','IT’S MY REALITY NOW',ach?`${ach} became real`:'Celebrate what comes true'],['futurejourney','🗺️','MY FUTURE GRATITUDE JOURNEY','Everything you’ve imagined']];
+  return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">✨ MY FUTURE GRATITUDE</h1>
+    <p className="game-sub">A beautiful future begins with what I choose to create today.</p>
+    <div className="fut-hero" aria-label="Future gratitude statement"><span className="fut-stars" aria-hidden="true">✦ ✧ ✦</span><p className="display">“I am grateful for the life I am creating.”</p></div>
+    <div className="stats">
+      <div className="stat"><div className="sv">${mine.length}</div><div className="sl">MY FUTURE GRATITUDES</div></div>
+      <div className="stat"><div className="sv">${daysImagined}</div><div className="sl">DAYS IMAGINED</div></div>
+      <div className="stat"><div className="sv">${(S.futureGratitudeActions||[]).filter(a=>a.done).length}</div><div className="sl">SMALL STEPS DONE</div></div>
+      <div className="stat"><div className="sv">${ach}</div><div className="sl">BECAME MY REALITY</div></div>
+    </div>
+    <${FutureFamiliarCard} onAct=${id=>setSheet({id,mode:'action'})}/>
+    <div className="fut-menu">${B.map(([id,e,t,sub])=>html`<button key=${id} className="fut-menu-btn" onClick=${()=>open(id)}><span className="fme">${e}</span><span><b>${t}</b><span>${sub}</span></span><span className="fmc">›</span></button>`)}</div>
+    <button className="btn warm" style=${{marginTop:14}} onClick=${()=>setAdding(true)}>+ ADD MY FUTURE GRATITUDE</button>
+    <p className="disclaimer">Future gratitude is an imagination exercise — not a claim that anything has already happened. Your real savings and evidence stay separate.</p>
+    ${adding && html`<${FutureCustomModal} onClose=${()=>setAdding(false)}/>`}
+    ${sheet && html`<${FutureItemSheet} id=${sheet.id} startMode=${sheet.mode} onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+}
+
+function FutureExplore(){
+  const {S}=useFX(); const [q,setQ]=useState(''); const [cat,setCat]=useState(null); const [limit,setLimit]=useState(40); const [sheet,setSheet]=useState(null); const [adding,setAdding]=useState(false);
+  const L=futLib();
+  const results=useMemo(()=>{ const t=q.trim().toLowerCase(); if(!t) return null; const score=new Map();
+    const esc=t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); const word=new RegExp('\\b'+esc+'(s|es)?\\b');
+    const all=[...(S.futureGratitudes||[]).map(c=>futItem(S,c.id)),...L.all.map(i=>futItem(S,i.id))].filter(Boolean);
+    all.forEach(it=>{ const lc=it.label.toLowerCase(); if(word.test(lc)) score.set(it,3); else if(lc.includes(t)) score.set(it,1); });
+    if(t.length>=3) FUT_CATS.forEach(c=>{ if(c.n.toLowerCase().includes(t)) c.list.forEach(i=>{ const it=all.find(x=>x.id===i.id); if(it&&!score.has(it)) score.set(it,2); }); });
+    return [...score.entries()].sort((a,b)=>b[1]-a[1]).map(e=>e[0]); },[q,S.futureGratitudes]);
+  const list=results||(cat?(cat==='own'?(S.futureGratitudes||[]).map(c=>futItem(S,c.id)):L.cat[cat].list.map(i=>futItem(S,i.id))):null);
+  const inCat=c=>c.list.filter(i=>(S.futureGratitudeCollection||{})[i.id]).length;
+  return html`<div className="grat-scope fut-scope">
+    <label className="lbl" htmlFor="fq" style=${{marginTop:4}}>🔎 SEARCH MY FUTURE</label>
+    <input id="fq" className="input" type="search" placeholder="savings, home, business, travel…" value=${q} onChange=${e=>{ setQ(e.target.value); setLimit(40); }}/>
+    ${!results && !cat && html`<div>
+      <p className="muted small" style=${{fontWeight:800,margin:'14px 2px 0'}}>${fmt(L.all.length)} future gratitudes across ${FUT_CATS.length} categories. Check anything you’d love to grow into.</p>
+      <div className="grat-cats">${[...FUT_CATS,FUT_OWN_CAT].map(c=>html`<button key=${c.id} className="grat-cat fut-cat" onClick=${()=>{ setCat(c.id); setLimit(40); }}><span className="gce">${c.e}</span><b>${c.n}</b><span>${c.id==='own'?`${(S.futureGratitudes||[]).length} of mine`:inCat(c)?`💛 ${inCat(c)}`:'explore'}</span></button>`)}</div>
+    </div>`}
+    ${cat && !results && html`<div className="row-between" style=${{marginTop:14}}><button className="btn tiny ghost" onClick=${()=>setCat(null)}>‹ ALL CATEGORIES</button></div>
+      <h2 className="display" style=${{fontSize:'1.5rem',margin:'12px 0 4px'}}>${L.cat[cat].e} ${L.cat[cat].n}</h2>
+      ${cat==='own' && html`<button className="btn warm" style=${{marginTop:8}} onClick=${()=>setAdding(true)}>+ ADD MY FUTURE GRATITUDE</button>`}`}
+    ${results && html`<p className="muted small" style=${{fontWeight:800,margin:'12px 2px 0'}}>${results.length} ${results.length===1?'result':'results'}</p>`}
+    ${list && html`<div className="grat-list">${list.filter(Boolean).slice(0,limit).map(it=>html`<${FutRow} key=${it.id} it=${it} onOpen=${x=>setSheet(x.id)}/>`)}</div>`}
+    ${list && list.length>limit && html`<button className="btn ghost" style=${{marginTop:12}} onClick=${()=>setLimit(l=>l+40)}>SHOW MORE (${list.length-limit})</button>`}
+    ${results && results.length===0 && html`<div className="card center"><p style=${{fontWeight:800,marginTop:0}}>Nothing matched — want to write it yourself?</p><button className="btn warm" onClick=${()=>setAdding(true)}>+ ADD MY FUTURE GRATITUDE</button></div>`}
+    ${adding && html`<${FutureCustomModal} init=${q.trim()?{text:q.trim()}:null} onClose=${()=>setAdding(false)}/>`}
+    ${sheet && html`<${FutureItemSheet} id=${sheet} onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+}
+
+function FutureMine(){
+  const {S}=useFX(); const [filter,setFilter]=useState('all'); const [limit,setLimit]=useState(40); const [sheet,setSheet]=useState(null); const [adding,setAdding]=useState(false);
+  const st=futStats(S); const pins=S.futureGratitudeFavorites||{};
+  const mine=futMine(S).sort((a,b)=>(pins[b.id]?1:0)-(pins[a.id]?1:0)||((st[b.id]||{}).days||0)-((st[a.id]||{}).days||0)||a.label.localeCompare(b.label));
+  const F={all:mine.filter(i=>futActive(S,i.id)),pinned:mine.filter(i=>pins[i.id]),own:mine.filter(i=>i.custom),archived:mine.filter(i=>['retired','replaced'].includes(futStatus(S,i.id).status)),real:mine.filter(i=>futAchieved(S,i.id))};
+  const shown=F[filter];
+  return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">💛 MY FUTURE GRATITUDES</h1>
+    <p className="game-sub">Futures I’ve chosen to grow into.</p>
+    <button className="btn warm" style=${{marginTop:6}} onClick=${()=>setAdding(true)}>+ ADD MY FUTURE GRATITUDE</button>
+    <div className="hscroll" style=${{marginTop:12}}>${[['all','ACTIVE'],['pinned','📌 PINNED'],['own','➕ MY OWN'],['archived','🗄️ ARCHIVED'],['real','🌟 REALITY']].map(([k,l])=>html`<button key=${k} className=${'chip'+(filter===k?' on':'')} onClick=${()=>{ setFilter(k); setLimit(40); }}>${l} · ${F[k].length}</button>`)}</div>
+    ${shown.length===0 ? html`<div className="card center"><p style=${{fontWeight:800,margin:0}}>${filter==='all'?'Nothing here yet. Explore the library or write your own future.':'Nothing here yet.'}</p></div>`
+      : html`<div className="grat-list">${shown.slice(0,limit).map(it=>html`<${FutRow} key=${it.id} it=${it} onOpen=${x=>setSheet(x.id)}/>`)}</div>`}
+    ${shown.length>limit && html`<button className="btn ghost" style=${{marginTop:12}} onClick=${()=>setLimit(l=>l+40)}>SHOW MORE (${shown.length-limit})</button>`}
+    <p className="disclaimer">Tap › for pin, edit, bridge, small steps and “It’s my reality now”.</p>
+    ${adding && html`<${FutureCustomModal} onClose=${()=>setAdding(false)}/>`}
+    ${sheet && html`<${FutureItemSheet} id=${sheet} onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+}
+
+function FutureToday(){
+  const {S,record,patch,toast,today,close,open}=useFX(); const G=FUTURE_DAILY_GOAL;
+  const todayIds=S.futureGratitudeSelections[today]||[];
+  const savedEntry=(S.futureGratitudeHistory||[]).find(h=>h.date===today&&h.type==='daily');
+  const seen=useRef(new Set());
+  const draw=mode=>{ let p=futRecommend(S,G,new Set([...seen.current,...todayIds]),mode); if(p.length<G){ seen.current=new Set(); p=futRecommend(S,G,new Set(todayIds),mode); } p.forEach(i=>seen.current.add(i.id)); return p; };
+  const [pool,setPool]=useState(()=>draw('first')); const [extra,setExtra]=useState([]);
+  const [step,setStep]=useState('pick'); const [feeling,setFeeling]=useState(savedEntry&&savedEntry.feeling||null); const [note,setNote]=useState(savedEntry&&savedEntry.note||'');
+  const [adding,setAdding]=useState(false); const [sheet,setSheet]=useState(null); const [actFor,setActFor]=useState(null); const [actText,setActText]=useState('');
+  const cards=[...extra,...pool.filter(p=>!extra.some(e=>e.id===p.id))];
+  const tap=id=>{ if(todayIds.includes(id)){ patch(s=>({...s,futureGratitudeSelections:{...s.futureGratitudeSelections,[today]:(s.futureGratitudeSelections[today]||[]).filter(x=>x!==id)}})); return; }
+    ding(700+Math.min(todayIds.length,14)*40,.08);
+    patch(s=>{ const ids=[...(s.futureGratitudeSelections[today]||[])]; if(!ids.includes(id)) ids.push(id); return futAddToCollection({...s,futureGratitudeSelections:{...s.futureGratitudeSelections,[today]:ids}},id); }); };
+  const saveFeeling=()=>{ if(!feeling) return; const entry={date:today,type:'daily',ids:[...todayIds],feeling,note:note.trim()};
+    record('futureDaily',20,s=>({...s,futureGratitudeHistory:[...(s.futureGratitudeHistory||[]).filter(h=>!(h.date===today&&h.type==='daily')),entry],
+      futureGratitudeReflections:[{id:uid(),date:today,type:'daily',feeling,text:note.trim(),ids:[...todayIds]},...(s.futureGratitudeReflections||[]).filter(r=>!(r.date===today&&r.type==='daily'))]}));
+    setStep('feeling-saved'); ding(900,.15); };
+  const items=todayIds.map(id=>cards.find(c=>c.id===id)||futItem(S,id)).filter(Boolean);
+  const F=feeling&&FUT_FEELINGS.find(f=>f[1]===feeling);
+  const saveAct=t=>{ const v=(t||actText).trim(); if(!v||!actFor) return; record('futureAction',10,s=>futAddAction(s,actFor,v)); toast('Small step saved 🌱'); setActText(''); setStep('done'); };
+
+  if(step==='imagine'||step==='feeling-saved') return html`<div className="grat-scope fut-scope center">
+    <div className="fut-chosen">${items.map((it,k)=>html`<div key=${it.id} className="fut-chosen-card" style=${{animationDelay:(k*.12)+'s'}}><span>${futCatOf(it).e}</span>${it.label}</div>`)}</div>
+    <p className="display fut-imagine">Imagine an ordinary day when this is part of your life.</p>
+    <h2 className="h2" style=${{marginTop:18}}>HOW DOES THIS FUTURE FEEL TO IMAGINE?</h2>
+    <div className="feels">${FUT_FEELINGS.map(([e,l])=>html`<button key=${l} className=${feeling===l?'on':''} onClick=${()=>{ setFeeling(l); if(step==='feeling-saved') setStep('imagine'); }}><span className="fe">${e}</span>${l}</button>`)}</div>
+    <label className="lbl" htmlFor="fn" style=${{textAlign:'left'}}>A NOTE (OPTIONAL)</label>
+    <textarea id="fn" className="input" style=${{minHeight:70}} placeholder="What came to mind?" value=${note} onChange=${e=>{ setNote(e.target.value); if(step==='feeling-saved') setStep('imagine'); }}></textarea>
+    ${step==='imagine' ? html`<button className="btn warm" style=${{marginTop:12}} disabled=${!feeling} onClick=${saveFeeling}>SAVE MY REFLECTION</button>`
+      : html`<div className="found-card" style=${{background:'var(--hero)'}}><div className="fw">${F[0]} ${F[1]} — ALL FEELINGS ARE WELCOME</div><p>${F[2]}</p></div>
+        ${(feeling==='UNFAMILIAR'||feeling==='DIFFICULT TO BELIEVE') && html`<div className="card" style=${{textAlign:'left'}}><h2 className="h2">⚡ BUILD A BRIDGE FOR ONE OF THEM?</h2>
+          <div className="choice-list">${items.map(it=>html`<button key=${it.id} onClick=${()=>setSheet({id:it.id,mode:'bridge'})}>${it.label}${futStatus(S,it.id).bridge?' 🌉':''}</button>`)}</div></div>`}
+        <div className="stack" style=${{marginTop:12}}><button className="btn sea" onClick=${()=>{ setActFor(items[0]&&items[0].id); setStep('action'); }}>🌱 ONE SMALL STEP FOR TODAY</button><button className="btn ghost" onClick=${()=>setStep('done')}>FINISH</button></div>`}
+    <button className="link-btn" onClick=${()=>setStep('pick')}>‹ Back to my choices</button>
+    ${sheet && html`<${FutureItemSheet} id=${sheet.id} startMode=${sheet.mode} onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+
+  if(step==='action'){ const it=futItem(S,actFor)||items[0]; const sugg=it?(FUT_ACTIONS[futGroup(it)]||FUT_ACTIONS.own):FUT_ACTIONS.own;
+    return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">🌱 ONE SMALL STEP</h1>
+    <p className="game-sub">What is one small thing I can do today to support this future?</p>
+    <div className="hscroll">${items.map(x=>html`<button key=${x.id} className=${'chip'+(actFor===x.id?' on':'')} onClick=${()=>setActFor(x.id)}>${futCatOf(x).e} ${x.label.length>34?x.label.slice(0,32)+'…':x.label}</button>`)}</div>
+    <div className="choice-list">${sugg.map(a=>html`<button key=${a} onClick=${()=>saveAct(a)}>${a}</button>`)}</div>
+    <label className="lbl" htmlFor="fta">OR MY OWN STEP</label>
+    <div className="row"><input id="fta" className="input" placeholder="Something small and doable…" value=${actText} onChange=${e=>setActText(e.target.value)}/><button className="btn small" disabled=${!actText.trim()} onClick=${()=>saveAct()}>SAVE</button></div>
+    <p className="disclaimer">Steps are progress, not guarantees. Money is never moved automatically.</p>
+    <button className="btn ghost" onClick=${()=>setStep('done')}>SKIP FOR TODAY</button>
+  </div>`; }
+
+  if(step==='done') return html`<div className="grat-scope fut-scope center">
+    <div className="fut-star" aria-hidden="true">🌅</div>
+    <h1 className="game-title display">Your future had your attention today.</h1>
+    <p className="display" style=${{fontSize:'1.2rem',fontWeight:700}}>I appreciate what I have today, and I’m growing comfortable with the life I’m creating.</p>
+    <div className="want-chips" style=${{marginTop:12}}>${items.map(it=>html`<span key=${it.id} className="goal-pill">${futCatOf(it).e} ${it.label}</span>`)}</div>
+    <div className="stack" style=${{marginTop:16}}><button className="btn warm" onClick=${close}>DONE</button><button className="btn ghost" onClick=${()=>open('futurejourney')}>MY FUTURE GRATITUDE JOURNEY</button></div>
+  </div>`;
+
+  return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">🌅 TODAY’S FUTURE GRATITUDE</h1>
+    <p className="game-sub">Choose as many futures as you like. ${G} is a lovely daily rhythm — and even one is a beautiful practice.</p>
+    ${savedEntry && html`<p className="center small" style=${{fontWeight:800}}>Today’s reflection saved: ${savedEntry.feeling} ✨</p>`}
+    <${FutureFamiliarCard} onAct=${id=>setSheet({id,mode:'action'})}/>
+    <div className="notice-grid">${cards.map(c=>{ const on=todayIds.includes(c.id); const k=todayIds.indexOf(c.id); const pin=(S.futureGratitudeFavorites||{})[c.id]; return html`<button key=${c.id} className=${'notice-card fut-card'+(on?' on':'')} onClick=${()=>tap(c.id)} aria-pressed=${on}>
+      ${on && html`<span className="nc-num">${k+1}</span>`}<span className="nc-e">${pin?'📌':futCatOf(c).e}</span>${c.label}</button>`; })}</div>
+    <button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setAdding(true)}>+ MY OWN FUTURE GRATITUDE</button>
+    <button className="link-btn" onClick=${()=>setPool(draw('more'))}>Show me ten others</button>
+    <div className="itch-continue"><div className=${'dg-bar'+(todayIds.length?' done':'')}>
+      <div className="dg-left"><span className="dg-count">${todayIds.length} / ${G}${todayIds.length>G?' ✨':''}</span><span className="dg-track"><i style=${{width:Math.min(100,todayIds.length/G*100)+'%'}}></i></span></div>
+      <button className="btn warm small" disabled=${!todayIds.length} onClick=${()=>setStep('imagine')}>IMAGINE ✨</button>
+    </div></div>
+    ${adding && html`<${FutureCustomModal} onClose=${it=>{ setAdding(false); if(it){ setExtra(e=>[futItem(S,it.id)||it,...e].filter(Boolean)); if(!todayIds.includes(it.id)) setTimeout(()=>tap(it.id),0); } }}/>`}
+    ${sheet && html`<${FutureItemSheet} id=${sheet.id} startMode=${sheet.mode} onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+}
+
+function FutureVision(){
+  const {S,record,toast}=useFX(); const [card,setCard]=useState(null); const [ans,setAns]=useState({});
+  const entries=id=>(S.futureGratitudeReflections||[]).filter(r=>r.type==='vision'&&r.cardId===id);
+  const openCard=c=>{ const t=entries(c.id).find(r=>r.date===dayKey()); setAns(t?{...t.answers}:{}); setCard(c); window.scrollTo&&window.scrollTo(0,0); };
+  const save=()=>{ const answers=Object.fromEntries(Object.entries(ans).filter(([,v])=>v&&v.trim()).map(([k,v])=>[k,v.trim()])); if(!Object.keys(answers).length) return;
+    record('futureVision',15,s=>({...s,futureGratitudeReflections:[{id:uid(),date:dayKey(),type:'vision',cardId:card.id,answers},...(s.futureGratitudeReflections||[]).filter(r=>!(r.type==='vision'&&r.cardId===card.id&&r.date===dayKey()))]}));
+    toast('Vision saved 🔮'); };
+  if(card){ const past=entries(card.id).filter(r=>r.date!==dayKey());
+    return html`<div className="grat-scope fut-scope">
+      <button className="btn tiny ghost" onClick=${()=>setCard(null)}>‹ ALL VISIONS</button>
+      <div className="vision-hero" style=${{background:card.bg}}><span className="vh-e" aria-hidden="true">${card.e}</span><span className="vh-stars" aria-hidden="true">✦ ✧ ✦</span><h1 className="display">${card.t}</h1><p>${card.intro}</p></div>
+      ${card.q.map((q,i)=>html`<div key=${i}><label className="lbl" htmlFor=${'vq'+i}>${q.toUpperCase()}</label><textarea id=${'vq'+i} className="input" style=${{minHeight:80}} value=${ans[i]||''} onChange=${e=>setAns(a=>({...a,[i]:e.target.value}))}></textarea></div>`)}
+      <button className="btn warm" style=${{marginTop:14}} disabled=${!Object.values(ans).some(v=>v&&v.trim())} onClick=${save}>SAVE MY VISION</button>
+      ${past.length>0 && html`<div className="card"><h2 className="h2">EARLIER VISIONS</h2>${past.slice(0,5).map(r=>html`<div key=${r.id} style=${{padding:'10px 0',borderBottom:'1px solid var(--line)'}}><div className="muted small" style=${{fontWeight:800}}>${prettyDate(r.date)}</div>${Object.entries(r.answers).map(([k,v])=>html`<div key=${k} style=${{marginTop:6}}><span className="muted small" style=${{fontWeight:800}}>${card.q[k]}</span><div style=${{fontWeight:700}}>${v}</div></div>`)}</div>`)}</div>`}
+      <p className="disclaimer">An imagination exercise — there are no wrong answers.</p>
+    </div>`; }
+  return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">🔮 FUTURE ME VISION</h1>
+    <p className="game-sub">Step into a future day and look around.</p>
+    <div className="vision-grid">${VISION_CARDS.map(c=>{ const n=entries(c.id).length; return html`<button key=${c.id} className="vision-tile" style=${{background:c.bg}} onClick=${()=>openCard(c)}><span className="vt-e">${c.e}</span><b>${c.t}</b><span>${n?`✓ ${n} ${n===1?'vision':'visions'} saved`:'Open'}</span></button>`; })}</div>
+  </div>`;
+}
+
+function FutureReality(){
+  const {S}=useFX(); const [sheet,setSheet]=useState(null);
+  const ach=Object.entries(S.futureGratitudeAchievements||{}).sort((a,b)=>b[1].date.localeCompare(a[1].date));
+  const cands=futMine(S).filter(i=>futActive(S,i.id));
+  return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">🌟 IT’S MY REALITY NOW</h1>
+    <p className="game-sub">When something you once imagined becomes real, celebrate it here. Only you decide when that happens.</p>
+    ${ach.length>0 && html`<div className="card"><h2 className="h2">BECAME MY REALITY</h2>${ach.map(([id,a])=>html`<div key=${id} className="mine-row"><span className="mine-e">🌟</span><div style=${{flex:1}}><b>${a.label}</b><div className="muted small" style=${{fontWeight:700}}>Real since ${prettyDate(a.date)}${a.firstImagined?` · imagined for ${futDaysTxt(a.practiceDays)} before`:''}</div></div></div>`)}</div>`}
+    <div className="card"><h2 className="h2">MY FUTURES STILL UNFOLDING</h2>
+      ${cands.length===0 ? html`<p style=${{fontWeight:700,margin:0}}>Add future gratitudes to your collection first — then come back when one comes true.</p>`
+      : cands.slice(0,60).map(it=>html`<div key=${it.id} className="mine-row"><span className="mine-e">${futCatOf(it).e}</span><div style=${{flex:1,minWidth:0}}><b>${it.label}</b></div><button className="btn tiny warm" onClick=${()=>setSheet(it.id)}>✨ IT’S REAL</button></div>`)}</div>
+    ${sheet && html`<${FutureItemSheet} id=${sheet} startMode="reality" onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+}
+
+function FutureJourney(){
+  const {S,patch}=useFX(); const [tab,setTab]=useState('imagined'); const [cat,setCat]=useState('all'); const [range,setRange]=useState('all'); const [sheet,setSheet]=useState(null); const [limit,setLimit]=useState(30);
+  const st=futStats(S); const today=dayKey();
+  const from=range==='7'?addDays(today,-6):range==='30'?addDays(today,-29):range==='month'?today.slice(0,8)+'01':'0000';
+  const inRange=d=>d&&d>=from;
+  const catOk=it=>cat==='all'||it.c===cat;
+  const daysIn=id=>((st[id]||{}).dates||[]).filter(inRange).length;
+  const imagined=Object.keys(st).map(id=>futItem(S,id)).filter(it=>it&&catOk(it)&&daysIn(it.id)>0).sort((a,b)=>st[b.id].last.localeCompare(st[a.id].last));
+  const personal=(S.futureGratitudes||[]).map(c=>futItem(S,c.id)).filter(it=>it&&catOk(it));
+  const revisited=imagined.filter(it=>daysIn(it.id)>=2).sort((a,b)=>daysIn(b.id)-daysIn(a.id)||a.label.localeCompare(b.label));
+  const refl=(S.futureGratitudeReflections||[]).filter(r=>inRange(r.date));
+  const acts=(S.futureGratitudeActions||[]).filter(a=>inRange(a.date));
+  const real=Object.entries(S.futureGratitudeAchievements||{}).filter(([id,a])=>inRange(a.date)).map(([id,a])=>({id,a,it:futItem(S,id)})).filter(x=>!x.it||catOk(x.it));
+  const exploring=futMine(S).filter(it=>catOk(it)&&futActive(S,it.id)&&(futStatus(S,it.id).bridge||daysIn(it.id)>0));
+  const usedCats=[...new Set([...Object.keys(st).map(id=>futItem(S,id)),...futMine(S)].filter(Boolean).map(i=>i.c))];
+  const TABS=[['imagined','IMAGINED',imagined.length],['personal','MY OWN',personal.length],['revisited','MOST REVISITED',revisited.length],['reflections','MY REFLECTIONS',refl.length+acts.length],['real','BECAME REALITY',real.length],['exploring','STILL EXPLORING',exploring.length]];
+  const Row=({it,right})=>html`<div className="mine-row" role="button" tabIndex="0" onClick=${()=>setSheet(it.id)} style=${{cursor:'pointer'}}><span className="mine-e">${futCatOf(it).e}</span><div style=${{flex:1,minWidth:0}}><b>${it.label}</b></div>${right}</div>`;
+  const toggleDone=a=>patch(s=>({...s,futureGratitudeActions:s.futureGratitudeActions.map(x=>x.id===a.id?{...x,done:!x.done,doneDate:!x.done?dayKey():null}:x)}));
+  const visionTitle=id=>(VISION_CARDS.find(v=>v.id===id)||{}).t||'Vision';
+  return html`<div className="grat-scope fut-scope">
+    <h1 className="game-title display">🗺️ MY FUTURE GRATITUDE JOURNEY</h1>
+    <div className="hscroll" role="tablist">${TABS.map(([k,l,n])=>html`<button key=${k} className=${'chip'+(tab===k?' on':'')} onClick=${()=>{ setTab(k); setLimit(30); }}>${l} · ${n}</button>`)}</div>
+    <div className="ff-two" style=${{marginTop:8}}>
+      <select className="input" aria-label="Category" value=${cat} onChange=${e=>setCat(e.target.value)}><option value="all">ALL CATEGORIES</option>${usedCats.map(c=>{ const C=futLib().cat[c]||FUT_OWN_CAT; return html`<option key=${c} value=${c}>${C.e} ${C.n}</option>`; })}</select>
+      <select className="input" aria-label="Date range" value=${range} onChange=${e=>setRange(e.target.value)}><option value="all">ALL TIME</option><option value="7">LAST 7 DAYS</option><option value="30">LAST 30 DAYS</option><option value="month">THIS MONTH</option></select>
+    </div>
+    <div className="card" style=${{paddingTop:6,paddingBottom:6}}>
+      ${tab==='imagined' && (imagined.length?imagined.slice(0,limit).map(it=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="muted small" style=${{fontWeight:800,whiteSpace:'nowrap'}}>${dayLabel(st[it.id].last)}</span>`}/>`):html`<p style=${{fontWeight:700}}>Futures you choose in Today’s Future Gratitude appear here.</p>`)}
+      ${tab==='personal' && (personal.length?personal.slice(0,limit).map(it=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="muted small" style=${{fontWeight:800}}>${st[it.id]?futDaysTxt(st[it.id].days):'new'}</span>`}/>`):html`<p style=${{fontWeight:700}}>Future gratitudes you write yourself live here.</p>`)}
+      ${tab==='revisited' && (revisited.length?revisited.slice(0,limit).map(it=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="small" style=${{fontWeight:800}}>${futDaysTxt(daysIn(it.id))}</span>`}/>`):html`<p style=${{fontWeight:700}}>Futures you return to on more than one day appear here.</p>`)}
+      ${tab==='reflections' && html`<div>${refl.length+acts.length===0?html`<p style=${{fontWeight:700}}>Your daily feelings, bridges, visions and small steps are kept here.</p>`:''}
+        ${refl.slice(0,limit).map(r=>html`<div key=${r.id} style=${{padding:'12px 0',borderBottom:'1px solid var(--line)'}}><div className="muted small" style=${{fontWeight:800}}>${prettyDate(r.date)} · ${r.type==='daily'?'DAILY REFLECTION':r.type==='bridge'?'BRIDGE':visionTitle(r.cardId)}</div>
+          ${r.type==='daily'?html`<div style=${{fontWeight:800}}>${(FUT_FEELINGS.find(f=>f[1]===r.feeling)||[''])[0]} ${r.feeling}${r.ids?` · ${r.ids.length} imagined`:''}</div>${r.text?html`<div className="mine-note">“${r.text}”</div>`:''}`
+          :r.type==='bridge'?html`<div style=${{fontWeight:700}}>🌉 “${r.text}”</div><div className="muted small" style=${{fontWeight:700}}>for ${(futItem(S,r.itemId)||{label:'a future gratitude'}).label}</div>`
+          :Object.values(r.answers||{}).slice(0,2).map((v,k)=>html`<div key=${k} style=${{fontWeight:700}}>${v}</div>`)}</div>`)}
+        ${acts.length>0 && html`<div style=${{paddingTop:10}}><div className="kv"><span>My small steps</span></div>${acts.slice(0,limit).map(a=>html`<button key=${a.id} className=${'fut-action'+(a.done?' done':'')} onClick=${()=>toggleDone(a)}><span className="gbox">${a.done?'✓':''}</span><span>${a.text}<span className="muted small" style=${{display:'block',fontWeight:700}}>${prettyDate(a.date)} · ${(futItem(S,a.itemId)||{label:''}).label}</span></span></button>`)}</div>`}</div>`}
+      ${tab==='real' && (real.length?real.map(({id,a})=>html`<div key=${id} className="mine-row"><span className="mine-e">🌟</span><div style=${{flex:1}}><b>${a.label}</b><div className="muted small" style=${{fontWeight:700}}>Real since ${prettyDate(a.date)}${a.firstImagined?` · imagined from ${prettyDate(a.firstImagined)}`:''}</div></div></div>`):html`<p style=${{fontWeight:700}}>When a future becomes real, it’s celebrated here.</p>`)}
+      ${tab==='exploring' && (exploring.length?exploring.slice(0,limit).map(it=>html`<${Row} key=${it.id} it=${it} right=${html`<span className="small" style=${{fontWeight:800}}>${futStatus(S,it.id).bridge?'🌉':''}${st[it.id]?' '+futDaysTxt(st[it.id].days):''}</span>`}/>`):html`<p style=${{fontWeight:700}}>Futures you’re actively imagining appear here until they become real.</p>`)}
+    </div>
+    <button className="btn ghost" style=${{marginTop:10}} onClick=${()=>setLimit(l=>l+30)}>SHOW MORE</button>
+    ${sheet && html`<${FutureItemSheet} id=${sheet} onClose=${()=>setSheet(null)}/>`}
+  </div>`;
+}
+
+function FutureTodayCard(){
+  const {S,open,today}=useFX(); const n=(S.futureGratitudeSelections[today]||[]).length; const saved=(S.futureGratitudeHistory||[]).some(h=>h.date===today&&h.type==='daily');
+  return html`<button className="card fut-today-card q-card" onClick=${()=>open('futuretoday')}>
+    <div className="row-between"><span className="eyebrow">🌅 TODAY’S FUTURE GRATITUDE</span><span className="pill">${saved?'✓ imagined':n?`${n} chosen`:'+20'}</span></div>
+    <p className="display quote" style=${{fontSize:'1.2rem'}}>“I am grateful for the life I am creating.”</p>
+  </button>`;
+}
+
 /* ================= TABS ================= */
 function QuickActions(){
   const {S,open}=useFX(); const now=Date.now();
   const ready=S.wishlist.filter(w=>wishReady(w,now)).length;
-  const Q=[['itch','🔥','I HAVE THE ITCH','var(--hero)'],['glitch','⚡','I FOUND A MONEY GLITCH','linear-gradient(135deg,#dccfff,#9aa6ff)'],['payday','💰','IT’S PAYDAY','var(--gold)'],['future','🌱','FUTURE ME','var(--sea)']];
+  const Q=[['itch','🔥','I HAVE THE ITCH','var(--hero)'],['glitch','⚡','I FOUND A MONEY GLITCH','linear-gradient(135deg,#dccfff,#9aa6ff)'],['stay','💎','LET IT STAY','var(--gold)'],['futurehome','🌅','MY FUTURE GRATITUDE','var(--sea)']];
   return html`<section className="card">
     <h2 className="h2">WHAT DO YOU NEED RIGHT NOW?</h2>
     <div className="quick">${Q.map(([id,e,l,bg])=>html`<button key=${id} style=${{background:bg}} onClick=${()=>open(id)}><span className="qe">${e}</span>${l}</button>`)}</div>
@@ -2849,6 +3194,7 @@ function TodayTab(){
     ${returning && html`<div className="card soft center" style=${{fontWeight:800}}>Your progress isn't gone. Start again today. ✨</div>`}
     <${QuickActions}/>
     <${NoticeGoodCard}/>
+    <${FutureTodayCard}/>
     <div className="card meter-card">
       <${Meter} points=${S.points} gid="mhome"/>
       <${LevelDots} points=${S.points}/>
@@ -2862,8 +3208,9 @@ function TodayTab(){
     </section>
     <section className="card"><div className="eyebrow">TODAY'S THOUGHT</div><p className="display quote">“${thought}”</p></section>
     <button className="card q-card" onClick=${()=>open('question')}>
-      <div className="row-between"><span className="eyebrow">💭 DAILY QUESTION</span><span className="pill">${S.answers[today]?'✓ answered':'+20'}</span></div>
+      <div className="row-between"><span className="eyebrow">💭 TODAY’S QUESTIONS</span><span className="pill">${dqCount(S,today)?`${dqCount(S,today)} / 6`:'+20'}</span></div>
       <p className="display quote" style=${{fontSize:'1.2rem'}}>${questionFor(today)}</p>
+      <p className="muted small" style=${{fontWeight:800,margin:'6px 0 0'}}>3 questions for today + 3 for my future</p>
     </button>
   </div>`;
 }
@@ -2876,9 +3223,7 @@ function PlayTab(){
     <div className="section-label">MONEY MOMENTS</div>
     <div className="games" style=${{marginTop:10}}>
       <button className="game-tile wide" style=${{background:'var(--hero)'}} onClick=${()=>open('itch')}><span className="ge">🔥</span><span><b>I HAVE THE ITCH</b><span>I suddenly want to spend money.</span></span></button>
-      <button className="game-tile" style=${{background:'var(--gold)'}} onClick=${()=>open('payday')}><span className="ge">💰</span><span><b>Payday Power</b><span>Keep first. Play second.</span></span></button>
       <button className="game-tile" style=${{background:'linear-gradient(135deg,#dccfff,#b9a3ff)'}} onClick=${()=>open('stay')}><span className="ge">💎</span><span><b>Let It Stay</b><span>Money is allowed to stay</span></span></button>
-      <button className="game-tile" style=${{background:'var(--sea)'}} onClick=${()=>open('future')}><span className="ge">🌱</span><span><b>Future Me</b><span>Fund the future you</span></span></button>
       <button className="game-tile" style=${{background:'linear-gradient(135deg,#ffc9ae,#ff8fc2)'}} onClick=${()=>open('vault')}><span className="ge">⚡</span><span><b>Glitch Vault</b><span>Old stories I found</span></span></button>
     </div>
     <div className="section-label">GAMES</div>
@@ -2887,7 +3232,7 @@ function PlayTab(){
         ${d.acts[g.id] && html`<span className="donemark">✓ today</span>`}
         <span className="ge">${g.e}</span><span><b>${g.n}</b><span>${g.d}</span></span>
       </button>`)}
-      <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#f3e1ff,#c9b6ff)'}} onClick=${()=>open('question')}><span className="ge">💭</span><span><b>Daily Question</b><span>${questionFor(today)}</span></span></button>
+      <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#f3e1ff,#c9b6ff)'}} onClick=${()=>open('question')}><span className="ge">💭</span><span><b>Daily Questions</b><span>3 for today + 3 for my future</span></span></button>
     </div>
   </div>`;
 }
@@ -2905,7 +3250,6 @@ function MagnetTab(){
     const m=pick(pool); return {text:m.text,id:m.id,bridge:false,n:c.n+1}; });
   const cardMsg=card.id?findMessage(S,card.id):null; const cardOwn=cardMsg&&cardMsg.source!=='built-in';
   const glitch=()=>{ setGlitching(true); ding(220,.15); setTimeout(()=>{ setGlitching(false); open('glitch',false,{statement:card.text,msgId:card.id}); },REDUCED?0:650); };
-  const realSaved=S.goals.reduce((a,g)=>a+(g.real||0),0);
   return html`<div className="wrap">
     <div className="card creature-stage" style=${{marginTop:10}}>
       <div className="eyebrow">YOUR MONEY CREATURE</div>
@@ -2933,8 +3277,8 @@ function MagnetTab(){
     </div>
     <div className="games">
       <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#fff0c8,#ffbe96 50%,#ff9fcb)'}} onClick=${()=>open('gratitude')}><span className="ge">✨</span><span><b>GRATITUDE VAULT</b><span>${gratCount(S)?`❤️ ${fmt(gratCount(S))} things appreciated`:'Look at how much is already here.'}</span></span></button>
+      <button className="game-tile wide fut-tile" style=${{background:'linear-gradient(135deg,#fff3c8,#f5cf72 40%,#ffb2d3 75%,#c9b6ff)'}} onClick=${()=>open('futurehome')}><span className="ge">🌅</span><span><b>FUTURE GRATITUDE VAULT</b><span>${futMine(S).length?`💛 ${futMine(S).length} futures I’m creating`:'I am grateful for the life I am creating.'}</span></span></button>
       <button className="game-tile wide" style=${{background:'linear-gradient(135deg,#dccfff,#9aa6ff)'}} onClick=${()=>open('vault')}><span className="ge">⚡</span><span><b>GLITCH VAULT</b><span>${S.glitches.length?`${S.glitches.length} old ${S.glitches.length===1?'story':'stories'} discovered`:'Old money stories I’ve discovered'}</span></span></button>
-      <button className="game-tile wide" style=${{background:'var(--sea)'}} onClick=${()=>open('future')}><span className="ge">🌱</span><span><b>FUTURE ME</b><span>${realSaved?`${fmt(realSaved)} DKK really saved`:'Future me deserves to be treated too'}</span></span></button>
       <button className="game-tile wide" style=${{background:'var(--gold)'}} onClick=${()=>open('stay')}><span className="ge">💎</span><span><b>LET IT STAY</b><span>Practice letting money stay</span></span></button>
     </div>
   </div>`;
@@ -2996,13 +3340,13 @@ function MeTab(){
   const lastSeller=S.seller[S.seller.length-1];
   const last14=Array.from({length:14},(_,i)=>addDays(today,i-13));
   const max14=Math.max(50,...last14.map(k=>(S.earned[k]||{}).total||0));
-  const answers=Object.entries(S.answers).sort((a,b)=>b[0].localeCompare(a[0]));
+  const answers=answerHistory(S);
   const stats=[
     [practiced,'Days practiced'],[L.name,'Magnet level'],[S.wsDone,'Money Search puzzles'],[S.flips,'Old stories flipped'],
     [S.evidence.length,'Real money evidence'],[t.shifts,'Thermostat shifts'],
     [lastSeller?(lastSeller.point>=SELL_LEVELS.length?'∞':fmtShort(SELL_LEVELS[lastSeller.point]*lastSeller.price)):'—','Seller expansion point'],
     [alive?S.streak:0,'Current streak'],[S.longest,'Longest streak'],[CREATURE[L.idx],'Creature stage'],
-    [S.moments.length,'Intentional money moments'],[gratCount(S),'Things appreciated'],[S.glitches.length,'Glitches found'],[fmtShort(S.goals.reduce((a,g)=>a+(g.real||0),0)),'DKK really saved'],[S.stays.length,'Let It Stay rounds']
+    [S.moments.length,'Intentional money moments'],[gratCount(S),'Things appreciated'],[S.glitches.length,'Glitches found'],[S.stays.length,'Let It Stay rounds']
   ];
   const momentCounts=Object.keys(MOMENT_LABELS).map(k=>[k,S.moments.filter(m=>m.type===k).length]).filter(([,n])=>n>0);
   return html`<div className="wrap">
@@ -3023,7 +3367,7 @@ function MeTab(){
       <div className="bars14">${last14.map(k=>{ const v=(S.earned[k]||{}).total||0; return html`<div key=${k}><i style=${{height:(v/max14*100)+'%'}} title=${v+' points'}></i><small>${Number(k.slice(8))}</small></div>`; })}</div>
     </div>
     ${answers.length>0 && html`<div className="card"><div className="row-between"><h2 className="h2">MY ANSWERS</h2><button className="btn tiny ghost" onClick=${()=>open('question')}>TODAY</button></div>
-      ${answers.slice(0,6).map(([d,v])=>html`<div key=${d} style=${{padding:'12px 0',borderBottom:'1px solid var(--line)'}}><div className="muted small" style=${{fontWeight:800}}>${prettyDate(d)} · ${v.q}</div><div style=${{fontWeight:700,marginTop:4}}>${v.a}</div></div>`)}</div>`}
+      ${answers.slice(0,6).map(([d,items])=>html`<div key=${d} className="dq-past"><div className="muted small" style=${{fontWeight:900}}>${prettyDate(d).toUpperCase()} · ${items.length} ${items.length===1?'answer':'answers'}</div>${items.map((x,k)=>html`<div key=${k} className="dq-past-item"><div className="muted small" style=${{fontWeight:800}}>${x.kind==='future'?'🌅':'💭'} ${x.q}</div><div style=${{fontWeight:700,marginTop:2}}>${x.a}</div></div>`)}</div>`)}</div>`}
     <div className="card">
       <h2 className="h2">SETTINGS</h2>
       <div className="setting"><span>Sound effects</span><button className=${'switch'+(S.sound?' on':'')} role="switch" aria-checked=${S.sound} aria-label="Sound effects" onClick=${()=>patch(s=>({...s,sound:!s.sound}))}></button></div>
@@ -3057,8 +3401,8 @@ function Onboarding({onDone}){
 }
 
 /* ================= APP ================= */
-const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,store:Store,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,future:FutureMe,payday:Payday,wishlist:Wishlist,stay:LetItStay,gratitude:GratitudeHome,gratexplore:GratExplore,gratsurprise:GratSurprise,gratmine:GratMine,noticegood:NoticeGood,gratgame:GratGame,gratmoney:GratMoney,mymessages:MyMessages};
-const HUBS=['gratitude','future','vault'];
+const SCREENS={ws:WordSearch,flip:FlipIt,rain:MoneyRain,thermo:Thermostat,spend:SpendMillions,seller:Seller,question:DailyQuestion,glitch:GlitchFlow,vault:GlitchVault,itch:Itch,wishlist:Wishlist,stay:LetItStay,gratitude:GratitudeHome,gratexplore:GratExplore,gratsurprise:GratSurprise,gratmine:GratMine,noticegood:NoticeGood,gratgame:GratGame,gratmoney:GratMoney,mymessages:MyMessages,futurehome:FutureHome,futuretoday:FutureToday,futureexplore:FutureExplore,futuremine:FutureMine,futurevision:FutureVision,futurereality:FutureReality,futurejourney:FutureJourney};
+const HUBS=['gratitude','vault','futurehome'];
 const TABS=[{id:'today',i:'🏠',n:'TODAY'},{id:'play',i:'🎮',n:'PLAY'},{id:'magnet',i:'✨',n:'MAGNET'},{id:'evidence',i:'💰',n:'EVIDENCE'},{id:'me',i:'👤',n:'ME'}];
 
 function App(){
