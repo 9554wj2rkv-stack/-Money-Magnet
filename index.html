@@ -592,6 +592,16 @@ label.lbl{display:block;font-weight:900;font-size:.9rem;letter-spacing:.06em;mar
 .dq-past{padding:12px 0;border-bottom:1px solid var(--line)}
 .dq-past:last-child{border-bottom:0}
 .dq-past-item{margin-top:8px}
+.fut-today-vault{background:linear-gradient(160deg,rgba(255,214,150,.3),rgba(255,160,200,.2) 55%,rgba(185,163,255,.28));border:1px solid rgba(245,207,114,.6);box-shadow:0 0 40px rgba(245,207,114,.18),var(--shadow)}
+.ftv-hero{margin-top:12px;padding:22px 18px}
+.ftv-hero p{font-size:1.35rem}
+.ftv-stats{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.ftv-stats span{padding:7px 12px;border-radius:999px;background:var(--card-solid);border:1px solid var(--line);font-weight:900;font-size:.88rem}
+.ftv-main{display:grid;gap:10px;margin-top:14px}
+.ftv-links{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.ftv-links button{appearance:none;border:1px solid var(--line);background:var(--card-solid);color:var(--text);border-radius:16px;min-height:52px;padding:6px 4px;font-weight:900;font-size:.8rem;line-height:1.2}
+.ftv-links button:active{transform:scale(.95)}
+@media (max-width:360px){.ftv-links{grid-template-columns:repeat(2,1fr)}}
 @keyframes threeIn{from{opacity:0;transform:translateY(30px) scale(.85) rotate(-3deg)}to{opacity:1;transform:none}}
 .mine-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .mine-row:last-child{border-bottom:0}
@@ -3152,18 +3162,33 @@ function FutureJourney(){
 }
 
 function FutureTodayCard(){
-  const {S,open,today}=useFX(); const n=(S.futureGratitudeSelections[today]||[]).length; const saved=(S.futureGratitudeHistory||[]).some(h=>h.date===today&&h.type==='daily');
-  return html`<button className="card fut-today-card q-card" onClick=${()=>open('futuretoday')}>
-    <div className="row-between"><span className="eyebrow">🌅 TODAY’S FUTURE GRATITUDE</span><span className="pill">${saved?'✓ imagined':n?`${n} chosen`:'+20'}</span></div>
-    <p className="display quote" style=${{fontSize:'1.2rem'}}>“I am grateful for the life I am creating.”</p>
-  </button>`;
+  const {S,open,today}=useFX();
+  const n=(S.futureGratitudeSelections[today]||[]).length; const saved=(S.futureGratitudeHistory||[]).some(h=>h.date===today&&h.type==='daily');
+  const mine=futMine(S).length; const real=Object.keys(S.futureGratitudeAchievements||{}).length; const fam=futFamiliar(S);
+  const steps=(S.futureGratitudeActions||[]).filter(a=>!a.done).length;
+  return html`<section className="card fut-today-vault" aria-label="Future Gratitude Vault">
+    <div className="row-between"><span className="eyebrow">🌅 FUTURE GRATITUDE VAULT</span><span className="pill">${saved?'✓ imagined today':n?`${n} chosen`:'+20'}</span></div>
+    <div className="fut-hero ftv-hero"><span className="fut-stars" aria-hidden="true">✦ ✧ ✦</span><p className="display">“I am grateful for the life I am creating.”</p></div>
+    <div className="ftv-stats"><span>💛 ${mine} ${mine===1?'future':'futures'}</span><span>🌱 ${steps} ${steps===1?'step':'steps'} to do</span><span>🌟 ${real} real</span></div>
+    ${fam && html`<button className="notice" style=${{borderColor:'#f5cf72'}} onClick=${()=>open('futurehome')}>✨ You’ve imagined “${fam.it.label}” on ${fam.days} different days →</button>`}
+    <div className="ftv-main">
+      <button className="btn warm" onClick=${()=>open('futuretoday')}>${saved||n?'🌅 CONTINUE TODAY’S FUTURE':'🌅 TODAY’S FUTURE GRATITUDE'}</button>
+      <button className="btn ghost" onClick=${()=>open('futurehome')}>✨ OPEN THE VAULT</button>
+    </div>
+    <div className="ftv-links">
+      <button onClick=${()=>open('futureexplore')}>🔭 Explore</button>
+      <button onClick=${()=>open('futuremine')}>💛 My futures</button>
+      <button onClick=${()=>open('futurevision')}>🔮 Vision</button>
+      <button onClick=${()=>open('futurereality')}>🌟 It’s real</button>
+    </div>
+  </section>`;
 }
 
 /* ================= TABS ================= */
 function QuickActions(){
   const {S,open}=useFX(); const now=Date.now();
   const ready=S.wishlist.filter(w=>wishReady(w,now)).length;
-  const Q=[['itch','🔥','I HAVE THE ITCH','var(--hero)'],['glitch','⚡','I FOUND A MONEY GLITCH','linear-gradient(135deg,#dccfff,#9aa6ff)'],['stay','💎','LET IT STAY','var(--gold)'],['futurehome','🌅','MY FUTURE GRATITUDE','var(--sea)']];
+  const Q=[['itch','🔥','I HAVE THE ITCH','var(--hero)'],['glitch','⚡','I FOUND A MONEY GLITCH','linear-gradient(135deg,#dccfff,#9aa6ff)'],['stay','💎','LET IT STAY','var(--gold)'],['gratitude','🌸','GRATITUDE VAULT','var(--sea)']];
   return html`<section className="card">
     <h2 className="h2">WHAT DO YOU NEED RIGHT NOW?</h2>
     <div className="quick">${Q.map(([id,e,l,bg])=>html`<button key=${id} style=${{background:bg}} onClick=${()=>open(id)}><span className="qe">${e}</span>${l}</button>`)}</div>
